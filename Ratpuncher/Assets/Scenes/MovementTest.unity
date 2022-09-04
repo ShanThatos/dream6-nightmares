@@ -441,7 +441,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &1073870380
 CapsuleCollider2D:
@@ -519,12 +519,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1073870379}
-  jumpForce: 2
-  dashForce: 4
+  jumpForce: 5
+  dashForce: 12
   dashCooldown: 1
-  moveAccel: 100
-  maxMoveSpeed: 7
-  groundPoundDelay: 0.05
+  dashDuration: 0.4
+  moveAccel: 90
+  maxMoveSpeed: 5.5
+  groundPoundDelay: 0.15
   bottom: {fileID: 1104970060}
 --- !u!1 &1104970059
 GameObject:

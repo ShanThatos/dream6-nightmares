@@ -68,6 +68,10 @@ public class PlayerMovement : MonoBehaviour
         if(currDashDuration >= 0)
         {
             currDashDuration -= Time.deltaTime;
+            if(currDashDuration < 0)
+            {
+                rb.gravityScale = gravity;
+            }
         }
     }
 
@@ -76,12 +80,16 @@ public class PlayerMovement : MonoBehaviour
         Vector2 currentVelocity = rb.velocity;
 
         // Limit maximum movement speed
-        if(Mathf.Abs(currentVelocity.x) <= maxMoveSpeed)
+        if(Mathf.Abs(currentVelocity.x) <= maxMoveSpeed && currDashDuration < 0)
         {
             rb.AddForce(moveVector);
-
         }
 
+        // Slow player after a dash
+        if(currDashDuration < 0 && Mathf.Abs(currentVelocity.x) > maxMoveSpeed)
+        {
+            currentVelocity.x = currentVelocity.x > 0 ? maxMoveSpeed : -maxMoveSpeed;
+        }
         // If no movement input, add some "drag" to help slow the player
         if(Mathf.Abs(moveVector.x) <= 1)
         {
@@ -132,7 +140,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
         }
-        else if (canDoubleJump){
+        else if (canDoubleJump && currDashDuration < 0){
 
             canDoubleJump = false;
             Jump();
@@ -154,6 +162,8 @@ public class PlayerMovement : MonoBehaviour
             currDashCooldown = dashCooldown;
             Vector2 currVelocity = rb.velocity;
             currVelocity.x = dashForce * forward.x;
+            currVelocity.y = 0;
+            // rb.gravityScale = 0;
             rb.velocity = currVelocity;
 
             currDashDuration = dashDuration;
