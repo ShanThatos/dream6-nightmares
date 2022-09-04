@@ -54,21 +54,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit2D[] hits;
-        Vector2 start = bottom.position;
-        hits = Physics2D.RaycastAll(start, new Vector2(0, -1), 0.075f);
-
-        // The raycast tends to hit the player itself, so want to "ignore" it
-        if (hits.Length > 1)
-        {
-            isGrounded = true;
-            canDoubleJump = true;
-        }
-        else
-        {
-            isGrounded = false;
-        }
-
         if (currDashCooldown >= 0)
         {
             currDashCooldown -= Time.deltaTime;
@@ -86,6 +71,8 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        checkIsGrounded();
+
         Vector2 currentVelocity = rb.velocity;
 
         // Limit maximum movement speed
@@ -126,6 +113,36 @@ public class PlayerMovement : MonoBehaviour
         }
 
         rb.velocity = currentVelocity;
+    }
+
+    public bool checkIsGrounded()
+    {
+        RaycastHit2D[] hits;
+        Vector2 start = bottom.position;
+        hits = Physics2D.RaycastAll(start, new Vector2(0, -1), 0.075f);
+
+        // The raycast tends to hit the player itself, so want to "ignore" it
+        if (hits.Length > 1)
+        {
+            isGrounded = true;
+            canDoubleJump = true;
+            animationManager.setVertical(Enums.VerticalState.Grounded);
+        }
+        else
+        {
+            isGrounded = false;
+
+            if (rb.velocity.y > 0)
+            {
+                animationManager.setVertical(Enums.VerticalState.Jumping);
+            }
+            else
+            {
+                animationManager.setVertical(Enums.VerticalState.Falling);
+            }
+        }
+
+        return isGrounded;
     }
 
     void OnMove(InputValue value)
@@ -187,6 +204,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
             groundPoundTimer = groundPoundDelay;
+            animationManager.setVertical(Enums.VerticalState.Pounding);
         }
     }
 

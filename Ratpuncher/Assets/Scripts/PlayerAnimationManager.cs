@@ -27,4 +27,25 @@ public class PlayerAnimationManager : MonoBehaviour
     {
         animator.SetBool("Dash", isDashing);
     }
+
+    public void setVertical(Enums.VerticalState state)
+    {
+        switch (state)
+        {
+            
+            case Enums.VerticalState.Jumping:
+                animator.SetInteger("Jump", 1);
+                break;
+            case Enums.VerticalState.Falling:
+                animator.SetInteger("Jump", -1);
+                break;
+            case Enums.VerticalState.Pounding:
+                animator.SetBool("Pound", true);
+                break;
+            default:
+                animator.SetInteger("Jump", 0);
+                animator.SetBool("Pound", false);
+                break;
+        }
+    }
 }
