@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("Time to remain midair after starting GP")]
     public float groundPoundDelay = 0.1f;
     float groundPoundTimer = 0f;
+    bool isGroundPounding = false;
 
     [Tooltip("Transform of the object player sprite is on")]
     public Transform sprite;
@@ -41,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
     bool canDoubleJump;
 
     PlayerAnimationManager animationManager;
+    PlayerParticles particleManager;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
         spriteScale = sprite.localScale;
 
         animationManager = GetComponent<PlayerAnimationManager>();
+        particleManager = GetComponent<PlayerParticles>();
     }
 
     // Update is called once per frame
@@ -127,6 +130,13 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = true;
             canDoubleJump = true;
             animationManager.setVertical(Enums.VerticalState.Grounded);
+
+            if (isGroundPounding)
+            {
+                // Landed after ground pound
+                particleManager.spawnPoundParticles();
+                isGroundPounding = false;
+            }
         }
         else
         {
@@ -178,6 +188,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
+        particleManager.spawnJumpParticles();
         Vector2 currVelocity = rb.velocity;
         currVelocity.y = jumpForce;
         rb.velocity = currVelocity;
@@ -185,11 +196,13 @@ public class PlayerMovement : MonoBehaviour
 
     void OnDash()
     {
-        if(currDashCooldown <= 0)
+        if(currDashCooldown <= 0 && isGroundPounding == false)
         {
+            float direction = Mathf.Sign(forward.x);
+            particleManager.spawnDashParticles(direction == -1);
             currDashCooldown = dashCooldown;
             Vector2 currVelocity = rb.velocity;
-            currVelocity.x = dashForce * forward.x;
+            currVelocity.x = dashForce * direction;
             currVelocity.y = 0;
             animationManager.setDashing(true);
             rb.velocity = currVelocity;
@@ -200,11 +213,12 @@ public class PlayerMovement : MonoBehaviour
      
     void OnPound()
     {
-        if (!isGrounded && groundPoundTimer < 0)
+        if (!isGrounded && isGroundPounding == false)
         {
             rb.velocity = Vector2.zero;
             groundPoundTimer = groundPoundDelay;
             animationManager.setVertical(Enums.VerticalState.Pounding);
+            isGroundPounding = true;
         }
     }
 
