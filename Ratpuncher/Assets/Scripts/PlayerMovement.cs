@@ -26,20 +26,29 @@ public class PlayerMovement : MonoBehaviour
     Vector2 moveVector;
     Vector2 forward = new Vector2(1, 0);
 
+    [Tooltip("Time to remain midair after starting GP")]
     public float groundPoundDelay = 0.1f;
     float groundPoundTimer = 0f;
 
+    [Tooltip("Transform of the object player sprite is on")]
+    public Transform sprite;
+
     // Bottom of the sprite. Used to check ifGrounded
     public Transform bottom;
+    Vector3 spriteScale;
 
     bool isGrounded;
     bool canDoubleJump;
+
+    PlayerAnimationManager animationManager;
 
     // Start is called before the first frame update
     void Start()
     {
         gravity = rb.gravityScale;
-        Debug.Log(gravity);
+        spriteScale = sprite.localScale;
+
+        animationManager = GetComponent<PlayerAnimationManager>();
     }
 
     // Update is called once per frame
@@ -70,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
             currDashDuration -= Time.deltaTime;
             if(currDashDuration < 0)
             {
-                rb.gravityScale = gravity;
+                animationManager.setDashing(false);
             }
         }
     }
@@ -80,12 +89,12 @@ public class PlayerMovement : MonoBehaviour
         Vector2 currentVelocity = rb.velocity;
 
         // Limit maximum movement speed
-        if(Mathf.Abs(currentVelocity.x) <= maxMoveSpeed && currDashDuration < 0)
+        if(Mathf.Abs(moveVector.x) >= 0 && currDashDuration < 0)
         {
-            rb.AddForce(moveVector);
+            currentVelocity.x += moveVector.x;
         }
 
-        // Slow player after a dash
+        // Limit player speed if not dashing
         if(currDashDuration < 0 && Mathf.Abs(currentVelocity.x) > maxMoveSpeed)
         {
             currentVelocity.x = currentVelocity.x > 0 ? maxMoveSpeed : -maxMoveSpeed;
@@ -93,6 +102,7 @@ public class PlayerMovement : MonoBehaviour
         // If no movement input, add some "drag" to help slow the player
         if(Mathf.Abs(moveVector.x) <= 1)
         {
+            animationManager.setRunning(false);
             currentVelocity.x = currentVelocity.x * .9f;
         }
 
@@ -121,13 +131,14 @@ public class PlayerMovement : MonoBehaviour
     void OnMove(InputValue value)
     {
         Vector2 inputVector = value.Get<Vector2>();
-        if(inputVector.x > 0)
+        float x = inputVector.x;
+        if(Mathf.Abs(x) > 0)
         {
-            forward = new Vector2(1, 0);
-        }
-        else if (inputVector.x < 0)
-        {
-            forward = new Vector2(-1, 0);
+            animationManager.setRunning(true);
+            forward = new Vector2(Mathf.Sign(x), 0);
+            Debug.Log(Mathf.Sign(x) * spriteScale.x);
+            sprite.localScale = new Vector3(Mathf.Sign(x) * spriteScale.x, spriteScale.y, spriteScale.z);
+            
         }
 
 
@@ -163,7 +174,7 @@ public class PlayerMovement : MonoBehaviour
             Vector2 currVelocity = rb.velocity;
             currVelocity.x = dashForce * forward.x;
             currVelocity.y = 0;
-            // rb.gravityScale = 0;
+            animationManager.setDashing(true);
             rb.velocity = currVelocity;
 
             currDashDuration = dashDuration;
