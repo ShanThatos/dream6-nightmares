@@ -14,4 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Office.unity
     guid: d181efed175193a40aced1b8bc3ec8c8
+  - enabled: 1
+    path: Assets/Scenes/LevelOne.unity
+    guid: d1906cc2e7c0f7243b91cd0de8f6390c
+  - enabled: 1
+    path: Assets/Scenes/LevelTwo.unity
+    guid: db51f0b4507d8cb41b7b825de582340e
+  - enabled: 1
+    path: Assets/Scenes/LevelThree.unity
+    guid: 8d2362b47c7c8d443ba5645d8d524441
+  - enabled: 1
+    path: Assets/Scenes/LevelFour.unity
+    guid: 19b4dd8b0d3b3364e9c5be8a76aa6746
   m_configObjects: {}
