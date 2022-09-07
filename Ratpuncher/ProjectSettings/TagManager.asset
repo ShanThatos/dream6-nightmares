@@ -14,8 +14,8 @@ TagManager:
   - Platform
   - Enemy
   - Player
-  - 
-  - 
+  - EnemyAttack
+  - PlayerAttack
   - 
   - 
   - 
