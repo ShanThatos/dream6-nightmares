@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,9 +14,11 @@ public class PlayerMovement : MonoBehaviour
     public float dashForce = 2;
     [Tooltip("Cooldown time between dashes")]
     public float dashCooldown = 1.5f;
-    float currDashCooldown = 0;
+    float currDashCooldown = 1;
     [Tooltip("IFrame time after dashing")]
     public float dashDuration = .75f;
+    public bool hasDashAbility = false;
+
     float currDashDuration = 0;
     float gravity;
 
@@ -30,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     public float groundPoundDelay = 0.1f;
     float groundPoundTimer = 0f;
     bool isGroundPounding = false;
+    public AudioSource groundPoundSound;
 
     [Tooltip("Transform of the object player sprite is on")]
     public Transform sprite;
@@ -59,21 +63,24 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currDashCooldown >= 0)
+        if (Input.GetKeyDown(KeyCode.Escape)) 
+            SceneManager.LoadScene("MainMenu");
+
+        if (hasDashAbility && currDashCooldown >= 0)
         {
             currDashCooldown -= Time.deltaTime;
         }
 
-        if(currDashDuration >= 0)
+        if (currDashDuration >= 0)
         {
             currDashDuration -= Time.deltaTime;
-            if(currDashDuration < 0)
+            if (currDashDuration < 0)
             {
                 animationManager.setDashing(false);
             }
         }
 
-        if(iframes >= 0)
+        if (iframes >= 0)
         {
             iframes--;
         }
@@ -86,32 +93,32 @@ public class PlayerMovement : MonoBehaviour
         Vector2 currentVelocity = rb.velocity;
 
         // Limit maximum movement speed
-        if(Mathf.Abs(moveVector.x) >= 0 && currDashDuration < 0)
+        if (Mathf.Abs(moveVector.x) >= 0 && currDashDuration < 0)
         {
             currentVelocity.x += moveVector.x;
         }
 
         // Limit player speed if not dashing
-        if(currDashDuration < 0 && Mathf.Abs(currentVelocity.x) > maxMoveSpeed)
+        if (currDashDuration < 0 && Mathf.Abs(currentVelocity.x) > maxMoveSpeed)
         {
             currentVelocity.x = currentVelocity.x > 0 ? maxMoveSpeed : -maxMoveSpeed;
         }
         // If no movement input, add some "drag" to help slow the player
-        if(Mathf.Abs(moveVector.x) <= 1)
+        if (Mathf.Abs(moveVector.x) <= 1)
         {
             animationManager.setRunning(false);
             currentVelocity.x = currentVelocity.x * .9f;
         }
 
-        
-        if(groundPoundTimer >= 0)
-        { 
+
+        if (groundPoundTimer >= 0)
+        {
             groundPoundTimer -= Time.deltaTime;
 
             if (groundPoundTimer < 0)
             {
                 // Execute GP when "animation" is done
-                Debug.Log("GP");
+                // Debug.Log("GP");
                 currentVelocity.y = -2 * jumpForce;
             }
             else
@@ -129,10 +136,10 @@ public class PlayerMovement : MonoBehaviour
     {
         RaycastHit2D[] hits;
         Vector2 start = bottom.position;
-        hits = Physics2D.RaycastAll(start, new Vector2(0, -1), 0.075f);
+        hits = Physics2D.RaycastAll(start, new Vector2(0, -1), 0.075f, LayerMask.GetMask("Platform"));
 
         // The raycast tends to hit the player itself, so want to "ignore" it
-        if (hits.Length > 1)
+        if (hits.Length > 0)
         {
             isGrounded = true;
             canDoubleJump = true;
@@ -140,6 +147,8 @@ public class PlayerMovement : MonoBehaviour
 
             if (isGroundPounding)
             {
+                if (groundPoundSound != null)
+                    groundPoundSound.Play(0);
                 // Landed after ground pound
                 particleManager.spawnPoundParticles();
                 isGroundPounding = false;
@@ -166,13 +175,13 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 inputVector = value.Get<Vector2>();
         float x = inputVector.x;
-        if(Mathf.Abs(x) > 0)
+        if (Mathf.Abs(x) > 0)
         {
             animationManager.setRunning(true);
             forward = new Vector2(Mathf.Sign(x), 0);
-            Debug.Log(Mathf.Sign(x) * spriteScale.x);
+            // Debug.Log(Mathf.Sign(x) * spriteScale.x);
             sprite.localScale = new Vector3(Mathf.Sign(x) * spriteScale.x, spriteScale.y, spriteScale.z);
-            
+
         }
 
 
@@ -185,12 +194,13 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
         }
-        else if (canDoubleJump && currDashDuration < 0){
+        else if (canDoubleJump && currDashDuration < 0)
+        {
 
             canDoubleJump = false;
             Jump();
         }
-        
+
     }
 
     void Jump()
@@ -203,7 +213,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnDash()
     {
-        if(currDashCooldown <= 0 && isGroundPounding == false)
+        if (currDashCooldown <= 0 && isGroundPounding == false)
         {
             float direction = Mathf.Sign(forward.x);
             particleManager.spawnDashParticles(direction == -1);
@@ -217,7 +227,7 @@ public class PlayerMovement : MonoBehaviour
             currDashDuration = dashDuration;
         }
     }
-     
+
     void OnPound()
     {
         if (!isGrounded && isGroundPounding == false)
@@ -229,20 +239,25 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         GameObject hit = collision.gameObject;
-        if(iframes <= 0 && hit.layer == 9)
+        if (iframes <= 0 && ((1 << hit.layer) & LayerMask.GetMask("EnemyAttack")) != 0)
         {
             iframes = 45;
 
-            if(hit.transform.position.x <= transform.position.x)
+            AttackCollider ac = hit.GetComponent<AttackCollider>();
+            if (ac.canAttack())
             {
-                rb.AddForce(new Vector2(25, 25), ForceMode2D.Impulse);
-            }
-            else
-            {
-                rb.AddForce(new Vector2(-25, 25), ForceMode2D.Impulse);
+                ac.resetCooldown();
+                if (hit.transform.position.x <= transform.position.x)
+                {
+                    rb.AddForce(new Vector2(40, 5) * ac.attackKnockback, ForceMode2D.Impulse);
+                }
+                else
+                {
+                    rb.AddForce(new Vector2(-40, 5) * ac.attackKnockback, ForceMode2D.Impulse);
+                }
             }
         }
     }

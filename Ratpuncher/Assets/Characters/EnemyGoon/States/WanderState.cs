@@ -25,15 +25,18 @@ public class WanderState : TimedState {
     }
 
     private bool checkCanMove() {
-        var groundCheck = Physics2D.Raycast(transform.position, Vector2.down, 1f, LayerMask.GetMask("Platform"));
+        float raycastDist = Mathf.Abs(1f * rb.transform.localScale.x);
+        var groundCheck = Physics2D.Raycast(transform.position, Vector2.down, raycastDist, LayerMask.GetMask("Platform"));
         if (groundCheck.collider == null)
             return false;
         
-        var wallCheck = Physics2D.Raycast(transform.position, direction, 1f, LayerMask.GetMask("Platform"));
-        if (wallCheck.collider != null)
+        var wallCheck = Physics2D.Raycast(transform.position, direction, raycastDist, LayerMask.GetMask("Platform"));
+        if (wallCheck.collider != null) {
+            direction *= -1;
             return false;
+        }
         
-        var forwardGroundCheck = Physics2D.Raycast(transform.position + (Vector3)direction, Vector2.down, 1f, LayerMask.GetMask("Platform"));
+        var forwardGroundCheck = Physics2D.Raycast(transform.position + (Vector3)direction * raycastDist, Vector2.down, raycastDist, LayerMask.GetMask("Platform"));
         if (forwardGroundCheck.collider == null) {
             direction *= -1;
             return false;
@@ -44,9 +47,10 @@ public class WanderState : TimedState {
 
     public void OnDrawGizmos() {
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(transform.position, transform.position + (Vector3) Vector2.down);
-        Gizmos.DrawLine(transform.position, transform.position + (Vector3) direction);
-        Gizmos.DrawLine(transform.position + (Vector3) direction, transform.position + (Vector3) direction + (Vector3) Vector2.down);
+        float raycastDist = Mathf.Abs(1f * rb.transform.localScale.x);
+        Gizmos.DrawLine(transform.position, transform.position + (Vector3) Vector2.down * raycastDist);
+        Gizmos.DrawLine(transform.position, transform.position + (Vector3) direction * raycastDist);
+        Gizmos.DrawLine(transform.position + (Vector3) direction * raycastDist, transform.position + (Vector3) direction * raycastDist + (Vector3) Vector2.down * raycastDist);
     }
 
     public override string getStateName() { return "Wander"; }

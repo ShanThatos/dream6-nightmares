@@ -15,14 +15,18 @@ public class StateManager : MonoBehaviour {
         if (nextState == null)
             nextState = currentState?.run();
         if (nextState != null && nextState != currentState) {
-            currentState?.onExit();
-            currentState = nextState;
-            currentState?.onEnter();
+            switchState(nextState);
         }
     }
 
     // can be overriden for anystate-state transitions (such as when the player comes in viewing range of an enemy)
     protected virtual State checkForAnyState() {
         return null;
+    }
+
+    public virtual void switchState(State newState) {
+        currentState?.onExit();
+        currentState = newState;
+        currentState?.onEnter();
     }
 }

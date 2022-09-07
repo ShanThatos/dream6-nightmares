@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8605556551874828136}
   - component: {fileID: 5596638094005321851}
   - component: {fileID: 7553548806539507095}
+  - component: {fileID: 160154359374593756}
   m_Layer: 10
   m_Name: GroundDust
   m_TagString: Untagged
@@ -4897,3 +4898,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &160154359374593756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5921306335632418300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854c58fe3c215a140a76a81c8ac796b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAttacking: 1
+  attackDamage: 10
+  attackCooldownTime: 1
