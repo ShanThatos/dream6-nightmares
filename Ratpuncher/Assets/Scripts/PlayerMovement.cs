@@ -41,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded;
     bool canDoubleJump;
 
+    int iframes = 0;
+
     PlayerAnimationManager animationManager;
     PlayerParticles particleManager;
 
@@ -69,6 +71,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 animationManager.setDashing(false);
             }
+        }
+
+        if(iframes >= 0)
+        {
+            iframes--;
         }
     }
 
@@ -219,6 +226,24 @@ public class PlayerMovement : MonoBehaviour
             groundPoundTimer = groundPoundDelay;
             animationManager.setVertical(Enums.VerticalState.Pounding);
             isGroundPounding = true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameObject hit = collision.gameObject;
+        if(iframes <= 0 && hit.layer == 9)
+        {
+            iframes = 45;
+
+            if(hit.transform.position.x <= transform.position.x)
+            {
+                rb.AddForce(new Vector2(25, 25), ForceMode2D.Impulse);
+            }
+            else
+            {
+                rb.AddForce(new Vector2(-25, 25), ForceMode2D.Impulse);
+            }
         }
     }
 
