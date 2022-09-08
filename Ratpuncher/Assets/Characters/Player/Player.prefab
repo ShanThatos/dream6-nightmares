@@ -303,6 +303,7 @@ GameObject:
   - component: {fileID: 8642731270172959564}
   - component: {fileID: 8642731270172959570}
   - component: {fileID: 8642731270172959569}
+  - component: {fileID: 1564415879}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -317,7 +318,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8642731270172959561}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.58, y: -1.68, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -463,6 +464,22 @@ MonoBehaviour:
   dashParticles: {fileID: 6802607700735488704, guid: 24f9ba9485905c14ea1505efc8fb0d48, type: 3}
   poundParticles: {fileID: 5921306335632418300, guid: 172f2f954b68a1e44882b7fa456a82f3, type: 3}
   bottom: {fileID: 8642731270143251503}
+--- !u!114 &1564415879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8642731270172959561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aed6694bddc66541ab4ebc6ae879b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canDoubleJump: 1
+  canDash: 1
+  canReflect: 0
+  canGroundPound: 1
 --- !u!1 &8642731271435911650
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,4 +11,12 @@ public class Enums : MonoBehaviour
         Falling,
         Pounding
     }
+
+    public enum PlayerActions
+    {
+        None,
+        Dashing,
+        Pounding,
+        Attacking,
+    }
 }

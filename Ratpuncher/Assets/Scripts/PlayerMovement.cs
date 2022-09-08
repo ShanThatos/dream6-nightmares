@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using static Enums;
 
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
     [Tooltip("Jump power")]
     public float jumpForce = 1;
+    bool canDoubleJump;
 
     [Tooltip("Dash power")]
     public float dashForce = 2;
@@ -20,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
     public bool hasDashAbility = false;
 
     float currDashDuration = 0;
-    float gravity;
 
     [Tooltip("Normal movement acceleration")]
     public float moveAccel = 90;
@@ -32,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("Time to remain midair after starting GP")]
     public float groundPoundDelay = 0.1f;
     float groundPoundTimer = 0f;
-    bool isGroundPounding = false;
     public AudioSource groundPoundSound;
 
     [Tooltip("Transform of the object player sprite is on")]
@@ -42,22 +42,24 @@ public class PlayerMovement : MonoBehaviour
     public Transform bottom;
     Vector3 spriteScale;
 
-    bool isGrounded;
-    bool canDoubleJump;
-
     int iframes = 0;
+    float prevY = float.MinValue;
+
+    public VerticalState verticalState { get; private set; }
+    public PlayerActions currentAction { get ; private set; }
 
     PlayerAnimationManager animationManager;
     PlayerParticles particleManager;
+    PlayerCapabilities playerCapabilities;
 
     // Start is called before the first frame update
     void Start()
     {
-        gravity = rb.gravityScale;
         spriteScale = sprite.localScale;
 
         animationManager = GetComponent<PlayerAnimationManager>();
         particleManager = GetComponent<PlayerParticles>();
+        playerCapabilities = GetComponent<PlayerCapabilities>();
     }
 
     // Update is called once per frame
@@ -66,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) 
             SceneManager.LoadScene("MainMenu");
 
-        if (hasDashAbility && currDashCooldown >= 0)
+        if (currDashCooldown >= 0)
         {
             currDashCooldown -= Time.deltaTime;
         }
@@ -77,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
             if (currDashDuration < 0)
             {
                 animationManager.setDashing(false);
+                currentAction = PlayerActions.None;
             }
         }
 
@@ -91,20 +94,23 @@ public class PlayerMovement : MonoBehaviour
         checkIsGrounded();
 
         Vector2 currentVelocity = rb.velocity;
-
-        // Limit maximum movement speed
-        if (Mathf.Abs(moveVector.x) >= 0 && currDashDuration < 0)
+    
+        if (currentAction == PlayerActions.None)
         {
-            currentVelocity.x += moveVector.x;
+            if(Mathf.Abs(moveVector.x) >= 0)
+            {
+                currentVelocity.x += moveVector.x;
+            }
+
+            // Limit player max speed from normal move
+            if(Mathf.Abs(currentVelocity.x) > maxMoveSpeed)
+            {
+                currentVelocity.x = currentVelocity.x > 0 ? maxMoveSpeed : -maxMoveSpeed;
+            }
         }
 
-        // Limit player speed if not dashing
-        if (currDashDuration < 0 && Mathf.Abs(currentVelocity.x) > maxMoveSpeed)
-        {
-            currentVelocity.x = currentVelocity.x > 0 ? maxMoveSpeed : -maxMoveSpeed;
-        }
         // If no movement input, add some "drag" to help slow the player
-        if (Mathf.Abs(moveVector.x) <= 1)
+        if (Mathf.Abs(moveVector.x) <= .33)
         {
             animationManager.setRunning(false);
             currentVelocity.x = currentVelocity.x * .9f;
@@ -118,7 +124,6 @@ public class PlayerMovement : MonoBehaviour
             if (groundPoundTimer < 0)
             {
                 // Execute GP when "animation" is done
-                // Debug.Log("GP");
                 currentVelocity.y = -2 * jumpForce;
             }
             else
@@ -129,6 +134,22 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
+        else if(currentAction == PlayerActions.Pounding)
+        {
+            // Triggers in event the player gets stuck on
+            // geometry while ground pounding
+            if(Mathf.Approximately(transform.position.y, prevY))
+            {
+                // NOTE: This CANNOT be the only check since it
+                // takes two physics ticks to trigger
+                // (It will cause a delay in most cases)
+                EndGroundPound();
+            }
+
+            prevY = transform.position.y;
+        }
+
+
         rb.velocity = currentVelocity;
     }
 
@@ -138,37 +159,49 @@ public class PlayerMovement : MonoBehaviour
         Vector2 start = bottom.position;
         hits = Physics2D.RaycastAll(start, new Vector2(0, -1), 0.075f, LayerMask.GetMask("Platform"));
 
-        // The raycast tends to hit the player itself, so want to "ignore" it
         if (hits.Length > 0)
         {
-            isGrounded = true;
+            // Grounded
+            verticalState = VerticalState.Grounded;
             canDoubleJump = true;
-            animationManager.setVertical(Enums.VerticalState.Grounded);
 
-            if (isGroundPounding)
+            if (currentAction == PlayerActions.Pounding)
             {
-                if (groundPoundSound != null)
-                    groundPoundSound.Play(0);
-                // Landed after ground pound
-                particleManager.spawnPoundParticles();
-                isGroundPounding = false;
+                EndGroundPound();
             }
+            verticalState = VerticalState.Grounded;
+            
         }
-        else
+        else if (currentAction != PlayerActions.Pounding)
         {
-            isGrounded = false;
-
+            // Airborne
             if (rb.velocity.y > 0)
             {
-                animationManager.setVertical(Enums.VerticalState.Jumping);
+                verticalState = VerticalState.Jumping;
             }
             else
             {
-                animationManager.setVertical(Enums.VerticalState.Falling);
+                verticalState = VerticalState.Falling;
             }
         }
+        animationManager.setVertical(verticalState);
 
-        return isGrounded;
+        return verticalState == VerticalState.Grounded;
+    }
+
+    private void EndGroundPound()
+    {
+        if(currentAction != PlayerActions.Pounding)
+        {
+            return;
+        }
+
+        if (groundPoundSound != null)
+        {
+            groundPoundSound.Play(0);
+        }
+        particleManager.spawnPoundParticles();
+        currentAction = PlayerActions.None;
     }
 
     void OnMove(InputValue value)
@@ -179,22 +212,28 @@ public class PlayerMovement : MonoBehaviour
         {
             animationManager.setRunning(true);
             forward = new Vector2(Mathf.Sign(x), 0);
-            // Debug.Log(Mathf.Sign(x) * spriteScale.x);
+
+            // May need to mirror sprite
             sprite.localScale = new Vector3(Mathf.Sign(x) * spriteScale.x, spriteScale.y, spriteScale.z);
 
         }
-
 
         moveVector = moveAccel * inputVector;
     }
 
     void OnJump()
     {
-        if (isGrounded)
+        if(currentAction == PlayerActions.Dashing || currentAction == PlayerActions.Pounding)
+        {
+            // Cannot jump while dashing or ground pounding
+            return;
+        }
+
+        if (verticalState == VerticalState.Grounded)
         {
             Jump();
         }
-        else if (canDoubleJump && currDashDuration < 0)
+        else if (canDoubleJump && playerCapabilities.canDoubleJump)
         {
 
             canDoubleJump = false;
@@ -213,30 +252,45 @@ public class PlayerMovement : MonoBehaviour
 
     void OnDash()
     {
-        if (currDashCooldown <= 0 && isGroundPounding == false)
+        if(currentAction == PlayerActions.Pounding)
         {
+            // Cannot dash when performing ground pound
+            return;
+        }
+
+        if (currDashCooldown <= 0 && playerCapabilities.canDash)
+        {
+            currentAction = PlayerActions.Dashing;
+
             float direction = Mathf.Sign(forward.x);
-            particleManager.spawnDashParticles(direction == -1);
-            currDashCooldown = dashCooldown;
             Vector2 currVelocity = rb.velocity;
             currVelocity.x = dashForce * direction;
             currVelocity.y = 0;
             animationManager.setDashing(true);
             rb.velocity = currVelocity;
 
+            // Spawn particles, which may need to be flipped
+            particleManager.spawnDashParticles(direction == -1);
+
+            currDashCooldown = dashCooldown;
             currDashDuration = dashDuration;
         }
     }
 
     void OnPound()
     {
-        if (!isGrounded && isGroundPounding == false)
+        if (playerCapabilities.canGroundPound)
         {
-            rb.velocity = Vector2.zero;
-            groundPoundTimer = groundPoundDelay;
-            animationManager.setVertical(Enums.VerticalState.Pounding);
-            isGroundPounding = true;
+            if (verticalState == VerticalState.Falling || verticalState == VerticalState.Jumping)
+            {
+                currentAction = PlayerActions.Pounding;
+
+                rb.velocity = Vector2.zero;
+                groundPoundTimer = groundPoundDelay;
+                animationManager.setVertical(VerticalState.Pounding);
+            }
         }
+        
     }
 
     void OnTriggerStay2D(Collider2D collision)
@@ -261,5 +315,4 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
 }
