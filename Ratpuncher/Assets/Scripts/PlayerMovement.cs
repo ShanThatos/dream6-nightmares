@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
     int iframes = 0;
     float prevY = float.MinValue;
+    Vector2 inputVector = Vector2.zero;
 
     public VerticalState verticalState { get; private set; }
     public PlayerActions currentAction { get ; private set; }
@@ -51,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
     PlayerAnimationManager animationManager;
     PlayerParticles particleManager;
     PlayerCapabilities playerCapabilities;
+    PlayerAttackManager attackManager;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
         animationManager = GetComponent<PlayerAnimationManager>();
         particleManager = GetComponent<PlayerParticles>();
         playerCapabilities = GetComponent<PlayerCapabilities>();
+        attackManager = GetComponent<PlayerAttackManager>();
     }
 
     // Update is called once per frame
@@ -87,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
         {
             iframes--;
         }
+
     }
 
     void FixedUpdate()
@@ -94,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
         checkIsGrounded();
 
         Vector2 currentVelocity = rb.velocity;
-    
+
         if (currentAction == PlayerActions.None)
         {
             if(Mathf.Abs(moveVector.x) >= 0)
@@ -108,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
                 currentVelocity.x = currentVelocity.x > 0 ? maxMoveSpeed : -maxMoveSpeed;
             }
         }
-
+        
         // If no movement input, add some "drag" to help slow the player
         if (Mathf.Abs(moveVector.x) <= .33)
         {
@@ -133,7 +137,6 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
-
         else if(currentAction == PlayerActions.Pounding)
         {
             // Triggers in event the player gets stuck on
@@ -148,6 +151,8 @@ public class PlayerMovement : MonoBehaviour
 
             prevY = transform.position.y;
         }
+
+        
 
 
         rb.velocity = currentVelocity;
@@ -206,7 +211,18 @@ public class PlayerMovement : MonoBehaviour
 
     void OnMove(InputValue value)
     {
-        Vector2 inputVector = value.Get<Vector2>();
+        inputVector = value.Get<Vector2>();
+        CalculateMovement();
+    }
+
+    void CalculateMovement()
+    {
+        if(currentAction == PlayerActions.Attacking && verticalState == VerticalState.Grounded)
+        {
+            moveVector = Vector2.zero;
+            return;
+        }
+
         float x = inputVector.x;
         if (Mathf.Abs(x) > 0)
         {
@@ -223,9 +239,9 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump()
     {
-        if(currentAction == PlayerActions.Dashing || currentAction == PlayerActions.Pounding)
+        if(currentAction != PlayerActions.None)
         {
-            // Cannot jump while dashing or ground pounding
+            // Cannot jump while doing other things
             return;
         }
 
@@ -279,7 +295,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnPound()
     {
-        if (playerCapabilities.canGroundPound)
+        if (playerCapabilities.canGroundPound && currentAction != PlayerActions.Attacking)
         {
             if (verticalState == VerticalState.Falling || verticalState == VerticalState.Jumping)
             {
@@ -291,6 +307,56 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         
+    }
+
+    void OnLightAttack(InputValue value)
+    {
+        if (!value.isPressed)
+        {
+            return;
+        }
+
+        if(currentAction == PlayerActions.Pounding || currentAction == PlayerActions.Dashing)
+        {
+            return;
+        }
+
+        bool success = attackManager.executeAttack();
+    }
+
+    public void setAttackState(int comboStep)
+    {
+        if (comboStep > 0)
+        {
+            currentAction = PlayerActions.Attacking;
+
+            if(verticalState == VerticalState.Grounded)
+            {
+                rb.AddForce(forward * 5, ForceMode2D.Impulse);
+            }
+        }
+        else
+        {
+            currentAction = PlayerActions.None;
+        }
+
+        animationManager.setAttackCombo(comboStep);
+
+        // May need to stop player movement if attacking
+        CalculateMovement();
+
+    }
+
+    void OnBlock(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            Debug.Log("Block started");
+        }
+        else
+        {
+            Debug.Log("Block Ended");
+        }
     }
 
     void OnTriggerStay2D(Collider2D collision)

@@ -61,12 +61,12 @@
                 },
                 {
                     "name": "Block",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "76b2885e-1bb5-44c6-aeb3-c652eed949fa",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Integer",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [

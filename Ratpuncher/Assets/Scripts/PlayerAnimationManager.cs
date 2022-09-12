@@ -48,4 +48,9 @@ public class PlayerAnimationManager : MonoBehaviour
                 break;
         }
     }
+
+    public void setAttackCombo(int step)
+    {
+        animator.SetInteger("Attack", step);
+    }
 }
