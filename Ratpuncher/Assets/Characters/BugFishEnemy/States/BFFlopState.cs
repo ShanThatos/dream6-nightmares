@@ -16,12 +16,15 @@ public class BFFlopState : BFState {
     bool floppedUp = false;
     bool floppedDown = false;
 
+    bool shockSpawned = false;
+
     public override void enter() {
         controller.animator.Play("BFFlop", 0, 0f);
         flopTimer = FLOP_COOLDOWN + UnityEngine.Random.Range(0f, 2f);
         idleTimer = idleTimerMax;
         floppedUp = false;
         floppedDown = false;
+        shockSpawned = false;
     }
 
     public void FixedUpdate() {
@@ -46,6 +49,11 @@ public class BFFlopState : BFState {
 
         if (idleTimer <= 0 && controller.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f && isGrounded())
             controller.switchState("BFIdle");
+        
+        if (controller.cues.inFlopStartShock && !shockSpawned && isGrounded()) {
+            GameObject shockSpawner = Instantiate(controller.shockSpawnerPrefab, Physics2D.Linecast(controller.transform.position, controller.getPoint("BottomPoint").position, LayerMask.GetMask("Platform")).point, Quaternion.identity);
+            shockSpawned = true;
+        }
     }
 
     public override bool canEnter() {

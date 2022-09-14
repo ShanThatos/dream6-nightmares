@@ -334,7 +334,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300621086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.06, y: -1.08, z: -10}
+  m_LocalPosition: {x: -5.41, y: -3.03, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -675,6 +675,10 @@ PrefabInstance:
     - target: {fileID: 1187009165426390343, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
       propertyPath: m_Name
       value: BugFishEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187009166774160806, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
+      propertyPath: inFlopStartShock
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}

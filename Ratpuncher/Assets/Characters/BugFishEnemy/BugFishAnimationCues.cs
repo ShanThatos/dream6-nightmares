@@ -8,5 +8,6 @@ public class BugFishAnimationCues : MonoBehaviour {
 
     public bool inFlopGoingUp = false;
     public bool inFlopGoingDown = false;
+    public bool inFlopStartShock = false;
 
 }

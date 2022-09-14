@@ -23,9 +23,11 @@ public class BugFishController : StateManager {
     public float flopUpForce = 50f;
     public float flopUpSideForce = 10f;
     public float flopDownForce = 10f;
+    public GameObject shockSpawnerPrefab;
 
     public float MIN_X = -10f;
     public float MAX_X = 10f;
+
 
     public override void init()
     {
