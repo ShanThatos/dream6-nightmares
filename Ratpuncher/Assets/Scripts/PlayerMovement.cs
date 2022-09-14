@@ -217,10 +217,14 @@ public class PlayerMovement : MonoBehaviour
 
     void CalculateMovement()
     {
-        if(currentAction == PlayerActions.Attacking && verticalState == VerticalState.Grounded)
+        if (currentAction == PlayerActions.Attacking && verticalState == VerticalState.Grounded)
         {
-            moveVector = Vector2.zero;
-            return;
+            // Stop movement if animation cancel fails
+            if (!attackManager.TryAnimationCancel())
+            {
+                moveVector = Vector2.zero;
+                return;
+            }
         }
 
         float x = inputVector.x;
@@ -235,6 +239,17 @@ public class PlayerMovement : MonoBehaviour
         }
 
         moveVector = moveAccel * inputVector;
+    }
+
+    public bool MovementAnimationCancel()
+    {
+        if(inputVector.magnitude > 0.2)
+        {
+            CalculateMovement();
+            return true;
+        }
+
+        return false;
     }
 
     void OnJump()

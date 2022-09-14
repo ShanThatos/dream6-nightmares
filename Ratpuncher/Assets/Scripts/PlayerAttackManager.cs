@@ -72,10 +72,17 @@ public class PlayerAttackManager : MonoBehaviour
     public void endAnimLock(int finishedStage)
     {
         isAnimLocked = false;
+
+        if (playerMovement.MovementAnimationCancel())
+        {
+            return;
+        }
+
         if (attackQueued)
         { 
             executeAttack();
         }
+
     }
 
     public void EndAttack()
@@ -90,8 +97,11 @@ public class PlayerAttackManager : MonoBehaviour
     {
         if (isAnimLocked)
         {
+            Debug.Log("Cannot animation cancel yet");
             return false;
         }
+
+        Debug.Log("Animation cancel");
 
         attackQueued = false;
         animationManager.setAttacking(false);
