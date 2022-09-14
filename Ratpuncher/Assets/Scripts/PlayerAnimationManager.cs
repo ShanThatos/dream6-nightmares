@@ -49,8 +49,19 @@ public class PlayerAnimationManager : MonoBehaviour
         }
     }
 
-    public void setAttackCombo(int step)
+    public void setAttacking(bool attacking)
     {
-        animator.SetInteger("Attack", step);
+        animator.SetBool("Attack", attacking);
+    }
+
+    public void setNextAttack()
+    {
+        animator.SetTrigger("NextAttack");
+    }
+
+    public void setAnimationCancel()
+    {
+        animator.ResetTrigger("NextAttack");
+        animator.SetTrigger("AttackCancel");
     }
 }

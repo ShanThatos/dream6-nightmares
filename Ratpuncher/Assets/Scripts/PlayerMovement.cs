@@ -274,6 +274,12 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+        if(currentAction == PlayerActions.Attacking && !attackManager.TryAnimationCancel())
+        {
+            // Try to cancel attack anim
+            return;
+        }
+
         if (currDashCooldown <= 0 && playerCapabilities.canDash)
         {
             currentAction = PlayerActions.Dashing;
@@ -338,9 +344,10 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             currentAction = PlayerActions.None;
+
         }
 
-        animationManager.setAttackCombo(comboStep);
+        
 
         // May need to stop player movement if attacking
         CalculateMovement();
