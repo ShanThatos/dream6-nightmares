@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1320965738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1320965739}
+  m_Layer: 8
+  m_Name: attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1320965739
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320965738}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.6333346, y: 0.11666668, z: 0}
+  m_LocalScale: {x: 16.666668, y: 16.666668, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8642731271435911648}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4599892860136188852
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,9 +335,10 @@ GameObject:
   - component: {fileID: 8642731270172959570}
   - component: {fileID: 8642731270172959569}
   - component: {fileID: 1564415879}
+  - component: {fileID: 392971927}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -480,6 +512,24 @@ MonoBehaviour:
   canDash: 1
   canReflect: 0
   canGroundPound: 1
+--- !u!114 &392971927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8642731270172959561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3f2c660305e33442ba6eaa9556b12c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attacks:
+  - {fileID: 4380985370008964227, guid: f5597b42a306a394fac116fbbc451018, type: 3}
+  - {fileID: 4380985370008964227, guid: 0b324f39fa3a53e46919e3e002c04c3e, type: 3}
+  - {fileID: 6060730667128994996, guid: c0b67dabcbe7756498f6ae8a21d967ce, type: 3}
+  attackPoint: {fileID: 1320965739}
+  sprite: {fileID: 8642731271435911648}
 --- !u!1 &8642731271435911650
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,6 +541,7 @@ GameObject:
   - component: {fileID: 8642731271435911648}
   - component: {fileID: 8642731271435911649}
   - component: {fileID: 8642731271435911655}
+  - component: {fileID: 2042096343}
   m_Layer: 8
   m_Name: sprite
   m_TagString: Untagged
@@ -513,6 +564,7 @@ Transform:
   - {fileID: 2964421254876713789}
   - {fileID: 8229839361481618094}
   - {fileID: 2207977682754327687}
+  - {fileID: 1320965739}
   m_Father: {fileID: 8642731270172959566}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -588,6 +640,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2042096343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8642731271435911650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb55406ace17654fb7545481495b5e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackManager: {fileID: 392971927}
 --- !u!1 &8690143495538744993
 GameObject:
   m_ObjectHideFlags: 0
