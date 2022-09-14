@@ -372,11 +372,11 @@ public class PlayerMovement : MonoBehaviour
                 ac.resetCooldown();
                 if (hit.transform.position.x <= transform.position.x)
                 {
-                    rb.AddForce(new Vector2(40, 5) * ac.attackKnockback, ForceMode2D.Impulse);
+                    rb.AddForce(new Vector2(5, 2) * ac.attackKnockback, ForceMode2D.Impulse);
                 }
                 else
                 {
-                    rb.AddForce(new Vector2(-40, 5) * ac.attackKnockback, ForceMode2D.Impulse);
+                    rb.AddForce(new Vector2(-5, 2) * ac.attackKnockback, ForceMode2D.Impulse);
                 }
             }
         }

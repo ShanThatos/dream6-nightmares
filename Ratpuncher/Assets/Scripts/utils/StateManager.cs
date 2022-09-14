@@ -1,32 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class StateManager : MonoBehaviour {
 
     public State currentState;
 
-    public virtual void Start() {
-        currentState?.onEnter();
-    }
-
-    public virtual void Update() {
-        State nextState = checkForAnyState();
-        if (nextState == null)
-            nextState = currentState?.run();
-        if (nextState != null && nextState != currentState) {
-            switchState(nextState);
+    State[] states;
+    
+    public void Start() {
+        states = transform.Find("States").GetComponentsInChildren<State>();
+        init();
+        foreach (State state in states) {
+            state.setManager(this);
+            state.init();
         }
+        currentState?.enter();
+    }
+    public virtual void init() {}
+
+
+    public void FixedUpdate() {
+        State nextState = Array.Find<State>(states, state => state.canEnter());
+        if (nextState != null)
+            switchState(nextState.getStateName());
+        currentState.run();
+        run();
     }
 
-    // can be overriden for anystate-state transitions (such as when the player comes in viewing range of an enemy)
-    protected virtual State checkForAnyState() {
-        return null;
-    }
+    public virtual void run() {}
 
-    public virtual void switchState(State newState) {
-        currentState?.onExit();
-        currentState = newState;
-        currentState?.onEnter();
+
+    public void switchState(State state) {
+        currentState?.exit();
+        currentState = state;
+        currentState?.enter();
+    }
+    public void switchState(string stateName) {
+        switchState(Array.Find<State>(states, state => state.getStateName() == stateName));
     }
 }
