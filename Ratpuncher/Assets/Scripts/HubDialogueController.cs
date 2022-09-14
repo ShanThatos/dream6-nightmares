@@ -7,6 +7,7 @@ using TMPro;
 public class HubDialogueController : MonoBehaviour
 {
     public HubDialogueSO hubDialogueSO;
+    private GameObject blackPanel;
     private Queue<string> sentences;
     public GameObject dialoguePanel;
     public TextMeshProUGUI nameText;
@@ -32,7 +33,8 @@ public class HubDialogueController : MonoBehaviour
         }
         */
         sentences = new Queue<string>();
-        StartDialogue(hubDialogueSO);
+        blackPanel = this.gameObject.transform.GetChild(0).gameObject;
+        StartDialogue(hubDialogueSO.firstDialogues);
     }
 
     // Update is called once per frame
@@ -47,11 +49,12 @@ public class HubDialogueController : MonoBehaviour
         
     }
 
-    public void StartDialogue(HubDialogueSO dialogueSO)
+    public void StartDialogue(string[] firstDialogue)
     {
         sentences.Clear();
-        
-        foreach (string sentence in dialogueSO.firstDialogues)
+        LeanTween.scaleY(dialoguePanel, 1, 0.2f);
+        LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0.5f, 0.2f);
+        foreach (string sentence in firstDialogue)
         {
             sentences.Enqueue(sentence);
         }
@@ -114,6 +117,8 @@ public class HubDialogueController : MonoBehaviour
     public void EndDialogue()
     {
         Debug.Log("Dialogue Ended");
-        dialoguePanel.SetActive(false);
+        LeanTween.scaleY(dialoguePanel, 0, 0.2f);
+        LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0, 0.2f);
+        //dialoguePanel.SetActive(false);
     }
 }

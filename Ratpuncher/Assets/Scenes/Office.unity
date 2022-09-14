@@ -2078,7 +2078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &753095090
 Transform:
   m_ObjectHideFlags: 0
@@ -2718,7 +2718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5254902}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3973,6 +3973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1692075508}
+  - component: {fileID: 1692075509}
   m_Layer: 5
   m_Name: HubDialogue
   m_TagString: Untagged
@@ -4002,6 +4003,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1692075509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692075507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6433a2cbd91254b82d5554551bea54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hubDialogueSO: {fileID: 11400000, guid: de66d5f613c919f41868a1e15123b263, type: 2}
+  dialoguePanel: {fileID: 1987819586}
+  nameText: {fileID: 338290435}
+  dialogueText: {fileID: 338403613}
+  characterImage: {fileID: 1487202505}
+  textSpeed: 50
 --- !u!1 &1860730823
 GameObject:
   m_ObjectHideFlags: 0
@@ -4480,7 +4499,7 @@ RectTransform:
   m_GameObject: {fileID: 1987819586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1487202504}

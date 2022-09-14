@@ -22,3 +22,7 @@ MonoBehaviour:
   - 'Rem: I am an unpaid intern of NEST'
   - 'Elios: Hello I am Elios, the boss of NEST'
   - 'Rem: Pay ME!!'
+  secondDialogues:
+  - 'Rem: I am in Dock level'
+  - 'Elios: This is where i met you.'
+  - 'Rem: Hello there.'

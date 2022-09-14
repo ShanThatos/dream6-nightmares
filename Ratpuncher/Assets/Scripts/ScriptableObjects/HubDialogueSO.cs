@@ -13,6 +13,8 @@ public class HubDialogueSO : ScriptableObject
 
     [TextArea(10, 15)]
     public String[] firstDialogues;
+    [TextArea(10, 15)]
+    public String[] secondDialogues;
 
     [Serializable]
     public class Character
