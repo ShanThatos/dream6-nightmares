@@ -676,6 +676,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BugFishEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1187009165426390346, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
+      propertyPath: MAX_X
+      value: 28.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187009165426390346, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
+      propertyPath: MIN_X
+      value: 8.7
+      objectReference: {fileID: 0}
     - target: {fileID: 1187009166774160806, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
       propertyPath: inFlopStartShock
       value: 0

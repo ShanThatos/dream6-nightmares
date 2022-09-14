@@ -11,8 +11,8 @@ public class BugFishController : StateManager {
 
     public BugFishAnimationCues cues;
 
-    public const float MAX_HEALTH = 100;
-    public float currentHealth;
+    public float maxHealth = 100;
+    float currentHealth;
 
     public Vector2 fishBaseKnockback;
 
@@ -25,6 +25,8 @@ public class BugFishController : StateManager {
     public float flopDownForce = 10f;
     public GameObject shockSpawnerPrefab;
 
+    public float hurtTime = .5f;
+
     public float MIN_X = -10f;
     public float MAX_X = 10f;
 
@@ -32,7 +34,7 @@ public class BugFishController : StateManager {
     public override void init()
     {
         base.init();
-        currentHealth = MAX_HEALTH;
+        currentHealth = maxHealth;
     }
 
     public Transform getPoint(string pointName) {
@@ -47,7 +49,6 @@ public class BugFishController : StateManager {
 
     public override void run() {
         base.run();
-        // Debug.Log(currentState.getStateName());
         if (currentHealth < 0) {
             Destroy(gameObject);
             return;
@@ -67,6 +68,7 @@ public class BugFishController : StateManager {
                 knockback.x *= (hit.transform.position.x <= transform.position.x ? 1 : 1);
                 rb.AddForce(knockback, ForceMode2D.Impulse);
                 currentHealth -= ac.attackDamage;
+                switchState("BFHurt");
             }
         }
     }

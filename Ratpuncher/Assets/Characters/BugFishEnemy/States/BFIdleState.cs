@@ -9,7 +9,6 @@ public class BFIdleState : BFState {
 
     public override void enter() {
         controller.animator.Play("BFIdle");
-        Debug.Log("Yay2");
     }
 
     public override void run() {
