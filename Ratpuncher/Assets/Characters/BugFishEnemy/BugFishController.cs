@@ -14,21 +14,27 @@ public class BugFishController : StateManager {
     public float maxHealth = 100;
     float currentHealth;
 
+    public bool invincible = false;
     public Vector2 fishBaseKnockback;
 
     Dictionary<string, Transform> points = new Dictionary<string, Transform>();
 
 
-    public float idleSpeed = 4f;
+    public float idleSpeed = 3f;
+    public float flyUpForce = 4f;
+    public float flySideForce = 4f;
+    public Vector2 flyFrequency = new Vector2(.3f, 1f);
     public float flopUpForce = 50f;
     public float flopUpSideForce = 10f;
     public float flopDownForce = 10f;
     public GameObject shockSpawnerPrefab;
+    public GameObject groundPoundPrefab;
 
     public float hurtTime = .5f;
 
     public float MIN_X = -10f;
     public float MAX_X = 10f;
+    public float MAX_Y = 10f;
 
 
     public override void init()
@@ -54,10 +60,12 @@ public class BugFishController : StateManager {
             return;
         }
         
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, MIN_X, MAX_X), transform.position.y, transform.position.z);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, MIN_X, MAX_X), Mathf.Min(transform.position.y, MAX_Y), transform.position.z);
     }
 
     void OnTriggerStay2D(Collider2D collision) {
+        if (invincible)
+            return;
         GameObject hit = collision.gameObject;
         if (hit.layer == LayerMask.NameToLayer("PlayerAttack")) {
             AttackCollider ac = hit.GetComponent<AttackCollider>();
@@ -68,7 +76,9 @@ public class BugFishController : StateManager {
                 knockback.x *= (hit.transform.position.x <= transform.position.x ? 1 : 1);
                 rb.AddForce(knockback, ForceMode2D.Impulse);
                 currentHealth -= ac.attackDamage;
-                switchState("BFHurt");
+
+                if (currentState.getStateName() == "BFIdle" || currentState.getStateName() == "BFFlop")
+                    switchState("BFHurt");
             }
         }
     }
@@ -77,6 +87,12 @@ public class BugFishController : StateManager {
         Gizmos.color = Color.green;
         Gizmos.DrawLine(new Vector3(MIN_X, -100, 0), new Vector3(MIN_X, 100, 0));
         Gizmos.DrawLine(new Vector3(MAX_X, -100, 0), new Vector3(MAX_X, 100, 0));
+        Gizmos.DrawLine(new Vector3(MIN_X, MAX_Y, 0), new Vector3(MAX_X, MAX_Y, 0));
+    }
+
+
+    public float getCurrentHealth() {
+        return currentHealth;
     }
 }
 
