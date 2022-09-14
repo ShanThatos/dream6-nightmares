@@ -34,7 +34,9 @@ public class HubDialogueController : MonoBehaviour
         */
         sentences = new Queue<string>();
         blackPanel = this.gameObject.transform.GetChild(0).gameObject;
-        StartDialogue(hubDialogueSO.firstDialogues);
+        blackPanel.transform.localScale = new Vector3(0, 0, 0);
+        //StartDialogue(hubDialogueSO.firstDialogues);
+        Debug.Log("YAY I STARTED");
     }
 
     // Update is called once per frame
@@ -49,12 +51,13 @@ public class HubDialogueController : MonoBehaviour
         
     }
 
-    public void StartDialogue(string[] firstDialogue)
+    public void StartDialogue(string[] dialogue)
     {
         sentences.Clear();
+        blackPanel.transform.localScale = new Vector3(1, 1, 1);
         LeanTween.scaleY(dialoguePanel, 1, 0.2f);
         LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0.5f, 0.2f);
-        foreach (string sentence in firstDialogue)
+        foreach (string sentence in dialogue)
         {
             sentences.Enqueue(sentence);
         }
@@ -117,8 +120,14 @@ public class HubDialogueController : MonoBehaviour
     public void EndDialogue()
     {
         Debug.Log("Dialogue Ended");
+        blackPanel.transform.localScale = new Vector3(0, 0, 0);
         LeanTween.scaleY(dialoguePanel, 0, 0.2f);
         LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0, 0.2f);
         //dialoguePanel.SetActive(false);
+    }
+
+    public void check(string text)
+    {
+        Debug.Log(text);
     }
 }
