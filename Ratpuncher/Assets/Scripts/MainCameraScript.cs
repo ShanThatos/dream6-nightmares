@@ -10,6 +10,8 @@ public class MainCameraScript : MonoBehaviour
 
     public Vector2 playerCameraOffset;
 
+    public Transform target;
+
     Camera cam;
 
     public static MainCameraScript instance;
@@ -24,7 +26,7 @@ public class MainCameraScript : MonoBehaviour
     void FixedUpdate()
     {
         float oldZ = transform.position.z;
-        Vector2 targetPos = (Vector2) GameManager.getPlayerTransform().position + playerCameraOffset;
+        Vector2 targetPos = (Vector2) target.position + playerCameraOffset;
         Vector2 newPos = Vector2.Lerp(transform.position, targetPos, Mathf.Clamp(Time.deltaTime * 4, 0, 1));
         float halfCamWidth = cam.orthographicSize * cam.aspect;
         newPos.x = Mathf.Clamp(newPos.x, minX + halfCamWidth, maxX - halfCamWidth);
