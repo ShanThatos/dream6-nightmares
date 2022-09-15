@@ -14,9 +14,16 @@ public class ItemDetection : MonoBehaviour
     private TextMeshProUGUI itemDescription;
     private TextMeshProUGUI itemName;
     private bool isInside;
+    private bool isExist;
+    private bool isOpened;
+    private bool oldInput;
+    private bool input;
+    private GameObject actionIndicator;
     // Start is called before the first frame update
     void Start()
     {
+        isOpened = false;
+        isInside = false;
         blackPanel = GameObject.FindGameObjectWithTag("BlackPanel");
         notification = GameObject.FindGameObjectWithTag("Notification");
         notification.GetComponentInChildren<TextMeshProUGUI>().text = "Press Space to Collect";
@@ -27,37 +34,45 @@ public class ItemDetection : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (isInside && Input.GetKeyDown(KeyCode.Space))
+        oldInput = input;
+        input = Input.GetAxisRaw("Interact") > 0;
+        if (isInside)
         {
-            blackPanel.transform.localScale = new Vector3(0, 0, 0);
-            LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0.0f, 0.1f);
-            LeanTween.scale(itemIdentifier, new Vector3(0, 0, 0), 0.1f);
-            Debug.Log("Collected " + name);
-            Destroy(this.gameObject);
+            if (Input.GetAxisRaw("Submit") > 0)
+            {
+                Collect();
+            }
+            if (input && !oldInput)
+            {
+                if (!isOpened)
+                {
+                    OpenIdentifier();
+                }
+                else
+                {
+                    CloseIdentifier();
+                }
+            }
         }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
-        { 
-            for (int i = 0; i < itemSO.items.Length; i++)
-            {
-                if (name == itemSO.items[i].itemName)
-                {
-                    itemName.text = itemSO.items[i].itemName;
-                    itemDescription.text = itemSO.items[i].itemDescription;
-                    itemImage.sprite = itemSO.items[i].itemSprite;
-                    break;
-                }
-            }
-            LeanTween.scaleY(notification, 1, 0.1f);
-            blackPanel.transform.localScale = new Vector3(1, 1, 1);
-            LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0.75f, 0.1f);
-            LeanTween.scale(itemIdentifier, new Vector3(1, 1, 1), 0.1f);
+        {
             isInside = true;
+            if (!isExist)
+            {
+                actionIndicator = Instantiate(Resources.Load("ActionIndicator")) as GameObject;
+                actionIndicator.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "F";
+                actionIndicator.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Interact";
+                actionIndicator.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
+                LeanTween.moveY(actionIndicator, this.gameObject.transform.position.y + 1, 0.2f);
+                LeanTween.scaleY(actionIndicator, 1, 0.2f);
+                isExist = true;
+            }
         }
     }
 
@@ -65,11 +80,51 @@ public class ItemDetection : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            LeanTween.scaleY(notification, 0, 0.1f); 
+            isInside = false;
+            LeanTween.moveY(actionIndicator, this.gameObject.transform.position.y + 1, 0.2f);
+            LeanTween.scaleY(actionIndicator, 0, 0.2f).setDestroyOnComplete(true);
+            isExist = false;
+            CloseIdentifier();
+        }
+    }
+
+    public void OpenIdentifier()
+    {
+        for (int i = 0; i < itemSO.items.Length; i++)
+        {
+            if (name == itemSO.items[i].itemName)
+            {
+                itemName.text = itemSO.items[i].itemName;
+                itemDescription.text = itemSO.items[i].itemDescription;
+                itemImage.sprite = itemSO.items[i].itemSprite;
+                break;
+            }
+        }
+        LeanTween.scaleY(notification, 1, 0.1f);
+        blackPanel.transform.localScale = new Vector3(1, 1, 1);
+        LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0.75f, 0.1f);
+        LeanTween.scale(itemIdentifier, new Vector3(1, 1, 1), 0.1f);
+        isOpened = true;
+    }
+
+    public void CloseIdentifier()
+    {
+        LeanTween.scaleY(notification, 0, 0.1f);
+        blackPanel.transform.localScale = new Vector3(0, 0, 0);
+        LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0.0f, 0.1f);
+        LeanTween.scale(itemIdentifier, new Vector3(0, 0, 0), 0.1f);
+        isOpened = false;
+    }
+
+    public void Collect()
+    {
+        if (isOpened)
+        {
             blackPanel.transform.localScale = new Vector3(0, 0, 0);
             LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0.0f, 0.1f);
             LeanTween.scale(itemIdentifier, new Vector3(0, 0, 0), 0.1f);
-            isInside = false;
+            Debug.Log("Collected " + name);
+            Destroy(this.gameObject);
         }
     }
 }

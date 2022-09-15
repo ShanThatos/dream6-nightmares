@@ -530,6 +530,7 @@ MonoBehaviour:
   - {fileID: 6060730667128994996, guid: c0b67dabcbe7756498f6ae8a21d967ce, type: 3}
   attackPoint: {fileID: 1320965739}
   sprite: {fileID: 8642731271435911648}
+  allowAttackQueueing: 0
 --- !u!1 &8642731271435911650
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +609,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3bdcd88f8848bc440b3db6989ce76e65, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

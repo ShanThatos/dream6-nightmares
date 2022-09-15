@@ -16,6 +16,7 @@ public class HubDialogueController : MonoBehaviour
 
     private bool oldInput;
     private bool input;
+    private bool isDialogueOn;
 
     private bool isRunning;
     public float textSpeed;
@@ -44,15 +45,18 @@ public class HubDialogueController : MonoBehaviour
     {
         oldInput = input;
         input = Input.GetAxisRaw("Submit") > 0;
-        if (input && !oldInput)
+        if (isDialogueOn)
         {
-            DisplayNextSentence();
+            if (input && !oldInput)
+            {
+                DisplayNextSentence();
+            }
         }
-        
     }
 
     public void StartDialogue(string[] dialogue)
     {
+        isDialogueOn = true;
         sentences.Clear();
         blackPanel.transform.localScale = new Vector3(1, 1, 1);
         LeanTween.scaleY(dialoguePanel, 1, 0.2f);
@@ -123,6 +127,7 @@ public class HubDialogueController : MonoBehaviour
         blackPanel.transform.localScale = new Vector3(0, 0, 0);
         LeanTween.scaleY(dialoguePanel, 0, 0.2f);
         LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0, 0.2f);
+        isDialogueOn = false;
         //dialoguePanel.SetActive(false);
     }
 
