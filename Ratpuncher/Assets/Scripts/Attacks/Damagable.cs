@@ -65,11 +65,10 @@ public class Damagable : MonoBehaviour
 
                     kb.x = kb.x < 0 ? 0 : kb.x;
                     kb.y = kb.y < 0 ? 0 : kb.y;
-                    bool flip = false;
+                    bool flip = attack.shouldFlip(transform);
 
-                    if (hit.transform.position.x >= transform.position.x)
+                    if (flip)
                     {
-                        flip = true;
                         kb.x *= -1;
                     }
 

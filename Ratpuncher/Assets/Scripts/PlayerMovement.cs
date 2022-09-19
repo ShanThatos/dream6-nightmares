@@ -444,10 +444,13 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+        rb.velocity = Vector2.zero;
+
         rb.AddForce(force, ForceMode2D.Impulse);
 
         if (launch)
         {
+  
             canRecoverFromLaunch = false;
             StartCoroutine(AllowLaunchRecovery());
             verticalState = VerticalState.Launched;
@@ -456,6 +459,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         CalculateMovement();
+    }
+
+    public bool isFacingRight()
+    {
+        return forward.x >= 0;
     }
 
     void OnTriggerStay2D(Collider2D collision)

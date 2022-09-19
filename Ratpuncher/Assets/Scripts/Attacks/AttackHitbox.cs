@@ -62,4 +62,15 @@ public class AttackHitbox : MonoBehaviour
 
         return false;
     }
+
+    public bool shouldFlip(Transform target)
+    {
+        if (player)
+        {
+            return !player.isFacingRight();
+        }
+
+        return transform.position.x >= target.position.x;
+
+    }
 }
