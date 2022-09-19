@@ -32,7 +32,8 @@ public class PlayerAnimationManager : MonoBehaviour
     {
         switch (state)
         {
-            
+            case Enums.VerticalState.Launched:
+                break;
             case Enums.VerticalState.Jumping:
                 animator.SetInteger("Jump", 1);
                 break;
@@ -45,8 +46,14 @@ public class PlayerAnimationManager : MonoBehaviour
             default:
                 animator.SetInteger("Jump", 0);
                 animator.SetBool("Pound", false);
+                setLaunched(false);
                 break;
         }
+    }
+
+    public void setLaunched(bool isLaunched)
+    {
+        animator.SetBool("Yeet", isLaunched);
     }
 
     public void setAttacking(bool attacking)

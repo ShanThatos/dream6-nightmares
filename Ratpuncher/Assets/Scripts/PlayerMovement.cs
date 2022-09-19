@@ -7,11 +7,53 @@ using static Enums;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Basic Info")]
     public Rigidbody2D rb;
+
+    [Tooltip("Transform of the object player sprite is on")]
+    public Transform sprite;
+
+    [Tooltip("Transform placed at bottom of sprite")]
+    public Transform bottom;
+    [Space(6)]
+
+
+    [Header("Horizontal Movement")]
+    [Tooltip("Normal movement acceleration")]
+    public float moveAccel = 90;
+
+    [Tooltip("Max speed while grounded")]
+    public float maxGroundMoveSpeed = 5.5f;
+
+    [Tooltip("Max speed while airborne")]
+    public float maxAirMoveSpeed = 3.3f;
+
+    [Tooltip("Max speed after being launched (Note: cannot control movement after launch)")]
+    public float maxLaunchSpeed = 12f;
+
+    private float currentMaxMoveSpeed;
+
+    [Tooltip("Recoil after hitting something")]
+    public Vector2 attackRecoil;
+
+    Vector2 moveVector;
+    Vector2 forward = new Vector2(1, 0);
+    [Space(6)]
+
+
+    [Header("Vertical movement")]
     [Tooltip("Jump power")]
     public float jumpForce = 1;
     bool canDoubleJump;
 
+    [Tooltip("Time to remain midair after starting GP")]
+    public float groundPoundDelay = 0.1f;
+    float groundPoundTimer = 0f;
+    public AudioSource groundPoundSound;
+
+    [Space(6)]
+
+    [Header("Dashing")]
     [Tooltip("Dash power")]
     public float dashForce = 2;
     [Tooltip("Cooldown time between dashes")]
@@ -23,28 +65,16 @@ public class PlayerMovement : MonoBehaviour
 
     float currDashDuration = 0;
 
-    [Tooltip("Normal movement acceleration")]
-    public float moveAccel = 90;
-    [Tooltip("Max speed of normal walking")]
-    public float maxMoveSpeed = 5.5f;
-    Vector2 moveVector;
-    Vector2 forward = new Vector2(1, 0);
+    
 
-    [Tooltip("Time to remain midair after starting GP")]
-    public float groundPoundDelay = 0.1f;
-    float groundPoundTimer = 0f;
-    public AudioSource groundPoundSound;
 
-    [Tooltip("Transform of the object player sprite is on")]
-    public Transform sprite;
 
-    // Bottom of the sprite. Used to check ifGrounded
-    public Transform bottom;
+
     Vector3 spriteScale;
-
     int iframes = 0;
     float prevY = float.MinValue;
     Vector2 inputVector = Vector2.zero;
+    private bool canRecoverFromLaunch = true;
 
     public VerticalState verticalState { get; private set; }
     public PlayerActions currentAction { get ; private set; }
@@ -58,6 +88,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         spriteScale = sprite.localScale;
+        currentMaxMoveSpeed = maxGroundMoveSpeed;
 
         animationManager = GetComponent<PlayerAnimationManager>();
         particleManager = GetComponent<PlayerParticles>();
@@ -99,22 +130,20 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 currentVelocity = rb.velocity;
 
-        if (currentAction == PlayerActions.None)
-        {
-            if(Mathf.Abs(moveVector.x) >= 0)
-            {
-                currentVelocity.x += moveVector.x;
-            }
 
-            // Limit player max speed from normal move
-            if(Mathf.Abs(currentVelocity.x) > maxMoveSpeed)
+        // Apply movement, and limit max speed if nessecary
+        if(verticalState != VerticalState.Launched && currentAction != PlayerActions.Dashing)
+        {
+            currentVelocity.x += moveVector.x;
+
+            if (Mathf.Abs(currentVelocity.x) > currentMaxMoveSpeed)
             {
-                currentVelocity.x = currentVelocity.x > 0 ? maxMoveSpeed : -maxMoveSpeed;
+                currentVelocity.x = currentVelocity.x > 0 ? currentMaxMoveSpeed : -currentMaxMoveSpeed;
             }
         }
-        
+
         // If no movement input, add some "drag" to help slow the player
-        if (Mathf.Abs(moveVector.x) <= .33)
+        if (Mathf.Abs(moveVector.x) <= .33 && verticalState != VerticalState.Launched)
         {
             animationManager.setRunning(false);
             currentVelocity.x = currentVelocity.x * .9f;
@@ -158,27 +187,33 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = currentVelocity;
     }
 
-    public bool checkIsGrounded()
+    private bool checkIsGrounded()
     {
         RaycastHit2D[] hits;
         Vector2 start = bottom.position;
         hits = Physics2D.RaycastAll(start, new Vector2(0, -1), 0.075f, LayerMask.GetMask("Platform"));
 
-        if (hits.Length > 0)
+        if (hits.Length > 0 && canRecoverFromLaunch)
         {
             // Grounded
-            verticalState = VerticalState.Grounded;
             canDoubleJump = true;
 
             if (currentAction == PlayerActions.Pounding)
             {
                 EndGroundPound();
             }
+
+            currentMaxMoveSpeed = maxGroundMoveSpeed;
             verticalState = VerticalState.Grounded;
-            
+        }
+        else if (verticalState == VerticalState.Launched)
+        {
+            Debug.Log("Is launched!");
         }
         else if (currentAction != PlayerActions.Pounding)
         {
+            Debug.Log("In air but not launched");
+
             // Airborne
             if (rb.velocity.y > 0)
             {
@@ -188,7 +223,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 verticalState = VerticalState.Falling;
             }
+
+            currentMaxMoveSpeed = maxAirMoveSpeed;
         }
+
         animationManager.setVertical(verticalState);
 
         return verticalState == VerticalState.Grounded;
@@ -227,7 +265,13 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        if (verticalState == VerticalState.Pounding || verticalState == VerticalState.Launched)
+        {
+            moveVector = Vector2.zero;
+        }
+        
         float x = inputVector.x;
+
         if (Mathf.Abs(x) > 0)
         {
             animationManager.setRunning(true);
@@ -283,9 +327,9 @@ public class PlayerMovement : MonoBehaviour
 
     void OnDash()
     {
-        if(currentAction == PlayerActions.Pounding)
+        if(currentAction == PlayerActions.Pounding || verticalState == VerticalState.Launched)
         {
-            // Cannot dash when performing ground pound
+            // Cannot dash when performing ground pound or launched
             return;
         }
 
@@ -325,6 +369,7 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = Vector2.zero;
                 groundPoundTimer = groundPoundDelay;
                 animationManager.setVertical(VerticalState.Pounding);
+                CalculateMovement();
             }
         }
         
@@ -337,7 +382,9 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if(currentAction == PlayerActions.Pounding || currentAction == PlayerActions.Dashing)
+        if(currentAction == PlayerActions.Pounding || 
+            currentAction == PlayerActions.Dashing || 
+            verticalState == VerticalState.Launched)
         {
             return;
         }
@@ -362,11 +409,17 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        
-
         // May need to stop player movement if attacking
         CalculateMovement();
 
+    }
+
+    public void AttackRecoil()
+    {
+        Vector2 recoil = attackRecoil;
+        recoil.x = forward.x > 0 ? -recoil.x : -recoil.x;
+
+        rb.AddForce(recoil, ForceMode2D.Impulse);
     }
 
     void OnBlock(InputValue value)
@@ -381,26 +434,39 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void OnLaunch(Vector2 force, bool launch)
+    {
+        Debug.Log("Player was hit");
+
+        if(verticalState == VerticalState.Pounding)
+        {
+            // Negate all knockback if ground pounding
+            return;
+        }
+
+        rb.AddForce(force, ForceMode2D.Impulse);
+
+        if (launch)
+        {
+            canRecoverFromLaunch = false;
+            StartCoroutine(AllowLaunchRecovery());
+            verticalState = VerticalState.Launched;
+            animationManager.setLaunched(true);
+            attackManager.EndAttack();
+        }
+
+        CalculateMovement();
+    }
+
     void OnTriggerStay2D(Collider2D collision)
     {
-        GameObject hit = collision.gameObject;
-        if (iframes <= 0 && ((1 << hit.layer) & LayerMask.GetMask("EnemyAttack")) != 0)
-        {
-            iframes = 45;
+       
+    }
 
-            AttackCollider ac = hit.GetComponent<AttackCollider>();
-            if (ac.canAttack())
-            {
-                ac.resetCooldown();
-                if (hit.transform.position.x <= transform.position.x)
-                {
-                    rb.AddForce(new Vector2(5, 2) * ac.attackKnockback, ForceMode2D.Impulse);
-                }
-                else
-                {
-                    rb.AddForce(new Vector2(-5, 2) * ac.attackKnockback, ForceMode2D.Impulse);
-                }
-            }
-        }
+    IEnumerator AllowLaunchRecovery()
+    {
+        yield return new WaitForSecondsRealtime(.2f);
+        canRecoverFromLaunch = true;
+        yield return null;
     }
 }

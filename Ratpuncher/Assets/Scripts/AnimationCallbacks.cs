@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnimationCallbacks : MonoBehaviour
 {
     public PlayerAttackManager attackManager;
-    
+
     // End animation lock, do other attacks if needed
     public void FinishAttack(int comboStage)
     {
@@ -17,5 +17,12 @@ public class AnimationCallbacks : MonoBehaviour
     {
         attackManager.EndAttack();
     }
+
+    // Spawn particles and hitbox()
+    public void SpawnParticlesAndHitbox()
+    {
+        attackManager.SpawnParticlesAndHitbox();
+    }
+
 
 }

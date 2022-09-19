@@ -9,7 +9,8 @@ public class Enums : MonoBehaviour
         Grounded,
         Jumping,
         Falling,
-        Pounding
+        Pounding,
+        Launched
     }
 
     public enum PlayerActions

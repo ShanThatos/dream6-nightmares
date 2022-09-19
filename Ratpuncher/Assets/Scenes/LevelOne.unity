@@ -809,9 +809,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 392971927, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}
+      propertyPath: attacks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 392971927, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}
       propertyPath: allowAttackQueueing
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 392971927, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}
+      propertyPath: attacks.Array.data[0]
+      value: 
+      objectReference: {fileID: 4380985370008964227, guid: 0b324f39fa3a53e46919e3e002c04c3e, type: 3}
     - target: {fileID: 392971927, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}
       propertyPath: attacks.Array.data[1]
       value: 

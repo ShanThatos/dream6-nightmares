@@ -109,7 +109,7 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _Motion_Amount: 0.35
-    - _Noise_Intensity: 0.665
+    - _Noise_Intensity: 0.395
     - _Noise_Speed: 0.2
     - _OcclusionStrength: 1
     - _Offset: 0.05
@@ -119,11 +119,11 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Transparency: 0.77
+    - _Transparency: 0.879
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.030740477, g: 0.034797873, b: 0.103773594, a: 0.79607844}
+    - _Color: {r: 0, g: 0, b: 0, a: 0.79607844}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Noise_Color: {r: 0.22556068, g: 0.24051966, b: 0.33962262, a: 1}
     - _Noise_Scroll: {r: 0.25, g: 0, b: 0, a: 0}

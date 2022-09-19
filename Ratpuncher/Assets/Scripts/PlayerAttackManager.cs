@@ -54,11 +54,7 @@ public class PlayerAttackManager : MonoBehaviour
             return false;
         }
 
-         GameObject attack = Instantiate(attacks[comboStage], attackPoint.position, Quaternion.identity);
-        if(Mathf.Sign(sprite.localScale.x) == -1)
-        {
-            attack.GetComponent<ParticleSystemRenderer>().flip = new Vector3(1, 0, 0);
-        } 
+        
 
         isAnimLocked = true;
 
@@ -89,6 +85,16 @@ public class PlayerAttackManager : MonoBehaviour
     {
         animationManager.setAttacking(false);
         playerMovement.setAttackState(0);
+    }
+
+    public void SpawnParticlesAndHitbox()
+    {
+        GameObject attack = Instantiate(attacks[0], attackPoint.position, Quaternion.identity);
+        attack.GetComponent<AttackHitbox>().player = playerMovement;
+        if (Mathf.Sign(sprite.localScale.x) == -1)
+        {
+            attack.GetComponent<ParticleSystemRenderer>().flip = new Vector3(1, 0, 0);
+        }
     }
 
     // Attempt to end attacking early
