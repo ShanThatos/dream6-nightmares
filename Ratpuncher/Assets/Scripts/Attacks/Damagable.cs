@@ -32,6 +32,14 @@ public class Damagable : MonoBehaviour
     private static GameObject particles;
     private PlayerMovement player;
 
+    public delegate void DeathEvent();
+    public event DeathEvent OnDeath;
+    public void CallOnDeath() => OnDeath?.Invoke();
+
+    public delegate void HurtEvent(float damage);
+    public event HurtEvent OnHurt;
+    public void CallOnHurt(float damage) => OnHurt?.Invoke(damage);
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +68,10 @@ public class Damagable : MonoBehaviour
                 if (attack.canHit(this))
                 {
                     health -= attack.damage;
+
+                    // See CallOnDeath on how to subscribe to this event
+                    // Usful if you need custom behavior on hit (health bars, etc.)
+                    CallOnHurt(attack.damage);
 
                     Vector2 kb = attack.knockback - knockResistance;
 
@@ -93,7 +105,12 @@ public class Damagable : MonoBehaviour
 
                     if (health <= 0)
                     {
-                        RIP();
+                        CallOnDeath();
+
+                        // Subscribe your controller class to OnDeath()
+                        // Example:
+                        // Damagable damage = GetComponent<Damagable>();
+                        // damage.OnDeath += OnDead;
                     }
 
                     attack.TryApplyRecoil();
@@ -107,13 +124,6 @@ public class Damagable : MonoBehaviour
                 Debug.LogWarning("Expected an AttackHitbox component");
             }
         }
-    }
-
-    private void RIP()
-    {
-        // Put a method called OnDead containing death behavior of
-        // into your controller script
-        BroadcastMessage("OnDead");
     }
 
      IEnumerator DisableIFrames()

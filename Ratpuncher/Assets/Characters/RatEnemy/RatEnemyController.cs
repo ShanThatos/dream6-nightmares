@@ -21,12 +21,22 @@ public class RatEnemyController : StateManager {
     public float speed = 3f;
     public bool canJumpAttack = true;
 
+    public GameObject deathParticles;
+
+    Damagable damage;
+    bool facingRight;
 
     public override void init() {
         base.init();
         currentHealth = MAX_HEALTH;
     }
 
+    void Awake()
+    {
+        damage = GetComponent<Damagable>();
+        damage.OnDeath += OnDead;
+        damage.OnHurt += OnHurt;
+    }
 
     public Transform getPoint(string pointName) {
         if (!points.ContainsKey(pointName))
@@ -36,6 +46,7 @@ public class RatEnemyController : StateManager {
 
     public void setDirection(bool isFacingRight) {
         transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * (isFacingRight ? -1 : 1), transform.localScale.y, transform.localScale.z);
+        facingRight = isFacingRight;
     }
 
     public override void run() {
@@ -45,20 +56,25 @@ public class RatEnemyController : StateManager {
         }
     }
 
-    void OnTriggerStay2D(Collider2D collision) {
-        GameObject hit = collision.gameObject;
-        if (hit.layer == LayerMask.NameToLayer("PlayerAttack")) {
-            AttackCollider ac = hit.GetComponent<AttackCollider>();
-            if (ac.canAttack())
+    public void OnDead()
+    {
+        if (deathParticles)
+        {
+            GameObject particles = Instantiate(deathParticles, transform.position, Quaternion.identity);
+            particles.transform.localScale = Vector3.Scale(particles.transform.localScale, transform.localScale);
+
+            if (facingRight)
             {
-                ac.resetCooldown();
-                Vector2 knockback = ratBaseKnockback * ac.attackKnockback;
-                knockback.x *= (hit.transform.position.x <= transform.position.x ? 1 : 1);
-                rb.AddForce(knockback, ForceMode2D.Impulse);
-                currentHealth -= ac.attackDamage;
-                switchState("RatHurt");
+                particles.GetComponent<ParticleSystemRenderer>().flip = new Vector3(1, 0, 0);
             }
         }
+        Destroy(gameObject);
+    }
+
+    public void OnHurt(float damage)
+    {
+        Debug.Log("Took " + damage + "damage!!");
+        switchState("RatHurt");
     }
 }
 

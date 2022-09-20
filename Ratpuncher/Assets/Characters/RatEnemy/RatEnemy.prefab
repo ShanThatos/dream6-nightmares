@@ -227,7 +227,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 750765896, guid: 7cdc67c554393a447b575504e1793055, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 6747546632773015466}
   - component: {fileID: 6747546632773015467}
   - component: {fileID: 6747546632773015468}
+  - component: {fileID: 1437290127}
   m_Layer: 9
   m_Name: MainAttackCollider
   m_TagString: Untagged
@@ -323,7 +324,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6747546632773015465}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 854c58fe3c215a140a76a81c8ac796b8, type: 3}
   m_Name: 
@@ -348,6 +349,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.22150373}
   serializedVersion: 2
   m_Radius: 0.27849627
+--- !u!114 &1437290127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747546632773015465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c577dc23271b7e4783741ee71b88030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 15
+  knockback: {x: 5, y: 2}
+  isPlayerAttack: 0
+  canLaunchPlayer: 1
+  player: {fileID: 0}
+  isActive: 0
 --- !u!1 &6747546632866254145
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,6 +501,7 @@ GameObject:
   - component: {fileID: 6747546633228865634}
   - component: {fileID: 6747546633228865636}
   - component: {fileID: 6747546633228865635}
+  - component: {fileID: 817066096}
   m_Layer: 7
   m_Name: RatEnemy
   m_TagString: Untagged
@@ -526,6 +546,7 @@ MonoBehaviour:
   ratBaseKnockback: {x: 5, y: 3}
   speed: 3
   canJumpAttack: 1
+  deathParticles: {fileID: 4380985370008964227, guid: eb75b2e46db738a4a85bc62f1d2c55c8, type: 3}
 --- !u!70 &6747546633228865636
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -563,6 +584,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &817066096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747546633228865632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad21e646a33c2845841519a139dd7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 30
+  knockResistance: {x: 2, y: 1}
+  iFrameTime: 0.6
+  isPlayer: 0
+  spawnHitParticles: 1
 --- !u!1 &6747546633636598854
 GameObject:
   m_ObjectHideFlags: 0

@@ -53,11 +53,17 @@ public class AttackHitbox : MonoBehaviour
 
     public bool canHit(Damagable target)
     {
+        if (!isActive)
+        {
+            return false;
+        }
+
         if (!isPlayerAttack)
         {
             return true;
         }
 
+        // Prevent player from hitting multiple times with one attack
         if (!alreadyHit.Contains(target))
         {
             alreadyHit.Add(target);

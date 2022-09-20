@@ -9,7 +9,7 @@ public class AnimationCallbacks : MonoBehaviour
     // End animation lock, do other attacks if needed
     public void FinishAttack(int comboStage)
     {
-        attackManager.endAnimLock(comboStage);
+        attackManager.endAnimLock();
     }
 
     // End attack

@@ -336,6 +336,7 @@ GameObject:
   - component: {fileID: 8642731270172959569}
   - component: {fileID: 1564415879}
   - component: {fileID: 392971927}
+  - component: {fileID: 585488167}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -456,17 +457,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8642731270172959560}
+  sprite: {fileID: 8642731271435911648}
+  bottom: {fileID: 8642731270143251503}
+  moveAccel: 90
+  maxGroundMoveSpeed: 5.5
+  maxAirMoveSpeed: 3.3
+  maxLaunchSpeed: 0
+  attackRecoil: {x: 20, y: 2}
   jumpForce: 8
+  groundPoundDelay: 0.15
+  groundPoundSound: {fileID: 254365810769650644}
   dashForce: 12
   dashCooldown: 1
   dashDuration: 0.33
   hasDashAbility: 0
-  moveAccel: 90
-  maxMoveSpeed: 5.5
-  groundPoundDelay: 0.15
-  groundPoundSound: {fileID: 254365810769650644}
-  sprite: {fileID: 8642731271435911648}
-  bottom: {fileID: 8642731270143251503}
 --- !u!114 &8642731270172959570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,6 +533,23 @@ MonoBehaviour:
   attackPoint: {fileID: 1320965739}
   sprite: {fileID: 8642731271435911648}
   allowAttackQueueing: 1
+--- !u!114 &585488167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8642731270172959561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad21e646a33c2845841519a139dd7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1000
+  knockResistance: {x: 1, y: 0}
+  iFrameTime: 1
+  isPlayer: 1
+  spawnHitParticles: 0
 --- !u!1 &8642731271435911650
 GameObject:
   m_ObjectHideFlags: 0

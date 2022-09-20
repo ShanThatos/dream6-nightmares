@@ -3396,10 +3396,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6747546632581645178, guid: 9e5ea6417031bcc4881f50ffeac512ae, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 6747546633228865632, guid: 9e5ea6417031bcc4881f50ffeac512ae, type: 3}
       propertyPath: m_Name
       value: RatEnemy

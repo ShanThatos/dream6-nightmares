@@ -45,12 +45,9 @@ public class PlayerAttackManager : MonoBehaviour
 
         if(isAnimLocked)
         {
-            if(comboStage < 3)
-            {
-                attackQueued = allowAttackQueueing;
-                Debug.Log("Attack queued");
-            }
-            
+
+            attackQueued = allowAttackQueueing;
+            Debug.Log("Attack queued");
             return false;
         }
 
@@ -65,7 +62,7 @@ public class PlayerAttackManager : MonoBehaviour
         return true;
     }
 
-    public void endAnimLock(int finishedStage)
+    public void endAnimLock()
     {
         isAnimLocked = false;
 
@@ -83,7 +80,7 @@ public class PlayerAttackManager : MonoBehaviour
 
     public void EndAttack()
     {
-        Debug.Log("End attack");
+        endAnimLock();
         animationManager.setAttacking(false);
         playerMovement.setAttackState(0);
     }
