@@ -83,6 +83,7 @@ public class PlayerAttackManager : MonoBehaviour
 
     public void EndAttack()
     {
+        Debug.Log("End attack");
         animationManager.setAttacking(false);
         playerMovement.setAttackState(0);
     }

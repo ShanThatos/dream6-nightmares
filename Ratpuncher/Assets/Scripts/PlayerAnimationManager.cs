@@ -58,6 +58,7 @@ public class PlayerAnimationManager : MonoBehaviour
 
     public void setAttacking(bool attacking)
     {
+        Debug.Log(attacking);
         animator.SetBool("Attack", attacking);
     }
 

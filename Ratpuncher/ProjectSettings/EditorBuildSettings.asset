@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 31b203e6aaec7144490389713810bce8
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Office.unity
     guid: d181efed175193a40aced1b8bc3ec8c8
   - enabled: 1
@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/LevelFour.unity
     guid: 19b4dd8b0d3b3364e9c5be8a76aa6746
+  - enabled: 1
+    path: Assets/Scenes/MovementTest.unity
+    guid: a1d93ab049e41664db408e074bab6c7f
   m_configObjects: {}

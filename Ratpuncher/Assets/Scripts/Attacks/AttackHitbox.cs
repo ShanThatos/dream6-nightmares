@@ -26,6 +26,10 @@ public class AttackHitbox : MonoBehaviour
     // Used to give the player some recoil
     public PlayerMovement player;
 
+    [SerializeField]
+    [Tooltip("Is this hitbox active. True for most cases")]
+    public bool isActive = true;
+
     private List<Damagable> alreadyHit = new List<Damagable>();
 
     void Start()

@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4380985370008964230}
   - component: {fileID: 4380985370008964229}
   - component: {fileID: 4380985370008964228}
-  - component: {fileID: 1155064763107697842}
-  - component: {fileID: 7390267063018068929}
+  - component: {fileID: 3267976984904110761}
+  - component: {fileID: 3875172853202408826}
   m_Layer: 10
-  m_Name: LightAttack
+  m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,7 +225,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -287,7 +287,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.5
+      scalar: 2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -669,7 +669,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0, y: 0, z: 0}
+    m_Position: {x: 0, y: -0.4, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
@@ -1534,16 +1534,25 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     speedRange: {x: 0, y: 1}
-    tilesX: 7
-    tilesY: 2
+    tilesX: 5
+    tilesY: 4
     animationType: 0
     rowIndex: 0
     cycles: 1
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 0}
-    - sprite: {fileID: 0}
+    - sprite: {fileID: 506688058, guid: 72019c0c8d76de64f899ddda4049f852, type: 3}
+    - sprite: {fileID: 845007818, guid: 72019c0c8d76de64f899ddda4049f852, type: 3}
+    - sprite: {fileID: -1288485645, guid: 72019c0c8d76de64f899ddda4049f852, type: 3}
+    - sprite: {fileID: -1280074881, guid: 72019c0c8d76de64f899ddda4049f852, type: 3}
+    - sprite: {fileID: 624649491, guid: 72019c0c8d76de64f899ddda4049f852, type: 3}
+    - sprite: {fileID: 987949757, guid: 72019c0c8d76de64f899ddda4049f852, type: 3}
+    - sprite: {fileID: -107098200, guid: 72019c0c8d76de64f899ddda4049f852, type: 3}
+    - sprite: {fileID: 1435593872, guid: 72019c0c8d76de64f899ddda4049f852, type: 3}
+    - sprite: {fileID: 1916002348, guid: 72019c0c8d76de64f899ddda4049f852, type: 3}
+    - sprite: {fileID: 298106478, guid: 72019c0c8d76de64f899ddda4049f852, type: 3}
+    - sprite: {fileID: 298106478, guid: 72019c0c8d76de64f899ddda4049f852, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -4873,7 +4882,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!58 &1155064763107697842
+--- !u!58 &3267976984904110761
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4888,8 +4897,8 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
---- !u!114 &7390267063018068929
+  m_Radius: 0.5
+--- !u!114 &3875172853202408826
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4898,10 +4907,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4380985370008964227}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 854c58fe3c215a140a76a81c8ac796b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c577dc23271b7e4783741ee71b88030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAttacking: 1
-  attackDamage: 10
-  attackCooldownTime: 1
-  attackKnockback: 1
+  damage: 10
+  knockback: {x: 7, y: 2}
+  isPlayerAttack: 1
+  canLaunchPlayer: 0
+  player: {fileID: 0}
