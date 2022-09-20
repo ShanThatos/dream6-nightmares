@@ -37,7 +37,7 @@ public class BFFlopState : BFState {
             idleTimer -= Time.deltaTime;
         if (controller.cues.inFlopGoingUp && !floppedUp) {
             Vector2 impulse = Vector2.zero;
-            impulse.x += (GameManager.getPlayerTransform().position.x < controller.transform.position.x ? -1 : 1) * controller.flopUpSideForce;
+            impulse.x += (GameManager.GetPlayerTransform().position.x < controller.transform.position.x ? -1 : 1) * controller.flopUpSideForce;
             impulse += Vector2.up * controller.flopUpForce;
             controller.rb.AddForce(impulse, ForceMode2D.Impulse);
             floppedUp = true;

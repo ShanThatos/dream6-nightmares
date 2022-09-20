@@ -17,7 +17,7 @@ public class RatChaseState : RatEnemyState {
             return;
         }
 
-        Vector2 playerPos = GameManager.getPlayerTransform().position;
+        Vector2 playerPos = GameManager.GetPlayerTransform().position;
         if (isGrounded()) {
             bool playerIsRight = playerPos.x > controller.transform.position.x;
             if (canMoveForward()) {
