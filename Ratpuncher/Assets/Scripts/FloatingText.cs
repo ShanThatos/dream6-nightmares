@@ -19,7 +19,7 @@ public class FloatingText : MonoBehaviour
             fText.transform.SetParent(gameObject.transform.GetChild(0));
             //int xPos = Random.Range(Mathf.RoundToInt(gameObject.transform.position.x - 2), Mathf.RoundToInt(gameObject.transform.position.x + 2));
             //int yPos = Random.Range(Mathf.RoundToInt(gameObject.transform.position.y), Mathf.RoundToInt(gameObject.transform.position.y + 4));
-            fText.transform.position = new Vector3(positions[i].x,positions[i].y, 0);
+            fText.transform.localPosition = new Vector3(positions[i].x,positions[i].y, 0);
             fText.transform.Rotate(0, 0, zRotations[i]);
             textObjects.Add(fText);
             fText.GetComponent<TextMeshProUGUI>().text = floatingText[i];
