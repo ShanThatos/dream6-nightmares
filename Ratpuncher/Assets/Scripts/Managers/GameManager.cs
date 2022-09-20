@@ -7,8 +7,7 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance { get; private set; }
 
     private bool movementLocked = false;
-    private List<Rigidbody2D> movementLockBodies = new List<Rigidbody2D>();
-    private List<RigidbodyConstraints2D> movementLockPreviousConstraints = new List<RigidbodyConstraints2D>();
+    private List<FreezeOnGMLock> freezeObjects = new List<FreezeOnGMLock>();
 
     void Awake() {
         if (instance == null) { instance = this; }
@@ -23,39 +22,33 @@ public class GameManager : MonoBehaviour {
 
 
 
-    public void __AddMovementLockedBody(Rigidbody2D body) {
-        movementLockBodies.Add(body);
-        movementLockPreviousConstraints.Add(body.constraints);
-        if (movementLocked)
-            body.constraints = RigidbodyConstraints2D.FreezeAll;
+    public void __AddMovementLockedObject(FreezeOnGMLock x) {
+        if (freezeObjects.Contains(x)) return;
+        freezeObjects.Add(x);
     }
-    public static void AddMovementLockedBody(Rigidbody2D body) {
-        instance.__AddMovementLockedBody(body);
+    public static void AddMovementLockedObject(FreezeOnGMLock x) {
+        instance.__AddMovementLockedObject(x);
     }
 
-    public void __RemoveMovementLockedBody(Rigidbody2D body) {
-        int index = movementLockBodies.IndexOf(body);
+    public void __RemoveMovementLockedObject(FreezeOnGMLock x) {
+        int index = freezeObjects.IndexOf(x);
         if (index != -1) {
-            movementLockBodies.RemoveAt(index);
-            body.constraints = movementLockPreviousConstraints[index];
-            movementLockPreviousConstraints.RemoveAt(index);
+            freezeObjects.RemoveAt(index);
+            x.Unlock();
         }
     }
-    public static void RemoveMovementLockedBody(Rigidbody2D body) {
-        instance.__RemoveMovementLockedBody(body);
+    public static void RemoveMovementLockedObject(FreezeOnGMLock x) {
+        instance.__RemoveMovementLockedObject(x);
     }
 
     public void __SetMovementLock(bool locked) {
         if (movementLocked == locked) return;
         movementLocked = locked;
 
-        for (int i = 0; i < movementLockBodies.Count; i++) {
-            if (locked) {
-                movementLockPreviousConstraints[i] = movementLockBodies[i].constraints;
-                movementLockBodies[i].constraints = RigidbodyConstraints2D.FreezeAll;
-            } else
-                movementLockBodies[i].constraints = movementLockPreviousConstraints[i];
-        }
+        freezeObjects.ForEach(x => { 
+            if (locked) x.Lock();
+            else x.Unlock();
+        });
     }
     public static void SetMovementLock(bool locked) {
         instance.__SetMovementLock(locked);
