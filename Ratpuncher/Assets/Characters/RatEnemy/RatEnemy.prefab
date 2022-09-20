@@ -482,6 +482,7 @@ GameObject:
   - component: {fileID: 6747546633228865634}
   - component: {fileID: 6747546633228865636}
   - component: {fileID: 6747546633228865635}
+  - component: {fileID: 7930760943968941999}
   m_Layer: 7
   m_Name: RatEnemy
   m_TagString: Untagged
@@ -563,6 +564,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7930760943968941999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747546633228865632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dedab063ad735f4399e7a772ad07b43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionTime: 0.5
+  minAlpha: 0.7
 --- !u!1 &6747546633636598854
 GameObject:
   m_ObjectHideFlags: 0
