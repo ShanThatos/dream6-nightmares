@@ -26,9 +26,12 @@ public class RatEnemyController : StateManager {
     Damagable damage;
     bool facingRight;
 
+    FlickerSprite flicker;
+
     public override void init() {
         base.init();
         currentHealth = MAX_HEALTH;
+        flicker = GetComponent<FlickerSprite>();
     }
 
     void Awake()
@@ -75,6 +78,7 @@ public class RatEnemyController : StateManager {
     {
         Debug.Log("Took " + damage + "damage!!");
         switchState("RatHurt");
+        flicker.Flicker();
     }
 }
 
