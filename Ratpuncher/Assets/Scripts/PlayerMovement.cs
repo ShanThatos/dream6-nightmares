@@ -360,7 +360,9 @@ public class PlayerMovement : MonoBehaviour
 
     void OnPound()
     {
-        if (playerCapabilities.canGroundPound && currentAction != PlayerActions.Attacking)
+        if (playerCapabilities.canGroundPound 
+            && currentAction != PlayerActions.Attacking 
+            && currentAction != PlayerActions.Pounding)
         {
             if (verticalState == VerticalState.Falling || verticalState == VerticalState.Jumping)
             {
