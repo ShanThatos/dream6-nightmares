@@ -24,6 +24,11 @@ public class BugFishController : StateManager {
     public GameObject shockSpawnerPrefab;
     public GameObject groundPoundPrefab;
 
+    public float MIN_DROP_COOLDOWN = 4f;
+    public float MAX_DROP_COOLDOWN = 8f;
+    public float dripWaitTime = 1f;
+    public GameObject dropletPrefab;
+
     public float hurtTime = .5f;
 
     public float MIN_X = -10f;

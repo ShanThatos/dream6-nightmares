@@ -104,10 +104,14 @@ MonoBehaviour:
   flopDownForce: 50
   shockSpawnerPrefab: {fileID: 3221310975992145530, guid: 33acaecc7d0a38040bb2525adb8e60ea, type: 3}
   groundPoundPrefab: {fileID: 5921306335632418300, guid: b5115a154722ab64aace78c31c45c457, type: 3}
+  MIN_DROP_COOLDOWN: 2
+  MAX_DROP_COOLDOWN: 4
+  dripWaitTime: 0.1
+  dropletPrefab: {fileID: 6033227996776067244, guid: af3e36c2b3b37b443a8bbcbdd5689460, type: 3}
   hurtTime: 0.5
   MIN_X: 99.54
   MAX_X: 115.7
-  MAX_Y: -18.5
+  MAX_Y: -20.3
   HPBar: {fileID: 0}
 --- !u!114 &1293347583534198777
 MonoBehaviour:
@@ -686,6 +690,7 @@ Transform:
   - {fileID: 1187009167438188161}
   - {fileID: 770386959190198141}
   - {fileID: 5500477711349933937}
+  - {fileID: 5005100714725689395}
   m_Father: {fileID: 1187009165426390342}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -766,6 +771,50 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c4c9bf7de1e299438037879b61eaac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2171406734485346436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5005100714725689395}
+  - component: {fileID: 2792863298871177393}
+  m_Layer: 7
+  m_Name: BFDripState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5005100714725689395
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2171406734485346436}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1187009167323236619}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2792863298871177393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2171406734485346436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93f379cd72c1e844a4404587a000eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2925040418793947957
