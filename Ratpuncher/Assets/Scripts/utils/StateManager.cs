@@ -22,6 +22,7 @@ public class StateManager : MonoBehaviour {
 
 
     public void FixedUpdate() {
+        if (GameManager.IsMovementLocked()) return;
         State nextState = Array.Find<State>(states, state => state.canEnter());
         if (nextState != null)
             switchState(nextState.getStateName());

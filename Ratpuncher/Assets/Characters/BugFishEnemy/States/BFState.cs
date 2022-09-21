@@ -21,7 +21,7 @@ public abstract class BFState : State {
     }
 
     public float getDistanceToPlayer() {
-        return Vector2.Distance(transform.position, GameManager.getPlayerTransform().position);
+        return Vector2.Distance(transform.position, GameManager.GetPlayerTransform().position);
     }
 }
 

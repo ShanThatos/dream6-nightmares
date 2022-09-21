@@ -20,7 +20,7 @@ public class RatJumpState : RatEnemyState {
 
     public override void enter() {
         controller.animator.Play("RatAttack");
-        bool facingRight = GameManager.getPlayerTransform().position.x > transform.position.x;
+        bool facingRight = GameManager.GetPlayerTransform().position.x > transform.position.x;
         controller.rb.AddForce(new Vector2(facingRight ? HORIZONTAL_JUMP_FORCE : -HORIZONTAL_JUMP_FORCE, VERTICAL_JUMP_FORCE), ForceMode2D.Impulse);
         controller.setDirection(facingRight);
         idleWaitTime = 0.5f;

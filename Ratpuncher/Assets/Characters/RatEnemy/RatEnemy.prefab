@@ -292,7 +292,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6747546632773015466}
-  - component: {fileID: 6747546632773015467}
   - component: {fileID: 6747546632773015468}
   - component: {fileID: 1437290127}
   m_Layer: 9
@@ -317,22 +316,6 @@ Transform:
   m_Father: {fileID: 6747546632987079914}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6747546632773015467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6747546632773015465}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 854c58fe3c215a140a76a81c8ac796b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAttacking: 0
-  attackDamage: 10
-  attackCooldownTime: 1
-  attackKnockback: 3
 --- !u!58 &6747546632773015468
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -503,6 +486,8 @@ GameObject:
   - component: {fileID: 6747546633228865635}
   - component: {fileID: 817066096}
   - component: {fileID: 817066097}
+  - component: {fileID: 1172716367326849466}
+  - component: {fileID: 3238221271775277670}
   m_Layer: 7
   m_Name: RatEnemy
   m_TagString: Untagged
@@ -616,6 +601,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionTime: 0.5
   minAlpha: 0.7
+--- !u!114 &1172716367326849466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747546633228865632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bd383d20598d94478ac42ffcc78b4f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3238221271775277670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747546633228865632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c45fa1b3b597e4544837718249daa9e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numFlickers: 5
+  flickerTime: 0.1
+  flickerColor: {r: 0.5849056, g: 0, b: 0, a: 1}
 --- !u!1 &6747546633636598854
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MainCameraScript : MonoBehaviour
@@ -8,9 +6,12 @@ public class MainCameraScript : MonoBehaviour
     public float minX;
     public float maxX;
 
-    public Vector2 playerCameraOffset;
+    public Vector2 cameraOffset;
 
     public Transform target;
+
+    private float defaultCamSize;
+    public float camSizeMultiplier = 1f;
 
     Camera cam;
 
@@ -20,17 +21,21 @@ public class MainCameraScript : MonoBehaviour
     {
         instance = this;
         cam = GetComponent<Camera>();
+        defaultCamSize = cam.orthographicSize;
     }
 
     // fixed update
     void FixedUpdate()
     {
         float oldZ = transform.position.z;
-        Vector2 targetPos = (Vector2) target.position + playerCameraOffset;
-        Vector2 newPos = Vector2.Lerp(transform.position, targetPos, Mathf.Clamp(Time.deltaTime * 4, 0, 1));
+        Vector2 targetPos = (Vector2) target.position + cameraOffset;
+        Vector2 newPos = Vector2.Lerp(transform.position, targetPos, Time.deltaTime * 4);
         float halfCamWidth = cam.orthographicSize * cam.aspect;
         newPos.x = Mathf.Clamp(newPos.x, minX + halfCamWidth, maxX - halfCamWidth);
         transform.position = new Vector3(newPos.x, newPos.y, oldZ);
+
+        float targetCamSize = defaultCamSize * camSizeMultiplier;
+        cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetCamSize, Time.deltaTime * 4);
     }
 
     private void OnDrawGizmosSelected()
