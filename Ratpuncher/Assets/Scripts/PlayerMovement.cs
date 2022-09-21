@@ -83,6 +83,7 @@ public class PlayerMovement : MonoBehaviour
     PlayerParticles particleManager;
     PlayerCapabilities playerCapabilities;
     PlayerAttackManager attackManager;
+    Damagable damage;
 
     // Start is called before the first frame update
     void Start()
@@ -94,6 +95,9 @@ public class PlayerMovement : MonoBehaviour
         particleManager = GetComponent<PlayerParticles>();
         playerCapabilities = GetComponent<PlayerCapabilities>();
         attackManager = GetComponent<PlayerAttackManager>();
+        damage = GetComponent<Damagable>();
+
+        damage.OnHurt += OnHurt;
     }
 
     // Update is called once per frame
@@ -208,11 +212,10 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (verticalState == VerticalState.Launched)
         {
-            Debug.Log("Is launched!");
+            ;
         }
         else if (currentAction != PlayerActions.Pounding)
         {
-            Debug.Log("In air but not launched");
 
             // Airborne
             if (rb.velocity.y > 0)
@@ -480,7 +483,10 @@ public class PlayerMovement : MonoBehaviour
         yield return null;
     }
 
-
+    public void OnHurt(float damage)
+    {
+        Debug.Log("Player took " + damage + " damage");
+    }
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(bottom.position, (Vector2) bottom.position + Vector2.down * 0.095f);

@@ -36,6 +36,9 @@ public class BugFishController : StateManager {
     public float MAX_X = 10f;
     public float MAX_Y = 10f;
 
+    Damagable damage;
+
+    public BossHPBar HPBar;
 
     public override void init()
     {
@@ -47,6 +50,16 @@ public class BugFishController : StateManager {
         if (!points.ContainsKey(pointName))
             points.Add(pointName, transform.Find("Points").Find(pointName));
         return points[pointName];
+    }
+
+    void Awake()
+    {
+        TryGetComponent<Damagable>(out damage);
+        if (damage)
+        {
+            damage.OnHurt += OnHurt;
+            damage.OnDeath += OnDeath;
+        }
     }
 
     public void setDirection(bool isFacingRight) {
@@ -67,7 +80,7 @@ public class BugFishController : StateManager {
         if (invincible)
             return;
         GameObject hit = collision.gameObject;
-        if (hit.layer == LayerMask.NameToLayer("PlayerAttack")) {
+        /* if (hit.layer == LayerMask.NameToLayer("PlayerAttack")) {
             AttackCollider ac = hit.GetComponent<AttackCollider>();
             if (ac.canAttack())
             {
@@ -79,8 +92,8 @@ public class BugFishController : StateManager {
 
                 if (currentState.getStateName() == "BFIdle" || currentState.getStateName() == "BFFlop")
                     switchState("BFHurt");
-            }
-        }
+            } 
+        } */
     }
 
     void OnDrawGizmos() {
@@ -90,6 +103,25 @@ public class BugFishController : StateManager {
         Gizmos.DrawLine(new Vector3(MIN_X, MAX_Y, 0), new Vector3(MAX_X, MAX_Y, 0));
     }
 
+    void OnHurt(float damage)
+    {
+        Debug.Log("Bugfish took " + damage + " damage!!");
+
+        if (currentState.getStateName() == "BFIdle" || currentState.getStateName() == "BFFlop")
+            switchState("BFHurt");
+
+        currentHealth -= damage;
+
+        if (HPBar)
+        {
+            HPBar.RecieveDamage(damage);
+        }
+    }
+
+    void OnDeath()
+    {
+
+    }
 
     public float getCurrentHealth() {
         return currentHealth;

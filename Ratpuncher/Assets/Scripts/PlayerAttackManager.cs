@@ -101,11 +101,8 @@ public class PlayerAttackManager : MonoBehaviour
     {
         if (isAnimLocked)
         {
-            Debug.Log("Cannot animation cancel yet");
             return false;
         }
-
-        Debug.Log("Animation cancel");
 
         attackQueued = false;
         animationManager.setAttacking(false);
