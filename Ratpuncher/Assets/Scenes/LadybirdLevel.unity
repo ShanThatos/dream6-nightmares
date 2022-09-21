@@ -377,6 +377,95 @@ Transform:
   m_Father: {fileID: 1026280613}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &180047273
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 73150007613672977, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_Name
+      value: GoldFishText
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 48.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -19.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.036194663
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070870367176708352, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252786394857399376, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252786394857399376, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252786394857399376, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252786394857399376, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405740323745665555, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: textString
+      value: 'The goldfish is arguably the most kept aquarium fish but they are also
+        the most miskept fish as well. Most owners do not accommodate for the goldfish
+        need of over 20 gallons each. They are also cool-water fishes that thrive
+        in 60-72F range but is often ignored and kept at room temperature. Cramped
+        and overheated, many goldfishes do not reach their lifespan potential. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405740323745665555, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: needsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
 --- !u!1 &248968373
 GameObject:
   m_ObjectHideFlags: 0
@@ -1372,6 +1461,181 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 0, g: 0.860724, b: 1, a: 1}
   radius: 0.28
+--- !u!1001 &619199072
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 73150007613672977, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_Name
+      value: ButterflyText
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 64.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -22.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.036194663
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070870367176708352, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252786394857399376, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252786394857399376, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252786394857399376, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252786394857399376, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405740323745665555, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: textString
+      value: Most Painted Lady butterflies join the migration from one side of the
+        continent to the other. A select few however are raised in captivity; contained
+        in a walled-off garden until they are pinned to canvas for display.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405740323745665555, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: needsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+--- !u!1001 &667604916
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 73150007613672977, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_Name
+      value: BirdText
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 59.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -17.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.036194663
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070870367176708352, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252786394857399376, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252786394857399376, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252786394857399376, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252786394857399376, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405740323745665555, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: textString
+      value: 'Once upon a time there was a beautiful bird who sang a beautiful song.
+        The people loved the song so much they wanted to listen to it forever. They
+        captured the bird and clipped its wings so that it could never fly away.
+        The bird rotted away in its golden cage and never sang again.  '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405740323745665555, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: needsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
 --- !u!4 &681528022 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4259658174831161474, guid: e1d3978f3d7b74d43b246be8c3444bf4, type: 3}
