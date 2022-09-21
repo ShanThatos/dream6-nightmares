@@ -46,7 +46,6 @@ public class RatJumpState : RatEnemyState {
     public override bool canEnter() {
         if (controller.currentState.getStateName() != "RatChase")
             return false;
-        // Debug.Log("Hey there " + getDistanceToPlayer());
         return controller.canJumpAttack && jumpWaitTime <= 0 && getDistanceToPlayer() > controller.getPoint("AttackTriggerZone").localScale.x;
     }
 

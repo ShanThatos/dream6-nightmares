@@ -29,7 +29,7 @@ public class MainCameraScript : MonoBehaviour
     {
         float oldZ = transform.position.z;
         Vector2 targetPos = (Vector2) target.position + cameraOffset;
-        Vector2 newPos = Vector2.Lerp(transform.position, targetPos, Time.deltaTime * 4);
+        Vector2 newPos = Vector2.Lerp(transform.position, targetPos, Time.deltaTime * 8);
         float halfCamWidth = cam.orthographicSize * cam.aspect;
         newPos.x = Mathf.Clamp(newPos.x, minX + halfCamWidth, maxX - halfCamWidth);
         transform.position = new Vector3(newPos.x, newPos.y, oldZ);

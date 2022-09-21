@@ -71,7 +71,8 @@ public class Damagable : MonoBehaviour
 
                     // See CallOnDeath on how to subscribe to this event
                     // Usful if you need custom behavior on hit (health bars, etc.)
-                    CallOnHurt(attack.damage);
+                    if (health > 0)
+                        CallOnHurt(attack.damage);
 
                     Vector2 kb = attack.knockback - knockResistance;
 

@@ -9,12 +9,6 @@ public class RatEnemyController : StateManager {
 
     public Animator animator;
 
-    public const float MAX_HEALTH = 30;
-    public float currentHealth;
-    bool isDead;
-
-    public Vector2 ratBaseKnockback;
-
     Dictionary<string, Transform> points = new Dictionary<string, Transform>();
 
 
@@ -30,7 +24,6 @@ public class RatEnemyController : StateManager {
 
     public override void init() {
         base.init();
-        currentHealth = MAX_HEALTH;
         flicker = GetComponent<FlickerSprite>();
     }
 
@@ -39,6 +32,10 @@ public class RatEnemyController : StateManager {
         damage = GetComponent<Damagable>();
         damage.OnDeath += OnDead;
         damage.OnHurt += OnHurt;
+    }
+
+    public bool isFacingRight() {
+        return facingRight;
     }
 
     public Transform getPoint(string pointName) {
@@ -52,33 +49,14 @@ public class RatEnemyController : StateManager {
         facingRight = isFacingRight;
     }
 
-    public override void run() {
-        if (currentHealth < 0 && !isDead) {
-            isDead = true;
-            Destroy(gameObject);
-        }
+    public override void run() {}
+
+    public void OnDead() {
+        switchState("RatDeath");
     }
 
-    public void OnDead()
-    {
-        if (deathParticles)
-        {
-            GameObject particles = Instantiate(deathParticles, transform.position, Quaternion.identity);
-            particles.transform.localScale = Vector3.Scale(particles.transform.localScale, transform.localScale);
-
-            if (facingRight)
-            {
-                particles.GetComponent<ParticleSystemRenderer>().flip = new Vector3(1, 0, 0);
-            }
-        }
-        Destroy(gameObject);
-    }
-
-    public void OnHurt(float damage)
-    {
-        Debug.Log("Took " + damage + "damage!!");
+    public void OnHurt(float damage) {
         switchState("RatHurt");
         flicker.Flicker();
     }
 }
-

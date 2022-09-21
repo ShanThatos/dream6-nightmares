@@ -9,10 +9,15 @@ public class GameManager : MonoBehaviour {
     private bool movementLocked = false;
     private List<FreezeOnGMLock> freezeObjects = new List<FreezeOnGMLock>();
 
+
+    public Vector2 currentCheckpoint;
+
+
     void Awake() {
         if (instance == null) { instance = this; }
         else { Destroy(gameObject); }
         player = FindObjectOfType<PlayerMovement>().gameObject;
+        currentCheckpoint = player.transform.position;
     }
 
 
@@ -20,40 +25,41 @@ public class GameManager : MonoBehaviour {
         return instance.player.transform;
     }
 
-
-
-    public void __AddMovementLockedObject(FreezeOnGMLock x) {
-        if (freezeObjects.Contains(x)) return;
-        freezeObjects.Add(x);
-    }
     public static void AddMovementLockedObject(FreezeOnGMLock x) {
-        instance.__AddMovementLockedObject(x);
+        if (instance.freezeObjects.Contains(x)) return;
+        instance.freezeObjects.Add(x);
     }
 
-    public void __RemoveMovementLockedObject(FreezeOnGMLock x) {
-        int index = freezeObjects.IndexOf(x);
+    public static void RemoveMovementLockedObject(FreezeOnGMLock x) {
+        int index = instance.freezeObjects.IndexOf(x);
         if (index != -1) {
-            freezeObjects.RemoveAt(index);
+            instance.freezeObjects.RemoveAt(index);
             x.Unlock();
         }
     }
-    public static void RemoveMovementLockedObject(FreezeOnGMLock x) {
-        instance.__RemoveMovementLockedObject(x);
-    }
 
-    public void __SetMovementLock(bool locked) {
-        if (movementLocked == locked) return;
-        movementLocked = locked;
+    public static void SetMovementLock(bool locked) {
+        if (instance.movementLocked == locked) return;
+        instance.movementLocked = locked;
 
-        freezeObjects.ForEach(x => { 
+        instance.freezeObjects.ForEach(x => { 
             if (locked) x.Lock();
             else x.Unlock();
         });
     }
-    public static void SetMovementLock(bool locked) {
-        instance.__SetMovementLock(locked);
-    }
+    
     public static bool IsMovementLocked() {
         return instance.movementLocked;
+    }
+
+
+
+    public static void RespawnPlayer() {
+        instance.player.transform.position = instance.currentCheckpoint;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+            RespawnPlayer();
     }
 }
