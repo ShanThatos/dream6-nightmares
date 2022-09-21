@@ -808,26 +808,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 392971927, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}
-      propertyPath: attacks.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 392971927, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}
-      propertyPath: allowAttackQueueing
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 392971927, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}
-      propertyPath: attacks.Array.data[0]
-      value: 
-      objectReference: {fileID: 4380985370008964227, guid: 0b324f39fa3a53e46919e3e002c04c3e, type: 3}
-    - target: {fileID: 392971927, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}
-      propertyPath: attacks.Array.data[1]
-      value: 
-      objectReference: {fileID: 4380985370008964227, guid: f5597b42a306a394fac116fbbc451018, type: 3}
-    - target: {fileID: 392971927, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}
-      propertyPath: attacks.Array.data[2]
-      value: 
-      objectReference: {fileID: 4380985370008964227, guid: f5597b42a306a394fac116fbbc451018, type: 3}
     - target: {fileID: 8642731270172959561, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}
       propertyPath: m_Name
       value: Player
@@ -875,10 +855,6 @@ PrefabInstance:
     - target: {fileID: 8642731270172959566, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8642731271435911649, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}

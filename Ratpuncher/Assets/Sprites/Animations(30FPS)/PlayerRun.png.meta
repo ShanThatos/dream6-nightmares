@@ -101,6 +101,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -109,9 +121,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 3000
         width: 1000
-        height: 951
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,9 +142,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1000
-        y: 0
+        y: 3000
         width: 1000
-        height: 951
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,9 +163,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2000
-        y: 0
+        y: 3000
         width: 1000
-        height: 951
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,9 +184,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3000
-        y: 0
+        y: 3000
         width: 1000
-        height: 951
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,10 +204,10 @@ TextureImporter:
       name: PlayerRun_4
       rect:
         serializedVersion: 2
-        x: 4000
-        y: 0
+        x: 0
+        y: 2000
         width: 1000
-        height: 951
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,10 +225,10 @@ TextureImporter:
       name: PlayerRun_5
       rect:
         serializedVersion: 2
-        x: 5000
-        y: 0
+        x: 1000
+        y: 2000
         width: 1000
-        height: 951
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,10 +246,10 @@ TextureImporter:
       name: PlayerRun_6
       rect:
         serializedVersion: 2
-        x: 6000
-        y: 0
+        x: 2000
+        y: 2000
         width: 1000
-        height: 951
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,10 +267,10 @@ TextureImporter:
       name: PlayerRun_7
       rect:
         serializedVersion: 2
-        x: 7000
-        y: 0
+        x: 3000
+        y: 2000
         width: 1000
-        height: 951
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,10 +288,10 @@ TextureImporter:
       name: PlayerRun_8
       rect:
         serializedVersion: 2
-        x: 8000
-        y: 0
+        x: 0
+        y: 1000
         width: 1000
-        height: 951
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,10 +309,10 @@ TextureImporter:
       name: PlayerRun_9
       rect:
         serializedVersion: 2
-        x: 9000
-        y: 0
+        x: 1000
+        y: 1000
         width: 1000
-        height: 951
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,10 +330,10 @@ TextureImporter:
       name: PlayerRun_10
       rect:
         serializedVersion: 2
-        x: 10000
-        y: 0
+        x: 2000
+        y: 1000
         width: 1000
-        height: 951
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,10 +351,10 @@ TextureImporter:
       name: PlayerRun_11
       rect:
         serializedVersion: 2
-        x: 11000
-        y: 0
+        x: 3000
+        y: 1000
         width: 1000
-        height: 951
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -360,10 +372,10 @@ TextureImporter:
       name: PlayerRun_12
       rect:
         serializedVersion: 2
-        x: 12000
+        x: 0
         y: 0
         width: 1000
-        height: 951
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -373,6 +385,27 @@ TextureImporter:
       bones: []
       spriteID: e60e939e7cb37f34ea82897e4169572b
       internalID: 1721560835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerRun_13
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a146dcfea2949f149ae7e7279eb867e5
+      internalID: -1741199212
       vertices: []
       indices: 
       edges: []
@@ -394,6 +427,7 @@ TextureImporter:
       PlayerRun_12: 1721560835
       PlayerRun_4: 1907052537
       PlayerRun_11: 1793602047
+      PlayerRun_13: -1741199212
       PlayerRun_0: -539607963
       PlayerRun_1: 1600928424
       PlayerRun_2: 11632948
