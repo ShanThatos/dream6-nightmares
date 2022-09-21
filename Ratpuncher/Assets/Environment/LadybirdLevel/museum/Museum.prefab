@@ -137,7 +137,6 @@ GameObject:
   - component: {fileID: 4259658174985980667}
   - component: {fileID: 4259658174985980646}
   - component: {fileID: 4259658174985980645}
-  - component: {fileID: 4259658174985980644}
   m_Layer: 6
   m_Name: museum_0003_cage_long
   m_TagString: Untagged
@@ -247,27 +246,6 @@ PolygonCollider2D:
       - {x: 2.280571, y: -6.050894}
       - {x: -2.2569923, y: -6.2406216}
       - {x: -2.1893234, y: -6.6229897}
---- !u!50 &4259658174985980644
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4259658174985980666}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &4259658175372715782
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,7 +776,6 @@ GameObject:
   - component: {fileID: 4259658176107794456}
   - component: {fileID: 4259658176107794459}
   - component: {fileID: 4259658176107794458}
-  - component: {fileID: 4259658176107794457}
   m_Layer: 6
   m_Name: museum_0004_cage_medium
   m_TagString: Untagged
@@ -908,27 +885,6 @@ PolygonCollider2D:
       - {x: 2.2814484, y: -3.4112253}
       - {x: -2.270012, y: -3.5792875}
       - {x: -2.1740837, y: -3.9575653}
---- !u!50 &4259658176107794457
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4259658176107794463}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &4259658176176959766
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,7 +895,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4259658176176959767}
   - component: {fileID: 4259658176176959762}
-  - component: {fileID: 4259658176176959761}
   - component: {fileID: 4259658176176959760}
   m_Layer: 6
   m_Name: museum_0005_cage_short
@@ -1015,27 +970,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &4259658176176959761
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4259658176176959766}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!60 &4259658176176959760
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1082,7 +1016,6 @@ GameObject:
   - component: {fileID: 4259658176400279593}
   - component: {fileID: 4259658176400279764}
   - component: {fileID: 4259658176400279595}
-  - component: {fileID: 4259658176400279594}
   m_Layer: 6
   m_Name: museum_0010_BG
   m_TagString: Untagged
@@ -1200,27 +1133,6 @@ PolygonCollider2D:
       - {x: 14.389889, y: 10.651022}
       - {x: -19.056717, y: 9.846393}
       - {x: -19.044308, y: -0.03279367}
---- !u!50 &4259658176400279594
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4259658176400279592}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &4259658176551226776
 GameObject:
   m_ObjectHideFlags: 0

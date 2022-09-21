@@ -191,7 +191,7 @@ public class PlayerMovement : MonoBehaviour
     {
         RaycastHit2D[] hits;
         Vector2 start = bottom.position;
-        hits = Physics2D.RaycastAll(start, new Vector2(0, -1), 0.075f, LayerMask.GetMask("Platform"));
+        hits = Physics2D.RaycastAll(start, new Vector2(0, -1), 0.095f, LayerMask.GetMask("Platform"));
 
         if (hits.Length > 0 && canRecoverFromLaunch)
         {
@@ -476,5 +476,11 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSecondsRealtime(.2f);
         canRecoverFromLaunch = true;
         yield return null;
+    }
+
+
+    private void OnDrawGizmosSelected() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(bottom.position, (Vector2) bottom.position + Vector2.down * 0.095f);
     }
 }
