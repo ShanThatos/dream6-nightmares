@@ -103,8 +103,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) 
-            SceneManager.LoadScene("MainMenu");
 
         if (currDashCooldown >= 0)
         {

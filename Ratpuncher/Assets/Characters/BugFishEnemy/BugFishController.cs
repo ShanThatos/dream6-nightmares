@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BugFishController : StateManager {
 
@@ -98,6 +99,10 @@ public class BugFishController : StateManager {
 
     public Damagable getDamagable() {
         return damage;
+    }
+
+    private void OnDestroy() {
+        SceneManager.LoadScene("Office");
     }
 }
 
