@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 1293347583534198777}
   - component: {fileID: 2607143885448870227}
   - component: {fileID: 8500303226021377546}
+  - component: {fileID: 6475464414496500532}
+  - component: {fileID: 5905820155135519013}
   m_Layer: 7
   m_Name: BugFishEnemy
   m_TagString: Untagged
@@ -93,9 +95,6 @@ MonoBehaviour:
   rb: {fileID: 1187009165426390347}
   animator: {fileID: 1187009166010962527}
   cues: {fileID: 1187009166774160806}
-  maxHealth: 100
-  invincible: 0
-  fishBaseKnockback: {x: 20, y: 10}
   idleSpeed: 3
   flyUpForce: 30
   flySideForce: 25
@@ -106,9 +105,10 @@ MonoBehaviour:
   shockSpawnerPrefab: {fileID: 3221310975992145530, guid: 33acaecc7d0a38040bb2525adb8e60ea, type: 3}
   groundPoundPrefab: {fileID: 5921306335632418300, guid: b5115a154722ab64aace78c31c45c457, type: 3}
   hurtTime: 0.5
-  MIN_X: 7.28
-  MAX_X: 30.48
-  MAX_Y: 10
+  MIN_X: 99.54
+  MAX_X: 115.7
+  MAX_Y: -18.5
+  HPBar: {fileID: 0}
 --- !u!114 &1293347583534198777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,6 +149,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd383d20598d94478ac42ffcc78b4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6475464414496500532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187009165426390343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c45fa1b3b597e4544837718249daa9e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numFlickers: 1
+  flickerTime: 0.2
+  flickerColor: {r: 0.6784314, g: 0, b: 0, a: 1}
+--- !u!114 &5905820155135519013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187009165426390343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad21e646a33c2845841519a139dd7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 500
+  knockResistance: {x: 100, y: 100}
+  iFrameTime: 0.6
+  isPlayer: 0
+  spawnHitParticles: 1
 --- !u!1 &1187009165847558662
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,7 +585,7 @@ Transform:
   m_GameObject: {fileID: 1187009166462086988}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 12, y: 12, z: 12}
+  m_LocalScale: {x: 7.6, y: 7.6, z: 7.6}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1187009167339795623}
@@ -653,6 +685,7 @@ Transform:
   - {fileID: 1187009166281527749}
   - {fileID: 1187009167438188161}
   - {fileID: 770386959190198141}
+  - {fileID: 5500477711349933937}
   m_Father: {fileID: 1187009165426390342}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1016,6 +1049,50 @@ Transform:
   m_Father: {fileID: 1187009166010962525}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6878916385066128332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5500477711349933937}
+  - component: {fileID: 8559910072962106124}
+  m_Layer: 7
+  m_Name: BFDeathState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5500477711349933937
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6878916385066128332}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1187009167323236619}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8559910072962106124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6878916385066128332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21cacd20a1ccf54eb8fdf711433c111, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8312491172259073116
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,10 +10,10 @@ public class BFPhaseState : BFState {
     public override void enter() {
         controller.animator.Play("BFPhase");
         time = 1f;
-        controller.invincible = true;
+        controller.getDamagable().setInvinicibility(true);
     }
     public override void exit() {
-        controller.invincible = false;
+        controller.getDamagable().setInvinicibility(false);
     }
 
     public override void run() {
@@ -26,7 +26,7 @@ public class BFPhaseState : BFState {
     public override bool canEnter() {
         if (controller.currentState.getStateName() != "BFIdle" && controller.currentState.getStateName() != "BFHurt")
             return false;
-        return controller.getCurrentHealth() <= controller.maxHealth / 3;
+        return controller.getDamagable().GetHealth() <= controller.getDamagable().GetMaxHealth() / 2;
     }
 
     public override string getStateName() {

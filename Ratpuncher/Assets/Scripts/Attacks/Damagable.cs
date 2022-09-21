@@ -127,12 +127,23 @@ public class Damagable : MonoBehaviour
         }
     }
 
-     IEnumerator DisableIFrames()
+    IEnumerator DisableIFrames()
     {
         yield return new WaitForSecondsRealtime(iFrameTime);
 
         iFrame = false;
 
         yield return null;
+    }
+
+    public float GetMaxHealth() {
+        return maxHealth;
+    }
+    public float GetHealth() {
+        return health;
+    }
+
+    public void setInvinicibility(bool invincible) {
+        iFrame = invincible;
     }
 }

@@ -14,6 +14,7 @@ public class FlickerSprite : MonoBehaviour {
 
     void Start() {
         sr = GetComponentInChildren<SpriteRenderer>();
+        Debug.Log(sr);
     }
 
     public void Flicker() {
@@ -26,6 +27,7 @@ public class FlickerSprite : MonoBehaviour {
         Color originalColor = sr.color;
         bool isFlickerColor = false;
         for (int i = 0; i < numFlickers; i++) {
+            isFlickerColor = !isFlickerColor;
             Color color = isFlickerColor ? flickerColor : originalColor;
             color.a = sr.color.a;
             sr.color = color;
