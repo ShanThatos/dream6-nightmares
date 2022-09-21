@@ -260,11 +260,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (currentAction == PlayerActions.Attacking && verticalState == VerticalState.Grounded)
         {
-            // Stop movement if animation cancel fails
             if (!attackManager.TryAnimationCancel())
             {
-                moveVector = Vector2.zero;
-                return;
+
             }
         }
 

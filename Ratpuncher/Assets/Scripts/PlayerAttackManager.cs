@@ -88,6 +88,7 @@ public class PlayerAttackManager : MonoBehaviour
     public void SpawnParticlesAndHitbox()
     {
         GameObject attack = Instantiate(attacks[0], attackPoint.position, Quaternion.identity);
+        attack.transform.parent = gameObject.transform;
         attack.GetComponent<AttackHitbox>().player = playerMovement;
         if (Mathf.Sign(sprite.localScale.x) == -1)
         {

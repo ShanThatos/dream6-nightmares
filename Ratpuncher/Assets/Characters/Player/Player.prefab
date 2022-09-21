@@ -393,7 +393,7 @@ Rigidbody2D:
   m_Mass: 3
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1.5
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -461,11 +461,11 @@ MonoBehaviour:
   sprite: {fileID: 8642731271435911648}
   bottom: {fileID: 8642731270143251503}
   moveAccel: 90
-  maxGroundMoveSpeed: 5.5
-  maxAirMoveSpeed: 3.3
+  maxGroundMoveSpeed: 6
+  maxAirMoveSpeed: 5.5
   maxLaunchSpeed: 0
   attackRecoil: {x: 20, y: 2}
-  jumpForce: 8
+  jumpForce: 12
   groundPoundDelay: 0.15
   groundPoundSound: {fileID: 254365810769650644}
   dashForce: 12
