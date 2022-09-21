@@ -11,12 +11,6 @@ public class BugFishController : StateManager {
 
     public BugFishAnimationCues cues;
 
-    public float maxHealth = 100;
-    float currentHealth;
-
-    public bool invincible = false;
-    public Vector2 fishBaseKnockback;
-
     Dictionary<string, Transform> points = new Dictionary<string, Transform>();
 
 
@@ -40,11 +34,7 @@ public class BugFishController : StateManager {
 
     public BossHPBar HPBar;
 
-    public override void init()
-    {
-        base.init();
-        currentHealth = maxHealth;
-    }
+    FlickerSprite flicker;
 
     public Transform getPoint(string pointName) {
         if (!points.ContainsKey(pointName))
@@ -52,11 +42,10 @@ public class BugFishController : StateManager {
         return points[pointName];
     }
 
-    void Awake()
-    {
+    void Awake() {
+        flicker = GetComponent<FlickerSprite>();
         TryGetComponent<Damagable>(out damage);
-        if (damage)
-        {
+        if (damage) {
             damage.OnHurt += OnHurt;
             damage.OnDeath += OnDeath;
         }
@@ -68,32 +57,7 @@ public class BugFishController : StateManager {
 
     public override void run() {
         base.run();
-        if (currentHealth < 0) {
-            Destroy(gameObject);
-            return;
-        }
-        
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, MIN_X, MAX_X), Mathf.Min(transform.position.y, MAX_Y), transform.position.z);
-    }
-
-    void OnTriggerStay2D(Collider2D collision) {
-        if (invincible)
-            return;
-        GameObject hit = collision.gameObject;
-        /* if (hit.layer == LayerMask.NameToLayer("PlayerAttack")) {
-            AttackCollider ac = hit.GetComponent<AttackCollider>();
-            if (ac.canAttack())
-            {
-                ac.resetCooldown();
-                Vector2 knockback = fishBaseKnockback * ac.attackKnockback;
-                knockback.x *= (hit.transform.position.x <= transform.position.x ? 1 : 1);
-                rb.AddForce(knockback, ForceMode2D.Impulse);
-                currentHealth -= ac.attackDamage;
-
-                if (currentState.getStateName() == "BFIdle" || currentState.getStateName() == "BFFlop")
-                    switchState("BFHurt");
-            } 
-        } */
     }
 
     void OnDrawGizmos() {
@@ -107,24 +71,21 @@ public class BugFishController : StateManager {
     {
         Debug.Log("Bugfish took " + damage + " damage!!");
 
-        if (currentState.getStateName() == "BFIdle" || currentState.getStateName() == "BFFlop")
+        if (currentState.getStateName() == "BFIdle")
             switchState("BFHurt");
 
-        currentHealth -= damage;
-
-        if (HPBar)
-        {
+        if (HPBar) 
             HPBar.RecieveDamage(damage);
-        }
+        if (flicker) 
+            flicker.Flicker();
     }
 
-    void OnDeath()
-    {
-
+    void OnDeath() {
+        switchState("BFDead");
     }
 
-    public float getCurrentHealth() {
-        return currentHealth;
+    public Damagable getDamagable() {
+        return damage;
     }
 }
 
