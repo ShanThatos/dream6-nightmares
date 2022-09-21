@@ -10,10 +10,10 @@ public class BFPhaseState : BFState {
     public override void enter() {
         controller.animator.Play("BFPhase");
         time = 1f;
-        controller.getDamagable().setInvinicibility(true);
+        controller.getDamagable().setInvincibility(true);
     }
     public override void exit() {
-        controller.getDamagable().setInvinicibility(false);
+        controller.getDamagable().setInvincibility(false);
     }
 
     public override void run() {

@@ -143,7 +143,9 @@ public class Damagable : MonoBehaviour
         return health;
     }
 
-    public void setInvinicibility(bool invincible) {
+    public void setInvincibility(bool invincible) {
+        if (invincible)
+            StopAllCoroutines();
         iFrame = invincible;
     }
 }

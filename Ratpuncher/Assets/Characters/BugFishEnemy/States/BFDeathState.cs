@@ -6,12 +6,14 @@ using UnityEngine;
 public class BFDeathState : BFState {
 
     public override void enter() {
-        // controller.animator.Play("BFDeath");
-        Destroy(controller.gameObject);
+        controller.getDamagable().setInvincibility(true);
+        controller.animator.Play("BFDeath");
+        controller.rb.velocity = Vector2.zero;
     }
 
     public override void run() {
-
+        if (controller.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+            Destroy(controller.gameObject);
     }
 
     public override string getStateName() {

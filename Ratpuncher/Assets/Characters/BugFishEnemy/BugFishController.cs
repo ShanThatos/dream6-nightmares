@@ -42,14 +42,19 @@ public class BugFishController : StateManager {
         return points[pointName];
     }
 
-    void Awake() {
+    public override void init() {
+        base.init();
+
         flicker = GetComponent<FlickerSprite>();
         TryGetComponent<Damagable>(out damage);
         if (damage) {
             damage.OnHurt += OnHurt;
             damage.OnDeath += OnDeath;
         }
+
+        HPBar.SetMaxHP(damage.GetMaxHealth());
     }
+
 
     public void setDirection(bool isFacingRight) {
         transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * (isFacingRight ? -1 : 1), transform.localScale.y, transform.localScale.z);
@@ -60,7 +65,7 @@ public class BugFishController : StateManager {
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, MIN_X, MAX_X), Mathf.Min(transform.position.y, MAX_Y), transform.position.z);
     }
 
-    void OnDrawGizmos() {
+    void OnDrawGizmosSelected() {
         Gizmos.color = Color.green;
         Gizmos.DrawLine(new Vector3(MIN_X, -100, 0), new Vector3(MIN_X, 100, 0));
         Gizmos.DrawLine(new Vector3(MAX_X, -100, 0), new Vector3(MAX_X, 100, 0));
@@ -69,7 +74,7 @@ public class BugFishController : StateManager {
 
     void OnHurt(float damage)
     {
-        Debug.Log("Bugfish took " + damage + " damage!!");
+        // Debug.Log("Bugfish took " + damage + " damage!!");
 
         if (currentState.getStateName() == "BFIdle")
             switchState("BFHurt");
@@ -81,7 +86,7 @@ public class BugFishController : StateManager {
     }
 
     void OnDeath() {
-        switchState("BFDead");
+        switchState("BFDeath");
     }
 
     public Damagable getDamagable() {

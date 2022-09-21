@@ -4,19 +4,26 @@ using UnityEngine;
 
 public class AudioTrigger : MonoBehaviour
 {
+
+    public bool playOnlyOnce = false;
+    public bool playOnEnter = true;
+    public bool stopOnExit = true;
     bool triggered = false;
 
     void OnTriggerEnter2D(Collider2D other) {
         if (LayerMask.LayerToName(other.gameObject.layer) == "Player" && !triggered) {
             triggered = true;
-            GetComponent<AudioSource>().Play();
+            if (playOnEnter)
+                GetComponent<AudioSource>().Play();
         }
     }
 
     void OnTriggerExit2D(Collider2D other) {
         if (LayerMask.LayerToName(other.gameObject.layer) == "Player" && triggered) {
-            triggered = false;
-            GetComponent<AudioSource>().Stop();
+            if (!playOnlyOnce)
+                triggered = false;
+            if (stopOnExit)
+                GetComponent<AudioSource>().Stop();
         }
     }
 }

@@ -75,7 +75,7 @@ public class BossHPBar : MonoBehaviour
 
         currentDelay = subBarDelay;
 
-        Debug.Log(targetValue);
+        // Debug.Log(targetValue);
     }
 
     public void SetMaxHP(float hp)
