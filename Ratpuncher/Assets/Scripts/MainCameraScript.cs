@@ -22,6 +22,7 @@ public class MainCameraScript : MonoBehaviour
         instance = this;
         cam = GetComponent<Camera>();
         defaultCamSize = cam.orthographicSize;
+        transform.position = new Vector3(target.position.x + cameraOffset.x, target.position.y + cameraOffset.y, transform.position.z);
     }
 
     // fixed update
