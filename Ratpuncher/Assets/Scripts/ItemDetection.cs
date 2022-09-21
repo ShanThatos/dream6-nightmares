@@ -66,10 +66,10 @@ public class ItemDetection : MonoBehaviour
             if (!isExist)
             {
                 actionIndicator = Instantiate(Resources.Load("ActionIndicator")) as GameObject;
-                actionIndicator.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "F";
-                actionIndicator.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Interact";
+                actionIndicator.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "F";
+                actionIndicator.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = "Interact";
                 actionIndicator.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
-                LeanTween.moveY(actionIndicator, this.gameObject.transform.position.y + 1, 0.2f);
+                LeanTween.moveY(actionIndicator, this.gameObject.transform.position.y + 2, 0.2f);
                 LeanTween.scaleY(actionIndicator, 1, 0.2f);
                 isExist = true;
             }
@@ -81,7 +81,7 @@ public class ItemDetection : MonoBehaviour
         if (collision.tag == "Player")
         {
             isInside = false;
-            LeanTween.moveY(actionIndicator, this.gameObject.transform.position.y + 1, 0.2f);
+            //LeanTween.moveY(actionIndicator, this.gameObject.transform.position.y + 1, 0.2f);
             LeanTween.scaleY(actionIndicator, 0, 0.2f).setDestroyOnComplete(true);
             isExist = false;
             CloseIdentifier();
