@@ -572,10 +572,8 @@ MonoBehaviour:
   currentState: {fileID: 6747546632880583795}
   rb: {fileID: 6747546633228865635}
   animator: {fileID: 6747546632581645179}
-  currentHealth: 0
-  ratBaseKnockback: {x: 5, y: 3}
   speed: 3
-  canJumpAttack: 1
+  canJumpAttack: 0
   deathParticles: {fileID: 4380985370008964227, guid: eb75b2e46db738a4a85bc62f1d2c55c8, type: 3}
 --- !u!70 &6747546633228865636
 CapsuleCollider2D:
@@ -627,7 +625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 30
-  knockResistance: {x: 2, y: 1}
+  knockResistance: {x: 4, y: 1}
   iFrameTime: 0.6
   isPlayer: 0
   spawnHitParticles: 1

@@ -78,6 +78,19 @@ public class BossHPBar : MonoBehaviour
         // Debug.Log(targetValue);
     }
 
+    public void OnDeath()
+    {
+        targetValue = 0;
+
+        currentDelay = .3f;
+
+        TryGetComponent<Animator>(out Animator ani);
+        if (ani)
+        {
+            ani.SetTrigger("Death");
+        }
+    }
+
     public void SetMaxHP(float hp)
     {
         maxHP = hp;

@@ -86,6 +86,8 @@ public class BugFishController : StateManager {
     }
 
     void OnDeath() {
+        if (HPBar)
+            HPBar.OnDeath();
         switchState("BFDeath");
     }
 
