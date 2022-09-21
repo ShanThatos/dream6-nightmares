@@ -8,6 +8,7 @@ TagManager:
   - BlackPanel
   - Notification
   - HubDialogue
+  - LevelCanvas
   layers:
   - Default
   - TransparentFX
@@ -42,6 +43,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2940486245
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 2772131587
+    locked: 0
+  - name: Forergound
+    uniqueID: 993612983
     locked: 0
