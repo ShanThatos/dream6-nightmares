@@ -60,6 +60,7 @@ public class HubDialogueController : MonoBehaviour
         sentences.Clear();
         blackPanel.transform.localScale = new Vector3(1, 1, 1);
         LeanTween.scaleY(dialoguePanel, 1, 0.2f);
+        LeanTween.alpha(characterImage.GetComponent<RectTransform>(), 1f, 0.2f).setDelay(0.1f);
         LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0.5f, 0.2f);
         foreach (string sentence in dialogue)
         {
@@ -126,6 +127,7 @@ public class HubDialogueController : MonoBehaviour
         Debug.Log("Dialogue Ended");
         blackPanel.transform.localScale = new Vector3(0, 0, 0);
         LeanTween.scaleY(dialoguePanel, 0, 0.2f);
+        LeanTween.alpha(characterImage.GetComponent<RectTransform>(), 0f, 0.2f);
         LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0, 0.2f);
         isDialogueOn = false;
         //dialoguePanel.SetActive(false);
