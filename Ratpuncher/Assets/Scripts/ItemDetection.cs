@@ -9,7 +9,7 @@ public class ItemDetection : MonoBehaviour
     //public ItemSO itemSO;
     [TextArea(5, 10)]
     public string descriptionString;
-    public Sprite itemSprite;
+    //public Sprite itemSprite;
 
     private GameObject itemIdentifier;
     private GameObject blackPanel;
@@ -107,7 +107,7 @@ public class ItemDetection : MonoBehaviour
         }*/
         itemName.text = name;
         itemDescription.text = descriptionString;
-        itemImage.sprite = itemSprite;
+        itemImage.sprite = gameObject.GetComponent<SpriteRenderer>().sprite;
         LeanTween.scaleY(notification, 1, 0.1f);
         blackPanel.transform.localScale = new Vector3(1, 1, 1);
         LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0.75f, 0.1f);

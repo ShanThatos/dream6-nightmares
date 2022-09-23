@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character:
   - name: Rem
-    sprite: {fileID: -1672026644, guid: 70b7b6394836903468757bc679547cb6, type: 3}
+    sprite: {fileID: 649988743, guid: 1327b6e1f8a35154d87e70e45da7ea25, type: 3}
   - name: Elios
-    sprite: {fileID: -1126351194, guid: 70b7b6394836903468757bc679547cb6, type: 3}
+    sprite: {fileID: 519468580, guid: 1327b6e1f8a35154d87e70e45da7ea25, type: 3}
   firstDialogues:
   - 'Rem: Welcome to the game Interim. Hello my name is Rem.'
   - 'Rem: I am an unpaid intern of NEST'
