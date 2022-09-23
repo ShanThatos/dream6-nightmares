@@ -6,7 +6,11 @@ using UnityEngine.UI;
 
 public class ItemDetection : MonoBehaviour
 {
-    public ItemSO itemSO;
+    //public ItemSO itemSO;
+    [TextArea(5, 10)]
+    public string descriptionString;
+    public Sprite itemSprite;
+
     private GameObject itemIdentifier;
     private GameObject blackPanel;
     private GameObject notification;
@@ -90,6 +94,7 @@ public class ItemDetection : MonoBehaviour
 
     public void OpenIdentifier()
     {
+        /*
         for (int i = 0; i < itemSO.items.Length; i++)
         {
             if (name == itemSO.items[i].itemName)
@@ -99,7 +104,10 @@ public class ItemDetection : MonoBehaviour
                 itemImage.sprite = itemSO.items[i].itemSprite;
                 break;
             }
-        }
+        }*/
+        itemName.text = name;
+        itemDescription.text = descriptionString;
+        itemImage.sprite = itemSprite;
         LeanTween.scaleY(notification, 1, 0.1f);
         blackPanel.transform.localScale = new Vector3(1, 1, 1);
         LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0.75f, 0.1f);
