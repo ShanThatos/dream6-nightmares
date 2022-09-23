@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
     PlayerCapabilities playerCapabilities;
     PlayerAttackManager attackManager;
     Damagable damage;
-
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -183,7 +183,11 @@ public class PlayerMovement : MonoBehaviour
             prevY = transform.position.y;
         }
 
-        
+        // Negate vertical movement when dashing
+        if(currentAction == PlayerActions.Dashing)
+        {
+            currentVelocity.y = 0;
+        }
 
 
         rb.velocity = currentVelocity;

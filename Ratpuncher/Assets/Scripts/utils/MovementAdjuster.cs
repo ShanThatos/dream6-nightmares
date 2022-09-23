@@ -10,53 +10,125 @@ public class MovementAdjuster : MonoBehaviour
 
     [Space(3)]
 
-    public TMP_InputField GravityField;
-    public TMP_InputField JumpField;
-    public TMP_InputField AirSpeedField;
-    public TMP_InputField DashField;
+    public TMP_Dropdown selector;
+    public TMP_InputField inputField;
+
+    List<string> vars;
+
+    bool suppressChange = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        vars = new List<string>();
+
         
+        vars.Add("Air Speed");
+        vars.Add("Gravity");
+        vars.Add("Ground Speed");
+        vars.Add("Jump Power");
+        vars.Add("Dash Power");
+        vars.Add("Dash Duration");
+        vars.Add("Dash Cooldown");
+        vars.Add("Pound Delay");
+
+        selector.ClearOptions();
+        selector.AddOptions(vars);
+
+        OnDropdownChange();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnSetNewVal()
     {
-        
+        if (suppressChange)
+        {
+            return;
+        }
+
+        float val = float.Parse(inputField.text);
+        int index = vars.IndexOf(selector.captionText.text);
+        set(index, val);
     }
 
-    public void OnChangeGravity()
+    public void OnDropdownChange()
     {
-        float grav = playerRB.gravityScale;
-        float.TryParse(GravityField.text, out grav);
-        Debug.Log(grav);
-
-        playerRB.gravityScale = grav;
+        int index = vars.IndexOf(selector.captionText.text);
+        suppressChange = true;
+        inputField.text = get(index).ToString();
+        suppressChange = false;
     }
 
-    public void OnChangeJump()
+    public void CopyAll()
     {
-        float val = playerMovement.jumpForce;
-        float.TryParse(JumpField.text, out val);
+        System.Text.StringBuilder str = new System.Text.StringBuilder();
 
-        playerMovement.jumpForce = val;
+        foreach(int i in System.Linq.Enumerable.Range(0, vars.Count))
+        {
+            str.Append(vars[i]);
+            str.Append(": ");
+            str.Append(get(i).ToString());
+            str.Append("\n");
+        }
+
+        GUIUtility.systemCopyBuffer = str.ToString();
+    }
+    public float get(int index)
+    {
+        switch (index)
+        {
+            case 0:
+                return playerRB.gravityScale;
+            case 1:
+                return playerMovement.maxGroundMoveSpeed;
+            case 2:
+                return playerMovement.maxAirMoveSpeed;
+            case 3:
+                return playerMovement.jumpForce;
+            case 4:
+                return playerMovement.dashForce;
+            case 5:
+                return playerMovement.dashDuration;
+            case 6:
+                return playerMovement.dashCooldown;
+            case 7:
+                return playerMovement.groundPoundDelay;
+            default:
+                return float.NaN;
+        }
+
     }
 
-    public void OnChangeAirMove()
+    void set(int index, float val)
     {
-        float val = playerMovement.maxAirMoveSpeed;
-        float.TryParse(AirSpeedField.text, out val);
-
-        playerMovement.maxAirMoveSpeed = val;
-    }
-
-    public void OnChangeDash()
-    {
-        float val = playerMovement.dashForce;
-        float.TryParse(DashField.text, out val);
-
-        playerMovement.dashForce = val;
+        switch (index)
+        {
+            case 0:
+                playerRB.gravityScale = val;
+                break;
+            case 1:
+                playerMovement.maxGroundMoveSpeed = val;
+                break;
+            case 2:
+                playerMovement.maxAirMoveSpeed = val;
+                break;
+            case 3:
+                playerMovement.jumpForce = val;
+                break;
+            case 4:
+                playerMovement.dashForce = val;
+                break;
+            case 5:
+                playerMovement.dashDuration = val;
+                break;
+            case 6:
+                playerMovement.dashCooldown = val;
+                break;
+            case 7:
+                playerMovement.groundPoundDelay = val;
+                break;
+            default:
+                Debug.LogWarning("Invalid dropdown index!");
+                break;
+        }
     }
 }
