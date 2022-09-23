@@ -22,10 +22,9 @@ public class MovementAdjuster : MonoBehaviour
     {
         vars = new List<string>();
 
-        
-        vars.Add("Air Speed");
         vars.Add("Gravity");
         vars.Add("Ground Speed");
+        vars.Add("Air Speed");
         vars.Add("Jump Power");
         vars.Add("Dash Power");
         vars.Add("Dash Duration");
