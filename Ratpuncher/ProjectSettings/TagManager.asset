@@ -7,8 +7,8 @@ TagManager:
   - ItemIdentifier
   - BlackPanel
   - Notification
-  - HubDialogue
   - LevelCanvas
+  - Dialogue
   layers:
   - Default
   - TransparentFX

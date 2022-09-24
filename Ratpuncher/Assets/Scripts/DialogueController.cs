@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
-public class HubDialogueController : MonoBehaviour
+using System;
+public class DialogueController : MonoBehaviour
 {
-    public HubDialogueSO hubDialogueSO;
+    //public HubDialogueSO hubDialogueSO;
+    public DialogueSystem dialogueSystem;
     private GameObject blackPanel;
     private Queue<string> sentences;
     public GameObject dialoguePanel;
@@ -90,15 +91,34 @@ public class HubDialogueController : MonoBehaviour
     IEnumerator TypeSentence(string sentence)
     {
         isRunning = true;
-        int separatorIndex = sentence.IndexOf(":");
-        string name = sentence.Substring(0, separatorIndex);
-        string dialogue = sentence.Substring(separatorIndex + 1); dialogueText.text = sentence;
-        nameText.text = name;
-        for (int i = 0; i < hubDialogueSO.character.Length; i++)
+        string nameChar;
+        string spriteName;
+        string dialogue;
+        try
         {
-            if (name == hubDialogueSO.character[i].name)
+            int startIndex = sentence.IndexOf("(");
+            int endIndex = sentence.IndexOf(")");
+            //Debug.Log("Start: " + startIndex + " End: " + endIndex);
+            nameChar = sentence.Substring(0, startIndex);
+            spriteName = sentence.Substring(startIndex + 1, endIndex - (startIndex + 1));
+            dialogue = sentence.Substring(endIndex + 1);
+        }
+        catch (ArgumentOutOfRangeException)
+        {
+            spriteName = "";
+            nameChar = "";
+            dialogue = sentence;
+        }
+        dialogueText.text = sentence;
+        nameText.text = nameChar;
+        //Debug.Log("Start: " + startIndex + " End: " + endIndex);
+        //Debug.Log(name);
+        //Debug.Log(spriteName);
+        for (int i = 0; i < dialogueSystem.character.Length; i++)
+        {
+            if (spriteName == dialogueSystem.character[i].spriteName)
             {
-                characterImage.sprite = hubDialogueSO.character[i].sprite;
+                characterImage.sprite = dialogueSystem.character[i].sprite;
                 break;
             }
         }

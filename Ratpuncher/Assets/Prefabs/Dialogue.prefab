@@ -163,8 +163,8 @@ GameObject:
   - component: {fileID: 3558910314061870617}
   - component: {fileID: 3558910314061870616}
   m_Layer: 5
-  m_Name: HubDialogue
-  m_TagString: HubDialogue
+  m_Name: Dialogue
+  m_TagString: Dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,10 +201,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3558910314061870622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c6433a2cbd91254b82d5554551bea54, type: 3}
+  m_Script: {fileID: 11500000, guid: 478d7847e8066f94195c5064d1915d8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hubDialogueSO: {fileID: 11400000, guid: de66d5f613c919f41868a1e15123b263, type: 2}
+  dialogueSystem: {fileID: 11400000, guid: 418f3cda626ba0b48ab1cdf64443eaf4, type: 2}
   dialoguePanel: {fileID: 3558910314370108335}
   nameText: {fileID: 3558910314878817518}
   dialogueText: {fileID: 3558910314878669552}

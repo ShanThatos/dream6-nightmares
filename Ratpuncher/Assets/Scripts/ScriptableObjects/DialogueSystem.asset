@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: DialogueSystem
   m_EditorClassIdentifier: 
   character:
+  - spriteName: 
+    sprite: {fileID: 512778289, guid: 1327b6e1f8a35154d87e70e45da7ea25, type: 3}
   - spriteName: rem normal
     sprite: {fileID: 649988743, guid: 1327b6e1f8a35154d87e70e45da7ea25, type: 3}
   - spriteName: elios normal
@@ -20,25 +22,14 @@ MonoBehaviour:
   - spriteName: ladybird normal
     sprite: {fileID: 2097016350, guid: 1327b6e1f8a35154d87e70e45da7ea25, type: 3}
   dialogues:
-  - dialogueName: Hub World Start Dialogue
-    singleDia:
-    - displayName: Rem
-      spriteName: rem normal
-      dialoguesText: Welcome to Interim I am Rem, an unpaid intern of NEST.
-    - displayName: Elios
-      spriteName: elios normal
-      dialoguesText: Hello I am the boss of NEST.
-    - displayName: Rem
-      spriteName: rem normal
-      dialoguesText: Pay Me!!
-  - dialogueName: Ladybird Start Dialogue
-    singleDia:
-    - displayName: Ladybird
-      spriteName: ladybird normal
-      dialoguesText: I am Ladybird and this is my level
-    - displayName: Rem
-      spriteName: rem normal
-      dialoguesText: This place is amazing
-    - displayName: Ladybird
-      spriteName: ladybird normal
-      dialoguesText: Save me!
+  - dialogueName: HubStart
+    dialoguesText:
+    - Welcome to the game Interim
+    - Rem (rem normal) My name is Rem an unpaid intern of NEST
+    - Elios (elios normal) Hello I am the boss of NEST
+    - Rem (rem normal) PayME!!
+  - dialogueName: LadybirdStart
+    dialoguesText:
+    - Ladybird (ladybird normal) This is my level
+    - Rem (rem normal) This is so cool
+    - Ladybird (ladybird normal) I want pizza

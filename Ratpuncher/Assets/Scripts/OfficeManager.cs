@@ -6,26 +6,18 @@ using TMPro;
 
 public class OfficeManager : MonoBehaviour
 {
-    private HubDialogueController hubControlScript;
-    private bool triggeredDia;
-    // Start is called before the first frame update
-    void Start()
+    private bool isTriggered;
+    public void Start()
     {
-        triggeredDia = false;
-        hubControlScript = GameObject.FindGameObjectWithTag("HubDialogue").GetComponent<HubDialogueController>();
-        //hubControlScript.check("Connecting to HubDialogueController");
-        
-        
+        isTriggered = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        if (!triggeredDia)
+        if (!isTriggered)
         {
-            hubControlScript.StartDialogue(hubControlScript.hubDialogueSO.firstDialogues);
-            triggeredDia = true;
+            DialogueManager.instance.PlayDialogue("HubStart");
+            isTriggered = true;
         }
-
     }
 }

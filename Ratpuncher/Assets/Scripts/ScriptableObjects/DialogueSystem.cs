@@ -18,18 +18,10 @@ public class DialogueSystem : ScriptableObject
     }
 
     [Serializable]
-    public class SingleDia
-    {
-        public String displayName;
-        public String spriteName;
-        [TextArea(10, 15)]
-        public String dialoguesText;
-    }
-
-    [Serializable]
     public class Dialogues
     {
         public String dialogueName;
-        public SingleDia[] singleDia;
+        [TextArea(5, 10)]
+        public String[] dialoguesText;
     }
 }
