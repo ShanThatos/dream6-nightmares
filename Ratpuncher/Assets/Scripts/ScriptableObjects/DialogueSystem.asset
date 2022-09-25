@@ -23,6 +23,8 @@ MonoBehaviour:
     sprite: {fileID: 2097016350, guid: 1327b6e1f8a35154d87e70e45da7ea25, type: 3}
   dialogues:
   - dialogueName: HubStart
+    needsTransition: 0
+    sceneName: 
     dialoguesText:
     - "Elio (elio normal) Good mornin\u2019 ma\u2019am! Come in, come in! It must
       be freezing out there- please make yourself comfortable."
@@ -53,11 +55,57 @@ MonoBehaviour:
       that okay?
     - Ladybird (ladybird normal) Y-yes! Just say the word.
   - dialogueName: LadybirdTransition
+    needsTransition: 1
+    sceneName: LadybirdLevel
     dialoguesText:
     - "Rem (rem normal) Alright Ladybird, I need you to close your eyes with me\u2026think
       of a time when\u2026"
   - dialogueName: LadybirdStart
+    needsTransition: 0
+    sceneName: 
     dialoguesText:
-    - Ladybird (ladybird normal) This is my level
-    - Rem (rem normal) This is so cool
-    - Ladybird (ladybird normal) I want pizza
+    - 'Rem (rem normal) Ugh, hopping into realms never gets easier it seems. Okay,
+      let''s just stick to the usual M.O: locate the core stabilizing this place
+      and retrieve it. '
+    - 'Rem (rem normal) Huh, this must be the childhood home Ladybird mentioned.
+      Her bedroom perhaps? '
+  - dialogueName: DefeatBugfish
+    needsTransition: 1
+    sceneName: Office
+    dialoguesText:
+    - Rem (rem normal) Everybody is a genius. But if you judge a fish by its ability
+      to climb a tree, it will live its whole life believing that it is stupid.
+    - "Rem (rem normal) But this fish tried to anyways. It tried to adapt and made
+      itself grow wings no matter how unnatural or painful. I\u2026 I wonder if it
+      ever felt like it was enough. To try not to disappoint by molding itself into
+      what others wanted it to be."
+    - Rem (rem normal) On some level, I think I see a little bit of myself in it.
+  - dialogueName: LadybirdClosure
+    needsTransition: 0
+    sceneName: 
+    dialoguesText:
+    - Elio (elio normal) Our ace detective! Our hero is back! Oh, how he flawlessly
+      saves the day once again <3
+    - "Rem (rem normal) Elio, you\u2019re so embarrassing :("
+    - 'Rem (rem normal) Um, Ladybird I found this in your dream realm. It seems to
+      be the root of your nightmares. Do you have an idea why?
+
+'
+    - 'Ladybird (ladybird normal) Ah, yes of course. I always look back at it and
+      think of what could have been. Maybe my childhood dream of wanting to explore
+      the world has never truly left.
+
+'
+    - 'Ladybird (ladybird normal) I kept delaying it because I have to run the family
+      business, and other responsibilities but looking back they sound like I was
+      making excuses for myself.
+
+'
+    - "Rem (rem normal) Ladybird, I don\u2019t-"
+    - "Ladybird (ladybird normal) But! I think I\u2019m ready now. I feel like I
+      can take control of my life again. Coming here made me realize that so thank
+      you again for everything you\u2019ve all done for me. And please! Take this
+      as a token of thanks. Please enjoy it before it gets cold! If you like it don\u2019t
+      be shy to ask for more, I love baking so it\u2019s no trouble at all!\n"
+    - 'Rem (rem normal) Thank you. And I wish you the best in your future endeavors.
+      We are always here if you ever need a helping hand. '

@@ -22,6 +22,8 @@ public class DialogueController : MonoBehaviour
     private bool isRunning;
     public float textSpeed;
 
+    [HideInInspector] public string soSceneName;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -150,6 +152,10 @@ public class DialogueController : MonoBehaviour
         LeanTween.alpha(characterImage.GetComponent<RectTransform>(), 0f, 0.2f);
         LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0, 0.2f);
         isDialogueOn = false;
+        if (soSceneName != "")
+        {
+            ScenesTransition.instance.LoadScene(soSceneName);
+        }
         //dialoguePanel.SetActive(false);
     }
 

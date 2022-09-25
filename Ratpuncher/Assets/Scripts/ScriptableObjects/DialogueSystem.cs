@@ -21,6 +21,8 @@ public class DialogueSystem : ScriptableObject
     public class Dialogues
     {
         public String dialogueName;
+        public bool needsTransition;
+        public String sceneName;
         [TextArea(5, 10)]
         public String[] dialoguesText;
     }

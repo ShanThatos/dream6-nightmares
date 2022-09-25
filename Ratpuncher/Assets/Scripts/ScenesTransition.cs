@@ -6,40 +6,56 @@ using UnityEngine.SceneManagement;
 
 public class ScenesTransition : MonoBehaviour
 {
+    public static ScenesTransition instance { get; private set; }
     private Animator transitionAnim;
-    public bool HasChangedScenes { get; private set; } // true if a scene change has taken place
-    public bool IsTransitioning { get; private set; } // true if we are in the process of changing scenes
-    bool didTransitionOut;
+    private bool isTransitioning;
     
-    public static System.Action OnTransition;         // called whenever a scene transition takes place
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
     void Start()
     {
         transitionAnim = gameObject.GetComponent<Animator>();
+        transitionAnim.Play("OpenEyes");
+        /*
         if (SceneManager.GetActiveScene().name != "MainMenu")
         {
             transitionAnim.Play("OpenEyes");
         }
+        */
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //Debug.Log(isAnimationStopped());
     }
     public void LoadScene(string sceneName)
     {
-        transitionAnim.Play("CloseEyes");
-        LeanTween.delayedCall(gameObject, 4f, () =>
+        if (isAnimationStopped())
         {
-            SceneManager.LoadSceneAsync(sceneName);
-        });
+            transitionAnim.Play("CloseEyes");
+            LeanTween.delayedCall(gameObject, 4f, () =>
+            {
+                SceneManager.LoadScene(sceneName);
+                Debug.Log("Change scene to: " + sceneName);
+            });
+        }
     }
 
-    private void ChangeScene(string sceneName)
+    public void ChangeScene(string scene)
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(scene);
     }
+
     public void SetInactive(GameObject ob)
     {
         ob.SetActive(false);
@@ -48,5 +64,10 @@ public class ScenesTransition : MonoBehaviour
     public void SetActive(GameObject ob)
     {
         ob.SetActive(true);
+    }
+
+    private bool isAnimationStopped()
+    {
+        return transitionAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !transitionAnim.IsInTransition(0);
     }
 }
