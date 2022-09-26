@@ -26,9 +26,23 @@ public class DialogueManager : MonoBehaviour
         {
             if (dialogueName == dialogueScript.dialogueSystem.dialogues[i].dialogueName)
             {
+                if (dialogueScript.dialogueSystem.dialogues[i].needsTransition)
+                {
+                    dialogueScript.soSceneName = dialogueScript.dialogueSystem.dialogues[i].sceneName;
+                }
+                else
+                {
+                    dialogueScript.soSceneName = "";
+                }
                 dialogueScript.StartDialogue(dialogueScript.dialogueSystem.dialogues[i].dialoguesText);
                 Debug.Log("Triggered");
             }
         }
+    }
+
+    [ContextMenu("Reset Ladybird Level")]
+    public void ResetLadybird()
+    {
+        PlayerPrefs.SetInt("LadybirdSolved", 0);
     }
 }
