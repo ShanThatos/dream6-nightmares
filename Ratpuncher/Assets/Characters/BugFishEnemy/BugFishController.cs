@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class BugFishController : StateManager {
 
     public Rigidbody2D rb;
+    public bool isAnimating;
 
     public Animator animator;
 
@@ -40,6 +42,8 @@ public class BugFishController : StateManager {
 
     public BossHPBar HPBar;
 
+    public UnityEvent onDeathEvent;
+
     FlickerSprite flicker;
 
     public Transform getPoint(string pointName) {
@@ -59,6 +63,8 @@ public class BugFishController : StateManager {
         }
 
         HPBar.SetMaxHP(damage.GetMaxHealth());
+
+        setAnimating(this.isAnimating);
     }
 
 
@@ -67,6 +73,7 @@ public class BugFishController : StateManager {
     }
 
     public override void run() {
+        if (isAnimating) return;
         base.run();
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, MIN_X, MAX_X), Mathf.Min(transform.position.y, MAX_Y), transform.position.z);
     }
@@ -101,8 +108,17 @@ public class BugFishController : StateManager {
         return damage;
     }
 
-    private void OnDestroy() {
-        SceneManager.LoadScene("Office");
+    private void OnDestroy() {}
+
+
+    public void setAnimating(bool isAnimating) {
+        this.isAnimating = isAnimating;
+        if (isAnimating) {
+            rb.velocity = Vector2.zero;
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        } else {
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
     }
 }
 
