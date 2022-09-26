@@ -93,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: {fileID: 1187009165847558664}
   rb: {fileID: 1187009165426390347}
+  isAnimating: 0
   animator: {fileID: 1187009166010962527}
   cues: {fileID: 1187009166774160806}
   idleSpeed: 3
@@ -180,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad21e646a33c2845841519a139dd7fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 500
+  maxHealth: 200
   knockResistance: {x: 100, y: 100}
   iFrameTime: 0.6
   isPlayer: 0

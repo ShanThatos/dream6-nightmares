@@ -13,6 +13,11 @@ public class MainCameraScript : MonoBehaviour
     private float defaultCamSize;
     public float camSizeMultiplier = 1f;
 
+    public float defaultCamPosLerp = 8f;
+    public float defaultCamSizeLerp = 4f;
+    float camPosLerp;
+    float camSizeLerp;
+
     Camera cam;
 
     public static MainCameraScript instance;
@@ -23,6 +28,8 @@ public class MainCameraScript : MonoBehaviour
         cam = GetComponent<Camera>();
         defaultCamSize = cam.orthographicSize;
         transform.position = new Vector3(target.position.x + cameraOffset.x, target.position.y + cameraOffset.y, transform.position.z);
+        setCamPosLerp(defaultCamPosLerp);
+        setCamSizeLerp(defaultCamSizeLerp);
     }
 
     // fixed update
@@ -30,13 +37,20 @@ public class MainCameraScript : MonoBehaviour
     {
         float oldZ = transform.position.z;
         Vector2 targetPos = (Vector2) target.position + cameraOffset;
-        Vector2 newPos = Vector2.Lerp(transform.position, targetPos, Time.deltaTime * 8);
+        Vector2 newPos = Vector2.Lerp(transform.position, targetPos, Time.deltaTime * camPosLerp);
         float halfCamWidth = cam.orthographicSize * cam.aspect;
         newPos.x = Mathf.Clamp(newPos.x, minX + halfCamWidth, maxX - halfCamWidth);
         transform.position = new Vector3(newPos.x, newPos.y, oldZ);
 
         float targetCamSize = defaultCamSize * camSizeMultiplier;
-        cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetCamSize, Time.deltaTime * 4);
+        cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetCamSize, Time.deltaTime * camSizeLerp);
+    }
+
+    public void setCamPosLerp(float lerp) {
+        camPosLerp = lerp;
+    }
+    public void setCamSizeLerp(float lerp) {
+        camSizeLerp = lerp;
     }
 
     private void OnDrawGizmosSelected()
