@@ -9,11 +9,12 @@ public class FreezeOnGMLock : MonoBehaviour {
     private float previousAnimatorSpeed;
 
     void Start() {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponentInChildren<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         GameManager.AddMovementLockedObject(this);
 
-        previousConstraints = rb.constraints;
+        if (rb != null)
+            previousConstraints = rb.constraints;
         if (animator != null) 
             previousAnimatorSpeed = animator.speed;
     }

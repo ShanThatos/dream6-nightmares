@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance { get; private set; }
 
     private bool movementLocked = false;
+    private bool isPaused = false;
+    public GameObject pausePanel;
     private List<FreezeOnGMLock> freezeObjects = new List<FreezeOnGMLock>();
 
 
@@ -18,6 +20,13 @@ public class GameManager : MonoBehaviour {
         else { Destroy(gameObject); }
         player = FindObjectOfType<PlayerMovement>().gameObject;
         currentCheckpoint = player.transform.position;
+    }
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (isPaused) { UnpauseGame(); }
+            else { PauseGame(); }
+        }
     }
 
 
@@ -53,7 +62,6 @@ public class GameManager : MonoBehaviour {
     }
 
 
-
     public static void RespawnPlayer() {
         instance.player.transform.position = instance.currentCheckpoint;
     }
@@ -61,5 +69,21 @@ public class GameManager : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
             RespawnPlayer();
+    }
+
+
+    public static void PauseGame() {
+        if (instance.isPaused) return;
+        instance.pausePanel.SetActive(true);
+        instance.isPaused = true;
+        Time.timeScale = 0f;
+        SetMovementLock(true);
+    }
+    public static void UnpauseGame() {
+        if (!instance.isPaused) return;
+        instance.pausePanel.SetActive(false);
+        instance.isPaused = false;
+        SetMovementLock(false);
+        Time.timeScale = 1f;
     }
 }

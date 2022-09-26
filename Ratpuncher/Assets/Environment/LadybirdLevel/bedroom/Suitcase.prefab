@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2079717255832494789}
   - component: {fileID: 6174237909563862771}
   - component: {fileID: 3373016239639842016}
+  - component: {fileID: 4381387445101299770}
   m_Layer: 6
   m_Name: Suitcase
   m_TagString: Untagged
@@ -186,6 +187,18 @@ MonoBehaviour:
   canLaunchPlayer: 1
   player: {fileID: 0}
   isActive: 1
+--- !u!114 &4381387445101299770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2795191927597264121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bd383d20598d94478ac42ffcc78b4f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3008908592218965853
 GameObject:
   m_ObjectHideFlags: 0
