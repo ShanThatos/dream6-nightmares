@@ -41,7 +41,7 @@ public class ScenesTransition : MonoBehaviour
         if (isAnimationStopped())
         {
             transitionAnim.Play("CloseEyes");
-            LeanTween.delayedCall(gameObject, 4f, () =>
+            LeanTween.delayedCall(gameObject, 2.3f, () =>
             {
                 SceneManager.LoadScene(sceneName);
                 Debug.Log("Change scene to: " + sceneName);
@@ -62,6 +62,11 @@ public class ScenesTransition : MonoBehaviour
     public void SetActive(GameObject ob)
     {
         ob.SetActive(true);
+    }
+
+    public void ResetLevels()
+    {
+        PlayerPrefs.SetInt("LadybirdSolved", 0);
     }
 
     private bool isAnimationStopped()
