@@ -24,13 +24,11 @@ public class ScenesTransition : MonoBehaviour
     void Start()
     {
         transitionAnim = gameObject.GetComponent<Animator>();
-        transitionAnim.Play("OpenEyes");
-        /*
+        //transitionAnim.Play("OpenEyes");
         if (SceneManager.GetActiveScene().name != "MainMenu")
         {
             transitionAnim.Play("OpenEyes");
         }
-        */
     }
 
     // Update is called once per frame
