@@ -65,8 +65,8 @@ public class PlayerMovement : MonoBehaviour
 
     float currDashDuration = 0;
 
-    
 
+    public AudioSource hurtSound;
 
 
 
@@ -486,6 +486,10 @@ public class PlayerMovement : MonoBehaviour
     public void OnHurt(float damage)
     {
         Debug.Log("Player took " + damage + " damage");
+        if(hurtSound && !hurtSound.isPlaying)
+        {
+            hurtSound.Play();
+        }
     }
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.red;

@@ -14,12 +14,17 @@ public class BirdTurretController : MonoBehaviour
 
     public GameObject attackPoint;
 
+    public AudioSource castSFX;
+    public AudioSource launchSFX;
+    public AudioSource deathSFX;
+
     Animator animator;
     GameObject player;
     Vector3 scale;
     ParticleSystem particles;
 
     Damagable hp;
+    bool isDead = false;
 
 
     // Start is called before the first frame update
@@ -58,6 +63,8 @@ public class BirdTurretController : MonoBehaviour
         checkFlip();
         particles.Play();
 
+        castSFX.Play();
+
         animator.SetTrigger("Casting");
         isCasting = true;
         currentInterval = attackInterval;
@@ -69,6 +76,8 @@ public class BirdTurretController : MonoBehaviour
         Debug.Log("Pew pew!");
         checkFlip();
         particles.Stop();
+
+        launchSFX.Play();
 
         GameObject proj = Instantiate(projectile, attackPoint.transform.position, Quaternion.identity);
         proj.GetComponent<BirdProjectile>().init(player.transform.position);
@@ -96,6 +105,13 @@ public class BirdTurretController : MonoBehaviour
 
     void OnDeath()
     {
+        if (isDead)
+        {
+            return;
+        }
+
+        isDead = true;
+        deathSFX.Play();
         animator.SetTrigger("Die");
     }
 
