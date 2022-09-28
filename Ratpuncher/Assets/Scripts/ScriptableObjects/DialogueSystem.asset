@@ -54,6 +54,7 @@ MonoBehaviour:
       I need to get into your nightmare realm to get to the root of this issue, is
       that okay?
     - Ladybird (ladybird normal) Y-yes! Just say the word.
+    - Rem (rem normal) I'll pin the notes for your case on my board right away!
   - dialogueName: LadybirdTransition
     needsTransition: 1
     sceneName: LadybirdLevel
