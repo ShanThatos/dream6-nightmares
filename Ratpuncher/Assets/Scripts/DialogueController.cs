@@ -103,7 +103,7 @@ public class DialogueController : MonoBehaviour
             //Debug.Log("Start: " + startIndex + " End: " + endIndex);
             nameChar = sentence.Substring(0, startIndex);
             spriteName = sentence.Substring(startIndex + 1, endIndex - (startIndex + 1));
-            dialogue = sentence.Substring(endIndex + 1);
+            dialogue = sentence.Substring(endIndex + 2);
         }
         catch (ArgumentOutOfRangeException)
         {
@@ -137,7 +137,6 @@ public class DialogueController : MonoBehaviour
                 oldInput = input;
                 dialogueText.maxVisibleCharacters = sentence.Length;
             }
-
             yield return null;
         }
 

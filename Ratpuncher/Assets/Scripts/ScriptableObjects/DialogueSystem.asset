@@ -16,7 +16,7 @@ MonoBehaviour:
   - spriteName: 
     sprite: {fileID: 512778289, guid: 1327b6e1f8a35154d87e70e45da7ea25, type: 3}
   - spriteName: rem normal
-    sprite: {fileID: 649988743, guid: 1327b6e1f8a35154d87e70e45da7ea25, type: 3}
+    sprite: {fileID: -482441440, guid: 5ab5b93c2aa1af94a80ff71225113d2f, type: 3}
   - spriteName: elio normal
     sprite: {fileID: 519468580, guid: 1327b6e1f8a35154d87e70e45da7ea25, type: 3}
   - spriteName: ladybird normal
@@ -37,12 +37,12 @@ MonoBehaviour:
       please tell me how the nightmare has been affecting you?
 
 '
-    - "Ladybird (ladybird normal) Well, it all began around the time that fog rolled
+    - Ladybird (ladybird normal) Well, it all began around the time that fog rolled
       into town about a month ago. I would wake up from the nightmares in a cold
-      sweat or some shivers at first but t-then it got a lot worse. I started waking
-      up to these terrible headaches and bruises started to appear in places I don\u2019t
-      remember getting. T-though I think lately I\u2019ve been a little scared to
-      sleep."
+      sweat or some shivers at first but t-then it got a lot worse.
+    - "Ladybird (ladybird normal) I started waking up to these terrible headaches
+      and bruises started to appear in places I don\u2019t remember getting. T-though
+      I think lately I\u2019ve been a little scared to sleep."
     - Rem (rem normal) Can you recall anything from these nightmares? Anything that
       sticks out to you?
     - "Ladybird (ladybird normal) Not much I\u2019m afraid. Only bits and pieces
@@ -75,10 +75,10 @@ MonoBehaviour:
     dialoguesText:
     - Rem (rem normal) Everybody is a genius. But if you judge a fish by its ability
       to climb a tree, it will live its whole life believing that it is stupid.
-    - "Rem (rem normal) But this fish tried to anyways. It tried to adapt and made
-      itself grow wings no matter how unnatural or painful. I\u2026 I wonder if it
-      ever felt like it was enough. To try not to disappoint by molding itself into
-      what others wanted it to be."
+    - Rem (rem normal) But this fish tried to anyways. It tried to adapt and made
+      itself grow wings no matter how unnatural or painful.
+    - "Rem (rem normal)  I\u2026 I wonder if it ever felt like it was enough. To
+      try not to disappoint by molding itself into what others wanted it to be."
     - Rem (rem normal) On some level, I think I see a little bit of myself in it.
   - dialogueName: LadybirdClosure
     needsTransition: 0
@@ -104,8 +104,9 @@ MonoBehaviour:
     - "Rem (rem normal) Ladybird, I don\u2019t-"
     - "Ladybird (ladybird normal) But! I think I\u2019m ready now. I feel like I
       can take control of my life again. Coming here made me realize that so thank
-      you again for everything you\u2019ve all done for me. And please! Take this
-      as a token of thanks. Please enjoy it before it gets cold! If you like it don\u2019t
-      be shy to ask for more, I love baking so it\u2019s no trouble at all!\n"
+      you again for everything you\u2019ve all done for me."
+    - "Ladybird (ladybird normal) And please! Take this as a token of thanks. Please
+      enjoy it before it gets cold! If you like it don\u2019t be shy to ask for more,
+      I love baking so it\u2019s no trouble at all!\n"
     - 'Rem (rem normal) Thank you. And I wish you the best in your future endeavors.
       We are always here if you ever need a helping hand. '
