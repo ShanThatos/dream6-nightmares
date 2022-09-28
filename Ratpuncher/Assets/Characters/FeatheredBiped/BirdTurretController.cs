@@ -96,6 +96,11 @@ public class BirdTurretController : MonoBehaviour
 
     void OnDeath()
     {
+        animator.SetTrigger("Die");
+    }
+
+    public void OnDestroy()
+    {
         Destroy(gameObject);
     }
 }
