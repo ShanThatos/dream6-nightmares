@@ -2876,6 +2876,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6747546633228865634, guid: 9e5ea6417031bcc4881f50ffeac512ae, type: 3}
+      propertyPath: canJumpAttack
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e5ea6417031bcc4881f50ffeac512ae, type: 3}
 --- !u!1 &754052735
@@ -4543,7 +4547,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 83d66a76dd75f8d4db9e004ff1e00238, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d5842050ed1dfd44dbb317331f9906cf, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
@@ -17096,6 +17100,10 @@ PrefabInstance:
     - target: {fileID: 6747546633228865633, guid: 9e5ea6417031bcc4881f50ffeac512ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747546633228865634, guid: 9e5ea6417031bcc4881f50ffeac512ae, type: 3}
+      propertyPath: canJumpAttack
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e5ea6417031bcc4881f50ffeac512ae, type: 3}
