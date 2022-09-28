@@ -74,12 +74,17 @@ MonoBehaviour:
     needsTransition: 1
     sceneName: Office
     dialoguesText:
-    - Rem (rem normal) Everybody is a genius. But if you judge a fish by its ability
-      to climb a tree, it will live its whole life believing that it is stupid.
-    - Rem (rem normal) But this fish tried to anyways. It tried to adapt and made
-      itself grow wings no matter how unnatural or painful.
-    - "Rem (rem normal)  I\u2026 I wonder if it ever felt like it was enough. To
-      try not to disappoint by molding itself into what others wanted it to be."
+    - "Rem (rem normal) Phew- I almost thought we wouldn\u2019t see the end of that
+      one. Hmm, looks like it dropped something\u2026 a plane ticket?"
+    - "Rem (rem normal) But a fish that flies, huh? If this bugfish is supposed to
+      be a manifestation of Ladybird\u2019s nightmare, I wonder why it took on that
+      form?"
+    - "Rem (rem normal)  It made itself grow wings no matter how unnatural or painful.
+      What made it go to such lengths? As if just being itself wasn\u2019t allowed.
+      Y\u2019know, a fish doing fish things, or whatever fishes do. Hah."
+    - "Rem (rem normal) I\u2026 I wonder if it ever felt like it was ever enough.
+      To try not to disappoint by molding itself into what others wanted it to be.
+      Is that what Ladybird felt?"
     - Rem (rem normal) On some level, I think I see a little bit of myself in it.
   - dialogueName: LadybirdClosure
     needsTransition: 0
@@ -88,27 +93,27 @@ MonoBehaviour:
     - Elio (elio normal) Our ace detective! Our hero is back! Oh, how he flawlessly
       saves the day once again <3
     - "Rem (rem normal) Elio, you\u2019re so embarrassing :("
-    - 'Rem (rem normal) Um, Ladybird I found this in your dream realm. It seems to
-      be the root of your nightmares. Do you have an idea why?
+    - 'Rem (rem normal) Um, Ladybird I found this in your dream realm at the end
+      of the pier. It seems to be the root of your nightmares. Do you have an idea
+      why?
 
 '
-    - 'Ladybird (ladybird normal) Ah, yes of course. I always look back at it and
-      think of what could have been. Maybe my childhood dream of wanting to explore
-      the world has never truly left.
-
-'
-    - 'Ladybird (ladybird normal) I kept delaying it because I have to run the family
+    - "Ladybird (ladybird normal) Ah, yes\u2026 that ticket was an unfilled dream
+      of sorts. I always look back at it and think of what could have been. Maybe
+      my childhood dream of wanting to explore the world has never truly left. \n"
+    - Ladybird (ladybird normal) I kept delaying it because I have to run the family
       business, and other responsibilities but looking back they sound like I was
       making excuses for myself.
-
-'
     - "Rem (rem normal) Ladybird, I don\u2019t-"
     - "Ladybird (ladybird normal) But! I think I\u2019m ready now. I feel like I
-      can take control of my life again. Coming here made me realize that so thank
-      you again for everything you\u2019ve all done for me."
-    - "Ladybird (ladybird normal) And please! Take this as a token of thanks. Please
-      enjoy it before it gets cold! If you like it don\u2019t be shy to ask for more,
-      I love baking so it\u2019s no trouble at all!\n"
+      can take control of my life again. My parents may have had an influence on
+      me when I was younger but for a while now, it seems like the only thing holding
+      me back was myself."
+    - "Ladybird (ladybird normal) Coming here made me realize that so thank you again
+      for everything you\u2019ve all done for me.\n"
+    - "Ladybird (ladybird normal) And please, take this as a token of thanks. I made
+      the bread this morning so enjoy it before it gets cold! If you like it don\u2019t
+      be shy to ask for more, I love baking so it\u2019s no trouble at all!\n"
     - 'Rem (rem normal) Thank you. And I wish you the best in your future endeavors.
       We are always here if you ever need a helping hand. '
     - Ladybird (ladybird normal) This is the end of the demo! Thank you for playing
