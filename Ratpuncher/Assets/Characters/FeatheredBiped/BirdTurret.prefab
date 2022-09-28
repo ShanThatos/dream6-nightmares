@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 5474646327596164949}
   - component: {fileID: 5474646327596164948}
   - component: {fileID: 5474646327596164947}
-  m_Layer: 0
+  - component: {fileID: 3699823682499725896}
+  - component: {fileID: 9077329086443506673}
+  m_Layer: 7
   m_Name: BirdTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 5474646327596164951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.46, y: 0.19, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5474646328087148666}
@@ -119,10 +121,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33b95e9f232d93140aef8824b5b9e252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 20
+  attackRange: 13
   attackInterval: 3
   projectile: {fileID: 8378149879974372768, guid: 97cb28b0b423ce64895da4b713e84d53, type: 3}
   attackPoint: {fileID: 5474646328087148669}
+--- !u!70 &3699823682499725896
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5474646327596164951}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -1.1}
+  m_Size: {x: 5, y: 2.2}
+  m_Direction: 1
+--- !u!114 &9077329086443506673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5474646327596164951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad21e646a33c2845841519a139dd7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  knockResistance: {x: 0, y: 0}
+  iFrameTime: 0.4
+  isPlayer: 0
+  spawnHitParticles: 1
 --- !u!1 &5474646328087148669
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,7 +169,7 @@ GameObject:
   - component: {fileID: 5474646328087148666}
   - component: {fileID: 5474646328087148664}
   - component: {fileID: 5474646328087148667}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}

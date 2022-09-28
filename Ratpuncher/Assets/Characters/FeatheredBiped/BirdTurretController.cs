@@ -19,6 +19,8 @@ public class BirdTurretController : MonoBehaviour
     Vector3 scale;
     ParticleSystem particles;
 
+    Damagable hp;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,8 @@ public class BirdTurretController : MonoBehaviour
         currentInterval = attackInterval;
         scale = transform.localScale;
         particles = attackPoint.gameObject.GetComponent<ParticleSystem>();
+        hp = GetComponent<Damagable>();
+        hp.OnDeath += OnDeath;
     }
 
     // Update is called once per frame
@@ -90,4 +94,8 @@ public class BirdTurretController : MonoBehaviour
         Gizmos.DrawSphere(attackPoint.transform.position, .05f);
     }
 
+    void OnDeath()
+    {
+        Destroy(gameObject);
+    }
 }
