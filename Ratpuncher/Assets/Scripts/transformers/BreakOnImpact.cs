@@ -35,6 +35,7 @@ public class BreakOnImpact : MonoBehaviour
             {
                 Debug.Log("RB not found");
             }
+            Destroy(obj, 10f);
         }
 
         Destroy(gameObject);
