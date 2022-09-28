@@ -2752,20 +2752,12 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5474646327596164946, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5474646327596164946, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5474646327596164946, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 37.72
       objectReference: {fileID: 0}
     - target: {fileID: 5474646327596164946, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -19.05
+      value: -18.71
       objectReference: {fileID: 0}
     - target: {fileID: 5474646327596164946, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2799,33 +2791,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5474646327596164947, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
-      propertyPath: attackRange
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5474646327596164947, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
-      propertyPath: attackInterval
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5474646327596164951, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
       propertyPath: m_Name
       value: BirdTurret
-      objectReference: {fileID: 0}
-    - target: {fileID: 5474646328087148664, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.59466004
-      objectReference: {fileID: 0}
-    - target: {fileID: 5474646328087148664, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.59466004
-      objectReference: {fileID: 0}
-    - target: {fileID: 5474646328087148664, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.6037736
-      objectReference: {fileID: 0}
-    - target: {fileID: 9077329086443506673, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
-      propertyPath: maxHealth
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
@@ -4312,7 +4280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5474646327596164946, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -27.83291
+      value: -27.71
       objectReference: {fileID: 0}
     - target: {fileID: 5474646327596164946, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17055,20 +17023,12 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5474646327596164946, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5474646327596164946, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5474646327596164946, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 69.09
+      value: 69.1
       objectReference: {fileID: 0}
     - target: {fileID: 5474646327596164946, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17.86
+      value: -17.6
       objectReference: {fileID: 0}
     - target: {fileID: 5474646327596164946, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17102,33 +17062,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.914
       objectReference: {fileID: 0}
-    - target: {fileID: 5474646327596164947, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
-      propertyPath: attackRange
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5474646327596164947, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
-      propertyPath: attackInterval
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5474646327596164951, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
       propertyPath: m_Name
       value: BirdTurret (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5474646328087148664, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.59466004
-      objectReference: {fileID: 0}
-    - target: {fileID: 5474646328087148664, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.59466004
-      objectReference: {fileID: 0}
-    - target: {fileID: 5474646328087148664, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.6037736
-      objectReference: {fileID: 0}
-    - target: {fileID: 9077329086443506673, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
-      propertyPath: maxHealth
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
