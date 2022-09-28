@@ -7,7 +7,7 @@ public class StateManager : MonoBehaviour {
 
     public State currentState;
 
-    State[] states;
+    protected State[] states;
     
     public void Start() {
         states = transform.Find("States").GetComponentsInChildren<State>();

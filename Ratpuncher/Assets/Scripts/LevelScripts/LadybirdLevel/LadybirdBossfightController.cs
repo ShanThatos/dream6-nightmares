@@ -5,6 +5,8 @@ using UnityEngine;
 public class LadybirdBossfightController : MonoBehaviour {
 
     BugFishController bugfish;
+
+    public Animator ladybirdAnimator;
     public Animator bugfishRevealAnimator;
     public Rigidbody2D fallingDock;
     public AudioSource bossfightMusic;
@@ -31,6 +33,9 @@ public class LadybirdBossfightController : MonoBehaviour {
         playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
         yield return new WaitForSeconds(1.5f);
 
+        ladybirdAnimator.Play("LBBFFade");
+        yield return new WaitForSeconds(3f);
+
         MainCameraScript.instance.setCamPosLerp(.5f);
         MainCameraScript.instance.setCamSizeLerp(.5f);
         bugfish.transform.parent = bugfishRevealAnimator.transform;
@@ -53,6 +58,7 @@ public class LadybirdBossfightController : MonoBehaviour {
         bossfightMusic.Play();
         while (true) {
             yield return new WaitForSeconds(0.2f);
+            bugfish.resetStates();
             if (bugfishRevealAnimator.GetCurrentAnimatorStateInfo(0).IsName("BFReveal") && bugfishRevealAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f) 
                 break;
         }
@@ -67,6 +73,7 @@ public class LadybirdBossfightController : MonoBehaviour {
 
         bugfish.transform.parent = null;
         bugfish.setAnimating(false);
+        bugfish.resetStates();
         playerRb.constraints = playerConstraints;
 
         MainCameraScript.instance.cameraOffset = cameraOffset;

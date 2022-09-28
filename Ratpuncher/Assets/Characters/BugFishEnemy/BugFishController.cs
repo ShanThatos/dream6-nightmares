@@ -27,6 +27,10 @@ public class BugFishController : StateManager {
     public GameObject shockSpawnerPrefab;
     public GameObject groundPoundPrefab;
 
+    public float totalSwoopAttackTime = 2f;
+    public GameObject swoopBigSonicBoomPrefab;
+    public GameObject swoopSmallSonicBoomPrefab;
+
     public float MIN_DROP_COOLDOWN = 4f;
     public float MAX_DROP_COOLDOWN = 8f;
     public float dripWaitTime = 1f;
@@ -119,6 +123,15 @@ public class BugFishController : StateManager {
         } else {
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
+    }
+    public void resetStates() {
+        foreach (BFState state in states) {
+            state.reset();
+        }
+    }
+
+    public bool isAnimationDone(String animationName) {
+        return animator.GetCurrentAnimatorStateInfo(0).IsName(animationName) && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1;
     }
 }
 
