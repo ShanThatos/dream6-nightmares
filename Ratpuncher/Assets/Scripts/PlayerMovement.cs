@@ -380,7 +380,7 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    void OnLightAttack(InputValue value)
+    void OnAttack(InputValue value)
     {
         if (!value.isPressed)
         {
