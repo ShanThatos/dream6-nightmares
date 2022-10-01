@@ -23,7 +23,8 @@ public class RatChaseState : RatEnemyState {
             if (canMoveForward()) {
                 controller.transform.Translate(Vector2.right * controller.speed * Time.deltaTime * (playerIsRight ? 1 : -1));
                 controller.setDirection(playerIsRight);
-            }
+            } else
+                controller.setDirection(!playerIsRight);
         }
     }
 
