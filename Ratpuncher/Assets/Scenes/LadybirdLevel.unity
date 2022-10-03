@@ -894,8 +894,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83ae8327db5b88469dd61e9dbdb7495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: A
-  action: Break
+  inputAction: {fileID: -2165720585879407947, guid: 08387cd74e10ea945880d82af85b4e25, type: 3}
+  isDoublePress: 0
+  keyOverride: 
+  actionOverride: Break
 --- !u!61 &86818577
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1446,8 +1448,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83ae8327db5b88469dd61e9dbdb7495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: Left Shift
-  action: Dash
+  inputAction: {fileID: 4737142619788410833, guid: 08387cd74e10ea945880d82af85b4e25, type: 3}
+  isDoublePress: 0
+  keyOverride: 
+  actionOverride: 
 --- !u!61 &325453030
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2244,6 +2248,10 @@ PrefabInstance:
       propertyPath: subBarTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5239186858182396171, guid: 8499c3b7b18524a40b212910bf68a659, type: 3}
+      propertyPath: BossDamageable
+      value: 
+      objectReference: {fileID: 2142920744}
     - target: {fileID: 6265595742173226614, guid: 8499c3b7b18524a40b212910bf68a659, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.93
@@ -2927,8 +2935,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83ae8327db5b88469dd61e9dbdb7495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: "\u2191"
-  action: Jump
+  inputAction: {fileID: 1264843926275944700, guid: 08387cd74e10ea945880d82af85b4e25, type: 3}
+  isDoublePress: 0
+  keyOverride: 
+  actionOverride: 
 --- !u!61 &754052738
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4145,8 +4155,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83ae8327db5b88469dd61e9dbdb7495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: A
-  action: Attack
+  inputAction: {fileID: -2165720585879407947, guid: 08387cd74e10ea945880d82af85b4e25, type: 3}
+  isDoublePress: 0
+  keyOverride: 
+  actionOverride: 
 --- !u!61 &994009231
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4435,8 +4447,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83ae8327db5b88469dd61e9dbdb7495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: "\u2191^2"
-  action: Double Jump
+  inputAction: {fileID: 1264843926275944700, guid: 08387cd74e10ea945880d82af85b4e25, type: 3}
+  isDoublePress: 1
+  keyOverride: 
+  actionOverride: Double Jump
 --- !u!61 &1040276276
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5714,8 +5728,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83ae8327db5b88469dd61e9dbdb7495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: "\u2192 "
-  action: Move
+  inputAction: {fileID: -7801903150496367807, guid: 08387cd74e10ea945880d82af85b4e25, type: 3}
+  isDoublePress: 0
+  keyOverride: 
+  actionOverride: 
 --- !u!61 &1451823362
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17250,6 +17266,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1187009165426390342, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
   m_PrefabInstance: {fileID: 2142920742}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2142920744 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5905820155135519013, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
+  m_PrefabInstance: {fileID: 2142920742}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad21e646a33c2845841519a139dd7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2144408388
 GameObject:
   m_ObjectHideFlags: 0

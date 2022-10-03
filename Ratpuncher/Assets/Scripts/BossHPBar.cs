@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class BossHPBar : MonoBehaviour
 {
-    // Start is called before the first frame update
 
+    public Damagable BossDamageable;
     public string bossName;
     public float subBarDelay = 1.0f;
     float currentDelay;
@@ -31,6 +31,10 @@ public class BossHPBar : MonoBehaviour
         nameText.text = bossName;
         currentHP = maxHP;
         targetValue = 1;
+
+        BossDamageable.OnHurt += RecieveDamage;
+        BossDamageable.OnDeath += OnDeath;
+        SetMaxHP(BossDamageable.GetMaxHealth());
     }
 
     // Update is called once per frame

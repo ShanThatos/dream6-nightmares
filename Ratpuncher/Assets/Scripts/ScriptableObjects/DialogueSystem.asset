@@ -22,6 +22,12 @@ MonoBehaviour:
   - spriteName: ladybird normal
     sprite: {fileID: 2097016350, guid: 1327b6e1f8a35154d87e70e45da7ea25, type: 3}
   dialogues:
+  - dialogueName: IntroStart
+    needsTransition: 0
+    sceneName: IntroLevel
+    dialoguesText:
+    - Rem (rem normal) Ugh my head...
+    - Rem (rem normal) Where am I, some sort of factory?
   - dialogueName: HubStart
     needsTransition: 0
     sceneName: 

@@ -95,16 +95,11 @@ public class BugFishController : StateManager {
 
         if (currentState.getStateName() == "BFIdle")
             switchState("BFHurt");
-
-        if (HPBar) 
-            HPBar.RecieveDamage(damage);
         if (flicker) 
             flicker.Flicker();
     }
 
     void OnDeath() {
-        if (HPBar)
-            HPBar.OnDeath();
         switchState("BFDeath");
     }
 
