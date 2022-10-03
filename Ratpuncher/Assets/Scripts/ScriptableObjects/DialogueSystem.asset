@@ -15,7 +15,7 @@ MonoBehaviour:
   character:
   - spriteName: 
     sprite: {fileID: 512778289, guid: 1327b6e1f8a35154d87e70e45da7ea25, type: 3}
-  - spriteName: rem normal
+  - spriteName: normal
     sprite: {fileID: -482441440, guid: 5ab5b93c2aa1af94a80ff71225113d2f, type: 3}
   - spriteName: elio normal
     sprite: {fileID: 519468580, guid: 1327b6e1f8a35154d87e70e45da7ea25, type: 3}
@@ -32,35 +32,36 @@ MonoBehaviour:
     needsTransition: 0
     sceneName: 
     dialoguesText:
-    - "Elio (elio normal) Good mornin\u2019 ma\u2019am! Come in, come in! It must
-      be freezing out there- please make yourself comfortable."
-    - Rem (rem normal) Welcome to NEST, my name is Rem and that is my partner Elio,
-      what can we help you with today?
-    - 'Ladybird (ladybird normal) H-hello! Please call me Ladybird, I heard this
-      was the place that was taking on nightmare cases? I think I might be getting
+    - "Elio (normal:elio normal) Good mornin\u2019 ma\u2019am! Come in, come in!
+      It must be freezing out there- please make yourself comfortable."
+    - Rem (normal:ladybird normal) Welcome to NEST, my name is Rem and that is my
+      partner Elio, what can we help you with today?
+    - 'Ladybird (normal:ladybird normal) H-hello! Please call me Ladybird, I heard
+      this was the place that was taking on nightmare cases? I think I might be getting
       these dreams too. '
-    - 'Rem (rem normal) We can definitely help you with that, Ladybird. If you can,
-      please tell me how the nightmare has been affecting you?
+    - 'Rem (normal:ladybird normal) We can definitely help you with that, Ladybird.
+      If you can, please tell me how the nightmare has been affecting you?
 
 '
-    - Ladybird (ladybird normal) Well, it all began around the time that fog rolled
-      into town about a month ago. I would wake up from the nightmares in a cold
-      sweat or some shivers at first but t-then it got a lot worse.
-    - "Ladybird (ladybird normal) I started waking up to these terrible headaches
+    - Ladybird (normal:ladybird normal) Well, it all began around the time that fog
+      rolled into town about a month ago. I would wake up from the nightmares in
+      a cold sweat or some shivers at first but t-then it got a lot worse.
+    - "Ladybird (normal:ladybird normal) I started waking up to these terrible headaches
       and bruises started to appear in places I don\u2019t remember getting. T-though
       I think lately I\u2019ve been a little scared to sleep."
-    - Rem (rem normal) Can you recall anything from these nightmares? Anything that
-      sticks out to you?
-    - "Ladybird (ladybird normal) Not much I\u2019m afraid. Only bits and pieces
-      that reminded me of my childhood home, the shores, or m-maybe the pet shop
-      I\u2019m running but when I wake up most of everything is forgotten. Only the
-      symptoms and heavy feelings linger. "
-    - Rem (rem normal) Thank you for trusting us with your situation, Ladybird. I
-      promise to do everything in my power to help you. In order to do so though
-      I need to get into your nightmare realm to get to the root of this issue, is
-      that okay?
-    - Ladybird (ladybird normal) Y-yes! Just say the word.
-    - Rem (rem normal) I'll pin the notes for your case on my board right away!
+    - Rem (normal:ladybird normal) Can you recall anything from these nightmares?
+      Anything that sticks out to you?
+    - "Ladybird (normal:ladybird normal) Not much I\u2019m afraid. Only bits and
+      pieces that reminded me of my childhood home, the shores, or m-maybe the pet
+      shop I\u2019m running but when I wake up most of everything is forgotten. Only
+      the symptoms and heavy feelings linger. "
+    - Rem (normal:ladybird normal) Thank you for trusting us with your situation,
+      Ladybird. I promise to do everything in my power to help you. In order to do
+      so though I need to get into your nightmare realm to get to the root of this
+      issue, is that okay?
+    - Ladybird (normal:ladybird normal) Y-yes! Just say the word.
+    - Rem (normal:ladybird normal) I'll pin the notes for your case on my board right
+      away!
   - dialogueName: LadybirdTransition
     needsTransition: 1
     sceneName: LadybirdLevel
