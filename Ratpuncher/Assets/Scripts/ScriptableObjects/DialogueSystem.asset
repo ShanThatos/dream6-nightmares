@@ -128,3 +128,10 @@ MonoBehaviour:
       (tm).
     - Ladybird (ladybird normal) Or else... (Your IP address is being traced as we
       speak!!)
+  - dialogueName: FactoryStart
+    needsTransition: 0
+    sceneName: 
+    dialoguesText:
+    - Rem (rem normal) So this is what my nightmare is...
+    - Rem (rem normal) I've never been in a place like this before
+    - Rem (rem normal) But why does it feel some familiar?
