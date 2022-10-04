@@ -6,6 +6,7 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance { get; private set; }
     private DialogueController dialogueScript;
+    public bool isDialogueOn;
 
     private void Awake()
     {
@@ -19,7 +20,12 @@ public class DialogueManager : MonoBehaviour
         }
         dialogueScript = GameObject.FindGameObjectWithTag("Dialogue").GetComponent<DialogueController>();
     }
-    
+
+    private void Update()
+    {
+        isDialogueOn = dialogueScript.isDialogueOn;
+    }
+
     public void PlayDialogue(string dialogueName)
     {
         for (int i = 0; i < dialogueScript.dialogueSystem.dialogues.Length; i++)

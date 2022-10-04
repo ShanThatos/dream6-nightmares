@@ -17,7 +17,7 @@ public class DialogueController : MonoBehaviour
 
     private bool oldInput;
     private bool input;
-    private bool isDialogueOn;
+    public bool isDialogueOn;
 
     private bool isRunning;
     public float textSpeed;
@@ -59,17 +59,20 @@ public class DialogueController : MonoBehaviour
 
     public void StartDialogue(string[] dialogue)
     {
-        isDialogueOn = true;
-        sentences.Clear();
-        blackPanel.transform.localScale = new Vector3(1, 1, 1);
-        LeanTween.scaleY(dialoguePanel, 1, 0.2f);
-        LeanTween.alpha(characterImage.GetComponent<RectTransform>(), 1f, 0.2f).setDelay(0.1f);
-        LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0.5f, 0.2f);
-        foreach (string sentence in dialogue)
+        if (!isDialogueOn)
         {
-            sentences.Enqueue(sentence);
+            isDialogueOn = true;
+            sentences.Clear();
+            blackPanel.transform.localScale = new Vector3(1, 1, 1);
+            LeanTween.scaleY(dialoguePanel, 1, 0.2f);
+            LeanTween.alpha(characterImage.GetComponent<RectTransform>(), 1f, 0.2f).setDelay(0.1f);
+            LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0.5f, 0.2f);
+            foreach (string sentence in dialogue)
+            {
+                sentences.Enqueue(sentence);
+            }
+            DisplayNextSentence();
         }
-        DisplayNextSentence();
     }
 
     public void DisplayNextSentence()
@@ -145,16 +148,19 @@ public class DialogueController : MonoBehaviour
     }
     public void EndDialogue()
     {
-        Debug.Log("Dialogue Ended");
-        blackPanel.transform.localScale = new Vector3(0, 0, 0);
-        LeanTween.scaleY(dialoguePanel, 0, 0.2f);
-        LeanTween.alpha(characterImage.GetComponent<RectTransform>(), 0f, 0.2f);
-        LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0, 0.2f);
-        isDialogueOn = false;
-        if (soSceneName != "")
+        if (isDialogueOn)
         {
-            ScenesTransition.instance.LoadScene(soSceneName);
-        }
+            Debug.Log("Dialogue Ended");
+            blackPanel.transform.localScale = new Vector3(0, 0, 0);
+            LeanTween.scaleY(dialoguePanel, 0, 0.2f);
+            LeanTween.alpha(characterImage.GetComponent<RectTransform>(), 0f, 0.2f);
+            LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0, 0.2f);
+            isDialogueOn = false;
+            if (soSceneName != "")
+            {
+                ScenesTransition.instance.LoadScene(soSceneName);
+            }
+        }   
         //dialoguePanel.SetActive(false);
     }
 

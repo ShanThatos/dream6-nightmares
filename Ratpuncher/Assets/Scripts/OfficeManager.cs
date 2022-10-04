@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class OfficeManager : MonoBehaviour
 {
@@ -8,6 +9,26 @@ public class OfficeManager : MonoBehaviour
     public GameObject ladybirdAlert;
     public GameObject elioAlert;
     public GameObject remAlert;
+
+    [Header("It starts here...")]
+    public GameObject boardButton;
+    public GameObject phoneButton;
+    public GameObject noteButton;
+    public GameObject safeButton;
+    public GameObject boardFirstSelected;
+    public GameObject phoneFirstSelected;
+    //public GameObject noteFirstSelected;
+    //public GameObject safeFirstSelected;
+
+    public GameObject boardPanel;
+    public GameObject phonePanel;
+    //public GameObject notePanel;
+    //public GameObject safePanel;
+
+    private bool backInput;
+    private bool oldBackInput;
+    private System.Action onBackInput;
+    private bool isTriggered;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,11 +47,80 @@ public class OfficeManager : MonoBehaviour
             boardAlert.SetActive(true);
             remAlert.SetActive(true);
         }
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        oldBackInput = backInput;
+        backInput = Input.GetAxisRaw("Cancel") > 0;
+
+        if (backInput && !oldBackInput)
+        {
+            onBackInput?.Invoke();
+        }
+        if (!DialogueManager.instance.isDialogueOn)
+        {
+            if (!isTriggered)
+            {
+                EventSystem.current.SetSelectedGameObject(boardButton);
+                isTriggered = true;
+            }
+        }
+        else
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            isTriggered = false;
+        }
+    }
+
+    public void OpenSettings()
+    {
+        phonePanel.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(phoneFirstSelected);
+        onBackInput = CloseSettings;
+    }
+
+    public void CloseSettings()
+    {
+        phonePanel.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(phoneButton);
+        onBackInput = null;
+    }
+
+    public void OpenBoard()
+    {
+        boardPanel.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(boardFirstSelected);
+        onBackInput = CloseBoard;
+    }
+
+    public void CloseBoard()
+    {
+        boardPanel.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(boardButton);
+        onBackInput = null;
+    }
+
+
+    public void ButtonSelect(GameObject go)
+    {
+        LeanTween.scale(go, new Vector3(1.1f, 1.1f, 1.1f), 0.2f);
+    }
+
+    public void ButtonDeselect(GameObject go)
+    {
+        LeanTween.scale(go, new Vector3(1f, 1f, 1f), 0.2f);
+    }
+
+    public void SliderSelect(GameObject go)
+    {
+        LeanTween.scale(go, new Vector3(4.2f, 3.2f, 4.2f), 0.2f);
+    }
+
+    public void SliderDeselect(GameObject go)
+    {
+        LeanTween.scale(go, new Vector3(4f, 3f, 4f), 0.2f);
     }
 }

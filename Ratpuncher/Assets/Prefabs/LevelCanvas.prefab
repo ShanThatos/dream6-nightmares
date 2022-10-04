@@ -319,6 +319,7 @@ GameObject:
   - component: {fileID: 2537568651321405534}
   - component: {fileID: 3403728001529321332}
   - component: {fileID: 8219937510993998977}
+  - component: {fileID: 9108521676245893835}
   m_Layer: 5
   m_Name: ResumeButton
   m_TagString: Untagged
@@ -398,12 +399,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 3032718885406970539}
+    m_SelectOnDown: {fileID: 8519511549684360654}
+    m_SelectOnLeft: {fileID: 3032718885406970539}
+    m_SelectOnRight: {fileID: 8519511549684360654}
   m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -441,6 +442,83 @@ MonoBehaviour:
           m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &9108521676245893835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447415624818594685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: ButtonSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 447415624818594685}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: ButtonSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 447415624818594685}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: ButtonDeselect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 447415624818594685}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: ButtonDeselect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 447415624818594685}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &578100939225167026
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,6 +1063,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8530956938342731814}
+  - component: {fileID: 8326454251035885871}
   m_Layer: 5
   m_Name: PausePanel
   m_TagString: Untagged
@@ -1016,6 +1095,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8326454251035885871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2188817779907970418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73cdac4bd27ca324784886ba41e9f713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resumeButton: {fileID: 447415624818594685}
+  settingsButton: {fileID: 3723181512799838777}
+  exitbutton: {fileID: 5245932905241362369}
+  settingsFirstSelected: {fileID: 2405186658287181965}
+  settingsPanel: {fileID: 1097886453721999675}
+  pausePanel: {fileID: 7392322908283831150}
 --- !u!1 &2405186658287181965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,6 +1123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8101557877255683232}
   - component: {fileID: 1104936480534179760}
+  - component: {fileID: 2426823114868150554}
   m_Layer: 5
   m_Name: VolumeSlider
   m_TagString: Untagged
@@ -1069,10 +1167,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 409807095383848}
+    m_SelectOnDown: {fileID: 3787676341571431107}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -1107,6 +1205,83 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2426823114868150554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2405186658287181965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: SliderSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2405186658287181965}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: SliderSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2405186658287181965}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: SliderDeselect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2405186658287181965}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: SliderDeselect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2405186658287181965}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2665485486862035719
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,7 +1555,7 @@ MonoBehaviour:
   m_text: Sound FX
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 675e9b8d7f38a9c4295db2d0eaca8a84, type: 2}
-  m_sharedMaterial: {fileID: -2933964491350508774, guid: 8baccd02219285a4899e8f5df23e9bd2, type: 2}
+  m_sharedMaterial: {fileID: 4501366506542715102, guid: 675e9b8d7f38a9c4295db2d0eaca8a84, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1443,7 +1618,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &3283225033138829596
@@ -1610,6 +1785,7 @@ GameObject:
   - component: {fileID: 1128167694621087980}
   - component: {fileID: 8553294241989195628}
   - component: {fileID: 8519511549684360654}
+  - component: {fileID: 106509572631252727}
   m_Layer: 5
   m_Name: SettingsButton
   m_TagString: Untagged
@@ -1689,12 +1865,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 8219937510993998977}
+    m_SelectOnDown: {fileID: 3032718885406970539}
+    m_SelectOnLeft: {fileID: 8219937510993998977}
+    m_SelectOnRight: {fileID: 3032718885406970539}
   m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1720,10 +1896,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7392322908283831150}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 8326454251035885871}
+        m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+        m_MethodName: OpenSettings
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1732,18 +1908,83 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1097886453721999675}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: MainMenu
-          m_BoolArgument: 1
-        m_CallState: 2
+--- !u!114 &106509572631252727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3723181512799838777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: ButtonSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 3723181512799838777}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: ButtonSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 3723181512799838777}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: ButtonDeselect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 3723181512799838777}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: ButtonDeselect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 3723181512799838777}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &3745519059848147583
 GameObject:
   m_ObjectHideFlags: 0
@@ -2992,6 +3233,7 @@ GameObject:
   - component: {fileID: 6581651023892351904}
   - component: {fileID: 8950858317281600171}
   - component: {fileID: 3032718885406970539}
+  - component: {fileID: 6798438556023987937}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -3071,12 +3313,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 8519511549684360654}
+    m_SelectOnDown: {fileID: 8219937510993998977}
+    m_SelectOnLeft: {fileID: 8519511549684360654}
+    m_SelectOnRight: {fileID: 8219937510993998977}
   m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3114,6 +3356,83 @@ MonoBehaviour:
           m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6798438556023987937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5245932905241362369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: ButtonSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 5245932905241362369}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: ButtonSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 5245932905241362369}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: ButtonDeselect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 5245932905241362369}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: ButtonDeselect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 5245932905241362369}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5680381682124492820
 GameObject:
   m_ObjectHideFlags: 0
@@ -3318,7 +3637,7 @@ MonoBehaviour:
   m_text: Volume
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 675e9b8d7f38a9c4295db2d0eaca8a84, type: 2}
-  m_sharedMaterial: {fileID: -2933964491350508774, guid: 8baccd02219285a4899e8f5df23e9bd2, type: 2}
+  m_sharedMaterial: {fileID: 4501366506542715102, guid: 675e9b8d7f38a9c4295db2d0eaca8a84, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3381,7 +3700,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &6408287422053842999
@@ -3487,7 +3806,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exit
+  m_text: Return to Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 692a85611fe3f6a44a2701b10996f5d0, type: 2}
   m_sharedMaterial: {fileID: -888643575040364970, guid: 692a85611fe3f6a44a2701b10996f5d0, type: 2}
@@ -3665,7 +3984,7 @@ MonoBehaviour:
   m_text: Settings
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 675e9b8d7f38a9c4295db2d0eaca8a84, type: 2}
-  m_sharedMaterial: {fileID: -2933964491350508774, guid: 8baccd02219285a4899e8f5df23e9bd2, type: 2}
+  m_sharedMaterial: {fileID: 4501366506542715102, guid: 675e9b8d7f38a9c4295db2d0eaca8a84, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3728,7 +4047,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &7979524412341208649
@@ -3743,6 +4062,7 @@ GameObject:
   - component: {fileID: 904201072843539523}
   - component: {fileID: 7885981733828682646}
   - component: {fileID: 409807095383848}
+  - component: {fileID: 1274188458607242906}
   m_Layer: 5
   m_Name: CloseButton
   m_TagString: Untagged
@@ -3822,12 +4142,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 3787676341571431107}
+    m_SelectOnDown: {fileID: 1104936480534179760}
+    m_SelectOnLeft: {fileID: 3787676341571431107}
+    m_SelectOnRight: {fileID: 1104936480534179760}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3853,10 +4173,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1097886453721999675}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 8326454251035885871}
+        m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+        m_MethodName: CloseSettings
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3865,18 +4185,83 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7392322908283831150}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+--- !u!114 &1274188458607242906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7979524412341208649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: ButtonSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7979524412341208649}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: ButtonSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7979524412341208649}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: ButtonDeselect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7979524412341208649}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: ButtonDeselect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7979524412341208649}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &8006346075919993618
 GameObject:
   m_ObjectHideFlags: 0
@@ -3960,6 +4345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2019818391878322976}
   - component: {fileID: 3787676341571431107}
+  - component: {fileID: 601653550842652107}
   m_Layer: 5
   m_Name: SFXSlider
   m_TagString: Untagged
@@ -4003,10 +4389,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 1104936480534179760}
+    m_SelectOnDown: {fileID: 409807095383848}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -4041,6 +4427,83 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &601653550842652107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8146857804264455253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: SliderSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8146857804264455253}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: SliderSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8146857804264455253}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: SliderDeselect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8146857804264455253}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8326454251035885871}
+          m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+          m_MethodName: SliderDeselect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8146857804264455253}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &8208227926551768046
 GameObject:
   m_ObjectHideFlags: 0
