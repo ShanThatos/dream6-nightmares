@@ -10,6 +10,10 @@ public class BFFlyState : BFState {
     float time;
 
     public override void enter() {
+
+        Collider2D bfCollider = controller.GetComponent<Collider2D>();
+        bfCollider.offset = new Vector2(bfCollider.offset.x, 2f);
+
         controller.animator.Play("BFFly");
         time = -1;
     }
