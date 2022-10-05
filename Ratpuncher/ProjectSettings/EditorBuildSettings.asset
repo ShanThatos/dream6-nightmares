@@ -12,12 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 31b203e6aaec7144490389713810bce8
   - enabled: 1
+    path: Assets/Scenes/FactoryLevel.unity
+    guid: bfa8527093aee0549a785ad03bbdcc1b
+  - enabled: 1
+    path: Assets/Scenes/FireflyLakeLevel.unity
+    guid: 0c497734a6c7c974eb80b50a34fc6fbf
+  - enabled: 1
     path: Assets/Scenes/Office.unity
     guid: d181efed175193a40aced1b8bc3ec8c8
   - enabled: 1
     path: Assets/Scenes/LadybirdLevel.unity
     guid: 448238d8612bbdd4b91ed85a1bdb0858
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LevelOne.unity
     guid: d1906cc2e7c0f7243b91cd0de8f6390c
   - enabled: 1
