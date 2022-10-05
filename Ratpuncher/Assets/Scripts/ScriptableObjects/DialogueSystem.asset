@@ -28,10 +28,25 @@ MonoBehaviour:
     dialoguesText:
     - Rem (rem normal) Ugh my head...
     - Rem (rem normal) Where am I, some sort of factory?
+  - dialogueName: IntroEvilEnergy
+    needsTransition: 0
+    sceneName: 
+    dialoguesText:
+    - Rem (rem normal) That purple stuff... Why is there Nightmare Energy here?
+    - Rem (rem normal) I probably shouldn't get too close
+  - dialogueName: IntroClosure
+    needsTransition: 1
+    sceneName: Office
+    dialoguesText:
+    - ??? () Hey Rem! You there?
+    - ??? () C'mon wake up already. We got a client!
   - dialogueName: HubStart
     needsTransition: 0
     sceneName: 
     dialoguesText:
+    - Elio (elio normal) Looks like you were having a pretty nasty dream. We've got
+      someone at the door right now, think you can handle it?
+    - Rem (rem normal) I'll be fine, send them in.
     - "Elio (elio normal) Good mornin\u2019 ma\u2019am! Come in, come in! It must
       be freezing out there- please make yourself comfortable."
     - Rem (rem normal) Welcome to NEST, my name is Rem and that is my partner Elio,

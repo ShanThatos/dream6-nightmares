@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
 
     public Vector2 currentCheckpoint;
 
-
+    private int movementLockCount = 0;
     void Awake() {
         if (instance == null) { instance = this; }
         else { Destroy(gameObject); }
@@ -48,11 +48,28 @@ public class GameManager : MonoBehaviour {
     }
 
     public static void SetMovementLock(bool locked) {
-        if (instance.movementLocked == locked) return;
-        instance.movementLocked = locked;
+        if (instance == null) return;
+
+        if (locked)
+        {
+            instance.movementLockCount++;
+        }
+        else
+        {
+            instance.movementLockCount--;
+        }
+
+        bool shouldLock = false;
+
+        if(instance.movementLockCount > 0)
+        {
+            shouldLock = true;
+        }
+
+        instance.movementLocked = shouldLock;
 
         instance.freezeObjects.ForEach(x => { 
-            if (locked) x.Lock();
+            if (shouldLock) x.Lock();
             else x.Unlock();
         });
     }

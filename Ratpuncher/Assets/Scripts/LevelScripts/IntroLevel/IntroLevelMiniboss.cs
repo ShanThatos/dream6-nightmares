@@ -4,31 +4,48 @@ using UnityEngine;
 
 public class IntroLevelMiniboss : MonoBehaviour
 {
-    public GameObject BossReveal;
-    public GameObject AfterBossDoor;
-    public GameObject BossHPBar;
-    public Damagable BossDamagable;
+    public GameObject bossReveal;
+    public GameObject afterBossDoor;
+    public GameObject bossHPBar;
+    public Damagable bossDamagable;
+    public GameObject[] barriers;
 
     bool active = false;
 
     void Start()
     {
-        BossDamagable.OnDeath += OnBossDeath;
+        bossDamagable.OnDeath += OnBossDeath;
+
+        foreach (GameObject obj in barriers)
+        {
+            obj.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (active)
+        if (!collision.gameObject.CompareTag("Player") || active)
         {
             return;
         }
-        BossReveal.SetActive(false);
-        BossHPBar.SetActive(true);
+        bossReveal.SetActive(false);
+        bossHPBar.SetActive(true);
+
+        foreach (GameObject obj in barriers)
+        {
+            obj.SetActive(true);
+        }
+
         active = true;
     }
 
     void OnBossDeath()
     {
-        AfterBossDoor.SetActive(false);
+        foreach (GameObject obj in barriers)
+        {
+            obj.SetActive(false);
+        }
+
+        afterBossDoor.SetActive(false);
     }
 }

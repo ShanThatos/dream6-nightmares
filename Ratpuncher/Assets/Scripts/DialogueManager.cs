@@ -28,6 +28,8 @@ public class DialogueManager : MonoBehaviour
 
     public void PlayDialogue(string dialogueName)
     {
+        GameManager.SetMovementLock(true);
+
         for (int i = 0; i < dialogueScript.dialogueSystem.dialogues.Length; i++)
         {
             if (dialogueName == dialogueScript.dialogueSystem.dialogues[i].dialogueName)
@@ -44,6 +46,7 @@ public class DialogueManager : MonoBehaviour
                 Debug.Log("Triggered");
             }
         }
+
     }
 
     [ContextMenu("Reset Ladybird Level")]

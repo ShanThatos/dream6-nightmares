@@ -57,7 +57,7 @@ public class TutorialIndicator : MonoBehaviour
                 if(actionOverride.ToUpper() == "MOVE")
                 {
                     // Need to handle a special case for movement since its a composite
-                    keyOverride = inputAction.action.GetBindingDisplayString(4);
+                    keyOverride = inputAction.action.GetBindingDisplayString(5);
                 }
                 else
                 {

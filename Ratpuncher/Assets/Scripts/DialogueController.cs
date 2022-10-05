@@ -160,8 +160,10 @@ public class DialogueController : MonoBehaviour
             {
                 ScenesTransition.instance.LoadScene(soSceneName);
             }
-        }   
+        }
         //dialoguePanel.SetActive(false);
+
+        GameManager.SetMovementLock(false);
     }
 
     public void check(string text)

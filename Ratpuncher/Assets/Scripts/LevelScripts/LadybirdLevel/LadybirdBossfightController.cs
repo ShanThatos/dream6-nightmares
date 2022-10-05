@@ -11,6 +11,7 @@ public class LadybirdBossfightController : MonoBehaviour {
     public Rigidbody2D fallingDock;
     public AudioSource bossfightMusic;
     public AudioSource seaMusic;
+    public GameObject[] barriers;
 
     bool started = false;
     bool ended = false;
@@ -18,6 +19,10 @@ public class LadybirdBossfightController : MonoBehaviour {
     void Start() {
         bugfish = GameObject.FindObjectOfType<BugFishController>();
         bugfish.setAnimating(true);
+        foreach (GameObject obj in barriers)
+        {
+            obj.SetActive(false);
+        }
     }
 
     public void StartBossfight() {
@@ -73,6 +78,12 @@ public class LadybirdBossfightController : MonoBehaviour {
 
         bugfish.transform.parent = null;
         bugfish.setAnimating(false);
+
+        foreach (GameObject obj in barriers)
+        {
+            obj.SetActive(true);
+        }
+
         bugfish.resetStates();
         playerRb.constraints = playerConstraints;
 
@@ -91,7 +102,13 @@ public class LadybirdBossfightController : MonoBehaviour {
     public IEnumerator EndBossFightCoroutine() {
         bugfishRevealAnimator.Play("BFDone");
         bugfish.HPBar.gameObject.SetActive(false);
-        GameManager.SetMovementLock(true);
+
+        foreach (GameObject obj in barriers)
+        {
+            obj.SetActive(false);
+        }
+
+        // GameManager.SetMovementLock(true);
         yield return new WaitForSeconds(3f);
         PlayerPrefs.SetInt("LadybirdSolved", 1);
         DialogueManager.instance.PlayDialogue("DefeatBugfish");
