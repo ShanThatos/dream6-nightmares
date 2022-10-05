@@ -5,13 +5,22 @@ using UnityEngine.Events;
 
 public class UnityEventTrigger : MonoBehaviour {
     public bool onlyTriggerOnce = false;
-    bool canTrigger = true;
-    public UnityEvent triggerResponse;
+    bool canTriggerEnter = true;
+    bool canTriggerExit = true;
+    public UnityEvent onEnterEvent;
+    public UnityEvent onExitEvent;
 
-    public void OnTriggerEnter2D(Collider2D other) {
-        if (canTrigger && other.gameObject.layer == LayerMask.NameToLayer("Player")) {
-            triggerResponse.Invoke();
-            canTrigger = !onlyTriggerOnce;
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (canTriggerEnter && other.gameObject.layer == LayerMask.NameToLayer("Player")) {
+            onEnterEvent.Invoke();
+            canTriggerEnter = !onlyTriggerOnce;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other) {
+        if (canTriggerExit && other.gameObject.layer == LayerMask.NameToLayer("Player")) {
+            onExitEvent.Invoke();
+            canTriggerExit = !onlyTriggerOnce;
         }
     }
 }

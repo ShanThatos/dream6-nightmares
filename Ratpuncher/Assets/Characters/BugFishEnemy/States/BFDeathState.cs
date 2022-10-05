@@ -12,6 +12,9 @@ public class BFDeathState : BFState {
         controller.getDamagable().setInvincibility(true);
         controller.animator.Play("BFDeath");
         controller.rb.velocity = Vector2.zero;
+
+        Collider2D bfCollider = controller.GetComponent<Collider2D>();
+        bfCollider.offset = new Vector2(bfCollider.offset.x, -5.08f);
     }
 
     public override void run() {

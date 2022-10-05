@@ -21,9 +21,5 @@ public class DestroyOnPlayerAttack : MonoBehaviour
                 alreadyDestroyed = true;
             }
         }
-        else
-        {
-            Debug.Log("Wrong Layer");
-        }
     }
 }

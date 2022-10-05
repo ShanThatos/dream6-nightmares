@@ -137,6 +137,7 @@ PlayerSettings:
   bundleVersion: 0.fp
   preloadedAssets:
   - {fileID: 0}
+  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -591,11 +592,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: 2D_BuiltInRenderer
   metroPackageVersion: 
-  metroCertificatePath: 
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: Dream6
+  metroCertificateIssuer: Dream6
+  metroCertificateNotAfter: 00c99cf3fff7d901
   metroApplicationDescription: 2D_BuiltInRenderer
   wsaImages: {}
   metroTileShortName: 

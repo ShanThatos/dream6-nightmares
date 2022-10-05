@@ -47,9 +47,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yay:
-  - text: its a fish but i dont like fish
+  - text: Would you just listen for once?
     duration: 3
-  - text: bye bye fishy
+  - text: Haven't you moved around enough?
+    duration: 2
+  - text: It's time to settle down...
+    duration: 1
+  - text: We have a house here...
+    duration: 1
+  - text: a store
+    duration: 1
+  - text: a kid
+    duration: 1
+  - text: and you still want to fly halfway across the world?
+    duration: 3
+  - text: God, you're so suffocating you know that?
     duration: 3
   transitionTime: 2
 --- !u!95 &9175231524488556615
@@ -117,13 +129,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041558100daed1541832f57ad3572710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onlyTriggerOnce: 1
-  triggerResponse:
+  onlyTriggerOnce: 0
+  onEnterEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9175231524488556984}
         m_TargetAssemblyTypeName: SpatialFloatingTextController, Assembly-CSharp
         m_MethodName: StartFloatingText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onExitEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9175231524488556984}
+        m_TargetAssemblyTypeName: SpatialFloatingTextController, Assembly-CSharp
+        m_MethodName: StopFloatingText
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -195,7 +222,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 6, y: 1}
+  m_SizeDelta: {x: 10, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9175231524982612685
 CanvasRenderer:
@@ -225,7 +252,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: its a fish but i dont like fish
+  m_text: Would you just listen for once?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 675e9b8d7f38a9c4295db2d0eaca8a84, type: 2}
   m_sharedMaterial: {fileID: 4501366506542715102, guid: 675e9b8d7f38a9c4295db2d0eaca8a84, type: 2}

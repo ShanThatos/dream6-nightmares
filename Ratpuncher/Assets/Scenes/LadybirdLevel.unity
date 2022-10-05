@@ -406,21 +406,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onlyTriggerOnce: 1
-  triggerResponse:
+  onEnterEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 939215988}
-        m_TargetAssemblyTypeName: LadybirdBossfightController, Assembly-CSharp
-        m_MethodName: StartBossfight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  onExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &61946817
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2355,88 +2346,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
-      propertyPath: yay.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
-      propertyPath: yay.Array.data[0].text
-      value: Would you just listen for once?
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
-      propertyPath: yay.Array.data[1].text
-      value: Haven't you moved around enough?
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
-      propertyPath: yay.Array.data[2].text
-      value: It's time to settle down...
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
-      propertyPath: yay.Array.data[3].text
-      value: We have a house here...
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
-      propertyPath: yay.Array.data[4].text
-      value: a store
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
-      propertyPath: yay.Array.data[5].text
-      value: a kid
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
-      propertyPath: yay.Array.data[6].text
-      value: and you still want to fly halfway across the world?
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
-      propertyPath: yay.Array.data[7].text
-      value: God, you're so suffocating you know that?
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
-      propertyPath: yay.Array.data[8].text
-      value: a store
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
-      propertyPath: yay.Array.data[9].text
-      value: a store
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
-      propertyPath: yay.Array.data[0].duration
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
-      propertyPath: yay.Array.data[1].duration
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
-      propertyPath: yay.Array.data[2].duration
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
-      propertyPath: yay.Array.data[3].duration
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: yay.Array.data[4].duration
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: yay.Array.data[5].duration
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
-      propertyPath: yay.Array.data[6].duration
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
-      propertyPath: yay.Array.data[7].duration
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
-      propertyPath: yay.Array.data[8].duration
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
-      propertyPath: yay.Array.data[9].duration
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_RootOrder
@@ -2484,7 +2399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072505, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_Name
-      value: SpatialFloatingText
+      value: KitchenFloatingText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bff23e96693451143b5fe34ea746d573, type: 3}
@@ -17769,33 +17684,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2077758712}
     - target: {fileID: 1187009165426390346, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
-      propertyPath: onDeathEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1187009165426390346, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
-      propertyPath: onDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1187009165426390346, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
       propertyPath: onDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 939215988}
-    - target: {fileID: 1187009165426390346, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
-      propertyPath: onDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1187009165426390346, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
-      propertyPath: onDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: EndBossFight
-      objectReference: {fileID: 0}
-    - target: {fileID: 1187009165426390346, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
-      propertyPath: onDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LadybirdBossfightController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1187009165426390346, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
-      propertyPath: onDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
 --- !u!4 &2142920743 stripped

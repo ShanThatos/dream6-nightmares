@@ -34,6 +34,12 @@ public class SpatialFloatingTextController : MonoBehaviour {
         isRunning = true;
         StartCoroutine(StartTextCoroutine());
     }
+    public void StopFloatingText() {
+        if (!isRunning) return;
+        animator.Play("FadeOut");
+        StopAllCoroutines();
+        isRunning = false;
+    }
 
     public IEnumerator StartTextCoroutine() {
         animator.speed = 1 / (transitionTime / 2);
