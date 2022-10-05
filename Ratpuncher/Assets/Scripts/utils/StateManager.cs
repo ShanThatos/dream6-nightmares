@@ -39,6 +39,9 @@ public class StateManager : MonoBehaviour {
         currentState?.enter();
     }
     public void switchState(string stateName) {
-        switchState(Array.Find<State>(states, state => state.getStateName() == stateName));
+        switchState(findState(stateName));
+    }
+    public State findState(string stateName) {
+        return Array.Find<State>(states, state => state.getStateName() == stateName);
     }
 }
