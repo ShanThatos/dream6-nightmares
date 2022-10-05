@@ -6346,6 +6346,18 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 6747546632528111985, guid: 9e5ea6417031bcc4881f50ffeac512ae, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747546632528111985, guid: 9e5ea6417031bcc4881f50ffeac512ae, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747546632528111985, guid: 9e5ea6417031bcc4881f50ffeac512ae, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6747546633228865632, guid: 9e5ea6417031bcc4881f50ffeac512ae, type: 3}
       propertyPath: m_Name
       value: RatEnemyBoss
@@ -6409,6 +6421,18 @@ PrefabInstance:
     - target: {fileID: 6747546633228865634, guid: 9e5ea6417031bcc4881f50ffeac512ae, type: 3}
       propertyPath: canJumpAttack
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747546634238139276, guid: 9e5ea6417031bcc4881f50ffeac512ae, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747546634238139276, guid: 9e5ea6417031bcc4881f50ffeac512ae, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747546634238139276, guid: 9e5ea6417031bcc4881f50ffeac512ae, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e5ea6417031bcc4881f50ffeac512ae, type: 3}
@@ -9751,7 +9775,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 817066096, guid: 9e5ea6417031bcc4881f50ffeac512ae, type: 3}
   m_PrefabInstance: {fileID: 308321784}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1560589103}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cad21e646a33c2845841519a139dd7fb, type: 3}
@@ -9880,6 +9904,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6108635679875393533, guid: c897f516095ae2943b442967e0325c59, type: 3}
   m_PrefabInstance: {fileID: 1543825998}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1560589103 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6747546633228865632, guid: 9e5ea6417031bcc4881f50ffeac512ae, type: 3}
+  m_PrefabInstance: {fileID: 308321784}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1560589111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560589103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bddd6205a351a384aa13cd39c3857bf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showBounds: 1
+  relativeToStart: 0
+  MIN_X: 80
+  MAX_X: 100.06
+  MIN_Y: -10.59
+  MAX_Y: 4.54
 --- !u!1 &1687973824
 GameObject:
   m_ObjectHideFlags: 0
