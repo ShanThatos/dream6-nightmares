@@ -894,10 +894,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83ae8327db5b88469dd61e9dbdb7495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputAction: {fileID: 0}
+  inputAction: {fileID: -2165720585879407947, guid: 08387cd74e10ea945880d82af85b4e25, type: 3}
   isDoublePress: 0
   keyOverride: 
-  actionOverride: 
+  actionOverride: Break
 --- !u!61 &86818577
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1525,7 +1525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83ae8327db5b88469dd61e9dbdb7495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputAction: {fileID: 0}
+  inputAction: {fileID: 4737142619788410833, guid: 08387cd74e10ea945880d82af85b4e25, type: 3}
   isDoublePress: 0
   keyOverride: 
   actionOverride: 
@@ -3142,7 +3142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83ae8327db5b88469dd61e9dbdb7495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputAction: {fileID: 0}
+  inputAction: {fileID: 1264843926275944700, guid: 08387cd74e10ea945880d82af85b4e25, type: 3}
   isDoublePress: 0
   keyOverride: 
   actionOverride: 
@@ -4365,7 +4365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83ae8327db5b88469dd61e9dbdb7495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputAction: {fileID: 0}
+  inputAction: {fileID: -2165720585879407947, guid: 08387cd74e10ea945880d82af85b4e25, type: 3}
   isDoublePress: 0
   keyOverride: 
   actionOverride: 
@@ -4657,10 +4657,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83ae8327db5b88469dd61e9dbdb7495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputAction: {fileID: 0}
-  isDoublePress: 0
+  inputAction: {fileID: 1264843926275944700, guid: 08387cd74e10ea945880d82af85b4e25, type: 3}
+  isDoublePress: 1
   keyOverride: 
-  actionOverride: 
+  actionOverride: Double Jump
 --- !u!61 &1040276276
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6004,7 +6004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83ae8327db5b88469dd61e9dbdb7495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputAction: {fileID: 0}
+  inputAction: {fileID: -7801903150496367807, guid: 08387cd74e10ea945880d82af85b4e25, type: 3}
   isDoublePress: 0
   keyOverride: 
   actionOverride: 
