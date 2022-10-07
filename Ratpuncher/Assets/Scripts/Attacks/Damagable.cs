@@ -40,6 +40,10 @@ public class Damagable : MonoBehaviour
     public event HurtEvent OnHurt;
     public void CallOnHurt(float damage) => OnHurt?.Invoke(damage);
 
+    public delegate void RespawnEvent();
+    public event RespawnEvent OnRespawn;
+    public void CallOnRespawn() => OnRespawn?.Invoke();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -141,6 +145,12 @@ public class Damagable : MonoBehaviour
     }
     public float GetHealth() {
         return health;
+    }
+
+    public void Respawn()
+    {
+        health = maxHealth;
+        CallOnRespawn();
     }
 
     public void setInvincibility(bool invincible) {

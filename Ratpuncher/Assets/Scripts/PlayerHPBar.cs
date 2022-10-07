@@ -20,12 +20,25 @@ public class PlayerHPBar : MonoBehaviour
         currPlayerHp = maxPlayerHP;
 
         playerHP.OnHurt += OnPlayerDamaged;
+        playerHP.OnRespawn += OnRespawned;
+        playerHP.OnDeath += OnPlayerDeath;
     }
 
     void OnPlayerDamaged(float damage)
     {
         currPlayerHp -= damage;
-        Debug.Log("PlayerHP Bar: " + currPlayerHp);
         bar.value = currPlayerHp / maxPlayerHP;
+    }
+
+    void OnRespawned()
+    {
+        currPlayerHp = maxPlayerHP;
+        bar.value = 1;
+    }
+
+    void OnPlayerDeath()
+    {
+        currPlayerHp = 0;
+        bar.value = 0;
     }
 }

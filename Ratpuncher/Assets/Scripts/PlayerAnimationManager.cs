@@ -71,4 +71,14 @@ public class PlayerAnimationManager : MonoBehaviour
         animator.ResetTrigger("NextAttack");
         animator.SetTrigger("AttackCancel");
     }
+
+    public void setDeath()
+    {
+        animator.SetTrigger("Death");
+    }
+
+    public void setRespawn()
+    {
+        animator.SetTrigger("Respawn");
+    }
 }

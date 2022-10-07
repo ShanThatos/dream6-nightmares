@@ -67,7 +67,8 @@ public class PlayerMovement : MonoBehaviour
 
 
     public AudioSource hurtSound;
-
+    public AudioSource deathSound;
+    bool isRespawning = false;
 
 
     Vector3 spriteScale;
@@ -98,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
         damage = GetComponent<Damagable>();
 
         damage.OnHurt += OnHurt;
+        damage.OnDeath += OnDeath;
     }
 
     // Update is called once per frame
@@ -441,9 +443,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnLaunch(Vector2 force, bool launch)
     {
-        Debug.Log("Player was hit");
+        if (isRespawning)
+        {
+            return;
+        }
 
-        if(verticalState == VerticalState.Pounding)
+        if (verticalState == VerticalState.Pounding)
         {
             // Negate all knockback if ground pounding
             return;
@@ -485,12 +490,55 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnHurt(float damage)
     {
+        if (isRespawning)
+        {
+            return;
+        }
+
         Debug.Log("Player took " + damage + " damage");
         if(hurtSound && !hurtSound.isPlaying)
         {
             hurtSound.Play();
         }
     }
+
+    public void OnDeath()
+    {
+        if (isRespawning)
+        {
+            return;
+        }
+
+        if (deathSound)
+        {
+            deathSound.Play();
+        }
+
+        Debug.Log("You died D:");
+        GetComponent<PlayerInput>().enabled = false;
+        moveVector = Vector2.zero;
+        damage.setInvincibility(true);
+        animationManager.setDeath();
+
+        isRespawning = true;
+    }
+
+    public void OnDeathAnimDone()
+    {
+        Debug.Log("Respawning");
+        GameManager.RespawnPlayer();
+        animationManager.setRespawn();
+    }
+
+    public void OnRespawnAnimDone()
+    {
+        Debug.Log("Respawned");
+        damage.Respawn();
+        damage.setInvincibility(false);
+        GetComponent<PlayerInput>().enabled = true;
+        isRespawning = false;
+    }
+
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(bottom.position, (Vector2) bottom.position + Vector2.down * 0.095f);

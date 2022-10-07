@@ -99,5 +99,9 @@ public class BossHPBar : MonoBehaviour
     {
         maxHP = hp;
         currentHP = maxHP;
+        targetValue = 1;
+        subBarTarget = 1;
+        mainBar.value = 1;
+        subBar.value = 1;
     }
 }
