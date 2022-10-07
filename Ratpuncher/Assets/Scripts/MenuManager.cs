@@ -22,9 +22,11 @@ public class MenuManager : MonoBehaviour
     public GameObject settingsPanel;
     public GameObject creditsPanel;
     public GameObject controlsPanel;
+    public GameObject xboxControlsPanel;
 
     private bool backInput;
     private bool oldBackInput;
+    private bool isXboxControls;
     private System.Action onBackInput;
 
     void Start()
@@ -90,10 +92,29 @@ public class MenuManager : MonoBehaviour
     public void CloseControls()
     {
         controlsPanel.SetActive(false);
+        xboxControlsPanel.SetActive(false);
         settingsPanel.SetActive(true);
         EventSystem.current.SetSelectedGameObject(settingsFirstSelected);
         onBackInput = null;
     }
+
+    public void ToggleControlPanelType()
+    {
+        if (isXboxControls)
+        {
+            isXboxControls = false;
+            controlsPanel.SetActive(true);
+            xboxControlsPanel.SetActive(false);
+        }
+        else
+        {
+            isXboxControls = true;
+            controlsPanel.SetActive(false);
+            xboxControlsPanel.SetActive(true);
+        }
+    }
+
+
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
