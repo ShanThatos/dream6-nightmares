@@ -15,13 +15,16 @@ public class OfficeManager : MonoBehaviour
     public GameObject phoneButton;
     public GameObject noteButton;
     public GameObject safeButton;
+    public GameObject controlsButton;
     public GameObject boardFirstSelected;
     public GameObject phoneFirstSelected;
+    public GameObject controlsFirstSelected;
     //public GameObject noteFirstSelected;
     //public GameObject safeFirstSelected;
 
     public GameObject boardPanel;
     public GameObject phonePanel;
+    public GameObject controlsPanel;
     //public GameObject notePanel;
     //public GameObject safePanel;
 
@@ -103,24 +106,40 @@ public class OfficeManager : MonoBehaviour
         onBackInput = null;
     }
 
+    public void OpenControls()
+    {
+        controlsPanel.SetActive(true);
+        phonePanel.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(controlsFirstSelected);
+        onBackInput = CloseControls;
+    }
+
+    public void CloseControls()
+    {
+        controlsPanel.SetActive(false);
+        phonePanel.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(controlsButton);
+        onBackInput = null;
+    }
+
 
     public void ButtonSelect(GameObject go)
     {
-        LeanTween.scale(go, new Vector3(1.1f, 1.1f, 1.1f), 0.2f);
+        LeanTween.scale(go, new Vector3(1.1f, 1.1f, 1.1f), 0.1f);
     }
 
     public void ButtonDeselect(GameObject go)
     {
-        LeanTween.scale(go, new Vector3(1f, 1f, 1f), 0.2f);
+        LeanTween.scale(go, new Vector3(1f, 1f, 1f), 0.1f);
     }
 
     public void SliderSelect(GameObject go)
     {
-        LeanTween.scale(go, new Vector3(4.2f, 3.2f, 4.2f), 0.2f);
+        LeanTween.scale(go, new Vector3(4.2f, 3.2f, 4.2f), 0.1f);
     }
 
     public void SliderDeselect(GameObject go)
     {
-        LeanTween.scale(go, new Vector3(4f, 3f, 4f), 0.2f);
+        LeanTween.scale(go, new Vector3(4f, 3f, 4f), 0.1f);
     }
 }

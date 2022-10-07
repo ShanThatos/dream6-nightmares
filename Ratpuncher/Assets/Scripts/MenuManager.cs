@@ -113,21 +113,21 @@ public class MenuManager : MonoBehaviour
 
     public void ButtonSelect(GameObject go)
     {
-        LeanTween.scale(go, new Vector3(1.1f, 1.1f, 1.1f), 0.2f);
+        LeanTween.scale(go, new Vector3(1.1f, 1.1f, 1.1f), 0.1f);
     }
 
     public void ButtonDeselect(GameObject go)
     {
-        LeanTween.scale(go, new Vector3(1f, 1f, 1f), 0.2f);
+        LeanTween.scale(go, new Vector3(1f, 1f, 1f), 0.1f);
     }
 
     public void SliderSelect(GameObject go)
     {
-        LeanTween.scale(go, new Vector3(4.2f, 3.2f, 4.2f), 0.2f);
+        LeanTween.scale(go, new Vector3(4.2f, 3.2f, 4.2f), 0.1f);
     }
 
     public void SliderDeselect(GameObject go)
     {
-        LeanTween.scale(go, new Vector3(4f, 3f, 4f), 0.2f);
+        LeanTween.scale(go, new Vector3(4f, 3f, 4f), 0.1f);
     }
 }

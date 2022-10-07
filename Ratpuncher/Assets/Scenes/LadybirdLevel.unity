@@ -533,6 +533,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3119446820186198882, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3366401945648290863, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4097783452415256870, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_Transition
       value: 2
@@ -720,7 +728,7 @@ PrefabInstance:
     - target: {fileID: 6069366141582893676, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1921355019}
+      objectReference: {fileID: 0}
     - target: {fileID: 6069366141582893676, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -751,7 +759,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6197960883307520742, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786444747209007028, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6992808316205646018, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1936,6 +1948,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &394609860 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2188817779907970418, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
+  m_PrefabInstance: {fileID: 77327004}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &396527751
 GameObject:
   m_ObjectHideFlags: 0
@@ -2242,7 +2259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4846960301396942004, guid: 8499c3b7b18524a40b212910bf68a659, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4846960301396942004, guid: 8499c3b7b18524a40b212910bf68a659, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6319,7 +6336,7 @@ PrefabInstance:
     - target: {fileID: 6108635679875393534, guid: c897f516095ae2943b442967e0325c59, type: 3}
       propertyPath: pausePanel
       value: 
-      objectReference: {fileID: 1921355019}
+      objectReference: {fileID: 394609860}
     - target: {fileID: 6108635679875393535, guid: c897f516095ae2943b442967e0325c59, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -17018,11 +17035,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1921355019 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2188817779907970418, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
-  m_PrefabInstance: {fileID: 77327004}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1948515429
 PrefabInstance:
   m_ObjectHideFlags: 0

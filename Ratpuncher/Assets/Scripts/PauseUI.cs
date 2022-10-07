@@ -7,11 +7,14 @@ public class PauseUI : MonoBehaviour
 {
     public GameObject resumeButton;
     public GameObject settingsButton;
+    public GameObject controlsButton;
     public GameObject exitbutton;
     public GameObject settingsFirstSelected;
+    public GameObject controlsFirstSelected;
 
     public GameObject settingsPanel;
     public GameObject pausePanel;
+    public GameObject controlsPanel;
 
     private bool backInput;
     private bool oldBackInput;
@@ -20,6 +23,9 @@ public class PauseUI : MonoBehaviour
     void Start()
     {
         EventSystem.current.SetSelectedGameObject(resumeButton);
+        pausePanel.SetActive(true);
+        settingsPanel.SetActive(false);
+        controlsPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -47,6 +53,23 @@ public class PauseUI : MonoBehaviour
         settingsPanel.SetActive(false);
         pausePanel.SetActive(true);
         EventSystem.current.SetSelectedGameObject(settingsButton);
+        onBackInput = null;
+    }
+    public void OpenControls()
+    {
+        pausePanel.SetActive(false);
+        settingsPanel.SetActive(false);
+        controlsPanel.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(controlsFirstSelected);
+        onBackInput = CloseControls;
+    }
+
+    public void CloseControls()
+    {
+        controlsPanel.SetActive(false);
+        pausePanel.SetActive(false);
+        settingsPanel.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(controlsButton);
         onBackInput = null;
     }
 

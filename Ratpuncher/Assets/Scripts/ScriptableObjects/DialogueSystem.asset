@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character:
   - spriteName: 
-    sprite: {fileID: 0}
+    sprite: {fileID: 512778289, guid: 1327b6e1f8a35154d87e70e45da7ea25, type: 3}
   - spriteName: rem normal
     sprite: {fileID: 21300000, guid: 5ab5b93c2aa1af94a80ff71225113d2f, type: 3}
   - spriteName: elio normal
