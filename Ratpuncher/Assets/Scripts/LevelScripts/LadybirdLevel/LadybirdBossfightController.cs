@@ -11,18 +11,18 @@ public class LadybirdBossfightController : MonoBehaviour {
     public Rigidbody2D fallingDock;
     public AudioSource bossfightMusic;
     public AudioSource seaMusic;
+    public GameObject restartTrigger;
+    public Transform bugfishRestartPoint;
     public GameObject[] barriers;
 
     bool started = false;
     bool ended = false;
+    bool waitingForRestart = false;
 
     void Start() {
         bugfish = GameObject.FindObjectOfType<BugFishController>();
         bugfish.setAnimating(true);
-        foreach (GameObject obj in barriers)
-        {
-            obj.SetActive(false);
-        }
+        setBarriersActive(false);
     }
 
     public void StartBossfight() {
@@ -34,7 +34,9 @@ public class LadybirdBossfightController : MonoBehaviour {
 
     public IEnumerator StartBossFightCoroutine() {
         Rigidbody2D playerRb = GameManager.instance.player.GetComponent<Rigidbody2D>();
+        Damagable playerDamagable = GameManager.instance.player.GetComponent<Damagable>();
         RigidbodyConstraints2D playerConstraints = playerRb.constraints;
+        playerDamagable.OnRespawn += ResetBossFight;
         playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
         yield return new WaitForSeconds(1.5f);
 
@@ -68,7 +70,7 @@ public class LadybirdBossfightController : MonoBehaviour {
                 break;
         }
 
-        fallingDock.bodyType = RigidbodyType2D.Dynamic;
+        // fallingDock.bodyType = RigidbodyType2D.Dynamic;
         bugfish.HPBar.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(1f);
@@ -79,10 +81,7 @@ public class LadybirdBossfightController : MonoBehaviour {
         bugfish.transform.parent = null;
         bugfish.setAnimating(false);
 
-        foreach (GameObject obj in barriers)
-        {
-            obj.SetActive(true);
-        }
+        setBarriersActive(true);
 
         bugfish.resetStates();
         playerRb.constraints = playerConstraints;
@@ -99,14 +98,51 @@ public class LadybirdBossfightController : MonoBehaviour {
         }
     }
 
+    void setBarriersActive(bool active)
+    {
+        foreach (GameObject obj in barriers)
+        {
+            obj.SetActive(active);
+        }
+    }
+
+    // Resets the bugfish's position and HP
+    // Called when the player respawns (PlayerDamagable.OnRespawn)
+    // so the player won't see this happen on screen
+    void ResetBossFight()
+    {
+        setBarriersActive(false);
+        restartTrigger.SetActive(true);
+
+        bugfish.getDamagable().Respawn();
+        bugfish.switchState("BFIdle");
+        bugfish.resetStates();
+        
+
+        waitingForRestart = true;
+
+        Collider2D bfCollider = bugfish.GetComponent<Collider2D>();
+        bfCollider.offset = new Vector2(bfCollider.offset.x, 0);
+
+    }
+
+    // Turns the barriers back on when the player reengages
+    // in combat.
+    public void RestartFight()
+    {
+        if (waitingForRestart)
+        {
+            setBarriersActive(true);
+            restartTrigger.SetActive(false);
+            waitingForRestart = false;
+        }
+    }
+
     public IEnumerator EndBossFightCoroutine() {
         bugfishRevealAnimator.Play("BFDone");
         bugfish.HPBar.gameObject.SetActive(false);
 
-        foreach (GameObject obj in barriers)
-        {
-            obj.SetActive(false);
-        }
+        setBarriersActive(false);
 
         // GameManager.SetMovementLock(true);
         yield return new WaitForSeconds(3f);

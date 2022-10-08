@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerHPBar : MonoBehaviour
 {
     public Slider bar;
+    public FlickerSprite flicker;
 
     float maxPlayerHP = 500;
     float currPlayerHp = 500;
@@ -28,6 +29,7 @@ public class PlayerHPBar : MonoBehaviour
     {
         currPlayerHp -= damage;
         bar.value = currPlayerHp / maxPlayerHP;
+        flicker.Flicker();
     }
 
     void OnRespawned()
@@ -40,5 +42,6 @@ public class PlayerHPBar : MonoBehaviour
     {
         currPlayerHp = 0;
         bar.value = 0;
+        flicker.Flicker();
     }
 }

@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FlickerSprite : MonoBehaviour {
 
     private SpriteRenderer sr;
+    private Image img;
 
     public int numFlickers = 5;
     public float flickerTime = 0.1f;
@@ -14,13 +16,17 @@ public class FlickerSprite : MonoBehaviour {
 
     void Start() {
         sr = GetComponentInChildren<SpriteRenderer>();
+        img = GetComponent<Image>();
+        
         Debug.Log(sr);
     }
 
     public void Flicker() {
         if (flickering) return;
         flickering = true;
-        StartCoroutine(FlickerCoroutine());
+        if(sr) StartCoroutine(FlickerCoroutine());
+        if(img) StartCoroutine(FlickerUICoroutine());
+
     }
 
     private IEnumerator FlickerCoroutine() {
@@ -34,6 +40,22 @@ public class FlickerSprite : MonoBehaviour {
             yield return new WaitForSeconds(flickerTime);
         }
         sr.color = originalColor;
+        flickering = false;
+    }
+
+    private IEnumerator FlickerUICoroutine()
+    {
+        Color originalColor = img.color;
+        bool isFlickerColor = false;
+        for (int i = 0; i < numFlickers; i++)
+        {
+            isFlickerColor = !isFlickerColor;
+            Color color = isFlickerColor ? flickerColor : originalColor;
+            color.a = img.color.a;
+            img.color = color;
+            yield return new WaitForSeconds(flickerTime);
+        }
+        img.color = originalColor;
         flickering = false;
     }
 }

@@ -34,6 +34,7 @@ public class BossHPBar : MonoBehaviour
 
         BossDamageable.OnHurt += RecieveDamage;
         BossDamageable.OnDeath += OnDeath;
+        BossDamageable.OnRespawn += ResetHP;
         SetMaxHP(BossDamageable.GetMaxHealth());
     }
 
@@ -103,5 +104,11 @@ public class BossHPBar : MonoBehaviour
         subBarTarget = 1;
         mainBar.value = 1;
         subBar.value = 1;
+    }
+
+    void ResetHP()
+    {
+        Debug.Log("Resetting " + bossName + " HP display!");
+        SetMaxHP(maxHP);
     }
 }
