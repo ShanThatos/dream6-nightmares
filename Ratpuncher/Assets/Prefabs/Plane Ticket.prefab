@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 933557669503571467}
   - component: {fileID: 933557669503571466}
   - component: {fileID: 933557669503571469}
+  - component: {fileID: 8601241681529586606}
   m_Layer: 0
   m_Name: Plane Ticket
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,4 +127,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descriptionString: 'A plane ticket for a one-way trip to New York City. The flight
     has long passed over a decade ago. It has never been used. '
-  itemSprite: {fileID: -1480813003, guid: bc728da679e49aa4d849932ff74b5070, type: 3}
+--- !u!114 &8601241681529586606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933557669503571468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e42cf572aceff684b85e40c5cebc7c84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionString: 
+  isOpened: 0

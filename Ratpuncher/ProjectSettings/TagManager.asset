@@ -9,6 +9,8 @@ TagManager:
   - Notification
   - LevelCanvas
   - Dialogue
+  - InteractableText
+  - Item
   layers:
   - Default
   - TransparentFX

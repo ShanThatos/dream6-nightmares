@@ -1029,7 +1029,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.19736567, y: -0.041877955}
+  m_Offset: {x: 0.30898473, y: 0.06454702}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1040,7 +1040,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.58534986, y: 0.75297314}
+  m_Size: {x: 0.5618529, y: 0.85161126}
   m_EdgeRadius: 0
 --- !u!1 &98306096
 GameObject:
@@ -1139,6 +1139,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 73150007613672976, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_Size.x
+      value: 3.5471344
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672976, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.045463562
+      objectReference: {fileID: 0}
     - target: {fileID: 73150007613672977, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
       propertyPath: m_Name
       value: GoldFishText
@@ -1149,7 +1157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 75.92
+      value: 77.91
       objectReference: {fileID: 0}
     - target: {fileID: 73150007613672979, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1207,6 +1215,16 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5763384163594527803, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: textString
+      value: 'The goldfish is arguably the most kept aquarium fish but they are also
+        the most miskept fish as well. Cramped and overheated, many goldfishes do
+        not reach their lifespan potential. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405740323745665555, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8405740323745665555, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
       propertyPath: textString
       value: 'The goldfish is arguably the most kept aquarium fish but they are also
@@ -1219,7 +1237,8 @@ PrefabInstance:
       propertyPath: needsTrigger
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8405740323745665555, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
 --- !u!1 &229982355
 GameObject:
@@ -3278,6 +3297,16 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5763384163594527803, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: textString
+      value: Most Painted Lady butterflies join the migration from one side of the
+        continent to the other. A select few however are raised in captivity; contained
+        in a walled-off garden until they are pinned to canvas for display.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405740323745665555, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8405740323745665555, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
       propertyPath: textString
       value: Most Painted Lady butterflies join the migration from one side of the
@@ -3288,7 +3317,8 @@ PrefabInstance:
       propertyPath: needsTrigger
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8405740323745665555, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
 --- !u!1 &641468105
 GameObject:
@@ -3392,6 +3422,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 73150007613672976, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_Size.x
+      value: 3.3525848
+      objectReference: {fileID: 0}
+    - target: {fileID: 73150007613672976, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.35266876
+      objectReference: {fileID: 0}
     - target: {fileID: 73150007613672977, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
       propertyPath: m_Name
       value: BirdText
@@ -3458,6 +3496,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5252786394857399376, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
       propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763384163594527803, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: textString
+      value: 'Once upon a time there was a beautiful bird who sang a beautiful song.
+        The people loved the song so much they wanted to listen to it forever. They
+        captured the bird and clipped its wings so that it could never fly away.
+        The bird rotted away in its golden cage and never sang again.  '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405740323745665555, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8405740323745665555, guid: 7a1a210bdefa5b34a8a1db9d44d50f94, type: 3}

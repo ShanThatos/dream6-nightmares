@@ -5948,6 +5948,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 501657205194732008, guid: afb1bdd8fe012b946b096740196970ed, type: 3}
+      propertyPath: descriptionString
+      value: 'A book found after a first victory.
+
+        The hardest step of any
+        adventure is the first.'
+      objectReference: {fileID: 0}
     - target: {fileID: 2073112824882839792, guid: afb1bdd8fe012b946b096740196970ed, type: 3}
       propertyPath: descriptionString
       value: 'A book found after a first victory.
@@ -7873,6 +7880,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 501657205194732008, guid: afb1bdd8fe012b946b096740196970ed, type: 3}
+      propertyPath: descriptionString
+      value: 'A book found after jumping through the air itself.
+
+        "I hate
+        double jumping, you can''t do it in real life" - Paul Torpac, 2022'
+      objectReference: {fileID: 0}
     - target: {fileID: 2073112824882839792, guid: afb1bdd8fe012b946b096740196970ed, type: 3}
       propertyPath: descriptionString
       value: 'A book found after jumping through the air itself.
@@ -10567,6 +10581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 2042891494}
+  flicker: {fileID: 0}
 --- !u!1 &2135001781
 GameObject:
   m_ObjectHideFlags: 0
