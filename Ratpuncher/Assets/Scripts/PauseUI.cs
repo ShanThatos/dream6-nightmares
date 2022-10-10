@@ -11,13 +11,16 @@ public class PauseUI : MonoBehaviour
     public GameObject exitbutton;
     public GameObject settingsFirstSelected;
     public GameObject controlsFirstSelected;
+    public GameObject XboxFirstSelected;
 
     public GameObject settingsPanel;
     public GameObject pausePanel;
     public GameObject controlsPanel;
+    public GameObject xboxControlsPanel;
 
     private bool backInput;
     private bool oldBackInput;
+    private bool isXboxControls;
     private System.Action onBackInput;
     // Start is called before the first frame update
     void Start()
@@ -60,6 +63,7 @@ public class PauseUI : MonoBehaviour
         pausePanel.SetActive(false);
         settingsPanel.SetActive(false);
         controlsPanel.SetActive(true);
+        isXboxControls = false;
         EventSystem.current.SetSelectedGameObject(controlsFirstSelected);
         onBackInput = CloseControls;
     }
@@ -67,10 +71,27 @@ public class PauseUI : MonoBehaviour
     public void CloseControls()
     {
         controlsPanel.SetActive(false);
-        pausePanel.SetActive(false);
+        xboxControlsPanel.SetActive(false);
         settingsPanel.SetActive(true);
         EventSystem.current.SetSelectedGameObject(controlsButton);
         onBackInput = null;
+    }
+    public void ToggleControlPanelType()
+    {
+        if (isXboxControls)
+        {
+            isXboxControls = false;
+            controlsPanel.SetActive(true);
+            xboxControlsPanel.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(controlsFirstSelected);
+        }
+        else
+        {
+            isXboxControls = true;
+            controlsPanel.SetActive(false);
+            xboxControlsPanel.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(XboxFirstSelected);
+        }
     }
 
     public void ButtonSelect(GameObject go)

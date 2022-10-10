@@ -17,6 +17,7 @@ public class MenuManager : MonoBehaviour
     public GameObject settingsFirstSelected;
     public GameObject creditsFirstSelected;
     public GameObject controlsFirstSelected;
+    public GameObject XboxFirstSelected;
 
     [Header("Panels")]
     public GameObject settingsPanel;
@@ -85,6 +86,7 @@ public class MenuManager : MonoBehaviour
     {
         settingsButton.SetActive(false);
         controlsPanel.SetActive(true);
+        isXboxControls = false;
         EventSystem.current.SetSelectedGameObject(controlsFirstSelected);
         onBackInput = CloseControls;
     }
@@ -105,12 +107,14 @@ public class MenuManager : MonoBehaviour
             isXboxControls = false;
             controlsPanel.SetActive(true);
             xboxControlsPanel.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(controlsFirstSelected);
         }
         else
         {
             isXboxControls = true;
             controlsPanel.SetActive(false);
             xboxControlsPanel.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(XboxFirstSelected);
         }
     }
 

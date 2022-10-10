@@ -19,17 +19,20 @@ public class OfficeManager : MonoBehaviour
     public GameObject boardFirstSelected;
     public GameObject phoneFirstSelected;
     public GameObject controlsFirstSelected;
+    public GameObject XboxFirstSelected;
     //public GameObject noteFirstSelected;
     //public GameObject safeFirstSelected;
 
     public GameObject boardPanel;
     public GameObject phonePanel;
     public GameObject controlsPanel;
+    public GameObject xboxControlsPanel;
     //public GameObject notePanel;
     //public GameObject safePanel;
 
     private bool backInput;
     private bool oldBackInput;
+    private bool isXboxControls;
     private System.Action onBackInput;
     private bool isTriggered;
     // Start is called before the first frame update
@@ -110,6 +113,7 @@ public class OfficeManager : MonoBehaviour
     {
         controlsPanel.SetActive(true);
         phonePanel.SetActive(false);
+        isXboxControls = false;
         EventSystem.current.SetSelectedGameObject(controlsFirstSelected);
         onBackInput = CloseControls;
     }
@@ -117,11 +121,29 @@ public class OfficeManager : MonoBehaviour
     public void CloseControls()
     {
         controlsPanel.SetActive(false);
+        xboxControlsPanel.SetActive(false);
         phonePanel.SetActive(true);
         EventSystem.current.SetSelectedGameObject(controlsButton);
         onBackInput = null;
     }
 
+    public void ToggleControlPanelType()
+    {
+        if (isXboxControls)
+        {
+            isXboxControls = false;
+            controlsPanel.SetActive(true);
+            xboxControlsPanel.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(controlsFirstSelected);
+        }
+        else
+        {
+            isXboxControls = true;
+            controlsPanel.SetActive(false);
+            xboxControlsPanel.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(XboxFirstSelected);
+        }
+    }
 
     public void ButtonSelect(GameObject go)
     {
