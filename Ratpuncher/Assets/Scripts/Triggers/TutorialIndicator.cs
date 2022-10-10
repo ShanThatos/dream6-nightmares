@@ -29,22 +29,19 @@ public class TutorialIndicator : MonoBehaviour
 
             }
 
-            if (string.IsNullOrWhiteSpace(keyOverride))
+            if (actionOverride.ToUpper() == "MOVE")
             {
-                if (actionOverride.ToUpper() == "MOVE")
-                {
-                    // Need to handle a special case for movement since its a composite
-                    keyOverride = inputAction.action.GetBindingDisplayString(5);
-                }
-                else
-                {
-                    keyOverride = inputAction.action.GetBindingDisplayString();
-                }
+                // Need to handle a special case for movement since its a composite
+                keyOverride = inputAction.action.GetBindingDisplayString(5);
+            }
+            else
+            {
+                keyOverride = inputAction.action.GetBindingDisplayString();
+            }
 
-                if (isDoublePress)
-                {
-                    keyOverride += "x2";
-                }
+            if (isDoublePress)
+            {
+                keyOverride += "x2";
             }
         }
     }
