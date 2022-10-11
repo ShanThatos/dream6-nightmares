@@ -21,6 +21,8 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 4c0b591a872e34c4e8003cc8e21bd452, type: 3}
   - spriteName: ladybird normal
     sprite: {fileID: 21300000, guid: 44fbe6de34dc5084e90949acdba782f6, type: 3}
+  - spriteName: young ladybird
+    sprite: {fileID: 21300000, guid: c59d16af17816324e84054bce00b84ce, type: 3}
   dialogues:
   - dialogueName: IntroStart
     needsTransition: 0
@@ -47,37 +49,42 @@ MonoBehaviour:
     - Elio (elio normal) Looks like you were having a pretty nasty dream. We've got
       someone at the door right now, think you can handle it?
     - Rem (rem normal) I'll be fine, send them in.
-    - "Elio (elio normal) Good mornin\u2019 ma\u2019am! Come in, come in! It must
-      be freezing out there- please make yourself comfortable."
+    - "Elio (elio normal) Good mornin\u2019 ma\u2019am! Come in, come in!"
+    - Elio (elio normal) It must be freezing out there- please make yourself comfortable.
     - Rem (rem normal) Welcome to NEST, my name is Rem and that is my partner Elio,
       what can we help you with today?
     - Ladybird (ladybird normal) H-hello! Please call me Ladybird, I heard this was
       the place that was taking on nightmare cases?
     - 'Ladybird (ladybird normal) I think I might be getting these dreams too. '
-    - 'Rem (rem normal) We can definitely help you with that, Ladybird. If you can,
-      please tell me how the nightmare has been affecting you?
-
-'
+    - "Rem (rem normal) We can definitely help you with that, Ladybird. Can you tell
+      me how has the nightmare been affecting you?\r"
     - Ladybird (ladybird normal) Well, it all began around the time that fog rolled
       into town about a month ago.
     - Ladybird (ladybird normal) I would wake up from the nightmares in a cold sweat
       or some shivers at first but t-then it got a lot worse.
     - "Ladybird (ladybird normal) I started waking up to these terrible headaches
       and bruises started to appear in places I don\u2019t remember getting."
-    - "Ladybird (ladybird normal) T-though I think lately I\u2019ve been a little
-      scared to sleep."
+    - "Ladybird (ladybird normal) To be honest, I\u2019ve been a little scared to
+      sleep."
     - Rem (rem normal) Can you recall anything from these nightmares? Anything that
       sticks out to you?
+    - "Ladybird (ladybird normal) Not much I\u2019m afraid."
     - "Ladybird (ladybird normal) Only bits and pieces that reminded me of my childhood
       home, the shores, or m-maybe the pet shop I\u2019m running."
-    - 'Ladybird (ladybird normal) But when I wake up, most of everything is forgotten.
-      Only the symptoms and heavy feelings linger. '
+    - Ladybird (ladybird normal) When I wake up though, most of everything is forgotten.
     - 'Rem (rem normal) Thank you for trusting us with your situation, Ladybird.
       I promise to do everything in my power to help you. '
-    - Rem (rem normal) In order to do so though I need to get into your nightmare
-      realm to get to the root of this issue, is that okay?
+    - Rem (rem normal) To do so though I need to get into your nightmare realm to
+      get to the root of this issue, is that okay?
     - Ladybird (ladybird normal) Y-yes! Just say the word.
-    - Rem (rem normal) I'll pin the notes for your case on my board right away!
+    - "() Ladybird\u2019s case is pinned to the board.\r"
+  - dialogueName: ElioHub
+    needsTransition: 0
+    sceneName: 
+    dialoguesText:
+    - "Elio (elio normal) Hey man, I think I have to sit this one out. Whatever that
+      whale creature was earlier did a number on me. \r\n"
+    - "Elio (elio normal) Don\u2019t have too much fun in there without me, alright?"
   - dialogueName: LadybirdTransition
     needsTransition: 1
     sceneName: LadybirdLevel
@@ -88,58 +95,72 @@ MonoBehaviour:
     needsTransition: 0
     sceneName: 
     dialoguesText:
-    - 'Rem (rem normal) Ugh, hopping into realms never gets easier it seems. Okay,
-      let''s just stick to the usual M.O: locate the core stabilizing this place
-      and retrieve it. '
+    - Rem (rem normal) Ugh, hopping into realms never gets easier it seems.
+    - 'Rem (rem normal) Okay, let''s just stick to the usual M.O: locate the core
+      stabilizing this place and retrieve it. '
     - 'Rem (rem normal) Huh, this must be the childhood home Ladybird mentioned.
       Her bedroom perhaps? '
+  - dialogueName: YoungLadybird
+    needsTransition: 0
+    sceneName: 
+    dialoguesText:
+    - Rem (rem normal) Hey darling, what are you doing out here all by yourself?
+    - "Young Ladybird (young ladybird) Oh it\u2019s because sometimes it gets too
+      loud at home. I wish mommy and daddy didn\u2019t fight so much. "
+    - "Young Ladybird (young ladybird) If I wasn\u2019t such a bad girl they would
+      be happy\u2026"
+    - "Young Ladybird (young ladybird) \u2026Mister, you shouldn\u2019t be here."
   - dialogueName: DefeatBugfish
     needsTransition: 1
     sceneName: Office
     dialoguesText:
     - "Rem (rem normal) Phew- I almost thought we wouldn\u2019t see the end of that
       one. Hmm, looks like it dropped something\u2026 a plane ticket?"
-    - "Rem (rem normal) But a fish that flies, huh? If this bugfish is supposed to
-      be a manifestation of Ladybird\u2019s nightmare, I wonder why it took on that
-      form?"
-    - "Rem (rem normal)  It made itself grow wings no matter how unnatural or painful.
-      What made it go to such lengths? As if just being itself wasn\u2019t allowed.
-      Y\u2019know, a fish doing fish things, or whatever fishes do. Hah."
+    - 'Rem (rem normal) But a fish that flies, huh? '
+    - "Rem (rem normal) If this bugfish is supposed to be a manifestation of Ladybird\u2019s
+      nightmare, I wonder why it took on that form?"
+    - Rem (rem normal) It made itself grow wings no matter how unnatural or painful.
+      What made it go to such lengths?
+    - "Rem (rem normal) As if just being itself wasn\u2019t allowed. Y\u2019know,
+      a fish doing fish things, or whatever fishes do. Hah."
     - "Rem (rem normal) I\u2026 I wonder if it ever felt like it was ever enough.
-      To try not to disappoint by molding itself into what others wanted it to be.
-      Is that what Ladybird felt?"
+      To try not to disappoint by molding itself into what others wanted it to be."
+    - Rem (rem normal) Is that what Ladybird felt?
     - Rem (rem normal) On some level, I think I see a little bit of myself in it.
   - dialogueName: LadybirdClosure
     needsTransition: 0
     sceneName: 
     dialoguesText:
     - Elio (elio normal) Our ace detective! Our hero is back! Oh, how he flawlessly
-      saves the day once again <3
-    - "Rem (rem normal) Elio, you\u2019re so embarrassing :("
-    - 'Rem (rem normal) Um, Ladybird I found this in your dream realm at the end
-      of the pier. It seems to be the root of your nightmares. Do you have an idea
-      why?
+      saves the day once again.
+    - "Rem (rem normal) Elio, you\u2019re so embarrassing."
+    - Rem (rem normal) Um, Ladybird I found this in your dream realm at the end of
+      the pier. It seems to be the root of your nightmares.
+    - 'Rem (rem normal) Do you have an idea why?
 
 '
     - "Ladybird (ladybird normal) Ah, yes\u2026 that ticket was an unfilled dream
-      of sorts. I always look back at it and think of what could have been. Maybe
-      my childhood dream of wanting to explore the world has never truly left. \n"
+      of sorts. I always look back at it and think of what could have been. "
+    - 'Ladybird (ladybird normal) Maybe my childhood dream of wanting to explore
+      the world has never truly left. '
     - Ladybird (ladybird normal) I kept delaying it because I have to run the family
-      business, and other responsibilities but looking back they sound like I was
-      making excuses for myself.
-    - "Rem (rem normal) Ladybird, I don\u2019t-"
-    - "Ladybird (ladybird normal) But! I think I\u2019m ready now. I feel like I
-      can take control of my life again. My parents may have had an influence on
-      me when I was younger but for a while now, it seems like the only thing holding
-      me back was myself."
-    - "Ladybird (ladybird normal) Coming here made me realize that so thank you again
-      for everything you\u2019ve all done for me.\n"
-    - "Ladybird (ladybird normal) And please, take this as a token of thanks. I made
-      the bread this morning so enjoy it before it gets cold! If you like it don\u2019t
-      be shy to ask for more, I love baking so it\u2019s no trouble at all!\n"
-    - 'Rem (rem normal) Thank you. And I wish you the best in your future endeavors.
-      We are always here if you ever need a helping hand. '
-    - Ladybird (ladybird normal) This is the end of the demo! Thank you for playing
+      business among other responsibilities.
+    - Ladybird (ladybird normal) Looking back now, they sound like I was just making
+      excuses for myself.
+    - "Rem (rem normal) You shouldn\u2019t be so hard on yourself. Comfortability
+      is hard to separate from for anyone."
+    - "Ladybird (ladybird normal) I think I\u2019m ready though. It\u2019s about
+      time I try and do something for myself."
+    - "Ladybird (ladybird normal) For a while now, it seems like the only thing holding
+      me back was me\u2026\n"
+    - 'Ladybird (ladybird normal) Rem, Elio, thank you so much for taking on my case.
+      You have saved me in more ways than one.
+
+'
+    - 'Rem (rem normal) It was our pleasure. We are always here if you ever need
+      a helping hand. '
+    - Ladybird (ladybird normal) This is the end of the pre-alpha! Thank you for
+      playing
     - Ladybird (ladybird normal) Please buy the full game when it comes out soon
       (tm).
     - Ladybird (ladybird normal) Or else... (Your IP address is being traced as we
