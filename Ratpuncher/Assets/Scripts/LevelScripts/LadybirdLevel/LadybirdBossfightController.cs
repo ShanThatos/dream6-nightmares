@@ -44,14 +44,14 @@ public class LadybirdBossfightController : MonoBehaviour {
         yield return new WaitForSeconds(3f);
 
         MainCameraScript.instance.setCamPosLerp(.5f);
-        MainCameraScript.instance.setCamSizeLerp(.5f);
+        MainCameraScript.instance.setCamFOVLerp(.5f);
         bugfish.transform.parent = bugfishRevealAnimator.transform;
         bugfish.transform.localPosition = Vector3.zero;
         bugfish.setAnimating(true);
         Vector2 cameraOffset = MainCameraScript.instance.cameraOffset;
         MainCameraScript.instance.target = bugfish.transform;
-        MainCameraScript.instance.cameraOffset = new Vector2(0, 6);
-        MainCameraScript.instance.camSizeMultiplier = 3.5f;
+        MainCameraScript.instance.cameraOffset = new Vector2(2, 2);
+        MainCameraScript.instance.camFOVMultiplier = 1.3f;
 
         for (int i = 4; i >= 0; i--) {
             seaMusic.volume = i / 5f;
@@ -76,7 +76,7 @@ public class LadybirdBossfightController : MonoBehaviour {
         yield return new WaitForSeconds(1f);
         
         MainCameraScript.instance.target = GameManager.GetPlayerTransform();
-        MainCameraScript.instance.camSizeMultiplier = 1f;
+        MainCameraScript.instance.camFOVMultiplier = 1f;
 
         bugfish.transform.parent = null;
         bugfish.setAnimating(false);
@@ -88,7 +88,7 @@ public class LadybirdBossfightController : MonoBehaviour {
 
         MainCameraScript.instance.cameraOffset = cameraOffset;
         MainCameraScript.instance.setCamPosLerp(MainCameraScript.instance.defaultCamPosLerp);
-        MainCameraScript.instance.setCamSizeLerp(MainCameraScript.instance.defaultCamSizeLerp);
+        MainCameraScript.instance.setCamFOVLerp(MainCameraScript.instance.defaultCamFOVLerp);
     }
 
     public void EndBossFight() {
