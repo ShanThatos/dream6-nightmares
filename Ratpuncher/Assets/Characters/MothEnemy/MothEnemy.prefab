@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad21e646a33c2845841519a139dd7fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 15
+  maxHealth: 5
   knockResistance: {x: 0, y: 0}
   iFrameTime: 0.4
   isPlayer: 0
