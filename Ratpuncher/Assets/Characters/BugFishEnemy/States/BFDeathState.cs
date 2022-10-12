@@ -13,8 +13,10 @@ public class BFDeathState : BFState {
         controller.animator.Play("BFDeath");
         controller.rb.velocity = Vector2.zero;
 
+        controller.rb.AddForce(new Vector2(0, 10f), ForceMode2D.Impulse);
+
         Collider2D bfCollider = controller.GetComponent<Collider2D>();
-        bfCollider.offset = new Vector2(bfCollider.offset.x, -5.08f);
+        bfCollider.offset = new Vector2(bfCollider.offset.x, 0);
     }
 
     public override void run() {

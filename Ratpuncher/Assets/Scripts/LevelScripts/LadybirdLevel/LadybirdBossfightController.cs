@@ -44,14 +44,14 @@ public class LadybirdBossfightController : MonoBehaviour {
         yield return new WaitForSeconds(3f);
 
         MainCameraScript.instance.setCamPosLerp(.5f);
-        MainCameraScript.instance.setCamFOVLerp(.5f);
+        MainCameraScript.instance.setCamFOVLerp(.95f);
         bugfish.transform.parent = bugfishRevealAnimator.transform;
         bugfish.transform.localPosition = Vector3.zero;
         bugfish.setAnimating(true);
         Vector2 cameraOffset = MainCameraScript.instance.cameraOffset;
         MainCameraScript.instance.target = bugfish.transform;
         MainCameraScript.instance.cameraOffset = new Vector2(2, 2);
-        MainCameraScript.instance.camFOVMultiplier = 1.3f;
+        MainCameraScript.instance.camFOVMultiplier = 2f;
 
         for (int i = 4; i >= 0; i--) {
             seaMusic.volume = i / 5f;

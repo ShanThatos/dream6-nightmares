@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalSwoopAttackTime: 1.5
   initialSwoopUpForce: 10
-  sonicBoomPrefab: {fileID: 0}
+  sonicBoomPrefab: {fileID: 5182112519667865800, guid: f70a40a98b7bd2347b1d9ce534d2a50e, type: 3}
 --- !u!1 &462830220030830906
 GameObject:
   m_ObjectHideFlags: 0

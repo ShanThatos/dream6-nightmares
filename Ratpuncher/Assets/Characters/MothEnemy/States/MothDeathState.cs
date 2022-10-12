@@ -16,6 +16,7 @@ public class MothDeathState : MothState {
         if (controller.animator.GetCurrentAnimatorStateInfo(0).IsName("MothDeath") && controller.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f) {
             if (!calledOnDeath) {
                 calledOnDeath = true;
+                Destroy(controller.gameObject, 3);
                 controller.onDeathEvent.Invoke();
             }
         }

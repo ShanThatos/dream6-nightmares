@@ -38,8 +38,10 @@ public class MainCameraScript : MonoBehaviour
         float oldZ = transform.position.z;
         Vector2 targetPos = (Vector2) target.position + cameraOffset;
         Vector2 newPos = Vector2.Lerp(transform.position, targetPos, Time.deltaTime * camPosLerp);
-        float halfCamFOV = cam.fieldOfView / 2;
-        newPos.x = Mathf.Clamp(newPos.x, minX + halfCamFOV, maxX - halfCamFOV);
+
+
+        float halfCamWidth = Mathf.Tan(Mathf.Deg2Rad * cam.fieldOfView / 2) * (-transform.position.z);
+        newPos.x = Mathf.Clamp(newPos.x, minX + halfCamWidth, maxX - halfCamWidth);
         transform.position = new Vector3(newPos.x, newPos.y, oldZ);
 
         float targetCamFOV = defaultCamFOV * camFOVMultiplier;
