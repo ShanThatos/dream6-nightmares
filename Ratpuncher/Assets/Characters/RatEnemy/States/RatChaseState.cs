@@ -13,18 +13,23 @@ public class RatChaseState : RatEnemyState {
 
     public override void run() {
         if (!isPlayerInTriggerDistance()) {
-            controller.switchState("RatIdle");
+            controller.switchState("RatWalk");
             return;
         }
 
         Vector2 playerPos = GameManager.GetPlayerTransform().position;
         if (isGrounded()) {
             bool playerIsRight = playerPos.x > controller.transform.position.x;
-            if (canMoveForward()) {
-                controller.transform.Translate(Vector2.right * controller.speed * Time.deltaTime * (playerIsRight ? 1 : -1));
-                controller.setDirection(playerIsRight);
+
+            if (controller.isFacingRight() == playerIsRight) {
+                if (canMoveForward())
+                    controller.transform.Translate(Vector2.right * controller.speed * Time.deltaTime * (playerIsRight ? 1 : -1));
+                else {
+                    controller.transform.Translate(Vector2.left * controller.speed * Time.deltaTime * (playerIsRight ? 1 : -1));
+                    controller.switchState("RatAttack");
+                }
             } else
-                controller.setDirection(!playerIsRight);
+                controller.setDirection(playerIsRight);
         }
     }
 
