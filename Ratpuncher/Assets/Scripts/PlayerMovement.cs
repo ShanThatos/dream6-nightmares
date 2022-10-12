@@ -73,19 +73,19 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 spriteScale;
     int iframes = 0;
-    float prevY = float.MinValue;
+    Vector3 prevPos;
     Vector2 inputVector = Vector2.zero;
     private bool canRecoverFromLaunch = true;
 
     public VerticalState verticalState { get; private set; }
-    public PlayerActions currentAction { get ; private set; }
+    public PlayerActions currentAction { get; private set; }
 
     PlayerAnimationManager animationManager;
     PlayerParticles particleManager;
     PlayerCapabilities playerCapabilities;
     PlayerAttackManager attackManager;
     Damagable damage;
-  
+
     // Start is called before the first frame update
     void Start()
     {
@@ -102,6 +102,7 @@ public class PlayerMovement : MonoBehaviour
 
         damage.OnHurt += OnHurt;
         damage.OnDeath += OnDeath;
+        prevPos = transform.position;
     }
 
     // Update is called once per frame
@@ -138,7 +139,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         // Apply movement, and limit max speed if nessecary
-        if(verticalState != VerticalState.Launched && currentAction != PlayerActions.Dashing)
+        if (verticalState != VerticalState.Launched && currentAction != PlayerActions.Dashing)
         {
             currentVelocity.x += moveVector.x;
 
@@ -172,20 +173,19 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
-        else if(currentAction == PlayerActions.Pounding)
+        else if (currentAction == PlayerActions.Pounding && Mathf.Approximately(transform.position.y, prevPos.y))
         {
-            // Triggers in event the player gets stuck on
-            // geometry while ground pounding
-            if(Mathf.Approximately(transform.position.y, prevY))
-            {
-                // NOTE: This CANNOT be the only check since it
-                // takes two physics ticks to trigger
-                // (It will cause a delay in most cases)
-                EndGroundPound();
-            }
-
-            prevY = transform.position.y;
+            // NOTE: This CANNOT be the only check since it
+            // takes two physics ticks to trigger
+            // (It will cause a delay in most cases)
+            EndGroundPound();
         }
+        else if(verticalState == VerticalState.Launched && Vector3.Distance(prevPos, transform.position) < 0.005)
+        {
+            verticalState = VerticalState.Falling;
+        }
+
+
 
         // Negate vertical movement when dashing
         if(currentAction == PlayerActions.Dashing)
@@ -193,7 +193,7 @@ public class PlayerMovement : MonoBehaviour
             currentVelocity.y = 0;
         }
 
-
+        prevPos = transform.position;
         rb.velocity = currentVelocity;
     }
 
