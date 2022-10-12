@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f1d98ae6c42785e40a90def84348555b
+guid: c3d33eac87a329149ada027c9065da4d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RemnantAtk_0
+      name: NarwhaleAttack_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 548f3dfb6ca8c0f40b8b5acac91ca0a9
-      internalID: -1546887629
+      spriteID: e927fa44ad70df64ab8bb74a88771870
+      internalID: 1795690006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_1
+      name: NarwhaleAttack_1
       rect:
         serializedVersion: 2
         x: 1000
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0138b67e917c0b44790a7424c234aba3
-      internalID: 1620710550
+      spriteID: 014cefff1a2447f41b02a496925739a5
+      internalID: -5804235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_2
+      name: NarwhaleAttack_2
       rect:
         serializedVersion: 2
         x: 2000
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce149f88a63e89e4f9c1af9e3efd40a4
-      internalID: 1732108654
+      spriteID: aac6cadd235984b4d84a01b934b6ed50
+      internalID: 1616851194
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_3
+      name: NarwhaleAttack_3
       rect:
         serializedVersion: 2
         x: 3000
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf0acb9e6cc46d643a1af4c27efc6e00
-      internalID: 1895075018
+      spriteID: a43a13331f040e449ab618bceca9508f
+      internalID: 85336936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_4
+      name: NarwhaleAttack_4
       rect:
         serializedVersion: 2
         x: 4000
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30e640609d5253945881ce582da187cf
-      internalID: 994667733
+      spriteID: c8db05a85447fc842b29001e5f526a43
+      internalID: 343046206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_5
+      name: NarwhaleAttack_5
       rect:
         serializedVersion: 2
         x: 5000
@@ -236,14 +236,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ec6b7dec6ed7bd4daf97a13e54ec5a7
-      internalID: -2037747248
+      spriteID: 6cdd84ac074b5ec4da772eb9c1a38087
+      internalID: 299117779
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_6
+      name: NarwhaleAttack_6
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 5000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5897f184878c87141a4d27cb459962c8
+      internalID: 1014615968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NarwhaleAttack_7
       rect:
         serializedVersion: 2
         x: 0
@@ -257,14 +278,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dda64ff539727694b9b87dc49eab1e15
-      internalID: 508742412
+      spriteID: 0d6a6d6a1dcbf364d8fd8e680b26d584
+      internalID: -1773316880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_7
+      name: NarwhaleAttack_8
       rect:
         serializedVersion: 2
         x: 1000
@@ -278,14 +299,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e38219d532646734da3daaa3569ade24
-      internalID: 1248031769
+      spriteID: 9ce2225b1d82db246bf8a35937618adf
+      internalID: 717669449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_8
+      name: NarwhaleAttack_9
       rect:
         serializedVersion: 2
         x: 2000
@@ -299,14 +320,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77eff3072b1b27b439017d18ae265cba
-      internalID: 719736468
+      spriteID: e9515efdd76e3f445858e3020d6ea925
+      internalID: -805511646
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_9
+      name: NarwhaleAttack_10
       rect:
         serializedVersion: 2
         x: 3000
@@ -320,14 +341,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d3721e9d316d764d8d5a822396f2f91
-      internalID: 1298914319
+      spriteID: a8f05fbcf624e584b90c61044edcbd94
+      internalID: 158893966
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_10
+      name: NarwhaleAttack_11
       rect:
         serializedVersion: 2
         x: 4000
@@ -341,14 +362,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2faabed20ee5a1479d21d859384a938
-      internalID: -987111103
+      spriteID: b40fbd829a6dbd5429247a8629957eed
+      internalID: -832077666
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_11
+      name: NarwhaleAttack_12
       rect:
         serializedVersion: 2
         x: 5000
@@ -362,14 +383,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1f7de87a1716834db156c17386cc25d
-      internalID: -791632610
+      spriteID: 73437a0b33e6a3c4a88f43dc9e7f6045
+      internalID: 664939651
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_12
+      name: NarwhaleAttack_13
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 4000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 620359502ac671048b735f9618d7cf5b
+      internalID: 1463141013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NarwhaleAttack_14
       rect:
         serializedVersion: 2
         x: 0
@@ -383,14 +425,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60ed29cd6c33da5458a35a30699a18b5
-      internalID: 897897631
+      spriteID: a163c88f419193a43bfcdd9912583cb1
+      internalID: 662612920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_13
+      name: NarwhaleAttack_15
       rect:
         serializedVersion: 2
         x: 1000
@@ -404,14 +446,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fb1e8a2905e20d4bba5eb0078e0c67d
-      internalID: -161972438
+      spriteID: 109be02f5e90c5e4fb4902a161c65a5d
+      internalID: -442080483
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_14
+      name: NarwhaleAttack_16
       rect:
         serializedVersion: 2
         x: 2000
@@ -425,14 +467,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7a986b2619b4a34c804ad231e829faa
-      internalID: -1775983452
+      spriteID: c71bdcb300fc72d44a287c2f46fbec02
+      internalID: -273486724
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_15
+      name: NarwhaleAttack_17
       rect:
         serializedVersion: 2
         x: 3000
@@ -446,14 +488,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0564a7c408b7e42458186d8c3a616c24
-      internalID: -1693067790
+      spriteID: 1620312c988491449b0f097d017acee8
+      internalID: -2111136295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_16
+      name: NarwhaleAttack_18
       rect:
         serializedVersion: 2
         x: 4000
@@ -467,14 +509,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfec31102942bbb44a72cea750ccac90
-      internalID: 387894156
+      spriteID: 5d75a9d4d7f16904ea68b9abb86bbd25
+      internalID: -764283679
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_17
+      name: NarwhaleAttack_19
       rect:
         serializedVersion: 2
         x: 5000
@@ -488,14 +530,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b25817141a635c74784c4e88392aa907
-      internalID: 1728038766
+      spriteID: e9c83e9cbfe6fe94b91b2ab0df6ee652
+      internalID: 737052711
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_18
+      name: NarwhaleAttack_20
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 3000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 063b69672025ea4418b74f283a3c9fbc
+      internalID: -2080153956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NarwhaleAttack_21
       rect:
         serializedVersion: 2
         x: 0
@@ -509,14 +572,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dab1849c09cdb2449ab8a7f3c00cb82a
-      internalID: -1741827024
+      spriteID: abadf5beb265c1e46a16f6a8b175a299
+      internalID: 11286748
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_19
+      name: NarwhaleAttack_22
       rect:
         serializedVersion: 2
         x: 1000
@@ -530,14 +593,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6919b031cb4f7da4daa855fc6781ccae
-      internalID: -2109719843
+      spriteID: 94dbb312df74a4544991f439ed0944e8
+      internalID: -283582126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_20
+      name: NarwhaleAttack_23
       rect:
         serializedVersion: 2
         x: 2000
@@ -551,14 +614,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8f1d8aafd873ee4f9865ce02e70112f
-      internalID: -86965600
+      spriteID: 9a2001cc6510cca41ac04393a9ea875f
+      internalID: -1421374956
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_21
+      name: NarwhaleAttack_24
       rect:
         serializedVersion: 2
         x: 3000
@@ -572,14 +635,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97c6103f6b3790c4eb35608b7ac465db
-      internalID: 752049426
+      spriteID: 2b1afe56beb734c4ebaf3981b5be0ef9
+      internalID: -1336553492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_22
+      name: NarwhaleAttack_25
       rect:
         serializedVersion: 2
         x: 4000
@@ -593,14 +656,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8419034ec9b9c8f4096444570bf89394
-      internalID: 1775969812
+      spriteID: f4d6f3cd833dc304eb7218d87848f129
+      internalID: -1320090038
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_23
+      name: NarwhaleAttack_26
       rect:
         serializedVersion: 2
         x: 5000
@@ -614,14 +677,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 476ff659e4a897f408a116099cb4d160
-      internalID: 809560947
+      spriteID: 206b544fc66a1524c9776f5287d2c2b1
+      internalID: -2093332350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_24
+      name: NarwhaleAttack_27
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eafaebd9608d1e24e98495874ec8cd4c
+      internalID: 1862411090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NarwhaleAttack_28
       rect:
         serializedVersion: 2
         x: 0
@@ -635,14 +719,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 515e920e019dd7641b93b4b0a7a63087
-      internalID: -447913226
+      spriteID: e3a4f81a69390b8428ec4d2598a6ffdb
+      internalID: 1315372355
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_25
+      name: NarwhaleAttack_29
       rect:
         serializedVersion: 2
         x: 1000
@@ -656,14 +740,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fca5873da21ba074db6569cc4a623c21
-      internalID: 327632812
+      spriteID: d40c7b594c698294785e265956125e46
+      internalID: 1313458707
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_26
+      name: NarwhaleAttack_30
       rect:
         serializedVersion: 2
         x: 2000
@@ -677,14 +761,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5832440edb1a05149b0fb27e311554c7
-      internalID: 1235031650
+      spriteID: 66eb12b3a797c294388e6d813e32d2e9
+      internalID: 1091184760
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_27
+      name: NarwhaleAttack_31
       rect:
         serializedVersion: 2
         x: 3000
@@ -698,14 +782,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a03447ff8407f0f418a8bc977b4b519b
-      internalID: 352609232
+      spriteID: 3b144316ad9ea5f4d8edab52a918bec6
+      internalID: -2051516402
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_28
+      name: NarwhaleAttack_32
       rect:
         serializedVersion: 2
         x: 4000
@@ -719,14 +803,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c7633743300b594bbc2fadcaf821158
-      internalID: -1746874741
+      spriteID: 6886c3827b1c1bc43aaa8f18e42cb6d0
+      internalID: 320987648
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_29
+      name: NarwhaleAttack_33
       rect:
         serializedVersion: 2
         x: 5000
@@ -740,14 +824,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a39777466d74374eb5ecc5497c2f233
-      internalID: -1306656857
+      spriteID: 49e723d4229487547ba2543bda5288c7
+      internalID: 1528850472
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_30
+      name: NarwhaleAttack_34
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79f96f4abf788cc41885b049f2c61383
+      internalID: 2040117874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NarwhaleAttack_35
       rect:
         serializedVersion: 2
         x: 0
@@ -761,8 +866,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0561efe995734249a6ed88a421ad2ff
-      internalID: 1899813228
+      spriteID: b9f6c649976b59b4aa9c4010ad99480c
+      internalID: -626357586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NarwhaleAttack_36
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d60e6aaab79893c4283c4ec67a4b9fae
+      internalID: 1834152463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NarwhaleAttack_37
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc7f4a6b00c5ee74e85e243133d96501
+      internalID: 312648102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NarwhaleAttack_38
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 0
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc1ec71116364aa4886a6bde5a5624f8
+      internalID: 1293979128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NarwhaleAttack_39
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e50d4a51e95e6e4a986e50a8625944a
+      internalID: 1384974028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NarwhaleAttack_40
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 0
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 793e8d8b8ce62214f9291662c2deff1f
+      internalID: 1354806676
       vertices: []
       indices: 
       edges: []
@@ -778,37 +988,47 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      RemnantAtk_27: 352609232
-      RemnantAtk_0: -1546887629
-      RemnantAtk_13: -161972438
-      RemnantAtk_28: -1746874741
-      RemnantAtk_10: -987111103
-      RemnantAtk_7: 1248031769
-      RemnantAtk_12: 897897631
-      RemnantAtk_15: -1693067790
-      RemnantAtk_8: 719736468
-      RemnantAtk_1: 1620710550
-      RemnantAtk_16: 387894156
-      RemnantAtk_29: -1306656857
-      RemnantAtk_17: 1728038766
-      RemnantAtk_11: -791632610
-      RemnantAtk_25: 327632812
-      RemnantAtk_23: 809560947
-      RemnantAtk_30: 1899813228
-      RemnantAtk_22: 1775969812
-      RemnantAtk_5: -2037747248
-      RemnantAtk_6: 508742412
-      RemnantAtk_21: 752049426
-      RemnantAtk_9: 1298914319
-      RemnantAtk_20: -86965600
-      RemnantAtk_3: 1895075018
-      RemnantAtk_2: 1732108654
-      RemnantAtk_18: -1741827024
-      RemnantAtk_24: -447913226
-      RemnantAtk_14: -1775983452
-      RemnantAtk_26: 1235031650
-      RemnantAtk_19: -2109719843
-      RemnantAtk_4: 994667733
+      NarwhaleAttack_35: -626357586
+      NarwhaleAttack_18: -764283679
+      NarwhaleAttack_24: -1336553492
+      NarwhaleAttack_1: -5804235
+      NarwhaleAttack_38: 1293979128
+      NarwhaleAttack_11: -832077666
+      NarwhaleAttack_2: 1616851194
+      NarwhaleAttack_16: -273486724
+      NarwhaleAttack_7: -1773316880
+      NarwhaleAttack_31: -2051516402
+      NarwhaleAttack_22: -283582126
+      NarwhaleAttack_27: 1862411090
+      NarwhaleAttack_26: -2093332350
+      NarwhaleAttack_34: 2040117874
+      NarwhaleAttack_20: -2080153956
+      NarwhaleAttack_8: 717669449
+      NarwhaleAttack_30: 1091184760
+      NarwhaleAttack_12: 664939651
+      NarwhaleAttack_37: 312648102
+      NarwhaleAttack_9: -805511646
+      NarwhaleAttack_23: -1421374956
+      NarwhaleAttack_33: 1528850472
+      NarwhaleAttack_4: 343046206
+      NarwhaleAttack_10: 158893966
+      NarwhaleAttack_36: 1834152463
+      NarwhaleAttack_40: 1354806676
+      NarwhaleAttack_0: 1795690006
+      NarwhaleAttack_17: -2111136295
+      NarwhaleAttack_25: -1320090038
+      NarwhaleAttack_19: 737052711
+      NarwhaleAttack_39: 1384974028
+      NarwhaleAttack_29: 1313458707
+      NarwhaleAttack_32: 320987648
+      NarwhaleAttack_6: 1014615968
+      NarwhaleAttack_28: 1315372355
+      NarwhaleAttack_14: 662612920
+      NarwhaleAttack_15: -442080483
+      NarwhaleAttack_3: 85336936
+      NarwhaleAttack_13: 1463141013
+      NarwhaleAttack_21: 11286748
+      NarwhaleAttack_5: 299117779
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

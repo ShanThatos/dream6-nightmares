@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f1d98ae6c42785e40a90def84348555b
+guid: a82b6a7905307334a86d667bfd8933e0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,259 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RemnantAtk_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 5000
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 548f3dfb6ca8c0f40b8b5acac91ca0a9
-      internalID: -1546887629
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RemnantAtk_1
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 5000
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0138b67e917c0b44790a7424c234aba3
-      internalID: 1620710550
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RemnantAtk_2
-      rect:
-        serializedVersion: 2
-        x: 2000
-        y: 5000
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ce149f88a63e89e4f9c1af9e3efd40a4
-      internalID: 1732108654
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RemnantAtk_3
-      rect:
-        serializedVersion: 2
-        x: 3000
-        y: 5000
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf0acb9e6cc46d643a1af4c27efc6e00
-      internalID: 1895075018
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RemnantAtk_4
-      rect:
-        serializedVersion: 2
-        x: 4000
-        y: 5000
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30e640609d5253945881ce582da187cf
-      internalID: 994667733
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RemnantAtk_5
-      rect:
-        serializedVersion: 2
-        x: 5000
-        y: 5000
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ec6b7dec6ed7bd4daf97a13e54ec5a7
-      internalID: -2037747248
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RemnantAtk_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 4000
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dda64ff539727694b9b87dc49eab1e15
-      internalID: 508742412
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RemnantAtk_7
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 4000
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e38219d532646734da3daaa3569ade24
-      internalID: 1248031769
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RemnantAtk_8
-      rect:
-        serializedVersion: 2
-        x: 2000
-        y: 4000
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 77eff3072b1b27b439017d18ae265cba
-      internalID: 719736468
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RemnantAtk_9
-      rect:
-        serializedVersion: 2
-        x: 3000
-        y: 4000
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d3721e9d316d764d8d5a822396f2f91
-      internalID: 1298914319
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RemnantAtk_10
-      rect:
-        serializedVersion: 2
-        x: 4000
-        y: 4000
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d2faabed20ee5a1479d21d859384a938
-      internalID: -987111103
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RemnantAtk_11
-      rect:
-        serializedVersion: 2
-        x: 5000
-        y: 4000
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e1f7de87a1716834db156c17386cc25d
-      internalID: -791632610
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RemnantAtk_12
+      name: NarwhaleIdle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -383,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60ed29cd6c33da5458a35a30699a18b5
-      internalID: 897897631
+      spriteID: 83adf32c6f57af042a8aec485bcac9c6
+      internalID: 1734602449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_13
+      name: NarwhaleIdle_1
       rect:
         serializedVersion: 2
         x: 1000
@@ -404,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fb1e8a2905e20d4bba5eb0078e0c67d
-      internalID: -161972438
+      spriteID: fbea9d2898d40794f903ca18e9d61c2d
+      internalID: -1215387881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_14
+      name: NarwhaleIdle_2
       rect:
         serializedVersion: 2
         x: 2000
@@ -425,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7a986b2619b4a34c804ad231e829faa
-      internalID: -1775983452
+      spriteID: cdcc2c2f627b70c44a21492019ddce92
+      internalID: 873422975
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_15
+      name: NarwhaleIdle_3
       rect:
         serializedVersion: 2
         x: 3000
@@ -446,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0564a7c408b7e42458186d8c3a616c24
-      internalID: -1693067790
+      spriteID: 9c9b1eccfae2a7f46ab5aff9ef1a164d
+      internalID: 541421210
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_16
+      name: NarwhaleIdle_4
       rect:
         serializedVersion: 2
         x: 4000
@@ -467,35 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfec31102942bbb44a72cea750ccac90
-      internalID: 387894156
+      spriteID: 9c6e6ae11f80b4d418efc23344a12d37
+      internalID: 972098997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_17
-      rect:
-        serializedVersion: 2
-        x: 5000
-        y: 3000
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b25817141a635c74784c4e88392aa907
-      internalID: 1728038766
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RemnantAtk_18
+      name: NarwhaleIdle_5
       rect:
         serializedVersion: 2
         x: 0
@@ -509,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dab1849c09cdb2449ab8a7f3c00cb82a
-      internalID: -1741827024
+      spriteID: eb4707c2084d27c4383ef9840e995563
+      internalID: -1479300631
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_19
+      name: NarwhaleIdle_6
       rect:
         serializedVersion: 2
         x: 1000
@@ -530,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6919b031cb4f7da4daa855fc6781ccae
-      internalID: -2109719843
+      spriteID: 5dd94d19a79f0b640afbd8e7adeffeb1
+      internalID: -21669735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_20
+      name: NarwhaleIdle_7
       rect:
         serializedVersion: 2
         x: 2000
@@ -551,14 +278,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8f1d8aafd873ee4f9865ce02e70112f
-      internalID: -86965600
+      spriteID: ca058a1b938233643924305b073e2ea9
+      internalID: -359762726
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_21
+      name: NarwhaleIdle_8
       rect:
         serializedVersion: 2
         x: 3000
@@ -572,14 +299,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97c6103f6b3790c4eb35608b7ac465db
-      internalID: 752049426
+      spriteID: 937cd6127cd8605468762704cd4620e5
+      internalID: 1141183824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_22
+      name: NarwhaleIdle_9
       rect:
         serializedVersion: 2
         x: 4000
@@ -593,35 +320,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8419034ec9b9c8f4096444570bf89394
-      internalID: 1775969812
+      spriteID: ad14856dc45f4484ab8a406d059796e1
+      internalID: -1211095524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_23
-      rect:
-        serializedVersion: 2
-        x: 5000
-        y: 2000
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 476ff659e4a897f408a116099cb4d160
-      internalID: 809560947
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RemnantAtk_24
+      name: NarwhaleIdle_10
       rect:
         serializedVersion: 2
         x: 0
@@ -635,14 +341,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 515e920e019dd7641b93b4b0a7a63087
-      internalID: -447913226
+      spriteID: 4a19265ce2936614681808cfd48c608d
+      internalID: -1548378775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_25
+      name: NarwhaleIdle_11
       rect:
         serializedVersion: 2
         x: 1000
@@ -656,14 +362,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fca5873da21ba074db6569cc4a623c21
-      internalID: 327632812
+      spriteID: b25f78b9544275e4aa1cb6d0ceb26cd7
+      internalID: 427366468
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_26
+      name: NarwhaleIdle_12
       rect:
         serializedVersion: 2
         x: 2000
@@ -677,14 +383,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5832440edb1a05149b0fb27e311554c7
-      internalID: 1235031650
+      spriteID: e2c4ed8fc803f94419432859836d3485
+      internalID: 847770143
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_27
+      name: NarwhaleIdle_13
       rect:
         serializedVersion: 2
         x: 3000
@@ -698,14 +404,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a03447ff8407f0f418a8bc977b4b519b
-      internalID: 352609232
+      spriteID: 1318ca14c496f1745b4cba9877d1b9d3
+      internalID: -1282664353
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_28
+      name: NarwhaleIdle_14
       rect:
         serializedVersion: 2
         x: 4000
@@ -719,35 +425,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c7633743300b594bbc2fadcaf821158
-      internalID: -1746874741
+      spriteID: ace5220ed0e48064eb42aae0a4f87722
+      internalID: -1963713837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemnantAtk_29
-      rect:
-        serializedVersion: 2
-        x: 5000
-        y: 1000
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6a39777466d74374eb5ecc5497c2f233
-      internalID: -1306656857
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RemnantAtk_30
+      name: NarwhaleIdle_15
       rect:
         serializedVersion: 2
         x: 0
@@ -761,8 +446,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0561efe995734249a6ed88a421ad2ff
-      internalID: 1899813228
+      spriteID: 0d33847b91ed3044980e4372d425280e
+      internalID: -383657087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NarwhaleIdle_16
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc777d72451099a41aba4f95222105ae
+      internalID: -935614825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NarwhaleIdle_17
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7589b1bf7872364184c8706a5185f88
+      internalID: -1970638813
       vertices: []
       indices: 
       edges: []
@@ -778,37 +505,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      RemnantAtk_27: 352609232
-      RemnantAtk_0: -1546887629
-      RemnantAtk_13: -161972438
-      RemnantAtk_28: -1746874741
-      RemnantAtk_10: -987111103
-      RemnantAtk_7: 1248031769
-      RemnantAtk_12: 897897631
-      RemnantAtk_15: -1693067790
-      RemnantAtk_8: 719736468
-      RemnantAtk_1: 1620710550
-      RemnantAtk_16: 387894156
-      RemnantAtk_29: -1306656857
-      RemnantAtk_17: 1728038766
-      RemnantAtk_11: -791632610
-      RemnantAtk_25: 327632812
-      RemnantAtk_23: 809560947
-      RemnantAtk_30: 1899813228
-      RemnantAtk_22: 1775969812
-      RemnantAtk_5: -2037747248
-      RemnantAtk_6: 508742412
-      RemnantAtk_21: 752049426
-      RemnantAtk_9: 1298914319
-      RemnantAtk_20: -86965600
-      RemnantAtk_3: 1895075018
-      RemnantAtk_2: 1732108654
-      RemnantAtk_18: -1741827024
-      RemnantAtk_24: -447913226
-      RemnantAtk_14: -1775983452
-      RemnantAtk_26: 1235031650
-      RemnantAtk_19: -2109719843
-      RemnantAtk_4: 994667733
+      NarwhaleIdle_7: -359762726
+      NarwhaleIdle_1: -1215387881
+      NarwhaleIdle_12: 847770143
+      NarwhaleIdle_14: -1963713837
+      NarwhaleIdle_11: 427366468
+      NarwhaleIdle_13: -1282664353
+      NarwhaleIdle_10: -1548378775
+      NarwhaleIdle_9: -1211095524
+      NarwhaleIdle_16: -935614825
+      NarwhaleIdle_6: -21669735
+      NarwhaleIdle_15: -383657087
+      NarwhaleIdle_5: -1479300631
+      NarwhaleIdle_8: 1141183824
+      NarwhaleIdle_2: 873422975
+      NarwhaleIdle_3: 541421210
+      NarwhaleIdle_17: -1970638813
+      NarwhaleIdle_0: 1734602449
+      NarwhaleIdle_4: 972098997
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

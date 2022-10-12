@@ -17,8 +17,6 @@ public class FlickerSprite : MonoBehaviour {
     void Start() {
         sr = GetComponentInChildren<SpriteRenderer>();
         img = GetComponent<Image>();
-        
-        Debug.Log(sr);
     }
 
     public void Flicker() {
@@ -37,6 +35,7 @@ public class FlickerSprite : MonoBehaviour {
             Color color = isFlickerColor ? flickerColor : originalColor;
             color.a = sr.color.a;
             sr.color = color;
+            Debug.Log(sr.color);
             yield return new WaitForSeconds(flickerTime);
         }
         sr.color = originalColor;
