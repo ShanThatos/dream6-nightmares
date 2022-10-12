@@ -98,6 +98,8 @@ public class PlayerMovement : MonoBehaviour
         attackManager = GetComponent<PlayerAttackManager>();
         damage = GetComponent<Damagable>();
 
+        Debug.Log("MaxHP: " + damage.GetMaxHealth());
+
         damage.OnHurt += OnHurt;
         damage.OnDeath += OnDeath;
     }

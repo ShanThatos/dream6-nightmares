@@ -15,11 +15,10 @@ public class IntroLevelMiniboss : MonoBehaviour
     void Start()
     {
         bossDamagable.OnDeath += OnBossDeath;
+        Damagable playerDamagable = GameManager.instance.player.GetComponent<Damagable>();
+        playerDamagable.OnRespawn += ResetFight;
 
-        foreach (GameObject obj in barriers)
-        {
-            obj.SetActive(false);
-        }
+        setBarriersActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,21 +30,33 @@ public class IntroLevelMiniboss : MonoBehaviour
         bossReveal.SetActive(false);
         bossHPBar.SetActive(true);
 
-        foreach (GameObject obj in barriers)
-        {
-            obj.SetActive(true);
-        }
+        setBarriersActive(true);
 
         active = true;
     }
 
     void OnBossDeath()
     {
-        foreach (GameObject obj in barriers)
+        foreach(GameObject obj in barriers)
         {
-            obj.SetActive(false);
+            obj.GetComponent<Animator>().SetTrigger("stop");
         }
 
         afterBossDoor.SetActive(false);
+    }
+
+    void ResetFight()
+    {
+        setBarriersActive(false);
+        active = false;
+        bossDamagable.Respawn();
+    }
+
+    void setBarriersActive(bool active)
+    {
+        foreach (GameObject obj in barriers)
+        {
+            obj.SetActive(active);
+        }
     }
 }
