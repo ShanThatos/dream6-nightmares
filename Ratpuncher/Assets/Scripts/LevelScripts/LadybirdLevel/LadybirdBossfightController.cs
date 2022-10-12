@@ -142,7 +142,10 @@ public class LadybirdBossfightController : MonoBehaviour {
         bugfishRevealAnimator.Play("BFDone");
         bugfish.HPBar.gameObject.SetActive(false);
 
-        setBarriersActive(false);
+        foreach (GameObject obj in barriers)
+        {
+            obj.GetComponent<Animator>().SetTrigger("stop");
+        }
 
         // GameManager.SetMovementLock(true);
         yield return new WaitForSeconds(3f);
