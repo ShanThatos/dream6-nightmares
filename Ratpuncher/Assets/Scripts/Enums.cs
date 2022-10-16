@@ -19,6 +19,6 @@ public class Enums : MonoBehaviour
         Dashing,
         Pounding,
         Attacking,
-        Blocking
+        Charging
     }
 }

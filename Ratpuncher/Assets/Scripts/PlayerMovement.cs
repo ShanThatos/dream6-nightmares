@@ -31,6 +31,9 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("Max speed after being launched (Note: cannot control movement after launch)")]
     public float maxLaunchSpeed = 12f;
 
+    [Tooltip("Max speed while charging")]
+    public float maxChargeMoveSpeed = .5f;
+
     private float currentMaxMoveSpeed;
 
     [Tooltip("Recoil after hitting something")]
@@ -214,6 +217,13 @@ public class PlayerMovement : MonoBehaviour
             }
 
             currentMaxMoveSpeed = maxGroundMoveSpeed;
+
+            if(currentAction == PlayerActions.Charging)
+            {
+                // If charging and grounded, drastically slow player
+                currentMaxMoveSpeed = maxChargeMoveSpeed;
+            }
+
             verticalState = VerticalState.Grounded;
         }
         else if (verticalState == VerticalState.Launched)
@@ -334,7 +344,9 @@ public class PlayerMovement : MonoBehaviour
 
     void OnDash()
     {
-        if(currentAction == PlayerActions.Pounding || verticalState == VerticalState.Launched)
+        if(currentAction == PlayerActions.Pounding 
+            || verticalState == VerticalState.Launched
+            || currentAction == PlayerActions.Charging)
         {
             // Cannot dash when performing ground pound or launched
             return;
@@ -368,7 +380,8 @@ public class PlayerMovement : MonoBehaviour
     void OnPound()
     {
         if (playerCapabilities.canGroundPound 
-            && currentAction != PlayerActions.Attacking 
+            && currentAction != PlayerActions.Attacking
+            && currentAction != PlayerActions.Charging
             && currentAction != PlayerActions.Pounding)
         {
             if (verticalState == VerticalState.Falling || verticalState == VerticalState.Jumping)
@@ -386,17 +399,26 @@ public class PlayerMovement : MonoBehaviour
 
     void OnAttack(InputValue value)
     {
-        if (!value.isPressed)
-        {
-            return;
-        }
-
-        if(currentAction == PlayerActions.Pounding || 
-            currentAction == PlayerActions.Dashing || 
+        if (currentAction == PlayerActions.Pounding ||
+            currentAction == PlayerActions.Dashing ||
             verticalState == VerticalState.Launched)
         {
             return;
         }
+
+        if (value.isPressed)
+        {
+            Debug.Log("Attack Down");
+            attackManager.BeginCharge();
+            currentAction = PlayerActions.Charging;
+            return;
+        }
+        else
+        {
+            Debug.Log("Attack Up");
+        }
+
+
 
         bool success = attackManager.executeAttack();
     }

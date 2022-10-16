@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class PlayerAttackManager : MonoBehaviour
 {
-    [Tooltip("Animation for each attack in combo sequence")]
-    public GameObject[] attacks;
+    [Tooltip("Object for regular attack")]
+    public GameObject normalAttack;
+
+    [Tooltip("Object for charged attack")]
+    public GameObject chargedAttack;
+
+    [Tooltip("Force to launch charged attack projectile")]
+    public float chargedForce;
 
     [Tooltip("Where the attack is spawned")]
     public Transform attackPoint;
@@ -16,18 +22,15 @@ public class PlayerAttackManager : MonoBehaviour
     [Tooltip("Allow queueing of attacks")]
     public bool allowAttackQueueing;
 
-    // Index of next attack in the array to use
-    int comboStage;
-
     bool attackQueued = false;
     bool isAnimLocked;
+    bool chargedAttackReady;
     PlayerMovement playerMovement;
     PlayerAnimationManager animationManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        comboStage = 0;
         playerMovement = gameObject.GetComponent<PlayerMovement>();
         animationManager = gameObject.GetComponent<PlayerAnimationManager>();
     }
@@ -38,24 +41,24 @@ public class PlayerAttackManager : MonoBehaviour
 
     }
 
+    public void BeginCharge()
+    {
+        animationManager.setAttacking(true);
+    }
+
     public bool executeAttack()
     {
-        comboStage = comboStage % attacks.Length;
         animationManager.setAttacking(true);
 
         if(isAnimLocked)
         {
-
             attackQueued = allowAttackQueueing;
             Debug.Log("Attack queued");
             return false;
         }
 
-        
-
         isAnimLocked = true;
 
-        comboStage++;
         attackQueued = false;
         playerMovement.setAttackState(1);
         animationManager.setNextAttack();
@@ -85,15 +88,41 @@ public class PlayerAttackManager : MonoBehaviour
         playerMovement.setAttackState(0);
     }
 
-    public void SpawnParticlesAndHitbox()
+    // Executed via animation callback
+    public void SpawnAttack()
     {
-        GameObject attack = Instantiate(attacks[0], attackPoint.position, Quaternion.identity);
+        if (chargedAttackReady)
+        {
+            SpawnChargedAttack();
+        }
+        else
+        {
+            SpawnNormalAttack();
+        }
+
+        chargedAttackReady = false;
+    }
+
+    public void SpawnNormalAttack()
+    {
+        GameObject attack = Instantiate(normalAttack, attackPoint.position, Quaternion.identity);
         attack.transform.parent = gameObject.transform;
         attack.GetComponent<AttackHitbox>().player = playerMovement;
         if (Mathf.Sign(sprite.localScale.x) == -1)
         {
             attack.GetComponent<ParticleSystemRenderer>().flip = new Vector3(1, 0, 0);
         }
+    }
+
+    public void SpawnChargedAttack()
+    {
+        GameObject attack = Instantiate(chargedAttack, attackPoint.position, Quaternion.identity);
+        if (Mathf.Sign(sprite.localScale.x) == -1)
+        {
+            attack.GetComponent<ParticleSystemRenderer>().flip = new Vector3(1, 0, 0);
+        }
+        attack.GetComponent<Rigidbody2D>().
+            AddForce(new Vector2(Mathf.Sign(sprite.localScale.x) * chargedForce, 0), ForceMode2D.Impulse);
     }
 
     // Attempt to end attacking early
@@ -110,5 +139,12 @@ public class PlayerAttackManager : MonoBehaviour
         animationManager.setAnimationCancel();
         playerMovement.setAttackState(0);
         return true;
+    }
+
+    // Executed via animation callback
+    public void ChargedAttackReady()
+    {
+        chargedAttackReady = true;
+        Debug.Log("Charge Ready!");
     }
 }

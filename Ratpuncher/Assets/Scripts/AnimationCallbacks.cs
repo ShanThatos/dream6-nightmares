@@ -22,7 +22,7 @@ public class AnimationCallbacks : MonoBehaviour
     // Spawn particles and hitbox()
     public void SpawnParticlesAndHitbox()
     {
-        attackManager.SpawnParticlesAndHitbox();
+        attackManager.SpawnAttack();
     }
 
     public void DeathAnimDone()
@@ -35,5 +35,8 @@ public class AnimationCallbacks : MonoBehaviour
         movement.OnRespawnAnimDone();
     }
 
-
+    public void ChargeAttackReady()
+    {
+        attackManager.ChargedAttackReady();
+    }
 }

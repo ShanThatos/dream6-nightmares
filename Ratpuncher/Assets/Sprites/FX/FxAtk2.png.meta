@@ -117,57 +117,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FxAtk2_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1000
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 371879b2d1aa0d54b8bde096474db973
-      internalID: -1712931519
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FxAtk2_1
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 1000
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a16e88f65c6074a4cb878fbfbc76ce2a
-      internalID: 894067680
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: FxAtk2_2
       rect:
         serializedVersion: 2
-        x: 2000
+        x: 6000
         y: 1000
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -183,12 +141,12 @@ TextureImporter:
       name: FxAtk2_3
       rect:
         serializedVersion: 2
-        x: 3000
+        x: 7000
         y: 1000
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -204,12 +162,12 @@ TextureImporter:
       name: FxAtk2_4
       rect:
         serializedVersion: 2
-        x: 4000
+        x: 8000
         y: 1000
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -225,12 +183,12 @@ TextureImporter:
       name: FxAtk2_5
       rect:
         serializedVersion: 2
-        x: 5000
+        x: 9000
         y: 1000
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -246,12 +204,12 @@ TextureImporter:
       name: FxAtk2_6
       rect:
         serializedVersion: 2
-        x: 6000
-        y: 1000
+        x: 0
+        y: 0
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -267,12 +225,12 @@ TextureImporter:
       name: FxAtk2_7
       rect:
         serializedVersion: 2
-        x: 7000
-        y: 1000
+        x: 1000
+        y: 0
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -288,12 +246,12 @@ TextureImporter:
       name: FxAtk2_8
       rect:
         serializedVersion: 2
-        x: 8000
-        y: 1000
+        x: 2000
+        y: 0
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -309,12 +267,12 @@ TextureImporter:
       name: FxAtk2_9
       rect:
         serializedVersion: 2
-        x: 9000
-        y: 1000
+        x: 3000
+        y: 0
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -330,12 +288,12 @@ TextureImporter:
       name: FxAtk2_10
       rect:
         serializedVersion: 2
-        x: 0
+        x: 4000
         y: 0
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -351,12 +309,12 @@ TextureImporter:
       name: FxAtk2_11
       rect:
         serializedVersion: 2
-        x: 1000
+        x: 5000
         y: 0
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -372,12 +330,12 @@ TextureImporter:
       name: FxAtk2_12
       rect:
         serializedVersion: 2
-        x: 2000
+        x: 6000
         y: 0
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -393,12 +351,12 @@ TextureImporter:
       name: FxAtk2_13
       rect:
         serializedVersion: 2
-        x: 3000
+        x: 7000
         y: 0
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -406,90 +364,6 @@ TextureImporter:
       bones: []
       spriteID: 1a6e007e9347de343bd65c2cafe9400b
       internalID: -1918628687
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FxAtk2_14
-      rect:
-        serializedVersion: 2
-        x: 4000
-        y: 0
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a16ccde93886eb4489d5fd1678a476d5
-      internalID: -1430391866
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FxAtk2_15
-      rect:
-        serializedVersion: 2
-        x: 5000
-        y: 0
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: afdb8780aa497c142ab8ddebcde3f797
-      internalID: 830013966
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FxAtk2_16
-      rect:
-        serializedVersion: 2
-        x: 6000
-        y: 0
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 06905efeb564d9e4d90a54605481db84
-      internalID: 1165972415
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FxAtk2_17
-      rect:
-        serializedVersion: 2
-        x: 7000
-        y: 0
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c54462ac49c9454791f27f82897d0b1
-      internalID: -739227029
       vertices: []
       indices: 
       edges: []
@@ -508,12 +382,9 @@ TextureImporter:
       FxAtk2_9: -1786422340
       FxAtk2_1: 894067680
       FxAtk2_7: 349246994
-      FxAtk2_15: 830013966
       FxAtk2_8: -528089550
-      FxAtk2_17: -739227029
       FxAtk2_4: 921919797
       FxAtk2_6: 2064903529
-      FxAtk2_16: 1165972415
       FxAtk2_13: -1918628687
       FxAtk2_5: 396714823
       FxAtk2_11: -1087274242
@@ -522,7 +393,6 @@ TextureImporter:
       FxAtk2_12: -939420733
       FxAtk2_2: -1447191726
       FxAtk2_3: 1514146612
-      FxAtk2_14: -1430391866
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

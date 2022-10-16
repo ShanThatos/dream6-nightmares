@@ -723,6 +723,7 @@ MonoBehaviour:
   maxGroundMoveSpeed: 6
   maxAirMoveSpeed: 5.5
   maxLaunchSpeed: 0
+  maxChargeMoveSpeed: 0.5
   attackRecoil: {x: 20, y: 2}
   jumpForce: 12
   groundPoundDelay: 0.15
@@ -790,8 +791,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f2c660305e33442ba6eaa9556b12c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attacks:
-  - {fileID: 4380985370008964227, guid: 0b324f39fa3a53e46919e3e002c04c3e, type: 3}
+  normalAttack: {fileID: 4380985370008964227, guid: 0b324f39fa3a53e46919e3e002c04c3e, type: 3}
+  chargedAttack: {fileID: 6060730667128994996, guid: c0b67dabcbe7756498f6ae8a21d967ce, type: 3}
+  chargedForce: 7.5
   attackPoint: {fileID: 1320965739}
   sprite: {fileID: 8642731271435911648}
   allowAttackQueueing: 1
