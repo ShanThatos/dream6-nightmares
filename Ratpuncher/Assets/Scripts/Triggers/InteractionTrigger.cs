@@ -85,7 +85,7 @@ public class InteractionTrigger : MonoBehaviour
         }
     }
 
-    void OnAttack()
+    void OnJump()
     {
         if (isInsideItem)
         {

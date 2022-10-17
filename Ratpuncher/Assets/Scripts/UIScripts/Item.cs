@@ -11,7 +11,6 @@ public class Item : MonoBehaviour
 
     private GameObject itemIdentifier;
     private GameObject blackPanel;
-    private GameObject notification;
     private Image itemImage;
     private TextMeshProUGUI itemDescription;
     private TextMeshProUGUI itemName;
@@ -20,12 +19,10 @@ public class Item : MonoBehaviour
     void Start()
     {
         blackPanel = GameObject.FindGameObjectWithTag("BlackPanel");
-        notification = GameObject.FindGameObjectWithTag("Notification");
-        notification.GetComponentInChildren<TextMeshProUGUI>().text = "Press Attack Key to Collect";
         itemIdentifier = GameObject.FindGameObjectWithTag("ItemIdentifier");
         itemImage = itemIdentifier.transform.GetChild(0).transform.GetChild(1).GetComponent<Image>();
-        itemName = itemIdentifier.transform.GetChild(0).GetComponentInChildren<TextMeshProUGUI>();
-        itemDescription = itemIdentifier.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>();
+        itemName = itemIdentifier.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        itemDescription = itemIdentifier.transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>();
     }
 
     public void OpenIdentifier()
@@ -33,7 +30,6 @@ public class Item : MonoBehaviour
         itemName.text = name;
         itemDescription.text = descriptionString;
         itemImage.sprite = gameObject.GetComponent<SpriteRenderer>().sprite;
-        LeanTween.scaleY(notification, 1, 0.1f);
         blackPanel.transform.localScale = new Vector3(1, 1, 1);
         LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0.75f, 0.1f);
         LeanTween.scale(itemIdentifier, new Vector3(1, 1, 1), 0.1f);
@@ -41,7 +37,6 @@ public class Item : MonoBehaviour
     }
     public void CloseIdentifier()
     {
-        LeanTween.scaleY(notification, 0, 0.1f);
         blackPanel.transform.localScale = new Vector3(0, 0, 0);
         LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0.0f, 0.1f);
         LeanTween.scale(itemIdentifier, new Vector3(0, 0, 0), 0.1f);
