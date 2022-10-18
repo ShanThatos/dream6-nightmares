@@ -20,12 +20,18 @@ public class SpawnPrefab : MonoBehaviour {
 
     float spawnTime;
 
+    [Tooltip("Set to 0 for infinite")]
+    public int maxCount;
+
+    int count;
+
     Collider2D spawnTrigger;
 
 
     void Start() {
         spawnTime = Random.Range(minSpawnTime, maxSpawnTime);
         spawnTrigger = GetComponent<Collider2D>();
+        count = 0;
     }
 
     void Update() {
@@ -37,6 +43,12 @@ public class SpawnPrefab : MonoBehaviour {
                 if (go.GetComponent<Rigidbody2D>() != null) 
                     go.GetComponent<Rigidbody2D>().angularVelocity = Random.Range(minAngularVelocity, maxAngularVelocity);
                 spawnTime = Random.Range(minSpawnTime, maxSpawnTime);
+
+                count++;
+                if (maxCount != 0 && count >= maxCount) 
+                { 
+                    Destroy(gameObject);
+                }  
             }
         }
     }

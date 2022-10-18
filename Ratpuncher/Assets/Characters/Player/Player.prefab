@@ -729,7 +729,7 @@ MonoBehaviour:
   groundPoundDelay: 0.15
   groundPoundSound: {fileID: 254365810769650644}
   dashForce: 12
-  dashCooldown: 1
+  dashCooldown: 4
   dashDuration: 0.33
   hasDashAbility: 0
   hurtSound: {fileID: 5041845320778197620}

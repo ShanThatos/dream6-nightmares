@@ -124,6 +124,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 animationManager.setDashing(false);
                 currentAction = PlayerActions.None;
+                damage.setInvincibility(false);
             }
         }
 
@@ -374,6 +375,7 @@ public class PlayerMovement : MonoBehaviour
 
             currDashCooldown = dashCooldown;
             currDashDuration = dashDuration;
+            damage.setInvincibility(true);
         }
     }
 
