@@ -15,12 +15,14 @@ public class OfficeManager : MonoBehaviour
     public GameObject phoneButton;
     public GameObject noteButton;
     public GameObject safeButton;
+    public GameObject menuButton;
     public GameObject controlsButton;
     public GameObject boardFirstSelected;
     public GameObject phoneFirstSelected;
     public GameObject controlsFirstSelected;
     public GameObject XboxFirstSelected;
     public GameObject noteFirstSelected;
+    public GameObject menuFirstSelected;
     //public GameObject safeFirstSelected;
 
     public GameObject boardPanel;
@@ -28,6 +30,7 @@ public class OfficeManager : MonoBehaviour
     public GameObject controlsPanel;
     public GameObject xboxControlsPanel;
     public GameObject notePanel;
+    public GameObject menuPanel;
     //public GameObject safePanel;
 
     private bool backInput;
@@ -120,6 +123,20 @@ public class OfficeManager : MonoBehaviour
     {
         notePanel.SetActive(false);
         EventSystem.current.SetSelectedGameObject(noteButton);
+        onBackInput = null;
+    }
+
+    public void OpenMenu()
+    {
+        menuPanel.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(menuFirstSelected);
+        onBackInput = CloseMenu;
+    }
+
+    public void CloseMenu()
+    {
+        menuPanel.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(menuButton);
         onBackInput = null;
     }
 
