@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 185ff01fbda59fe488ec1a7f0d40830c
+guid: 1330bfb9fe20e6348a68609b6d2f1e9d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fly_0
+      name: TwinkleBoom_0
       rect:
         serializedVersion: 2
         x: 0
@@ -125,20 +125,20 @@ TextureImporter:
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a912bd14029715f4c84710d15055427f
-      internalID: -1967742709
+      spriteID: 1f525803eb99e97479ca1b583d7f0c9d
+      internalID: 866389667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly_1
+      name: TwinkleBoom_1
       rect:
         serializedVersion: 2
         x: 1000
@@ -146,20 +146,20 @@ TextureImporter:
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 805bd00fa44eff8499fe950b1e504fa3
-      internalID: 1054151078
+      spriteID: 6283606a8231b4a4385b82a6e285e0ad
+      internalID: -249031801
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly_2
+      name: TwinkleBoom_2
       rect:
         serializedVersion: 2
         x: 2000
@@ -167,20 +167,20 @@ TextureImporter:
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02c3f57947ffdc9408e505e5fc528d75
-      internalID: -2139909957
+      spriteID: 0840e400148a3a9428cca761db9570cd
+      internalID: 151314366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly_3
+      name: TwinkleBoom_3
       rect:
         serializedVersion: 2
         x: 3000
@@ -188,20 +188,20 @@ TextureImporter:
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8c497c1937fbed4f8d2358549570f67
-      internalID: -383204188
+      spriteID: 121d0aacf41ea324684d0199790cc826
+      internalID: 1817395419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly_4
+      name: TwinkleBoom_4
       rect:
         serializedVersion: 2
         x: 0
@@ -209,20 +209,20 @@ TextureImporter:
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c291d7f4496c8d4e9ceba09e71d98c7
-      internalID: -1862447418
+      spriteID: a14a069af2e1e9346a84e4849a644118
+      internalID: -1694245542
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly_5
+      name: TwinkleBoom_5
       rect:
         serializedVersion: 2
         x: 1000
@@ -230,20 +230,20 @@ TextureImporter:
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 383cd5969c2bc024e9bb982f366f24b4
-      internalID: -1277205877
+      spriteID: 765485f8c985e774984829d2a8f7f2f7
+      internalID: -1069287232
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly_6
+      name: TwinkleBoom_6
       rect:
         serializedVersion: 2
         x: 2000
@@ -251,20 +251,20 @@ TextureImporter:
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8a9414d738fb714d9b341f7159acea3
-      internalID: 1121429229
+      spriteID: 15d45d138a71a194f9b5af261478f1a6
+      internalID: -1886726505
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly_7
+      name: TwinkleBoom_7
       rect:
         serializedVersion: 2
         x: 3000
@@ -272,20 +272,20 @@ TextureImporter:
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8658f1f8755cdd9438151056df4a2a12
-      internalID: 890975661
+      spriteID: 4d4cb1cb3b238d840bf32d18971271b0
+      internalID: 2104416518
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly_8
+      name: TwinkleBoom_8
       rect:
         serializedVersion: 2
         x: 0
@@ -293,20 +293,20 @@ TextureImporter:
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 126b7c6e672e8ba409120a2e06b1860c
-      internalID: -182344285
+      spriteID: e75194f2105fb6d46a3619408f88983d
+      internalID: 1894418177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly_9
+      name: TwinkleBoom_9
       rect:
         serializedVersion: 2
         x: 1000
@@ -314,20 +314,20 @@ TextureImporter:
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce9875505bb616d4b9c95d40d9a30649
-      internalID: 576849227
+      spriteID: 9385a4dad6020c4428ab88e8d3d66799
+      internalID: -289319457
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly_10
+      name: TwinkleBoom_10
       rect:
         serializedVersion: 2
         x: 2000
@@ -335,20 +335,20 @@ TextureImporter:
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90dedaef291a47d479296e74d1f353b5
-      internalID: 865100577
+      spriteID: 3d5f8cec940076f42a99214a988f621a
+      internalID: 2087563645
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly_11
+      name: TwinkleBoom_11
       rect:
         serializedVersion: 2
         x: 3000
@@ -356,20 +356,20 @@ TextureImporter:
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 036306a340c40b14cb07961f03bb7112
-      internalID: -100284344
+      spriteID: 8e47f7649beedb3418038c17d0c73ea3
+      internalID: 807223169
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly_12
+      name: TwinkleBoom_12
       rect:
         serializedVersion: 2
         x: 0
@@ -377,20 +377,20 @@ TextureImporter:
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 850da7ad861cf384e8e88bee2368f04a
-      internalID: 1171230452
+      spriteID: 2a95e9fad5d1736408344059cb81169d
+      internalID: 948429507
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly_13
+      name: TwinkleBoom_13
       rect:
         serializedVersion: 2
         x: 1000
@@ -398,14 +398,35 @@ TextureImporter:
         width: 1000
         height: 1000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9e18a8bd3119984ea454ba8ebd8c929
-      internalID: 546672169
+      spriteID: 853f1ba4315d4ca4fb82a28e368da3ea
+      internalID: -962926733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TwinkleBoom_14
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68c9dfc98148b8b46859a3ed6d2c7640
+      internalID: 1606006190
       vertices: []
       indices: 
       edges: []
@@ -419,26 +440,23 @@ TextureImporter:
     indices: 
     edges: []
     weights: []
-    secondaryTextures:
-    - texture: {fileID: 2800000, guid: bdab0f41645338244af70927b5a7df91, type: 3}
-      name: _Emission
+    secondaryTextures: []
     nameFileIdTable:
-      Fly_8: -182344285
-      Fly_4: -1862447418
-      Fly_9: 576849227
-      Fly_13: 546672169
-      Fly_2: -2139909957
-      Fly_14: -291139064
-      Fly_12: 1171230452
-      Fly_1: 1054151078
-      Fly_7: 890975661
-      Fly_5: -1277205877
-      Fly_3: -383204188
-      Fly_15: -905620745
-      Fly_6: 1121429229
-      Fly_10: 865100577
-      Fly_0: -1967742709
-      Fly_11: -100284344
+      TwinkleBoom_7: 2104416518
+      TwinkleBoom_9: -289319457
+      TwinkleBoom_12: 948429507
+      TwinkleBoom_5: -1069287232
+      TwinkleBoom_10: 2087563645
+      TwinkleBoom_0: 866389667
+      TwinkleBoom_4: -1694245542
+      TwinkleBoom_14: 1606006190
+      TwinkleBoom_13: -962926733
+      TwinkleBoom_8: 1894418177
+      TwinkleBoom_6: -1886726505
+      TwinkleBoom_11: 807223169
+      TwinkleBoom_1: -249031801
+      TwinkleBoom_3: 1817395419
+      TwinkleBoom_2: 151314366
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

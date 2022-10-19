@@ -10,11 +10,17 @@ public class PlayerAttackManager : MonoBehaviour
     [Tooltip("Object for charged attack")]
     public GameObject chargedAttack;
 
+    [Tooltip("Object for charged attack ready indicator")]
+    public GameObject chargedAttackIndicator;
+
     [Tooltip("Force to launch charged attack projectile")]
     public float chargedForce;
 
     [Tooltip("Where the attack is spawned")]
     public Transform attackPoint;
+
+    [Tooltip("Where charged ready indicator is spawned")]
+    public Transform readyPoint;
 
     [Tooltip("Player sprite (used to figure out direction)")]
     public Transform sprite;
@@ -86,6 +92,7 @@ public class PlayerAttackManager : MonoBehaviour
         endAnimLock();
         animationManager.setAttacking(false);
         playerMovement.setAttackState(0);
+        chargedAttackReady = false;
     }
 
     // Executed via animation callback
@@ -135,6 +142,7 @@ public class PlayerAttackManager : MonoBehaviour
         }
 
         attackQueued = false;
+        chargedAttackReady = false;
         animationManager.setAttacking(false);
         animationManager.setAnimationCancel();
         playerMovement.setAttackState(0);
@@ -144,7 +152,10 @@ public class PlayerAttackManager : MonoBehaviour
     // Executed via animation callback
     public void ChargedAttackReady()
     {
+        if(chargedAttackReady == false)
+        {
+            Instantiate(chargedAttackIndicator, readyPoint.transform.position, Quaternion.identity);
+        }
         chargedAttackReady = true;
-        Debug.Log("Charge Ready!");
     }
 }
