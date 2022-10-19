@@ -715,7 +715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3032718885406970539, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: MainMenu
+      value: Office
       objectReference: {fileID: 0}
     - target: {fileID: 3032718885406970539, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -14274,6 +14274,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1187009165426390342, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187009165426390342, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187009165426390342, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187009165426390342, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -14313,34 +14325,6 @@ PrefabInstance:
       propertyPath: onDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 939215988}
-    - target: {fileID: 1187009166010962524, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1187009166010962524, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1187009166010962524, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
-      propertyPath: m_Color.b
-      value: 0.30466363
-      objectReference: {fileID: 0}
-    - target: {fileID: 1187009166010962524, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
-      propertyPath: m_Color.g
-      value: 0.17152013
-      objectReference: {fileID: 0}
-    - target: {fileID: 1187009166010962524, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
-      propertyPath: m_Color.r
-      value: 0.31132078
-      objectReference: {fileID: 0}
-    - target: {fileID: 1187009166010962524, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 808db905a3c05434b845e86e7b54d69d, type: 2}
-    - target: {fileID: 1187009166010962525, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.67
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
 --- !u!4 &2142920743 stripped

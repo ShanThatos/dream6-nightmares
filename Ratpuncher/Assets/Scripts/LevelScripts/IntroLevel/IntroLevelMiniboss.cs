@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class IntroLevelMiniboss : MonoBehaviour
 {
-    public GameObject bossReveal;
     public GameObject afterBossDoor;
     public GameObject bossHPBar;
-    public Damagable bossDamagable;
+    public GameObject boss;
+    Damagable bossDamagable;
     public GameObject[] barriers;
 
     bool active = false;
 
     void Start()
     {
+        boss.SetActive(false);
+        bossDamagable = boss.GetComponent<Damagable>();
         bossDamagable.OnDeath += OnBossDeath;
         Damagable playerDamagable = GameManager.instance.player.GetComponent<Damagable>();
         playerDamagable.OnRespawn += ResetFight;
@@ -27,7 +29,7 @@ public class IntroLevelMiniboss : MonoBehaviour
         {
             return;
         }
-        bossReveal.SetActive(false);
+        boss.SetActive(true);
         bossHPBar.SetActive(true);
 
         setBarriersActive(true);

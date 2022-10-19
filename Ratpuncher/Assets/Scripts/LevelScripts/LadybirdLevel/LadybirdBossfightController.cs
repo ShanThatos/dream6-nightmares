@@ -114,6 +114,11 @@ public class LadybirdBossfightController : MonoBehaviour {
         setBarriersActive(false);
         restartTrigger.SetActive(true);
 
+        AttackHitbox[] bossAttacks = bugfish.GetComponentsInChildren<AttackHitbox>();
+        Debug.Log("RESET " + bossAttacks.Length);
+        foreach(AttackHitbox attack in bossAttacks)
+            attack.damage *= 0.75f;
+
         bugfish.getDamagable().Respawn();
         bugfish.switchState("BFIdle");
         bugfish.resetStates();

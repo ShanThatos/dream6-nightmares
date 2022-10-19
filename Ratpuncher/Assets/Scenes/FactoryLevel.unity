@@ -811,7 +811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3032718885406970539, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: MainMenu
+      value: Office
       objectReference: {fileID: 0}
     - target: {fileID: 3032718885406970539, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1043,7 +1043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6197960883307520742, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6992808316205646018, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -10960,10 +10960,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51a9b830ebbf1014ea4e663216216b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossReveal: {fileID: 1135462478}
   afterBossDoor: {fileID: 1879364070}
   bossHPBar: {fileID: 16370662}
-  bossDamagable: {fileID: 520498652}
+  boss: {fileID: 0}
   barriers:
   - {fileID: 535160874}
   - {fileID: 1608880485}
