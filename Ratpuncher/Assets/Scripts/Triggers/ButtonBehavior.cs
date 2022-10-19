@@ -9,12 +9,12 @@ public class ButtonBehavior : MonoBehaviour , ISelectHandler, IDeselectHandler, 
 {
     public void OnSelect(BaseEventData eventData)
     {
-        GetComponentInChildren<TextMeshProUGUI>().color = Color.gray;
+        GetComponentInChildren<TextMeshProUGUI>().color = new Color32(50, 50, 50, 255);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        GetComponentInChildren<TextMeshProUGUI>().color = Color.gray;
+        GetComponentInChildren<TextMeshProUGUI>().color = new Color32(50, 50, 50, 255);
     }
 
     public void OnDeselect(BaseEventData eventData)
@@ -28,7 +28,7 @@ public class ButtonBehavior : MonoBehaviour , ISelectHandler, IDeselectHandler, 
     }
     public void SelectButton(GameObject go)
     {
-        go.GetComponentInChildren<TextMeshProUGUI>().color = Color.gray;
+        go.GetComponentInChildren<TextMeshProUGUI>().color = new Color32(50, 50, 50, 255);
         //go.transform.Translate(Vector3.right*0.5f);
     }
 
