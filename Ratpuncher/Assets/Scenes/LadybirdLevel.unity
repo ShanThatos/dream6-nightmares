@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &27879477 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6543877269537428778, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
-  m_PrefabInstance: {fileID: 77327004}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &34393473
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,19 +887,19 @@ PrefabInstance:
     - target: {fileID: 4490445078487422075, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 292313330}
+      objectReference: {fileID: 0}
     - target: {fileID: 4490445078487422075, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 292313330}
+      objectReference: {fileID: 0}
     - target: {fileID: 4490445078487422075, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 292313330}
+      objectReference: {fileID: 0}
     - target: {fileID: 4490445078487422075, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_Delegates.Array.data[3].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 292313330}
+      objectReference: {fileID: 0}
     - target: {fileID: 4490445078487422076, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1216,19 +1211,19 @@ PrefabInstance:
     - target: {fileID: 6543877269537428783, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 27879477}
+      objectReference: {fileID: 0}
     - target: {fileID: 6543877269537428783, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 27879477}
+      objectReference: {fileID: 0}
     - target: {fileID: 6543877269537428783, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 27879477}
+      objectReference: {fileID: 0}
     - target: {fileID: 6543877269537428783, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_Delegates.Array.data[3].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 27879477}
+      objectReference: {fileID: 0}
     - target: {fileID: 6786444747209007028, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2156,11 +2151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64f4fb70ce765245ba9889a1989cb49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &292313330 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4490445078487422078, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
-  m_PrefabInstance: {fileID: 77327004}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &303045468
 GameObject:
   m_ObjectHideFlags: 0

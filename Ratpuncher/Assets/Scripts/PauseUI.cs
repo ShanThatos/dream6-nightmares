@@ -7,7 +7,7 @@ public class PauseUI : MonoBehaviour
 {
     public GameObject resumeButton;
     public GameObject settingsButton;
-    public GameObject controlsButton;
+    //public GameObject controlsButton;
     public GameObject exitbutton;
     public GameObject settingsFirstSelected;
     public GameObject controlsFirstSelected;
@@ -46,6 +46,8 @@ public class PauseUI : MonoBehaviour
     public void OpenSettings()
     {
         pausePanel.SetActive(false);
+        controlsPanel.SetActive(false);
+        xboxControlsPanel.SetActive(false);
         settingsPanel.SetActive(true);
         EventSystem.current.SetSelectedGameObject(settingsFirstSelected);
         onBackInput = CloseSettings;
@@ -54,6 +56,8 @@ public class PauseUI : MonoBehaviour
     public void CloseSettings()
     {
         settingsPanel.SetActive(false);
+        controlsPanel.SetActive(false);
+        xboxControlsPanel.SetActive(false);
         pausePanel.SetActive(true);
         EventSystem.current.SetSelectedGameObject(settingsButton);
         onBackInput = null;
@@ -62,19 +66,22 @@ public class PauseUI : MonoBehaviour
     {
         pausePanel.SetActive(false);
         settingsPanel.SetActive(false);
+        xboxControlsPanel.SetActive(false);
         controlsPanel.SetActive(true);
         isXboxControls = false;
         EventSystem.current.SetSelectedGameObject(controlsFirstSelected);
-        onBackInput = CloseControls;
+        onBackInput = CloseSettings;
     }
 
-    public void CloseControls()
+    public void OpenXboxControls()
     {
+        pausePanel.SetActive(false);
+        settingsPanel.SetActive(false);
         controlsPanel.SetActive(false);
-        xboxControlsPanel.SetActive(false);
-        settingsPanel.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(controlsButton);
-        onBackInput = null;
+        xboxControlsPanel.SetActive(true);
+        isXboxControls = true;
+        EventSystem.current.SetSelectedGameObject(XboxFirstSelected);
+        onBackInput = CloseSettings;
     }
     public void ToggleControlPanelType()
     {

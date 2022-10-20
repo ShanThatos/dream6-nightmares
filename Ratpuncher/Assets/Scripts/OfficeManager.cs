@@ -16,7 +16,7 @@ public class OfficeManager : MonoBehaviour
     public GameObject noteButton;
     public GameObject safeButton;
     public GameObject menuButton;
-    public GameObject controlsButton;
+    //public GameObject controlsButton;
     public GameObject boardFirstSelected;
     public GameObject phoneFirstSelected;
     public GameObject controlsFirstSelected;
@@ -86,14 +86,35 @@ public class OfficeManager : MonoBehaviour
 
     public void OpenSettings()
     {
+        controlsPanel.SetActive(false);
+        xboxControlsPanel.SetActive(false);
         phonePanel.SetActive(true);
         EventSystem.current.SetSelectedGameObject(phoneFirstSelected);
+        onBackInput = CloseSettings;
+    }
+    public void OpenControls()
+    {
+        xboxControlsPanel.SetActive(false);
+        phonePanel.SetActive(false);
+        controlsPanel.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(controlsFirstSelected);
+        onBackInput = CloseSettings;
+    }
+
+    public void OpenXboxControls()
+    {
+        phonePanel.SetActive(false);
+        controlsPanel.SetActive(false);
+        xboxControlsPanel.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(XboxFirstSelected);
         onBackInput = CloseSettings;
     }
 
     public void CloseSettings()
     {
         phonePanel.SetActive(false);
+        xboxControlsPanel.SetActive(false);
+        controlsPanel.SetActive(false);
         EventSystem.current.SetSelectedGameObject(phoneButton);
         onBackInput = null;
     }
@@ -137,24 +158,6 @@ public class OfficeManager : MonoBehaviour
     {
         menuPanel.SetActive(false);
         EventSystem.current.SetSelectedGameObject(menuButton);
-        onBackInput = null;
-    }
-
-    public void OpenControls()
-    {
-        controlsPanel.SetActive(true);
-        phonePanel.SetActive(false);
-        isXboxControls = false;
-        EventSystem.current.SetSelectedGameObject(controlsFirstSelected);
-        onBackInput = CloseControls;
-    }
-
-    public void CloseControls()
-    {
-        controlsPanel.SetActive(false);
-        xboxControlsPanel.SetActive(false);
-        phonePanel.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(controlsButton);
         onBackInput = null;
     }
 
