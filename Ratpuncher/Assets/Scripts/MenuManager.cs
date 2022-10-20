@@ -57,13 +57,37 @@ public class MenuManager : MonoBehaviour
     public void OpenSettings()
     {
         settingsPanel.SetActive(true);
+        controlsPanel.SetActive(false);
+        xboxControlsPanel.SetActive(false);
         EventSystem.current.SetSelectedGameObject(settingsFirstSelected);
+        onBackInput = CloseSettings;
+    }
+
+    public void OpenControls()
+    {
+        settingsPanel.SetActive(false);
+        xboxControlsPanel.SetActive(false);
+        controlsPanel.SetActive(true);
+        isXboxControls = false;
+        EventSystem.current.SetSelectedGameObject(controlsFirstSelected);
+        onBackInput = CloseSettings;
+    }
+
+    public void OpenXBoxControls()
+    {
+        settingsPanel.SetActive(false);
+        controlsPanel.SetActive(false);
+        xboxControlsPanel.SetActive(true);
+        isXboxControls = true;
+        EventSystem.current.SetSelectedGameObject(XboxFirstSelected);
         onBackInput = CloseSettings;
     }
 
     public void CloseSettings()
     {
         settingsPanel.SetActive(false);
+        controlsPanel.SetActive(false);
+        xboxControlsPanel.SetActive(false);
         EventSystem.current.SetSelectedGameObject(settingsButton);
         onBackInput = null;
     }
@@ -82,14 +106,6 @@ public class MenuManager : MonoBehaviour
         onBackInput = null;
     }
 
-    public void OpenControls()
-    {
-        settingsButton.SetActive(false);
-        controlsPanel.SetActive(true);
-        isXboxControls = false;
-        EventSystem.current.SetSelectedGameObject(controlsFirstSelected);
-        onBackInput = CloseControls;
-    }
 
     public void CloseControls()
     {
