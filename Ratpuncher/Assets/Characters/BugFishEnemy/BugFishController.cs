@@ -66,7 +66,8 @@ public class BugFishController : StateManager {
             damage.OnDeath += OnDeath;
         }
 
-        HPBar.SetMaxHP(damage.GetMaxHealth());
+        if (HPBar)
+            HPBar.SetMaxHP(damage.GetMaxHealth());
 
         setAnimating(this.isAnimating);
     }

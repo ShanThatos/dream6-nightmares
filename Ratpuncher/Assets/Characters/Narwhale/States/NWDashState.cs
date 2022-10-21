@@ -14,13 +14,13 @@ public class NWDashState : NWState {
         controller.animator.Play("NarwhaleAttack");
 
         controller.rb.velocity = new Vector2(0, controller.rb.velocity.y);
-
-        if (controller.bounds.isNearBounds()) {
+        
+        if (Vector2.Distance(GameManager.GetPlayerTransform().position, transform.position) < 10)
+            controller.setDirection(transform.position.x <= GameManager.GetPlayerTransform().position.x);
+        else if (controller.bounds.isNearBounds()) {
             float mid = (controller.bounds.MIN_X + controller.bounds.MAX_X) / 2;
             controller.setDirection(transform.position.x <= mid);
-        } else if (Vector2.Distance(GameManager.GetPlayerTransform().position, transform.position) < 10)
-            controller.setDirection(transform.position.x <= GameManager.GetPlayerTransform().position.x);
-        else
+        } else
             controller.setDirection(Random.value > 0.5f);
 
         finishedDashing = false;

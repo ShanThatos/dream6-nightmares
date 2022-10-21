@@ -129,6 +129,10 @@ public class LadybirdBossfightController : MonoBehaviour {
         Collider2D bfCollider = bugfish.GetComponent<Collider2D>();
         bfCollider.offset = new Vector2(bfCollider.offset.x, 0);
 
+        Vector3 pos = bugfish.transform.position;
+        pos.y += 2f;
+        bugfish.transform.position = pos;
+
     }
 
     // Turns the barriers back on when the player reengages
