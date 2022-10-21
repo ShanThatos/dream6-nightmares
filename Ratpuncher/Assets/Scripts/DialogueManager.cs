@@ -7,6 +7,7 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager instance { get; private set; }
     private DialogueController dialogueScript;
     public bool isDialogueOn;
+    public bool isDialogueFinished;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
+        isDialogueFinished = dialogueScript.isDialogueFinished;
         isDialogueOn = dialogueScript.isDialogueOn;
     }
 

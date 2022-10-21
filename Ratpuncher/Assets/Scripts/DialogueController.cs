@@ -18,6 +18,7 @@ public class DialogueController : MonoBehaviour
     private bool oldInput;
     private bool input;
     public bool isDialogueOn;
+    public bool isDialogueFinished;
 
     private bool isRunning;
     public float textSpeed;
@@ -150,6 +151,7 @@ public class DialogueController : MonoBehaviour
     {
         if (isDialogueOn)
         {
+            isDialogueFinished = true;
             Debug.Log("Dialogue Ended");
             blackPanel.transform.localScale = new Vector3(0, 0, 0);
             LeanTween.scaleY(dialoguePanel, 0, 0.2f);

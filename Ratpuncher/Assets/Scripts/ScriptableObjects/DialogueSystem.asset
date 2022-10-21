@@ -77,7 +77,6 @@ MonoBehaviour:
     - Rem (rem normal) To do so though I need to get into your nightmare realm to
       get to the root of this issue, is that okay?
     - Ladybird (ladybird normal) Y-yes! Just say the word.
-    - "() Ladybird\u2019s case is pinned to the board.\r"
   - dialogueName: ElioHub
     needsTransition: 0
     sceneName: 

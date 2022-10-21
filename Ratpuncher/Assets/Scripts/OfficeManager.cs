@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class OfficeManager : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class OfficeManager : MonoBehaviour
     public GameObject xboxControlsPanel;
     public GameObject notePanel;
     public GameObject menuPanel;
+    public GameObject pinCaseAlert;
     //public GameObject safePanel;
 
     private bool backInput;
@@ -41,21 +43,6 @@ public class OfficeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (PlayerPrefs.GetInt("LadybirdSolved", 0) == 0)
-        {
-            boardAlert.SetActive(true);
-            ladybirdAlert.SetActive(true);
-        }
-        else if (PlayerPrefs.GetInt("ElioSolved", 0) == 0 && PlayerPrefs.GetInt("ElioActivated", 0) == 1)
-        {
-            boardAlert.SetActive(true);
-            elioAlert.SetActive(true);
-        }
-        else if (PlayerPrefs.GetInt("RemSolved", 0) == 0 && PlayerPrefs.GetInt("RemActivated", 0) == 1)
-        {
-            boardAlert.SetActive(true);
-            remAlert.SetActive(true);
-        }
         EventSystem.current.SetSelectedGameObject(null);
     }
 
@@ -81,6 +68,25 @@ public class OfficeManager : MonoBehaviour
         {
             EventSystem.current.SetSelectedGameObject(null);
             isTriggered = false;
+        }
+    }
+
+    public void TriggerAlert()
+    {
+        if (PlayerPrefs.GetInt("LadybirdSolved", 0) == 0)
+        {
+            boardAlert.SetActive(true);
+            ladybirdAlert.SetActive(true);
+        }
+        else if (PlayerPrefs.GetInt("ElioSolved", 0) == 0 && PlayerPrefs.GetInt("ElioActivated", 0) == 1)
+        {
+            boardAlert.SetActive(true);
+            elioAlert.SetActive(true);
+        }
+        else if (PlayerPrefs.GetInt("RemSolved", 0) == 0 && PlayerPrefs.GetInt("RemActivated", 0) == 1)
+        {
+            boardAlert.SetActive(true);
+            remAlert.SetActive(true);
         }
     }
 
@@ -197,5 +203,21 @@ public class OfficeManager : MonoBehaviour
     public void SliderDeselect(GameObject go)
     {
         LeanTween.scale(go, new Vector3(4f, 3f, 4f), 0.1f);
+    }
+
+    public void TriggerPin()
+    {
+        if (PlayerPrefs.GetInt("LadybirdSolved", 0) == 0)
+        {
+            pinCaseAlert.GetComponentInChildren<TextMeshProUGUI>().text = "Ladybird's case is pinned to the board";
+        }
+        var seq = LeanTween.sequence();
+        seq.append(LeanTween.alpha(pinCaseAlert.GetComponent<RectTransform>(), 0.75f, 0.5f));
+        seq.append(LeanTween.moveX(pinCaseAlert.transform.GetChild(0).gameObject.GetComponent<RectTransform>(), 0, 1f));
+        seq.append(3f);
+        seq.append(LeanTween.moveX(pinCaseAlert.transform.GetChild(0).gameObject.GetComponent<RectTransform>(), 2000, 1f));
+        seq.append(LeanTween.alpha(pinCaseAlert.GetComponent<RectTransform>(), 0, 0.5f));
+        seq.append(() => Destroy(pinCaseAlert));
+
     }
 }

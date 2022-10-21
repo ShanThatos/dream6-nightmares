@@ -8,8 +8,10 @@ using UnityEngine.SceneManagement;
 public class LevelStartDialogue : MonoBehaviour
 {
     public string startDialogue;
+    public bool hasFinishedAction;
     private string alternativeDialogue;
     private bool isTriggered;
+    private bool didFinishedAction;
     public void Start()
     {
         isTriggered = false;
@@ -38,10 +40,32 @@ public class LevelStartDialogue : MonoBehaviour
                     return;
                 }
             }
-            
+
             // Play the start dialogue if none of the conditions matches
             DialogueManager.instance.PlayDialogue(startDialogue);
             isTriggered = true;
+        }
+
+        if (isTriggered)
+        {
+            if (hasFinishedAction && DialogueManager.instance.isDialogueFinished)
+            {
+                TriggerFinishedAction();
+            }
+
+        }
+    }
+
+    private void TriggerFinishedAction()
+    {
+        if (!didFinishedAction)
+        {
+            if (PlayerPrefs.GetInt("LadybirdSolved", 0) == 0)
+            {
+                this.gameObject.GetComponent<OfficeManager>().TriggerPin();
+                this.gameObject.GetComponent<OfficeManager>().TriggerAlert();
+                didFinishedAction = true;
+            }
         }
     }
 }
