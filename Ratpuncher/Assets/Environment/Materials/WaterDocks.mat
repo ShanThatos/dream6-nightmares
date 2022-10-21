@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Water2D
+  m_Name: WaterDocks
   m_Shader: {fileID: -6465566751694194690, guid: 07931b74ac07ad0439f9151812e34ef7, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []

@@ -401,6 +401,15 @@ public class PlayerMovement : MonoBehaviour
 
     void OnAttack(InputValue value)
     {
+        
+        Debug.Log(value);
+
+        float floatVal = 0;
+        if(value.Get() != null)
+        {
+            floatVal = (float)value.Get();
+        }
+
         if (currentAction == PlayerActions.Pounding ||
             currentAction == PlayerActions.Dashing ||
             verticalState == VerticalState.Launched)
@@ -408,16 +417,18 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if (value.isPressed)
+        if (floatVal > .05 || value.isPressed)
         {
-            Debug.Log("Attack Down");
-            attackManager.BeginCharge();
-            currentAction = PlayerActions.Charging;
+            if(currentAction != PlayerActions.Charging)
+            {
+                attackManager.BeginCharge();
+                currentAction = PlayerActions.Charging;
+            }
             return;
         }
         else
         {
-            Debug.Log("Attack Up");
+            // pass 
         }
 
 
@@ -439,7 +450,6 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             currentAction = PlayerActions.None;
-
         }
 
         // May need to stop player movement if attacking
