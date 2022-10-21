@@ -40,6 +40,9 @@ public class LadybirdBossfightController : MonoBehaviour {
         playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
         yield return new WaitForSeconds(1.5f);
 
+        DialogueManager.instance.PlayDialogue("YoungLadybird");
+        yield return new WaitUntil(finishedDialogue);
+
         ladybirdAnimator.Play("LBBFFade");
         yield return new WaitForSeconds(3f);
 
@@ -91,6 +94,10 @@ public class LadybirdBossfightController : MonoBehaviour {
         MainCameraScript.instance.setCamFOVLerp(MainCameraScript.instance.defaultCamFOVLerp);
     }
 
+    public bool finishedDialogue()
+    {
+        return DialogueManager.instance.isDialogueFinished;
+    }
     public void EndBossFight() {
         if (!ended) {
             ended = true;

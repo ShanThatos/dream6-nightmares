@@ -152,6 +152,7 @@ public class DialogueController : MonoBehaviour
         if (isDialogueOn)
         {
             isDialogueFinished = true;
+            Invoke("ResetDialogue", 5f);
             Debug.Log("Dialogue Ended");
             blackPanel.transform.localScale = new Vector3(0, 0, 0);
             LeanTween.scaleY(dialoguePanel, 0, 0.2f);
@@ -171,5 +172,10 @@ public class DialogueController : MonoBehaviour
     public void check(string text)
     {
         Debug.Log(text);
+    }
+
+    private void ResetDialogue()
+    {
+        isDialogueFinished = false;
     }
 }
