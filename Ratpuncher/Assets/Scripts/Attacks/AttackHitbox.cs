@@ -30,6 +30,10 @@ public class AttackHitbox : MonoBehaviour
     [Tooltip("Is this hitbox active. True for most cases")]
     public bool isActive = true;
 
+    [SerializeField]
+    [Tooltip("Attack is nightmare energy")]
+    public bool energyAttack = false;
+
     private List<Damagable> alreadyHit = new List<Damagable>();
 
     void Start()

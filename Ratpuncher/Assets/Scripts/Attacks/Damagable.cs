@@ -36,9 +36,9 @@ public class Damagable : MonoBehaviour
     public event DeathEvent OnDeath;
     public void CallOnDeath() => OnDeath?.Invoke();
 
-    public delegate void HurtEvent(float damage);
+    public delegate void HurtEvent(float damage, bool isEnergy = false);
     public event HurtEvent OnHurt;
-    public void CallOnHurt(float damage) => OnHurt?.Invoke(damage);
+    public void CallOnHurt(float damage, bool isEnergy) => OnHurt?.Invoke(damage, isEnergy);
 
     public delegate void RespawnEvent();
     public event RespawnEvent OnRespawn;
@@ -74,9 +74,9 @@ public class Damagable : MonoBehaviour
                     health -= attack.damage;
 
                     // See CallOnDeath on how to subscribe to this event
-                    // Usful if you need custom behavior on hit (health bars, etc.)
+                    // Useful if you need custom behavior on hit (health bars, etc.)
                     if (health > 0)
-                        CallOnHurt(attack.damage);
+                        CallOnHurt(attack.damage, attack.energyAttack);
 
                     Vector2 kb = attack.knockback - knockResistance;
 

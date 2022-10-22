@@ -102,7 +102,6 @@ MonoBehaviour:
   maxScale: 1
   timeToMaxScale: 8
   timeToFade: 1
-  damage: 20
 --- !u!60 &2415505141481137659
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -804,3 +803,4 @@ MonoBehaviour:
   canLaunchPlayer: 0
   player: {fileID: 0}
   isActive: 1
+  energyAttack: 1

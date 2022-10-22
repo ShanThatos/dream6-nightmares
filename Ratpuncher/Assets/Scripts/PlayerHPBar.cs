@@ -25,7 +25,7 @@ public class PlayerHPBar : MonoBehaviour
         playerHP.OnDeath += OnPlayerDeath;
     }
 
-    void OnPlayerDamaged(float damage)
+    void OnPlayerDamaged(float damage, bool isEnergy = false)
     {
         currPlayerHp -= damage;
         bar.value = currPlayerHp / maxPlayerHP;

@@ -199,6 +199,7 @@ MonoBehaviour:
   canLaunchPlayer: 1
   player: {fileID: 0}
   isActive: 1
+  energyAttack: 1
 --- !u!1 &2518915855663590804
 GameObject:
   m_ObjectHideFlags: 0

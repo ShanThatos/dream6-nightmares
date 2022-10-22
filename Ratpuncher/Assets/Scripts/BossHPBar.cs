@@ -72,7 +72,7 @@ public class BossHPBar : MonoBehaviour
 
     }
 
-    public void RecieveDamage(float damage)
+    public void RecieveDamage(float damage, bool isEnergy = false)
     {
         currentHP -= damage;
 

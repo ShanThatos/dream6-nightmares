@@ -524,14 +524,17 @@ public class PlayerMovement : MonoBehaviour
         yield return null;
     }
 
-    public void OnHurt(float damage)
+    public void OnHurt(float damage, bool isEnergyHit)
     {
         if (isRespawning)
         {
             return;
         }
 
-        Debug.Log("Player took " + damage + " damage");
+        particleManager.spawnHitParticles(isEnergyHit);
+
+        string type = isEnergyHit ? "energy" : "physical";
+        Debug.Log("Player took " + damage + " " + type + " damage");
         if(hurtSound && !hurtSound.isPlaying)
         {
             hurtSound.Play();

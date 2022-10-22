@@ -8,6 +8,8 @@ public class PlayerParticles : MonoBehaviour
     public GameObject jumpParticles;
     public GameObject dashParticles;
     public GameObject poundParticles;
+    public GameObject hitParticles;
+    public GameObject energyHitParticles;
 
     public Transform bottom;
 
@@ -42,5 +44,17 @@ public class PlayerParticles : MonoBehaviour
     public void spawnPoundParticles()
     {
         Instantiate(poundParticles, bottom.position, Quaternion.identity);
+    }
+
+    public void spawnHitParticles(bool wasEnergy)
+    {
+        if (wasEnergy)
+        {
+            Instantiate(energyHitParticles, gameObject.transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(hitParticles, gameObject.transform.position, Quaternion.identity);
+        }
     }
 }

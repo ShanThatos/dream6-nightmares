@@ -67,7 +67,7 @@ public class NarwhaleController : StateManager
         switchState("NWDeath");
     }
 
-    public void OnHurt(float damage) {
+    public void OnHurt(float damage, bool isEnegy) {
         flicker.Flicker();
     }
 

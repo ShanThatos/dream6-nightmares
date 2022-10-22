@@ -55,7 +55,7 @@ public class RatEnemyController : StateManager {
         switchState("RatDeath");
     }
 
-    public void OnHurt(float damage) {
+    public void OnHurt(float damage, bool isEnergy) {
         switchState("RatHurt");
         flicker.Flicker();
     }

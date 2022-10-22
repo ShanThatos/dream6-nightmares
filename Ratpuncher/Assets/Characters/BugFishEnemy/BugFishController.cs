@@ -90,7 +90,7 @@ public class BugFishController : StateManager {
         Gizmos.DrawLine(new Vector3(MIN_X, MAX_Y, 0), new Vector3(MAX_X, MAX_Y, 0));
     }
 
-    void OnHurt(float damage)
+    void OnHurt(float damage, bool isEnergy = false)
     {
         // Debug.Log("Bugfish took " + damage + " damage!!");
 

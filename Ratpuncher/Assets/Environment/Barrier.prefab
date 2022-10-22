@@ -225,3 +225,4 @@ MonoBehaviour:
   canLaunchPlayer: 0
   player: {fileID: 0}
   isActive: 1
+  energyAttack: 1

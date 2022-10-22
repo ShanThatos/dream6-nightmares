@@ -69,7 +69,7 @@ public class MothEnemyController : StateManager {
         switchState("MothDeath");
     }
 
-    public void OnHurt(float damage) {
+    public void OnHurt(float damage, bool isEnergy) {
         switchState("MothRun");
         flicker.Flicker();
     }
