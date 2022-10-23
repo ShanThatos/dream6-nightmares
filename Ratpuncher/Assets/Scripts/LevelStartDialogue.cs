@@ -35,15 +35,22 @@ public class LevelStartDialogue : MonoBehaviour
                 if (PlayerPrefs.GetInt("LadybirdSolved", 0) == 1)
                 {
                     alternativeDialogue = "LadybirdClosure";
-                    DialogueManager.instance.PlayDialogue(alternativeDialogue);
-                    isTriggered = true;
-                    return;
+                    if (PlayerPrefs.GetInt(alternativeDialogue, 0) == 0)
+                    {
+                        DialogueManager.instance.PlayDialogue(alternativeDialogue);
+                        PlayerPrefs.SetInt(alternativeDialogue, 1);
+                        isTriggered = true;
+                        return;
+                    }
                 }
             }
-
-            // Play the start dialogue if none of the conditions matches
-            DialogueManager.instance.PlayDialogue(startDialogue);
-            isTriggered = true;
+            if (PlayerPrefs.GetInt(startDialogue, 0) == 0)
+            {
+                // Play the start dialogue if none of the conditions matches
+                DialogueManager.instance.PlayDialogue(startDialogue);
+                isTriggered = true;
+                PlayerPrefs.SetInt(startDialogue, 1);
+            }
         }
 
         if (isTriggered)
