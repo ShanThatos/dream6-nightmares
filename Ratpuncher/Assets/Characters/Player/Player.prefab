@@ -793,6 +793,8 @@ MonoBehaviour:
   jumpParticles: {fileID: 3490313779896905587, guid: 7f74fd7e7787b774d8633a4c7349aeec, type: 3}
   dashParticles: {fileID: 6802607700735488704, guid: 24f9ba9485905c14ea1505efc8fb0d48, type: 3}
   poundParticles: {fileID: 5921306335632418300, guid: 172f2f954b68a1e44882b7fa456a82f3, type: 3}
+  hitParticles: {fileID: 7070989776459374697, guid: 9be3e97b638bd1b48bcb6f8c38c754fb, type: 3}
+  energyHitParticles: {fileID: 7070989776459374697, guid: 6dd3f40a376e40f4e8ca0316f9b29445, type: 3}
   bottom: {fileID: 8642731270143251503}
 --- !u!114 &1564415879
 MonoBehaviour:
@@ -844,6 +846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 500
   knockResistance: {x: 1, y: 0}
+  damageReduction: 0
   iFrameTime: 1
   isPlayer: 1
   spawnHitParticles: 0

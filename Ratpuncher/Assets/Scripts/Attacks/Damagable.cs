@@ -14,6 +14,11 @@ public class Damagable : MonoBehaviour
     private Vector2 knockResistance;
 
     [SerializeField]
+    [Tooltip("Damage resistance (1 = invunerable)")]
+    [Range(0f, 1f)]
+    private float damageReduction = 0.0f;
+
+    [SerializeField]
     [Tooltip("How long entity is invincible in seconds after damage")]
     private float iFrameTime = 0.4f;
 
@@ -30,6 +35,7 @@ public class Damagable : MonoBehaviour
     private bool iFrame = false;
     private Rigidbody2D rb;
     private static GameObject particles;
+    private static GameObject deflectParticles;
     private PlayerMovement player;
 
     public delegate void DeathEvent();
@@ -48,6 +54,7 @@ public class Damagable : MonoBehaviour
     void Start()
     {
         particles = Resources.Load<GameObject>("HitParticles");
+        deflectParticles = Resources.Load<GameObject>("DeflectParticles");
 
         health = maxHealth;
         rb = GetComponent<Rigidbody2D>();
@@ -71,12 +78,22 @@ public class Damagable : MonoBehaviour
             {
                 if (attack.canHit(this))
                 {
-                    health -= attack.damage;
+                    float effectiveDamage = (attack.damage * (1- damageReduction) );
+                    health -= effectiveDamage;
+
+                    GameObject hitFX = particles;
+                    float recoilMult = 1.0f;
+
+                    if (damageReduction >= .8f)
+                    {
+                        hitFX = deflectParticles;
+                        recoilMult = 2.0f;
+                    }
 
                     // See CallOnDeath on how to subscribe to this event
                     // Useful if you need custom behavior on hit (health bars, etc.)
                     if (health > 0)
-                        CallOnHurt(attack.damage, attack.energyAttack);
+                        CallOnHurt(effectiveDamage, attack.energyAttack);
 
                     Vector2 kb = attack.knockback - knockResistance;
 
@@ -101,10 +118,11 @@ public class Damagable : MonoBehaviour
 
                     if (spawnHitParticles)
                     {
-                        GameObject spawned = Instantiate(particles, hit.transform.position, Quaternion.identity);
+                        GameObject spawned = Instantiate(hitFX, hit.transform.position, Quaternion.identity);   
                         if(flip)
                         {
                             spawned.transform.rotation = new Quaternion(0, 0, 180, 0);
+                            spawned.GetComponent<ParticleSystemRenderer>().flip = new Vector3(1, 0, 0);
                         }
                     }
 
@@ -118,7 +136,7 @@ public class Damagable : MonoBehaviour
                         // damage.OnDeath += OnDead;
                     }
 
-                    attack.TryApplyRecoil();
+                    attack.TryApplyRecoil(recoilMult);
 
                     iFrame = true;
                     StartCoroutine(DisableIFrames());

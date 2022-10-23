@@ -457,10 +457,12 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    public void AttackRecoil()
+    public void AttackRecoil(float multiplier = 1.0f)
     {
         Vector2 recoil = attackRecoil;
         recoil.x = forward.x > 0 ? -recoil.x : -recoil.x;
+
+        recoil *= multiplier;
 
         rb.AddForce(recoil, ForceMode2D.Impulse);
     }

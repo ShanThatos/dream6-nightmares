@@ -47,11 +47,11 @@ public class AttackHitbox : MonoBehaviour
         
     }
 
-    public void TryApplyRecoil()
+    public void TryApplyRecoil(float mult = 1.0f)
     {
         if (isPlayerAttack && player)
         {
-            player.AttackRecoil();
+            player.AttackRecoil(mult);
         }
     }
 
