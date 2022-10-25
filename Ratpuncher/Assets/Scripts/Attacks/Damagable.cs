@@ -90,6 +90,8 @@ public class Damagable : MonoBehaviour
                         recoilMult = 2.0f;
                     }
 
+                    Debug.Log("Health left: " + health);
+
                     // See CallOnDeath on how to subscribe to this event
                     // Useful if you need custom behavior on hit (health bars, etc.)
                     if (health > 0)
