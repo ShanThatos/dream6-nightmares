@@ -52,11 +52,19 @@ public class BoundedTransform : MonoBehaviour {
         Gizmos.DrawLine(new Vector3(actualMinX, actualMaxY), new Vector3(actualMinX, actualMinY));
     }
 
+    float EPSILON = 0.25f;
     public bool isNearBounds() {
-        float EPSILON = 0.25f;
         return Mathf.Abs(transform.position.x - actualMinX) < EPSILON
             || Mathf.Abs(transform.position.x - actualMaxX) < EPSILON
             || Mathf.Abs(transform.position.y - actualMinY) < EPSILON
             || Mathf.Abs(transform.position.y - actualMaxY) < EPSILON;
+    }
+
+    public bool isNearLeftBound() {
+        return Mathf.Abs(transform.position.x - actualMinX) < EPSILON;
+    }
+
+    public bool isNearRightBound() {
+        return Mathf.Abs(transform.position.x - actualMaxX) < EPSILON;
     }
 }
