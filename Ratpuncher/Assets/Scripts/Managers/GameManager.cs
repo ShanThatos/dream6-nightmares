@@ -53,12 +53,12 @@ public class GameManager : MonoBehaviour {
         PlayerInput playerInput = instance.player.GetComponent<PlayerInput>();
         if (locked)
         {
-            playerInput.enabled = false;
+            // playerInput.enabled = false;
             instance.movementLockCount++;
         }
         else
         {
-            playerInput.enabled = true;
+            // playerInput.enabled = true;
             instance.movementLockCount--;
         }
 
@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour {
         }
 
         instance.movementLocked = shouldLock;
+        playerInput.enabled = !shouldLock;
 
         instance.freezeObjects.ForEach(x => { 
             if (shouldLock) x.Lock();

@@ -43,11 +43,19 @@ public class LadybirdBossfightController : MonoBehaviour {
         playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
         playerInput.enabled = false;
         playerAnimationManager.setRunning(false);
+
+        // GameManager.SetMovementLock(true);
+
         yield return new WaitForSeconds(1.5f);
 
         DialogueManager.instance.PlayDialogue("YoungLadybird");
         yield return new WaitForSeconds(3f);
         yield return new WaitUntil(finishedDialogue);
+
+        yield return new WaitForSeconds(1f);
+        playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
+        // playerInput.enabled = false;
+        playerAnimationManager.setRunning(false);
 
         ladybirdAnimator.Play("LBBFFade");
         yield return new WaitForSeconds(3f);
@@ -82,6 +90,8 @@ public class LadybirdBossfightController : MonoBehaviour {
         // fallingDock.bodyType = RigidbodyType2D.Dynamic;
         bugfish.HPBar.gameObject.SetActive(true);
 
+        // playerInput.enabled = true;
+
         yield return new WaitForSeconds(1f);
         
         MainCameraScript.instance.target = GameManager.GetPlayerTransform();
@@ -93,8 +103,9 @@ public class LadybirdBossfightController : MonoBehaviour {
         setBarriersActive(true);
 
         bugfish.resetStates();
+
         playerRb.constraints = playerConstraints;
-        playerInput.enabled = true;
+        // GameManager.SetMovementLock(false);
 
         MainCameraScript.instance.cameraOffset = cameraOffset;
         MainCameraScript.instance.setCamPosLerp(MainCameraScript.instance.defaultCamPosLerp);
