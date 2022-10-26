@@ -26,9 +26,10 @@ public class ScenesTransition : MonoBehaviour
     {
         transitionAnim = gameObject.GetComponent<Animator>();
         //transitionAnim.Play("OpenEyes");
-        if (SceneManager.GetActiveScene().name != "MainMenu")
+        if (SceneManager.GetActiveScene().name != "MainMenu" || SceneManager.GetActiveScene().name != "Office")
         {
             transitionAnim.Play("OpenEyes");
+            LockPlayer();
         }
     }
 
@@ -42,6 +43,10 @@ public class ScenesTransition : MonoBehaviour
         if (isAnimationStopped())
         {
             transitionAnim.Play("CloseEyes");
+            if (SceneManager.GetActiveScene().name != "MainMenu" || SceneManager.GetActiveScene().name != "Office")
+            {
+                LockPlayer();
+            }
             LeanTween.delayedCall(gameObject, 2.3f, () =>
             {
                 SceneManager.LoadScene(sceneName);
@@ -78,5 +83,15 @@ public class ScenesTransition : MonoBehaviour
     private bool isAnimationStopped()
     {
         return transitionAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !transitionAnim.IsInTransition(0);
+    }
+
+    public void LockPlayer()
+    {
+        GameManager.SetMovementLock(true);
+    }
+
+    public void UnlockPlayer()
+    {
+        GameManager.SetMovementLock(false);
     }
 }
