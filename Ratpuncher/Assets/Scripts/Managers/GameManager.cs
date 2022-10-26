@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour {
     public GameObject player;
@@ -49,13 +50,15 @@ public class GameManager : MonoBehaviour {
 
     public static void SetMovementLock(bool locked) {
         if (instance == null) return;
-
+        PlayerInput playerInput = instance.player.GetComponent<PlayerInput>();
         if (locked)
         {
+            playerInput.enabled = false;
             instance.movementLockCount++;
         }
         else
         {
+            playerInput.enabled = true;
             instance.movementLockCount--;
         }
 
