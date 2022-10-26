@@ -14,10 +14,14 @@ public class TrackingDrill : MonoBehaviour
     [Tooltip("GameObject to spawn on attack")]
     public GameObject attack;
 
+    [Tooltip("GameObject to telegraph attack")]
+    public GameObject readyParticles;
+
     Transform player;
     Rigidbody2D rb;
     bool shouldTrack = false;
     bool hasAttacked = false;
+    bool alreadyReady = false;
     float lifetime = 0;
 
     // Start is called before the first frame update
@@ -57,6 +61,11 @@ public class TrackingDrill : MonoBehaviour
         }
 
         lifetime += Time.deltaTime;
+        if(!alreadyReady && lifetime >= delay - .66)
+        {
+            alreadyReady = true;
+            readyParticles.SetActive(true);
+        }
         if(lifetime >= delay)
         {
             executeAttck();
