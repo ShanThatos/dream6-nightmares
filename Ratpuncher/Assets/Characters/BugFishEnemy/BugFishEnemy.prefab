@@ -244,6 +244,7 @@ MonoBehaviour:
   MIN_X: 165.98
   MAX_X: 182
   MAX_Y: -22.5
+  MIN_Y_DRIP: -24.16
   HPBar: {fileID: 0}
   onDeathEvent:
     m_PersistentCalls:
@@ -329,6 +330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 200
   knockResistance: {x: 100, y: 100}
+  damageReduction: 0
   iFrameTime: 0.6
   isPlayer: 0
   spawnHitParticles: 1
@@ -1440,6 +1442,7 @@ MonoBehaviour:
   canLaunchPlayer: 1
   player: {fileID: 0}
   isActive: 0
+  energyAttack: 0
 --- !u!1 &3387308168211124832
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,6 +1689,7 @@ MonoBehaviour:
   canLaunchPlayer: 1
   player: {fileID: 0}
   isActive: 0
+  energyAttack: 0
 --- !u!1 &5041367199583986324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1763,6 +1767,7 @@ MonoBehaviour:
   canLaunchPlayer: 1
   player: {fileID: 0}
   isActive: 0
+  energyAttack: 0
 --- !u!1 &6173529996755507075
 GameObject:
   m_ObjectHideFlags: 0
@@ -2505,6 +2510,7 @@ MonoBehaviour:
   canLaunchPlayer: 1
   player: {fileID: 0}
   isActive: 0
+  energyAttack: 0
 --- !u!1 &8312491172259073116
 GameObject:
   m_ObjectHideFlags: 0

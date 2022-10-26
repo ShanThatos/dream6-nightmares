@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxScale: 1
-  timeToMaxScale: 8
+  timeToMaxScale: 2
   timeToFade: 1
 --- !u!60 &2415505141481137659
 PolygonCollider2D:

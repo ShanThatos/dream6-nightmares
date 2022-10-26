@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class LadybirdBossfightController : MonoBehaviour {
 
@@ -35,12 +36,17 @@ public class LadybirdBossfightController : MonoBehaviour {
     public IEnumerator StartBossFightCoroutine() {
         Rigidbody2D playerRb = GameManager.instance.player.GetComponent<Rigidbody2D>();
         Damagable playerDamagable = GameManager.instance.player.GetComponent<Damagable>();
+        PlayerInput playerInput = GameManager.instance.player.GetComponent<PlayerInput>();
+        PlayerAnimationManager playerAnimationManager = GameManager.instance.player.GetComponent<PlayerAnimationManager>();
         RigidbodyConstraints2D playerConstraints = playerRb.constraints;
         playerDamagable.OnRespawn += ResetBossFight;
         playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
+        playerInput.enabled = false;
+        playerAnimationManager.setRunning(false);
         yield return new WaitForSeconds(1.5f);
 
         DialogueManager.instance.PlayDialogue("YoungLadybird");
+        yield return new WaitForSeconds(3f);
         yield return new WaitUntil(finishedDialogue);
 
         ladybirdAnimator.Play("LBBFFade");
@@ -88,6 +94,7 @@ public class LadybirdBossfightController : MonoBehaviour {
 
         bugfish.resetStates();
         playerRb.constraints = playerConstraints;
+        playerInput.enabled = true;
 
         MainCameraScript.instance.cameraOffset = cameraOffset;
         MainCameraScript.instance.setCamPosLerp(MainCameraScript.instance.defaultCamPosLerp);
@@ -155,6 +162,7 @@ public class LadybirdBossfightController : MonoBehaviour {
     }
 
     public IEnumerator EndBossFightCoroutine() {
+        bugfish.getDamagable().setInvincibility(true);
         bugfishRevealAnimator.Play("BFDone");
         bugfish.HPBar.gameObject.SetActive(false);
 

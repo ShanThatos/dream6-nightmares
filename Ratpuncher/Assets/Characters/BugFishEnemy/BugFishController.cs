@@ -42,6 +42,8 @@ public class BugFishController : StateManager {
     public float MAX_X = 10f;
     public float MAX_Y = 10f;
 
+    public float MIN_Y_DRIP = 0f;
+
     Damagable damage;
 
     public BossHPBar HPBar;
@@ -85,9 +87,11 @@ public class BugFishController : StateManager {
 
     void OnDrawGizmosSelected() {
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(new Vector3(MIN_X, -100, 0), new Vector3(MIN_X, 100, 0));
-        Gizmos.DrawLine(new Vector3(MAX_X, -100, 0), new Vector3(MAX_X, 100, 0));
+        Gizmos.DrawLine(new Vector3(MIN_X, MAX_Y, 0), new Vector3(MIN_X, MAX_Y - 30, 0));
+        Gizmos.DrawLine(new Vector3(MAX_X, MAX_Y, 0), new Vector3(MAX_X, MAX_Y - 30, 0));
         Gizmos.DrawLine(new Vector3(MIN_X, MAX_Y, 0), new Vector3(MAX_X, MAX_Y, 0));
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(new Vector3(MIN_X, MIN_Y_DRIP, 0), new Vector3(MAX_X, MIN_Y_DRIP, 0));
     }
 
     void OnHurt(float damage, bool isEnergy = false)

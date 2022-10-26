@@ -32,6 +32,9 @@ public class StateManager : MonoBehaviour {
 
     public virtual void run() {}
 
+    public bool isCurrentStateIn(params String[] stateNames) {
+        return Array.Exists(stateNames, element => element == currentState.getStateName());
+    }
 
     public void switchState(State state) {
         currentState?.exit();
