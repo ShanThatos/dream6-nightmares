@@ -41,6 +41,7 @@ public class LadybirdBossfightController : MonoBehaviour {
         yield return new WaitForSeconds(1.5f);
 
         DialogueManager.instance.PlayDialogue("YoungLadybird");
+        yield return new WaitForSeconds(3f);
         yield return new WaitUntil(finishedDialogue);
 
         ladybirdAnimator.Play("LBBFFade");

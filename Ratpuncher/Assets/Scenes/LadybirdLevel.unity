@@ -5091,6 +5091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startDialogue: LadybirdStart
+  hasFinishedAction: 0
 --- !u!4 &929615900
 Transform:
   m_ObjectHideFlags: 0

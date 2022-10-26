@@ -40,7 +40,7 @@ public class BFDripState : BFState {
     }
 
     public override bool canEnter() {
-        return controller.currentState.getStateName() == "BFFly" && dripTimer <= 0;
+        return controller.currentState.getStateName() == "BFFly" && dripTimer <= 0 && controller.transform.position.y > controller.MIN_Y_DRIP;
     }
 
     public override string getStateName() {
