@@ -211,13 +211,16 @@ public class OfficeManager : MonoBehaviour
         {
             pinCaseAlert.GetComponentInChildren<TextMeshProUGUI>().text = "Ladybird's case is pinned to the board";
         }
+        GameObject text = pinCaseAlert.transform.GetChild(0).gameObject;
+        pinCaseAlert.SetActive(true);
         var seq = LeanTween.sequence();
-        seq.append(LeanTween.alpha(pinCaseAlert.GetComponent<RectTransform>(), 0.75f, 0.5f));
-        seq.append(LeanTween.moveX(pinCaseAlert.transform.GetChild(0).gameObject.GetComponent<RectTransform>(), 0, 1f));
+        //seq.append(LeanTween.moveX(pinCaseAlert.GetComponent<RectTransform>(), 485, 1f));
+        seq.append(LeanTween.scaleY(pinCaseAlert, 1, 0.15f));
         seq.append(3f);
-        seq.append(LeanTween.moveX(pinCaseAlert.transform.GetChild(0).gameObject.GetComponent<RectTransform>(), 2000, 1f));
-        seq.append(LeanTween.alpha(pinCaseAlert.GetComponent<RectTransform>(), 0, 0.5f));
-        seq.append(() => Destroy(pinCaseAlert));
+        seq.append(() => {
+            LeanTween.value(text, a => text.GetComponent<TextMeshProUGUI>().alpha = a, 1, 0, 1.5f);
+            LeanTween.alpha(pinCaseAlert.GetComponent<RectTransform>(), 0f, 1.5f).setDestroyOnComplete(true);
+        });
 
     }
 }
