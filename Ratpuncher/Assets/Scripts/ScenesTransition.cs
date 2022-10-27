@@ -72,12 +72,9 @@ public class ScenesTransition : MonoBehaviour
 
     public void ResetLevels()
     {
-        PlayerPrefs.SetInt("LadybirdSolved", 0);
-        PlayerPrefs.SetInt("IntroStart", 0);
-        PlayerPrefs.SetInt("HubStart", 0);
-        PlayerPrefs.SetInt("LadybirdStart", 0);
-        PlayerPrefs.SetInt("LadybirdClosure", 0);
-        PlayerPrefs.SetInt("FactoryStart", 0);
+        string rebinds = PlayerPrefs.GetString("rebinds");
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetString("rebinds", rebinds);
     }
 
     private bool isAnimationStopped()

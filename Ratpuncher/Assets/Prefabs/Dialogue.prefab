@@ -93,7 +93,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6634532804248118921
 RectTransform:
   m_ObjectHideFlags: 0
@@ -111,8 +111,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 650.94556, y: -121.734116}
-  m_SizeDelta: {x: -1495.7361, y: -316.8794}
+  m_AnchoredPosition: {x: 555.547, y: -91}
+  m_SizeDelta: {x: -1603.8342, y: -296.0409}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5911823924646601459
 CanvasRenderer:
@@ -142,17 +142,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: press space to continue
+  m_text: press any key >>
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 675e9b8d7f38a9c4295db2d0eaca8a84, type: 2}
-  m_sharedMaterial: {fileID: 4501366506542715102, guid: 675e9b8d7f38a9c4295db2d0eaca8a84, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 692a85611fe3f6a44a2701b10996f5d0, type: 2}
+  m_sharedMaterial: {fileID: -888643575040364970, guid: 692a85611fe3f6a44a2701b10996f5d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4289440683
+  m_fontColor: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -345,6 +345,7 @@ MonoBehaviour:
   dialogueText: {fileID: 3558910314878669552}
   characterImage: {fileID: 3558910313998736164}
   isDialogueOn: 0
+  isDialogueFinished: 0
   textSpeed: 30
   soSceneName: 
 --- !u!1 &3558910314120415074

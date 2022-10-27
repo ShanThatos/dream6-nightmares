@@ -48,7 +48,8 @@ public class DialogueController : MonoBehaviour
     private void Update()
     {
         oldInput = input;
-        input = Input.GetAxisRaw("Submit") > 0;
+        input = Input.anyKeyDown;
+        //input = Input.GetAxisRaw("Submit") > 0;
         if (isDialogueOn)
         {
             if (input && !oldInput)
@@ -134,18 +135,23 @@ public class DialogueController : MonoBehaviour
         for (float t = 0; dialogueText.maxVisibleCharacters < sentence.Length; t += Time.deltaTime)
         {
             dialogueText.maxVisibleCharacters = (int)(t * textSpeed);
-
             if (input && !oldInput)
             {
-                // consume input
-                oldInput = input;
-                dialogueText.maxVisibleCharacters = sentence.Length;
+                if (sentence.Length - dialogueText.maxVisibleCharacters < 20)
+                {
+                    isRunning = false;
+                    DisplayNextSentence();
+                }
+                else
+                {
+                    // consume input
+                    oldInput = input;
+                    dialogueText.maxVisibleCharacters = sentence.Length;
+                }
             }
             yield return null;
         }
-
         isRunning = false;
-
     }
     public void EndDialogue()
     {
