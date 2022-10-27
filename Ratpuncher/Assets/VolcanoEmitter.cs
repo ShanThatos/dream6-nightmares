@@ -48,6 +48,7 @@ public class VolcanoEmitter : MonoBehaviour
             }
 
             Debug.Log("Volcano launched " + i + " projectiles");
+            Destroy(gameObject, 3f);
         }
 
         frameCount++;

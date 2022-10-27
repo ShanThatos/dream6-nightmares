@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -14,6 +14,20 @@ public class TutorialIndicator : MonoBehaviour
     public string actionOverride;
     private bool isTriggered;
     private GameObject actionIndicator;
+
+    static Dictionary<string, string> KeyNameOverrides;
+    static TutorialIndicator()
+    {
+        KeyNameOverrides = new Dictionary<string, string>();
+
+        KeyNameOverrides.Add("Up", "↑");
+        KeyNameOverrides.Add("Left", "←");
+        KeyNameOverrides.Add("Down", "↓");
+        KeyNameOverrides.Add("Right", "→");
+    }
+
+
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -37,6 +51,11 @@ public class TutorialIndicator : MonoBehaviour
             else
             {
                 keyOverride = inputAction.action.GetBindingDisplayString();
+            }
+
+            if (KeyNameOverrides.ContainsKey(keyOverride))
+            {
+                keyOverride = KeyNameOverrides[keyOverride];
             }
 
             if (isDoublePress)
@@ -71,4 +90,6 @@ public class TutorialIndicator : MonoBehaviour
             LeanTween.scaleY(actionIndicator, 0, 0.2f).setDestroyOnComplete(true);
         }
     }
+
+    
 }
