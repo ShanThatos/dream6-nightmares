@@ -207,18 +207,18 @@ public class OfficeManager : MonoBehaviour
 
     public void TriggerPin()
     {
+        GameObject caseText = pinCaseAlert.transform.GetChild(0).gameObject;
         if (PlayerPrefs.GetInt("LadybirdSolved", 0) == 0)
         {
-            pinCaseAlert.GetComponentInChildren<TextMeshProUGUI>().text = "Ladybird's case is pinned to the board";
+            caseText.GetComponent<TextMeshProUGUI>().text = "Ladybird's case is pinned to the board";
         }
-        GameObject text = pinCaseAlert.transform.GetChild(0).gameObject;
         pinCaseAlert.SetActive(true);
         var seq = LeanTween.sequence();
         //seq.append(LeanTween.moveX(pinCaseAlert.GetComponent<RectTransform>(), 485, 1f));
         seq.append(LeanTween.scaleY(pinCaseAlert, 1, 0.15f));
         seq.append(3f);
         seq.append(() => {
-            LeanTween.value(text, a => text.GetComponent<TextMeshProUGUI>().alpha = a, 1, 0, 1.5f);
+            LeanTween.value(caseText, a => caseText.GetComponent<TextMeshProUGUI>().alpha = a, 1, 0, 1.5f);
             LeanTween.alpha(pinCaseAlert.GetComponent<RectTransform>(), 0f, 1.5f).setDestroyOnComplete(true);
         });
 

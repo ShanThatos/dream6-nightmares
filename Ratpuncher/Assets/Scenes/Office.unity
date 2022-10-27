@@ -2303,8 +2303,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Check: LadybirdSolved
   ItemName: Plane Ticket
-  Description: Whatever the item name description is blah blah blah blah blah blah
-    blha blah
+  Description: 'A plane ticket for a one-way trip to New York City. The flight has
+    long passed over a decade ago. It has never been used. '
 --- !u!114 &416395640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5336,8 +5336,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Whatever the item description of this item name is. This is set in the
-    inspector.
+  m_text: 'A plane ticket for a one-way trip to New York City. The flight has long
+    passed over a decade ago. It has never been used. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 692a85611fe3f6a44a2701b10996f5d0, type: 2}
   m_sharedMaterial: {fileID: -888643575040364970, guid: 692a85611fe3f6a44a2701b10996f5d0, type: 2}

@@ -103,7 +103,7 @@ MonoBehaviour:
     needsTransition: 0
     sceneName: 
     dialoguesText:
-    - Rem (rem normal) Hey darling, what are you doing out here all by yourself?
+    - Rem (rem normal) Hey kid, what are you doing out here all by yourself?
     - "Young Ladybird (young ladybird) Oh it\u2019s because sometimes it gets too
       loud at home. I wish mommy and daddy didn\u2019t fight so much. "
     - "Young Ladybird (young ladybird) If I wasn\u2019t such a bad girl they would
@@ -146,8 +146,8 @@ MonoBehaviour:
       business among other responsibilities.
     - Ladybird (ladybird normal) Looking back now, they sound like I was just making
       excuses for myself.
-    - "Rem (rem normal) You shouldn\u2019t be so hard on yourself. Comfortability
-      is hard to separate from for anyone."
+    - "Rem (rem normal) You shouldn\u2019t be so hard on yourself. Comfort is hard
+      to separate from for anyone."
     - "Ladybird (ladybird normal) I think I\u2019m ready though. It\u2019s about
       time I try and do something for myself."
     - "Ladybird (ladybird normal) For a while now, it seems like the only thing holding
@@ -171,3 +171,93 @@ MonoBehaviour:
     - Rem (rem normal) So this is what my nightmare is...
     - Rem (rem normal) I've never been in a place like this before
     - Rem (rem normal) But why does it feel some familiar?
+  - dialogueName: ElioIntro
+    needsTransition: 0
+    sceneName: 
+    dialoguesText:
+    - "Rem (rem normal) Elio\u2026has been out of it lately."
+    - "Rem (rem normal) He\u2019s still recovering from our encounter with that whale-like
+      creature a while back but I can\u2019t help but think there\u2019s something
+      more to it\u2026"
+    - Rem (rem normal) I should check on him.
+  - dialogueName: ElioStart
+    needsTransition: 0
+    sceneName: 
+    dialoguesText:
+    - Elio (elio normal) Hey man.
+    - "Rem (rem normal) Hey, you don\u2019t look so hot. Everything okay?"
+    - "Elio (elio normal) Yeah\u2026I mean I wish I could say yes, but it\u2019s
+      been pretty rough lately. Sleep \u2018s been a rarity for everyone these days,
+      and it\u2019s gotten to me too."
+    - "Elio (elio normal) Think I got a case of the nightmares too, ironic isn\u2019t
+      it?\r"
+    - "Elio (elio normal) \u2026"
+    - Elio (elio normal) You-- you know how I had worked on the Crime Bureau in the
+      past?
+    - 'Rem (rem normal) Yeah, you mentioned it but not much. '
+    - "Elio (elio normal) Mm, it\u2019s not a pretty story. I- I screwed up big time
+      and my team, my friends, had paid the price for it. "
+    - Elio (elio normal) They trusted me and made me their leader and I let them
+      down. Like a sick prank, I was the only one who made it out of that mission
+      alive.
+    - "Elio (elio normal) For a while, I felt that it would\u2019ve been better if
+      I had died with them because then I wouldn\u2019t have to live with this overwhelming
+      guilt."
+    - "Rem (rem normal) I\u2019m sorry to hear that."
+    - "Rem (rem normal) Guilt, regret, those things are hard and we don\u2019t ever
+      get taught how to process them."
+    - "Rem (rem normal) It may be selfish of me but I\u2019m glad you\u2019re still
+      here-- that you\u2019re alive."
+    - "Elio (elio normal) Yeah. Has been for a while but the usual stuff I do doesn\u2019t
+      work anymore."
+    - "Elio (elio normal) Thought I could deal with it on my own but as you can see
+      that\u2019s not going so well.\r"
+    - "Elio (elio normal) I hate to be a burden but y\u2019think you could maybe
+      help a guy out?"
+    - Elio (elio normal) Hop into my brain and fight off the scary monsters for me?
+    - "Rem (rem normal) Of course, Elio. I would love to and seriously, you\u2019re
+      not a bother at all."
+    - 'Rem (rem normal) I wish you would rely on me more instead of stubbornly trying
+      to do everything on your own. '
+    - 'Rem (rem normal) Plus, I always wondered what was going on in that head of
+      yours. '
+    - "Rem (rem normal) You just need to sit back big guy, I\u2019ll take care of
+      it."
+  - dialogueName: ElioMid
+    needsTransition: 0
+    sceneName: 
+    dialoguesText:
+    - Elio (elio normal) Thanks again for doing this for me man.
+  - dialogueName: ElioClosure
+    needsTransition: 0
+    sceneName: 
+    dialoguesText:
+    - "Rem (rem normal) I\u2019m back."
+    - Elio (elio normal) Welcome home.
+    - "Rem (rem normal) You\u2019re an absolute mess. Why didn\u2019t you say anything?"
+    - "Elio (elio normal) I\u2019m sorry Rem. I didn\u2019t mean to hide it from
+      you. "
+    - "Elio (elio normal) It\u2019s irrational but after that\u2026 I can\u2019t
+      help but think that I\u2019m like a bad omen to others or something."
+    - "Elio (elio normal) I didn\u2019t want to be the reason that you got hurt too."
+    - "Elio (elio normal) And maybe\u2026 I was scared to be close to people again,
+      only for them to leave."
+    - 'Rem (rem normal) You help so many people, Elio. Everyday. '
+    - "Rem (rem normal) Yet you won\u2019t allow yourself the same. You\u2019re not
+      a burden or a bad omen.\r"
+    - "Rem (rem normal) So rely on me, Elio. I give you permission. I\u2019m not
+      going anywhere."
+    - "Elio (elio normal) Mm, thanks, Rem. I will. You\u2019re stuck with me now,
+      no takebacks. "
+  - dialogueName: DefeatCrab
+    needsTransition: 1
+    sceneName: Office
+    dialoguesText:
+    - "Rem (rem normal) It seems like Elio\u2019s team truly cared for him. Though
+      Elio still beat himself up regardless. "
+    - "Rem (rem normal) He\u2019s been suffering quietly and alone all this time
+      and I wish I had known to help him sooner."
+    - "Rem (rem normal) I get where he\u2019s coming from though. Couldn\u2019t help
+      thinking that he was a burden even if everyone tells him he wasn\u2019t."
+    - "Rem (rem normal) \u2026"
+    - 'Rem (rem normal) Elio, you idiot. '
