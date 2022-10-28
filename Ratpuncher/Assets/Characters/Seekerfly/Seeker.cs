@@ -7,8 +7,11 @@ public class Seeker : MonoBehaviour
     [Tooltip("Distance after which the seeker gives up")]
     public float giveUpDistance = 11f;
 
-    [Tooltip("Pause before final rush")]
-    public float terminalDelay = 1.5f;
+    [Tooltip("Distance wherein seeker explodes")]
+    public float detotationDistance = 1.5f;
+
+    [Tooltip("Detonation prefab")]
+    public GameObject detoationPrefab;
 
     [Tooltip("Move Speed")]
     public float moveSpeed = 3f;
@@ -43,6 +46,12 @@ public class Seeker : MonoBehaviour
             transform.forward = f;
             
             transform.Translate(f * moveSpeed * Time.deltaTime, Space.World);
+
+            float dis = Vector3.Distance(transform.position, target.position);
+            if(dis >= giveUpDistance || dis <= detotationDistance)
+            {
+                Detonate();
+            }
         }
     }
 
@@ -56,14 +65,22 @@ public class Seeker : MonoBehaviour
         }
     }
 
+    public void Detonate()
+    {
+        Instantiate(detoationPrefab, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position, transform.forward);
+        Gizmos.DrawWireSphere(transform.position, detotationDistance);
+    }
 
-        if (target != null && false)
-        {
-            Gizmos.DrawLine(transform.position, target.position);
-        }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawRay(transform.position, transform.forward);
+        
     }
 }
