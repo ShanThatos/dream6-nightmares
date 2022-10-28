@@ -9,10 +9,12 @@ public class TutorialIndicator : MonoBehaviour
 
     public InputActionReference inputAction;
     public bool isDoublePress;
+    public bool isChargeAttack;
 
     public string keyOverride;
     public string actionOverride;
     private bool isTriggered;
+    private bool isInside;
     private GameObject actionIndicator;
 
     static Dictionary<string, string> KeyNameOverrides;
@@ -32,6 +34,21 @@ public class TutorialIndicator : MonoBehaviour
     private void Start()
     {
         KeyChange();
+    }
+
+    private void Update()
+    {
+        if (isChargeAttack && isInside)
+        {
+            if (GameManager.instance.player.GetComponent<PlayerAttackManager>().isFullyCharged)
+            {
+                actionIndicator.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = "(Release) Charge";
+            }
+            else
+            {
+                actionIndicator.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = actionOverride;
+            }
+        }
     }
     private void KeyChange()
     {
@@ -68,6 +85,7 @@ public class TutorialIndicator : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            isInside = true;
             KeyChange();
             if (!isTriggered)
             {
@@ -84,6 +102,7 @@ public class TutorialIndicator : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D collision)
     {
+        isInside = false;
         if (collision.tag == "Player")
         {
             isTriggered = false;
@@ -91,5 +110,10 @@ public class TutorialIndicator : MonoBehaviour
         }
     }
 
-    
+    private void ChangeText()
+    {
+        actionIndicator.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = "(Release) Attack";
+    }
+
+
 }

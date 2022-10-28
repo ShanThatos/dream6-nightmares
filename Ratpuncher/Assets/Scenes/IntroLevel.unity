@@ -1486,6 +1486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputAction: {fileID: -2165720585879407947, guid: 08387cd74e10ea945880d82af85b4e25, type: 3}
   isDoublePress: 0
+  isChargeAttack: 0
   keyOverride: 
   actionOverride: 
 --- !u!61 &86818577
@@ -7839,6 +7840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputAction: {fileID: 4737142619788410833, guid: 08387cd74e10ea945880d82af85b4e25, type: 3}
   isDoublePress: 0
+  isChargeAttack: 0
   keyOverride: 
   actionOverride: 
 --- !u!61 &325453030
@@ -9194,6 +9196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputAction: {fileID: 1264843926275944700, guid: 08387cd74e10ea945880d82af85b4e25, type: 3}
   isDoublePress: 0
+  isChargeAttack: 0
   keyOverride: 
   actionOverride: 
 --- !u!61 &754052738
@@ -10522,6 +10525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputAction: {fileID: -2165720585879407947, guid: 08387cd74e10ea945880d82af85b4e25, type: 3}
   isDoublePress: 0
+  isChargeAttack: 0
   keyOverride: 
   actionOverride: 
 --- !u!61 &994009231
@@ -10654,6 +10658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputAction: {fileID: 1264843926275944700, guid: 08387cd74e10ea945880d82af85b4e25, type: 3}
   isDoublePress: 1
+  isChargeAttack: 0
   keyOverride: 
   actionOverride: Double Jump
 --- !u!61 &1040276276
@@ -11353,6 +11358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputAction: {fileID: -2165720585879407947, guid: 08387cd74e10ea945880d82af85b4e25, type: 3}
   isDoublePress: 0
+  isChargeAttack: 1
   keyOverride: 
   actionOverride: (Hold) Charge
 --- !u!61 &1239865917
@@ -12202,6 +12208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputAction: {fileID: -7801903150496367807, guid: 08387cd74e10ea945880d82af85b4e25, type: 3}
   isDoublePress: 0
+  isChargeAttack: 0
   keyOverride: 
   actionOverride: 
 --- !u!61 &1451823362

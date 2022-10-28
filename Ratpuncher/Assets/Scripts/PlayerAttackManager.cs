@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class PlayerAttackManager : MonoBehaviour
 {
     [Tooltip("Object for regular attack")]
@@ -28,6 +27,8 @@ public class PlayerAttackManager : MonoBehaviour
     [Tooltip("Allow queueing of attacks")]
     public bool allowAttackQueueing;
 
+    [HideInInspector]
+    public bool isFullyCharged;
     bool attackQueued = false;
     bool isAnimLocked;
     bool chargedAttackReady;
@@ -98,6 +99,7 @@ public class PlayerAttackManager : MonoBehaviour
     // Executed via animation callback
     public void SpawnAttack()
     {
+        isFullyCharged = false;
         if (chargedAttackReady)
         {
             SpawnChargedAttack();
@@ -155,6 +157,7 @@ public class PlayerAttackManager : MonoBehaviour
         if(chargedAttackReady == false)
         {
             Instantiate(chargedAttackIndicator, readyPoint.transform.position, Quaternion.identity);
+            isFullyCharged = true;
         }
         chargedAttackReady = true;
     }
