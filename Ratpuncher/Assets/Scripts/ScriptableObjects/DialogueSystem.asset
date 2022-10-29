@@ -28,8 +28,18 @@ MonoBehaviour:
     needsTransition: 0
     sceneName: IntroLevel
     dialoguesText:
-    - Rem (rem normal) Ugh my head...
-    - Rem (rem normal) Where am I, some sort of factory?
+    - "Rem (rem normal) Ugh, my head is killing me. Wha- why am I in a nightmare
+      realm right now? What is happening\u2026"
+  - dialogueName: DefeatMiniboss
+    needsTransition: 0
+    sceneName: 
+    dialoguesText:
+    - Rem (rem normal) Elio, is that you?
+    - "Elio (elio normal) Rem! I\u2019m so glad to see you. I don\u2019t know what\u2019s
+      going on but something isn\u2019t right. "
+    - "Elio (elio normal) The Core to this realm ahead is nothing like I\u2019ve
+      ever seen before. We gotta to be careful."
+    - Rem (rem normal) Roger that.
   - dialogueName: IntroEvilEnergy
     needsTransition: 0
     sceneName: 
@@ -52,9 +62,16 @@ MonoBehaviour:
     needsTransition: 0
     sceneName: 
     dialoguesText:
-    - Elio (elio normal) Looks like you were having a pretty nasty dream. We've got
-      someone at the door right now, think you can handle it?
-    - Rem (rem normal) I'll be fine, send them in.
+    - Elio (elio normal) Shit, Rem you good?
+    - "Rem (rem normal) I\u2019m alright but\u2026 did you hear that? It was talking
+      and its voice was going straight to my head."
+    - "Elio (elio normal) That\u2019s weird, I didn\u2019t hear anything, or at least
+      anything that I could make sense of. "
+    - 'Rem (rem normal) We have to do something. We have to help. '
+    - "Rem (rem normal) It sounded so sad and\u2026I\u2019m strangely drawn towards
+      it for some reason."
+    - "Elio (elio normal) Of course man, that\u2019s what we do. Come on, looks like
+      we already got someone at the door. "
     - "Elio (elio normal) Good mornin\u2019 ma\u2019am! Come in, come in!"
     - Elio (elio normal) It must be freezing out there- please make yourself comfortable.
     - Rem (rem normal) Welcome to NEST, my name is Rem and that is my partner Elio,

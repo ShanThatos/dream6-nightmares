@@ -13049,6 +13049,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca5a9c9bec0d35d489627d4c61ffc5b0, type: 3}
+--- !u!114 &1753252896 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1979939025591928439, guid: ca5a9c9bec0d35d489627d4c61ffc5b0, type: 3}
+  m_PrefabInstance: {fileID: 1753252895}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55193aa89bfb38f428ba7995ec74d0c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1761792830 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6108635679875393534, guid: c897f516095ae2943b442967e0325c59, type: 3}
@@ -14002,6 +14013,38 @@ PrefabInstance:
     - target: {fileID: 6232032654833355558, guid: 9284c0fef640d4648bb55d91c5c990d5, type: 3}
       propertyPath: MIN_Y
       value: -12.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232032654833355560, guid: 9284c0fef640d4648bb55d91c5c990d5, type: 3}
+      propertyPath: onDeathEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232032654833355560, guid: 9284c0fef640d4648bb55d91c5c990d5, type: 3}
+      propertyPath: onDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232032654833355560, guid: 9284c0fef640d4648bb55d91c5c990d5, type: 3}
+      propertyPath: onDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1753252896}
+    - target: {fileID: 6232032654833355560, guid: 9284c0fef640d4648bb55d91c5c990d5, type: 3}
+      propertyPath: onDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232032654833355560, guid: 9284c0fef640d4648bb55d91c5c990d5, type: 3}
+      propertyPath: onDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232032654833355560, guid: 9284c0fef640d4648bb55d91c5c990d5, type: 3}
+      propertyPath: onDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DialogueManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232032654833355560, guid: 9284c0fef640d4648bb55d91c5c990d5, type: 3}
+      propertyPath: onDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: DefeatMiniboss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232032654833355560, guid: 9284c0fef640d4648bb55d91c5c990d5, type: 3}
+      propertyPath: onDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6232032654833355582, guid: 9284c0fef640d4648bb55d91c5c990d5, type: 3}
       propertyPath: m_Name
