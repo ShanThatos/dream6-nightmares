@@ -71,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
 
     public AudioSource hurtSound;
     public AudioSource deathSound;
+    public PlayerInput input;
     bool isRespawning = false;
 
 
@@ -578,6 +579,17 @@ public class PlayerMovement : MonoBehaviour
         damage.setInvincibility(false);
         GetComponent<PlayerInput>().enabled = true;
         isRespawning = false;
+    }
+
+    public void LockControls(bool isLocked)
+    {
+        input.enabled = !isLocked;
+
+        if (isLocked)
+        {
+            inputVector = Vector2.zero;
+            CalculateMovement();
+        }
     }
 
     private void OnDrawGizmosSelected() {

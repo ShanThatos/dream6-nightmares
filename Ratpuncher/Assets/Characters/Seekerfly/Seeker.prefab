@@ -50,7 +50,7 @@ MonoBehaviour:
   giveUpDistance: 15
   detotationDistance: 0.6
   detoationPrefab: {fileID: 3490313779896905587, guid: 78e0aaa875fa14d4fa9f6501dad4d691, type: 3}
-  moveSpeed: 5
+  moveSpeed: 15
   rotationSpeed: 0.4
 --- !u!58 &493683740080140349
 CircleCollider2D:

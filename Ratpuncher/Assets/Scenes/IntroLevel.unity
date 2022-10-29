@@ -10389,6 +10389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   afterBossDoor: {fileID: 1364984369}
+  dashTutorial: {fileID: 1503875253}
   bossHPBar: {fileID: 16370662}
   boss: {fileID: 3225989502036969902}
   barriers:
@@ -12348,6 +12349,59 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1503875252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1503875254}
+  - component: {fileID: 1503875253}
+  m_Layer: 0
+  m_Name: DashTutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1503875253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503875252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db8a3d60e2f6b87448c53df986ffadea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Header: Ability Absorbed
+  action: {fileID: 4737142619788410833, guid: 08387cd74e10ea945880d82af85b4e25, type: 3}
+  description: 'Press [[KEY]] to dash, briefly becoming invincible.
+
+    You can
+    dash midair too'
+  image: {fileID: 21300000, guid: 8212058af51024b4fa4f3b50a2db016d, type: 3}
+  followUpDialogue: DefeatNarwhal
+  isOpened: 0
+--- !u!4 &1503875254
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503875252}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 89.21166, y: -3.9640632, z: 0.63083583}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1520627589
 GameObject:
   m_ObjectHideFlags: 0

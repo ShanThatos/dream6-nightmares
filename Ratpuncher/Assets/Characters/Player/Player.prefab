@@ -765,6 +765,7 @@ MonoBehaviour:
   hasDashAbility: 0
   hurtSound: {fileID: 5041845320778197620}
   deathSound: {fileID: 4604658197211814552}
+  input: {fileID: 8642731270172959565}
 --- !u!114 &8642731270172959570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -832,6 +833,7 @@ MonoBehaviour:
   readyPoint: {fileID: 2025681456001354436}
   sprite: {fileID: 8642731271435911648}
   allowAttackQueueing: 1
+  isFullyCharged: 0
 --- !u!114 &585488167
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -36,6 +36,12 @@ MonoBehaviour:
     dialoguesText:
     - Rem (rem normal) That purple stuff... Why is there Nightmare Energy here?
     - Rem (rem normal) I probably shouldn't get too close
+  - dialogueName: DefeatNarwhal
+    needsTransition: 0
+    sceneName: 
+    dialoguesText:
+    - Rem (rem normal) Narwhal, Narwhal swimming in the ocean...
+    - Rem (rem normal) ...causing a commotion
   - dialogueName: IntroClosure
     needsTransition: 1
     sceneName: Office

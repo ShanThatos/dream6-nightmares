@@ -11,6 +11,9 @@ public class InteractionTrigger : MonoBehaviour
     
     private Item itemScript;
     private bool isInsideItem;
+
+    private TutorialPopup popup;
+    private bool popupOpen;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +64,12 @@ public class InteractionTrigger : MonoBehaviour
 
     void OnInteract()
     {
+        if (popupOpen)
+        {
+            //Block interaction if a tutorial popup is open
+            return;
+        }
+
         if (isInsideText)
         {
             if (!textScript.textShown)
@@ -85,12 +94,26 @@ public class InteractionTrigger : MonoBehaviour
         }
     }
 
+
+    public void openTutorialPopup(TutorialPopup pop)
+    {
+        popupOpen = true;
+        popup = pop;
+    }
+
     void OnJump()
     {
         if (isInsideItem)
         {
             itemScript.Collect();
         }
+        if (popupOpen)
+        {
+            popup.Close();
+            popup = null;
+            popupOpen = false;
+        }
+
     }
 
 }

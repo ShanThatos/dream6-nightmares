@@ -29,7 +29,12 @@ public class PlayerHPBar : MonoBehaviour
     {
         currPlayerHp -= damage;
         bar.value = currPlayerHp / maxPlayerHP;
-        flicker.Flicker();
+
+        if (flicker)
+        {
+            flicker.Flicker();
+        }
+        
     }
 
     void OnRespawned()

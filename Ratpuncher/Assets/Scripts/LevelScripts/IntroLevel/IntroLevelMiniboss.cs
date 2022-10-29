@@ -5,6 +5,7 @@ using UnityEngine;
 public class IntroLevelMiniboss : MonoBehaviour
 {
     public GameObject afterBossDoor;
+    public TutorialPopup dashTutorial;
     public GameObject bossHPBar;
     public GameObject boss;
     Damagable bossDamagable;
@@ -44,6 +45,8 @@ public class IntroLevelMiniboss : MonoBehaviour
             obj.GetComponent<Animator>().SetTrigger("stop");
         }
 
+        dashTutorial.Open();
+        GameManager.instance.player.GetComponent<PlayerCapabilities>().canDash = true;
         afterBossDoor.SetActive(false);
     }
 

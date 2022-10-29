@@ -15,6 +15,7 @@ public class LadybirdBossfightController : MonoBehaviour {
     public GameObject restartTrigger;
     public Transform bugfishRestartPoint;
     public GameObject[] barriers;
+    public TutorialPopup GPPopup;
 
     bool started = false;
     bool ended = false;
@@ -185,6 +186,8 @@ public class LadybirdBossfightController : MonoBehaviour {
         // GameManager.SetMovementLock(true);
         yield return new WaitForSeconds(3f);
         PlayerPrefs.SetInt("LadybirdSolved", 1);
-        DialogueManager.instance.PlayDialogue("DefeatBugfish");
+
+        // Popup will play dialogue after it is closed
+        GPPopup.Open();
     }
 }
