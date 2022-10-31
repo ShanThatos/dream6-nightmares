@@ -16,7 +16,7 @@ public class Damagable : MonoBehaviour
     [SerializeField]
     [Tooltip("Damage resistance (1 = invunerable)")]
     [Range(0f, 1f)]
-    private float damageReduction = 0.0f;
+    public float damageReduction = 0.0f;
 
     [SerializeField]
     [Tooltip("How long entity is invincible in seconds after damage")]
@@ -167,6 +167,10 @@ public class Damagable : MonoBehaviour
         return health;
     }
 
+    public float GetHealthPercent()
+    {
+        return health / maxHealth;
+    }
     public void Respawn()
     {
         health = maxHealth;

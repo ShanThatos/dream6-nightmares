@@ -24,6 +24,11 @@ public class TrackingDrill : MonoBehaviour
     bool alreadyReady = false;
     float lifetime = 0;
 
+    public delegate void ExecuteEvent();
+    public ExecuteEvent OnExecute;
+    public void CallOnExecute() => OnExecute?.Invoke();
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,9 +81,13 @@ public class TrackingDrill : MonoBehaviour
     {
         attack.SetActive(true);
         ParticleSystem temp = GetComponent<ParticleSystem>();
+#pragma warning disable CS0618 // Type or member is obsolete
         temp.enableEmission = false;
+#pragma warning restore CS0618 // Type or member is obsolete
         rb.velocity = Vector2.zero;
         hasAttacked = true;
+
+        CallOnExecute();
 
         Destroy(this, 3f);
     }
