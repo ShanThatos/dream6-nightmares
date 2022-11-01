@@ -11,6 +11,9 @@ public class TrackingDrill : MonoBehaviour
     [Tooltip("Tracking speed")]
     public float speed;
 
+    [Tooltip("Should this attack target the player?")]
+    public bool targetPlayer = true;
+
     [Tooltip("GameObject to spawn on attack")]
     public GameObject attack;
 
@@ -18,6 +21,7 @@ public class TrackingDrill : MonoBehaviour
     public GameObject readyParticles;
 
     Transform player;
+    Vector3 target;
     Rigidbody2D rb;
     bool shouldTrack = false;
     bool hasAttacked = false;
@@ -36,6 +40,12 @@ public class TrackingDrill : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    public void manualSetTarget(Vector3 tgt)
+    {
+        targetPlayer = false;
+        target = tgt;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -44,9 +54,15 @@ public class TrackingDrill : MonoBehaviour
             return;
         }
 
+        if (targetPlayer)
+        {
+            target = player.position;
+        }
+
+
         if (shouldTrack)
         {
-            if(player.position.x > transform.position.x)
+            if(target.x > transform.position.x)
             {
                 rb.velocity = new Vector2(speed, 0);
             }
@@ -56,39 +72,61 @@ public class TrackingDrill : MonoBehaviour
             }
         }
 
-        if(Mathf.Abs(player.position.x - transform.position.x) < 0.001)
+        if (!alreadyReady)
         {
-            shouldTrack = false;
+            if (Mathf.Abs(target.x - transform.position.x) < 0.001)
+            {
+                shouldTrack = false;
+            }
+            else
+            {
+                shouldTrack = true;
+            }
         }
-        else
-        {
-            shouldTrack = true;
-        }
+        
 
         lifetime += Time.deltaTime;
-        if(!alreadyReady && lifetime >= delay - .66)
+        if(!alreadyReady && lifetime >= delay - .5)
         {
-            alreadyReady = true;
-            readyParticles.SetActive(true);
-        }
-        if(lifetime >= delay)
-        {
-            executeAttck();
+            StartCoroutine(PreAttack());
         }
     }
 
     private void executeAttck()
     {
+        StopAllCoroutines();
         attack.SetActive(true);
         ParticleSystem temp = GetComponent<ParticleSystem>();
 #pragma warning disable CS0618 // Type or member is obsolete
         temp.enableEmission = false;
 #pragma warning restore CS0618 // Type or member is obsolete
-        rb.velocity = Vector2.zero;
         hasAttacked = true;
 
         CallOnExecute();
 
         Destroy(this, 3f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            StartCoroutine(PreAttack());
+        }   
+    }
+
+    IEnumerator PreAttack()
+    {
+        if (alreadyReady)
+        {
+            yield break;
+        }
+
+        rb.velocity = Vector2.zero;
+        alreadyReady = true;
+        shouldTrack = false;
+        readyParticles.SetActive(true);
+        yield return new WaitForSecondsRealtime(.5f);
+        executeAttck();
     }
 }

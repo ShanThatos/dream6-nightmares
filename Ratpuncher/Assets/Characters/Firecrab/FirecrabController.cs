@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FirecrabController : StateManager
 {
-
     [HideInInspector]
     public Rigidbody2D rb;
 
@@ -39,7 +38,7 @@ public class FirecrabController : StateManager
 
     void OnDeath()
     {
-
+        switchState("FCDead");
     }
 
     void OnHurt(float damage, bool isEnergy)

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1858204324760289123}
   - component: {fileID: 1858204324760289128}
   - component: {fileID: 1858204324760289127}
+  - component: {fileID: 4017218391053129653}
   m_Layer: 9
   m_Name: DrillParticles
   m_TagString: Untagged
@@ -4828,8 +4829,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6441e03cf5024db4b94d027887846519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 7
+  delay: 5
   speed: 3
+  targetPlayer: 1
   attack: {fileID: 1858204324123927359}
   readyParticles: {fileID: 8101017017478918827}
 --- !u!50 &1858204324760289127
@@ -4853,6 +4855,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!61 &4017218391053129653
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858204324760289122}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.02429074, y: 0.1707635}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9154215, y: 0.08903408}
+  m_EdgeRadius: 0
 --- !u!1001 &4619723369026051544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4931,9 +4959,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1858204324760289125}
     m_Modifications:
+    - target: {fileID: 1545491313, guid: 1f5142bd19b3937499384d38c29b21fd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5637945779338064333, guid: 1f5142bd19b3937499384d38c29b21fd, type: 3}
       propertyPath: knockback.y
-      value: 100
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637945779338064334, guid: 1f5142bd19b3937499384d38c29b21fd, type: 3}
+      propertyPath: m_Size.y
+      value: 0.13226286
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637945779338064334, guid: 1f5142bd19b3937499384d38c29b21fd, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.42692178
       objectReference: {fileID: 0}
     - target: {fileID: 5637945779338064335, guid: 1f5142bd19b3937499384d38c29b21fd, type: 3}
       propertyPath: m_SortingOrder

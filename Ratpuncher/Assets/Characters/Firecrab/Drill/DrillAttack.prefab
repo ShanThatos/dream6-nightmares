@@ -5003,8 +5003,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c577dc23271b7e4783741ee71b88030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
-  knockback: {x: 5, y: 50}
+  damage: 50
+  knockback: {x: 5, y: 15}
   isPlayerAttack: 0
   canLaunchPlayer: 1
   player: {fileID: 0}

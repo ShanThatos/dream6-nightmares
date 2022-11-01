@@ -146,7 +146,7 @@ public class Damagable : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("Expected an AttackHitbox component");
+                
             }
         }
     }

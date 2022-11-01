@@ -15,6 +15,10 @@ public class FirecrabIdle : FirecrabState
     private float idleTime;
 
     public float attackDistance = 10f;
+
+    private int volcanoCount = 0;
+    private int digCount = 0;
+
     public override void enter()
     {
         controller.animator.Play("Idle");
@@ -34,14 +38,28 @@ public class FirecrabIdle : FirecrabState
                 int rand = Random.Range(1, 11);
                 if(rand % 2 == 0)
                 {
-                    controller.switchState("FCVolcano");
+                    if(volcanoCount <= 2)
+                    {
+                        switchVolcano();
+                    }
+                    else
+                    {
+                        switchDig();
+                    }
+
+                    
                 }
                 else
                 {
-                    controller.switchState("FCDig");
+                    if (digCount <= 2)
+                    {
+                        switchDig();
+                    }
+                    else
+                    {
+                        switchVolcano();
+                    }
                 }
-
-                
             }
             else
             {
@@ -49,6 +67,20 @@ public class FirecrabIdle : FirecrabState
             }
 
         }
+    }
+
+    private void switchVolcano()
+    {
+        volcanoCount++;
+        digCount = 0;
+        controller.switchState("FCVolcano");
+    }
+
+    private void switchDig()
+    {
+        digCount++;
+        volcanoCount = 0;
+        controller.switchState("FCDig");
     }
 
     public override string getStateName()

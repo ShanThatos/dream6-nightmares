@@ -7,6 +7,7 @@ public class FirecrabVolcano : FirecrabState
     public GameObject volcanoPrefab;
     public Transform launchPoint;
     public float interval;
+    public int baseCount = 1;
 
     private int launchCount;
     private float timer;
@@ -17,15 +18,16 @@ public class FirecrabVolcano : FirecrabState
 
         controller.animator.Play("Volcano");
 
-        launchCount = 1;
+        launchCount = baseCount;
 
         if(healthPercent < 0.4)
         {
-            launchCount = 3;
+            launchCount++;
         }
-        else if (healthPercent < 0.7)
+
+        if(healthPercent < 0.7)
         {
-            launchCount = 2;
+            launchCount++;
         }
 
         timer = interval;
