@@ -10798,7 +10798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdf5eeb400564b3488b31a6a4644d9e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDialogue: IntroStart
+  startDialogue: FireflyLakeStart
   hasFinishedAction: 0
 --- !u!4 &929615900
 Transform:

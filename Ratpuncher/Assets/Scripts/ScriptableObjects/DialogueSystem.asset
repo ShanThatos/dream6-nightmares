@@ -23,6 +23,8 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 44fbe6de34dc5084e90949acdba782f6, type: 3}
   - spriteName: young ladybird
     sprite: {fileID: 21300000, guid: c59d16af17816324e84054bce00b84ce, type: 3}
+  - spriteName: elio note
+    sprite: {fileID: -574757328, guid: 35323186108770846abe2d03b14134df, type: 3}
   dialogues:
   - dialogueName: IntroStart
     needsTransition: 0
@@ -194,6 +196,13 @@ MonoBehaviour:
     - Rem (rem normal) So this is what my nightmare is...
     - Rem (rem normal) I've never been in a place like this before
     - Rem (rem normal) But why does it feel some familiar?
+  - dialogueName: FireflyLakeStart
+    needsTransition: 0
+    sceneName: 
+    dialoguesText:
+    - "Rem (rem normal) Oh, a cabin huh? It would be cozy if it weren\u2019t for
+      the fact that I\u2019m in a nightmare realm right now."
+    - Rem (rem normal) Or that it just gave me another massive headache.
   - dialogueName: ElioIntro
     needsTransition: 0
     sceneName: 
@@ -276,6 +285,7 @@ MonoBehaviour:
     needsTransition: 1
     sceneName: Office
     dialoguesText:
+    - ' (elio note) [Note dropped]'
     - "Rem (rem normal) It seems like Elio\u2019s team truly cared for him. Though
       Elio still beat himself up regardless. "
     - "Rem (rem normal) He\u2019s been suffering quietly and alone all this time
