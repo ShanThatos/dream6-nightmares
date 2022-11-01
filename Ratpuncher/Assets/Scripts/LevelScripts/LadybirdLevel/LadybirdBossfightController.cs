@@ -36,29 +36,16 @@ public class LadybirdBossfightController : MonoBehaviour {
 
     public IEnumerator StartBossFightCoroutine() {
         PlayerMovement player = GameManager.instance.player.GetComponent<PlayerMovement>();
-        // Rigidbody2D playerRb = player.rb;
         Damagable playerDamagable = player.GetComponent<Damagable>();
-        // PlayerAnimationManager playerAnimationManager = GameManager.instance.player.GetComponent<PlayerAnimationManager>();
-        // RigidbodyConstraints2D playerConstraints = playerRb.constraints;
         playerDamagable.OnRespawn += ResetBossFight;
         player.LockControls(true);
-        // playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
-        // playerInput.enabled = false;
-        // playerAnimationManager.setRunning(false);
-        
-
-        // GameManager.SetMovementLock(true);
 
         yield return new WaitForSeconds(1.5f);
 
         DialogueManager.instance.PlayDialogue("YoungLadybird");
         yield return new WaitForSeconds(3f);
-        yield return new WaitUntil(finishedDialogue);
-
+        yield return new WaitUntil(() => DialogueManager.instance.isDialogueFinished);
         yield return new WaitForSeconds(1f);
-        // playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
-        // playerInput.enabled = false;
-        // playerAnimationManager.setRunning(false);
 
         ladybirdAnimator.Play("LBBFFade");
         yield return new WaitForSeconds(3f);
@@ -104,19 +91,13 @@ public class LadybirdBossfightController : MonoBehaviour {
 
         bugfish.resetStates();
 
-        // playerRb.constraints = playerConstraints;
         player.LockControls(false);
-        // GameManager.SetMovementLock(false);
 
         MainCameraScript.instance.cameraOffset = cameraOffset;
         MainCameraScript.instance.setCamPosLerp(MainCameraScript.instance.defaultCamPosLerp);
         MainCameraScript.instance.setCamFOVLerp(MainCameraScript.instance.defaultCamFOVLerp);
     }
 
-    public bool finishedDialogue()
-    {
-        return DialogueManager.instance.isDialogueFinished;
-    }
     public void EndBossFight() {
         if (!ended) {
             ended = true;
@@ -174,6 +155,7 @@ public class LadybirdBossfightController : MonoBehaviour {
     }
 
     public IEnumerator EndBossFightCoroutine() {
+        GameManager.LockMovement();
         bugfish.getDamagable().setInvincibility(true);
         bugfishRevealAnimator.Play("BFDone");
         bugfish.HPBar.gameObject.SetActive(false);
