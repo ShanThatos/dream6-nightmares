@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.Events;
 public class DialogueController : MonoBehaviour
 {
     //public HubDialogueSO hubDialogueSO;
@@ -22,6 +23,8 @@ public class DialogueController : MonoBehaviour
 
     private bool isRunning;
     public float textSpeed;
+
+    public UnityEvent EndDialogueFunction;
 
     [HideInInspector] public string soSceneName;
 
@@ -165,6 +168,7 @@ public class DialogueController : MonoBehaviour
             LeanTween.alpha(characterImage.GetComponent<RectTransform>(), 0f, 0.2f);
             LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0, 0.2f);
             isDialogueOn = false;
+            EndDialogueFunction.Invoke();
             if (soSceneName != "")
             {
                 ScenesTransition.instance.LoadScene(soSceneName);
