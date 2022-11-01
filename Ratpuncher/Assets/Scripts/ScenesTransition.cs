@@ -84,11 +84,11 @@ public class ScenesTransition : MonoBehaviour
 
     public void LockPlayer()
     {
-        GameManager.SetMovementLock(true);
+        GameManager.LockMovement();
     }
 
     public void UnlockPlayer()
     {
-        GameManager.SetMovementLock(false);
+        GameManager.UnlockMovement();
     }
 }

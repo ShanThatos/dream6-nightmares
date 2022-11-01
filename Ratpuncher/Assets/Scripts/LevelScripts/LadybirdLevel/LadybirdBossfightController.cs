@@ -35,15 +35,17 @@ public class LadybirdBossfightController : MonoBehaviour {
     }
 
     public IEnumerator StartBossFightCoroutine() {
-        Rigidbody2D playerRb = GameManager.instance.player.GetComponent<Rigidbody2D>();
-        Damagable playerDamagable = GameManager.instance.player.GetComponent<Damagable>();
-        PlayerInput playerInput = GameManager.instance.player.GetComponent<PlayerInput>();
-        PlayerAnimationManager playerAnimationManager = GameManager.instance.player.GetComponent<PlayerAnimationManager>();
-        RigidbodyConstraints2D playerConstraints = playerRb.constraints;
+        PlayerMovement player = GameManager.instance.player.GetComponent<PlayerMovement>();
+        // Rigidbody2D playerRb = player.rb;
+        Damagable playerDamagable = player.GetComponent<Damagable>();
+        // PlayerAnimationManager playerAnimationManager = GameManager.instance.player.GetComponent<PlayerAnimationManager>();
+        // RigidbodyConstraints2D playerConstraints = playerRb.constraints;
         playerDamagable.OnRespawn += ResetBossFight;
-        playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
-        playerInput.enabled = false;
-        playerAnimationManager.setRunning(false);
+        player.LockControls(true);
+        // playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
+        // playerInput.enabled = false;
+        // playerAnimationManager.setRunning(false);
+        
 
         // GameManager.SetMovementLock(true);
 
@@ -54,9 +56,9 @@ public class LadybirdBossfightController : MonoBehaviour {
         yield return new WaitUntil(finishedDialogue);
 
         yield return new WaitForSeconds(1f);
-        playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
+        // playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
         // playerInput.enabled = false;
-        playerAnimationManager.setRunning(false);
+        // playerAnimationManager.setRunning(false);
 
         ladybirdAnimator.Play("LBBFFade");
         yield return new WaitForSeconds(3f);
@@ -88,10 +90,7 @@ public class LadybirdBossfightController : MonoBehaviour {
                 break;
         }
 
-        // fallingDock.bodyType = RigidbodyType2D.Dynamic;
         bugfish.HPBar.gameObject.SetActive(true);
-
-        // playerInput.enabled = true;
 
         yield return new WaitForSeconds(1f);
         
@@ -105,7 +104,8 @@ public class LadybirdBossfightController : MonoBehaviour {
 
         bugfish.resetStates();
 
-        playerRb.constraints = playerConstraints;
+        // playerRb.constraints = playerConstraints;
+        player.LockControls(false);
         // GameManager.SetMovementLock(false);
 
         MainCameraScript.instance.cameraOffset = cameraOffset;

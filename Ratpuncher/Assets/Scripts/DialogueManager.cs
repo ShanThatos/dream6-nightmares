@@ -30,7 +30,7 @@ public class DialogueManager : MonoBehaviour
 
     public void PlayDialogue(string dialogueName)
     {
-        GameManager.SetMovementLock(true);
+        GameManager.LockMovement();
 
         for (int i = 0; i < dialogueScript.dialogueSystem.dialogues.Length; i++)
         {
@@ -45,7 +45,7 @@ public class DialogueManager : MonoBehaviour
                     dialogueScript.soSceneName = "";
                 }
                 dialogueScript.StartDialogue(dialogueScript.dialogueSystem.dialogues[i].dialoguesText);
-                Debug.Log("Triggered");
+                // Debug.Log("Triggered");
             }
         }
 

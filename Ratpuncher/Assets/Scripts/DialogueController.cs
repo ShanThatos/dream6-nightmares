@@ -41,7 +41,7 @@ public class DialogueController : MonoBehaviour
         blackPanel = this.gameObject.transform.GetChild(0).gameObject;
         blackPanel.transform.localScale = new Vector3(0, 0, 0);
         //StartDialogue(hubDialogueSO.firstDialogues);
-        Debug.Log("YAY I STARTED");
+        // Debug.Log("YAY I STARTED");
     }
 
     // Update is called once per frame
@@ -172,7 +172,7 @@ public class DialogueController : MonoBehaviour
         }
         //dialoguePanel.SetActive(false);
 
-        GameManager.SetMovementLock(false);
+        GameManager.UnlockMovement();
     }
 
     public void check(string text)

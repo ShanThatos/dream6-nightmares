@@ -581,12 +581,17 @@ public class PlayerMovement : MonoBehaviour
         isRespawning = false;
     }
 
+    int inputLockSemaphore = 0;
     public void LockControls(bool isLocked)
     {
-        input.enabled = !isLocked;
+        inputLockSemaphore += isLocked ? 1 : -1;
+        if(inputLockSemaphore < 0)
+            inputLockSemaphore = 0;
 
-        if (isLocked)
-        {
+        bool isTrulyLocked = inputLockSemaphore > 0;
+
+        input.enabled = !isTrulyLocked;
+        if (inputLockSemaphore > 0) {
             inputVector = Vector2.zero;
             CalculateMovement();
         }

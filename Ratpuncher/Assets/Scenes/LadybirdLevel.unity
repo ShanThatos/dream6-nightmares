@@ -2223,7 +2223,7 @@ MonoBehaviour:
   descriptionString: Goldfish are often miskept, trapped in cramped and overheated
     bowls. They rarely reach their full potential lifespan.
   isOpened: 0
-  uncollectable: 1
+  uncollectable: 0
 --- !u!1 &303045468
 GameObject:
   m_ObjectHideFlags: 0
@@ -5194,7 +5194,7 @@ MonoBehaviour:
   descriptionString: There was once a beautiful bird with a beautiful song. People
     caged the bird to hear its song forever, but the bird never sang again.
   isOpened: 0
-  uncollectable: 1
+  uncollectable: 0
 --- !u!114 &837326790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5704,7 +5704,7 @@ MonoBehaviour:
   barriers:
   - {fileID: 1903958391}
   - {fileID: 648258029}
-  GPPopup: {fileID: 517466319}
+  GPPopup: {fileID: 0}
 --- !u!4 &939215989
 Transform:
   m_ObjectHideFlags: 0
@@ -6890,11 +6890,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642731270172959566, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.84
+      value: -17.96
       objectReference: {fileID: 0}
     - target: {fileID: 8642731270172959566, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.04
+      value: -11.01
       objectReference: {fileID: 0}
     - target: {fileID: 8642731270172959566, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8096,6 +8096,18 @@ PrefabInstance:
       propertyPath: pausePanel
       value: 
       objectReference: {fileID: 394609860}
+    - target: {fileID: 6108635679875393534, guid: c897f516095ae2943b442967e0325c59, type: 3}
+      propertyPath: useTestPos
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108635679875393534, guid: c897f516095ae2943b442967e0325c59, type: 3}
+      propertyPath: playerTestPos.x
+      value: 171.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108635679875393534, guid: c897f516095ae2943b442967e0325c59, type: 3}
+      propertyPath: playerTestPos.y
+      value: -25.12
+      objectReference: {fileID: 0}
     - target: {fileID: 6108635679875393535, guid: c897f516095ae2943b442967e0325c59, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -14650,7 +14662,7 @@ MonoBehaviour:
   descriptionString: 'Some Painted Lady Butterflies are raised in capativity: trapped
     in walled gardens until they are pinned to boards for display.'
   isOpened: 0
-  uncollectable: 1
+  uncollectable: 0
 --- !u!61 &2136053200
 BoxCollider2D:
   m_ObjectHideFlags: 0

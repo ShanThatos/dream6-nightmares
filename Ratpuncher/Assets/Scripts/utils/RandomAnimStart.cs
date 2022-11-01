@@ -15,7 +15,7 @@ public class RandomAnimStart : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         delayFrames = Random.Range(minDelay, maxDelay);
-        print(delayFrames);
+        // print(delayFrames);
     }
 
     private void Update()
