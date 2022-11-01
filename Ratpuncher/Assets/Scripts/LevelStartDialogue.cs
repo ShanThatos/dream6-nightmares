@@ -32,16 +32,20 @@ public class LevelStartDialogue : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "Office")
             {
                 // if ladybird level is solved, show solved dialogue
-                if (PlayerPrefs.GetInt("LadybirdSolved", 0) == 1)
+                if (PlayerPrefs.GetInt("LadybirdSolved", 0) == 1 && PlayerPrefs.GetInt("LadybirdClosure", 0) == 0)
                 {
                     alternativeDialogue = "LadybirdClosure";
-                    if (PlayerPrefs.GetInt(alternativeDialogue, 0) == 0)
-                    {
-                        DialogueManager.instance.PlayDialogue(alternativeDialogue);
-                        PlayerPrefs.SetInt(alternativeDialogue, 1);
-                        isTriggered = true;
-                        return;
-                    }
+                    PlayAlternativeDialouge();
+                }
+                else if (PlayerPrefs.GetInt("LadybirdClosure", 0) == 1 && PlayerPrefs.GetInt("ElioSolved", 0) == 0)
+                {
+                    alternativeDialogue = "ElioIntro";
+                    PlayAlternativeDialouge();
+                }
+                else if (PlayerPrefs.GetInt("ElioSolved", 0) == 1 && PlayerPrefs.GetInt("ElioClosure", 0) == 0)
+                {
+                    alternativeDialogue = "ElioClosure";
+                    PlayAlternativeDialouge();
                 }
             }
             if (PlayerPrefs.GetInt(startDialogue, 0) == 0)
@@ -58,21 +62,40 @@ public class LevelStartDialogue : MonoBehaviour
             if (hasFinishedAction && DialogueManager.instance.isDialogueFinished)
             {
                 TriggerFinishedAction();
+                hasFinishedAction = false;
             }
-
         }
     }
 
-    private void TriggerFinishedAction()
+    public void PlayAlternativeDialouge()
+    {
+        if (PlayerPrefs.GetInt(alternativeDialogue, 0) == 0)
+        {
+            DialogueManager.instance.PlayDialogue(alternativeDialogue);
+            PlayerPrefs.SetInt(alternativeDialogue, 1);
+            isTriggered = true;
+            return;
+        }
+    }
+
+    public void TriggerFinishedAction()
     {
         if (!didFinishedAction)
         {
             if (PlayerPrefs.GetInt("LadybirdSolved", 0) == 0)
             {
-                this.gameObject.GetComponent<OfficeManager>().TriggerPin();
+                this.gameObject.GetComponent<OfficeManager>().TriggerPin("Ladybird's case is pinned to the board");
                 this.gameObject.GetComponent<OfficeManager>().TriggerAlert();
-                didFinishedAction = true;
             }
+            else if (PlayerPrefs.GetInt("LadybirdSolved", 0) == 1 && PlayerPrefs.GetInt("ElioIntro", 0) == 1)
+            {
+                this.gameObject.GetComponent<OfficeManager>().TriggerAlert();
+            }
+            didFinishedAction = true;
+            LeanTween.delayedCall(gameObject, 5f, () =>
+            {
+                didFinishedAction = false;
+            });
         }
     }
 }
