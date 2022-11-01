@@ -48,13 +48,11 @@ public class RemnantController : StateManager
     }
 
 
-    bool facingRight;
     public void setDirection(bool isFacingRight) {
         transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * (isFacingRight ? 1 : -1), transform.localScale.y, transform.localScale.z);
-        facingRight = isFacingRight;
     }
     public bool isFacingRight() {
-        return facingRight;
+        return transform.localScale.x > 0;
     }
 
     public bool isAnimationDone(string animationName) {

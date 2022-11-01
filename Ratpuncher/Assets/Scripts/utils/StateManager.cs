@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class StateManager : MonoBehaviour {
 
+    public bool isStateMachineActive = true;
     public State currentState;
 
     protected State[] states;
@@ -22,7 +23,7 @@ public class StateManager : MonoBehaviour {
 
 
     public void FixedUpdate() {
-        if (GameManager.IsMovementLocked()) return;
+        if (!isStateMachineActive || GameManager.IsMovementLocked()) return;
         State nextState = Array.Find<State>(states, state => state.canEnter());
         if (nextState != null)
             switchState(nextState.getStateName());
