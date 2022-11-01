@@ -5,7 +5,7 @@ using UnityEngine;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance { get; private set; }
-    private DialogueController dialogueScript;
+    public DialogueController dialogueScript;
     public bool isDialogueOn;
     public bool isDialogueFinished;
 

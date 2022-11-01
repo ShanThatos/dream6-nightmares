@@ -20,6 +20,14 @@ public class Item : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefs.GetInt(name, 0) == 1)
+        {
+            this.gameObject.SetActive(false);
+        }
+        else
+        {
+            this.gameObject.SetActive(true);
+        }
         blackPanel = GameObject.FindGameObjectWithTag("BlackPanel");
         itemIdentifier = GameObject.FindGameObjectWithTag("ItemIdentifier");
         itemImage = itemIdentifier.transform.GetChild(0).transform.GetChild(1).GetComponent<Image>();
@@ -67,6 +75,7 @@ public class Item : MonoBehaviour
             if (!uncollectable)
             {
                 Debug.Log("Collected " + name);
+                PlayerPrefs.SetInt(name, 1);
                 Destroy(this.gameObject);
             }
         }
