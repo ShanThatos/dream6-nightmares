@@ -51,9 +51,11 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    [ContextMenu("Reset Ladybird Level")]
-    public void ResetLadybird()
+    [ContextMenu("Reset Levels")]
+    public void ResetLevels()
     {
-        PlayerPrefs.SetInt("LadybirdSolved", 0);
+        string rebinds = PlayerPrefs.GetString("rebinds");
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetString("rebinds", rebinds);
     }
 }

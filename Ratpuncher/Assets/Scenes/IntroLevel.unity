@@ -14016,7 +14016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6232032654833355560, guid: 9284c0fef640d4648bb55d91c5c990d5, type: 3}
       propertyPath: onDeathEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6232032654833355560, guid: 9284c0fef640d4648bb55d91c5c990d5, type: 3}
       propertyPath: onDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode

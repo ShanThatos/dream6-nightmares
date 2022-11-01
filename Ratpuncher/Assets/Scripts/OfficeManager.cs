@@ -8,6 +8,7 @@ public class OfficeManager : MonoBehaviour
 {
     public GameObject boardAlert;
     public GameObject ladybirdAlert;
+    public GameObject elioSitAlert;
     public GameObject elioAlert;
     public GameObject remAlert;
 
@@ -73,13 +74,18 @@ public class OfficeManager : MonoBehaviour
 
     public void TriggerAlert()
     {
-        if (PlayerPrefs.GetInt("LadybirdSolved", 0) == 0)
+        if (PlayerPrefs.GetInt("LadybirdSolved", 0) == 0 && PlayerPrefs.GetInt("HubStart", 0) == 1)
         {
             boardAlert.SetActive(true);
             ladybirdAlert.SetActive(true);
         }
-        else if (PlayerPrefs.GetInt("ElioSolved", 0) == 0 && PlayerPrefs.GetInt("ElioActivated", 0) == 1)
+        else if (PlayerPrefs.GetInt("ElioSolved", 0) == 0 && PlayerPrefs.GetInt("ElioIntro", 0) == 1 && PlayerPrefs.GetInt("ElioStart", 0) == 0)
         {
+            elioSitAlert.SetActive(true);
+        }
+        else if (PlayerPrefs.GetInt("ElioSolved", 0) == 0 && PlayerPrefs.GetInt("ElioStart", 0) == 1)
+        {
+            elioSitAlert.SetActive(false);
             boardAlert.SetActive(true);
             elioAlert.SetActive(true);
         }
@@ -205,13 +211,10 @@ public class OfficeManager : MonoBehaviour
         LeanTween.scale(go, new Vector3(4f, 3f, 4f), 0.1f);
     }
 
-    public void TriggerPin()
+    public void TriggerPin(string pinText)
     {
         GameObject caseText = pinCaseAlert.transform.GetChild(0).gameObject;
-        if (PlayerPrefs.GetInt("LadybirdSolved", 0) == 0)
-        {
-            caseText.GetComponent<TextMeshProUGUI>().text = "Ladybird's case is pinned to the board";
-        }
+        caseText.GetComponent<TextMeshProUGUI>().text = pinText;
         pinCaseAlert.SetActive(true);
         var seq = LeanTween.sequence();
         //seq.append(LeanTween.moveX(pinCaseAlert.GetComponent<RectTransform>(), 485, 1f));
@@ -219,7 +222,13 @@ public class OfficeManager : MonoBehaviour
         seq.append(3f);
         seq.append(() => {
             LeanTween.value(caseText, a => caseText.GetComponent<TextMeshProUGUI>().alpha = a, 1, 0, 1.5f);
-            LeanTween.alpha(pinCaseAlert.GetComponent<RectTransform>(), 0f, 1.5f).setDestroyOnComplete(true);
+            LeanTween.alpha(pinCaseAlert.GetComponent<RectTransform>(), 0f, 1.5f).setOnComplete(() =>
+            {
+                pinCaseAlert.transform.localScale = new Vector3(1, 0, 1);
+                LeanTween.value(caseText, a => caseText.GetComponent<TextMeshProUGUI>().alpha = a, 0, 1, 0f);
+                LeanTween.alpha(pinCaseAlert.GetComponent<RectTransform>(), 255f, 0f);
+                pinCaseAlert.SetActive(false);
+            });
         });
 
     }
