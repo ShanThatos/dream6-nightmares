@@ -35,10 +35,9 @@ public class LadybirdBossfightController : MonoBehaviour {
     }
 
     public IEnumerator StartBossFightCoroutine() {
-        PlayerMovement player = GameManager.instance.player.GetComponent<PlayerMovement>();
-        Damagable playerDamagable = player.GetComponent<Damagable>();
+        Damagable playerDamagable = GameManager.instance.player.GetComponent<Damagable>();
         playerDamagable.OnRespawn += ResetBossFight;
-        player.LockControls(true);
+        GameManager.LockPlayer();
 
         yield return new WaitForSeconds(1.5f);
 
@@ -91,7 +90,7 @@ public class LadybirdBossfightController : MonoBehaviour {
 
         bugfish.resetStates();
 
-        player.LockControls(false);
+        GameManager.UnlockPlayer();
 
         MainCameraScript.instance.cameraOffset = cameraOffset;
         MainCameraScript.instance.setCamPosLerp(MainCameraScript.instance.defaultCamPosLerp);
