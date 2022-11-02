@@ -296,3 +296,8 @@ MonoBehaviour:
     - "Elio (elio normal) Rem! I\u2019m so glad to see you. I don\u2019t know what\u2019s
       going on but something isn\u2019t adding u-"
     - Rem (rem normal) Look out!
+  - dialogueName: FactoryClosure
+    needsTransition: 1
+    sceneName: Office
+    dialoguesText:
+    - ' () That concludes the Alpha, Thank you for playing!'

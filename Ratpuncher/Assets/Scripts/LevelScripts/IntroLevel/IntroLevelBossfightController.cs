@@ -33,7 +33,7 @@ public class IntroLevelBossfightController : MonoBehaviour {
         GameManager.LockPlayer();
 
         DialogueManager.instance.PlayDialogue("IntroBeforeBoss");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         yield return new WaitUntil(() => DialogueManager.instance.isDialogueFinished);
 
         animator.Play("IntroBossfightWithElio");
@@ -46,6 +46,7 @@ public class IntroLevelBossfightController : MonoBehaviour {
         yield return new WaitForSeconds(1.4f);
 
         //DialogueManager.instance.PlayDialogue("IntroClosure");
+        GameManager.LockMovement();
         ScenesTransition.instance.ChangeScene("Office");
     }
 

@@ -33,7 +33,7 @@ public class RMMainAttackState : RMState {
         if (remainingCooldown > 0f || !controller.isCurrentStateIn("RMIdle", "RMRun", "RMChase"))
             return false;
         Transform tr = controller.getPoint("MainAttackZone");
-        return Vector2.Distance(tr.position, GameManager.GetPlayerTransform().position) < tr.lossyScale.x;
+        return Vector2.Distance(tr.position, GameManager.GetPlayerTransform().position) < tr.localScale.x;
     }
 
     public override string getStateName() {

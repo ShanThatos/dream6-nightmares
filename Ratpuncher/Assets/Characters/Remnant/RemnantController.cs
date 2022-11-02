@@ -64,7 +64,7 @@ public class RemnantController : StateManager
     
 
     public void OnDead() {
-        // switchState("RMDeath");
+        switchState("RMDeath");
     }
 
     public void OnHurt(float damage, bool isEnergy) {

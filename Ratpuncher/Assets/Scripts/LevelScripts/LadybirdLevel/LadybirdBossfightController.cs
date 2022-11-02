@@ -154,7 +154,9 @@ public class LadybirdBossfightController : MonoBehaviour {
     }
 
     public IEnumerator EndBossFightCoroutine() {
+
         GameManager.LockMovement();
+
         bugfish.getDamagable().setInvincibility(true);
         bugfishRevealAnimator.Play("BFDone");
         bugfish.HPBar.gameObject.SetActive(false);
@@ -167,6 +169,8 @@ public class LadybirdBossfightController : MonoBehaviour {
         // GameManager.SetMovementLock(true);
         yield return new WaitForSeconds(3f);
         PlayerPrefs.SetInt("LadybirdSolved", 1);
+
+        GameManager.UnlockMovement();
 
         // Popup will play dialogue after it is closed
         GPPopup.Open();

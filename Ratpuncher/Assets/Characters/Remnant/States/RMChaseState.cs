@@ -15,19 +15,27 @@ public class RMChaseState : RMState {
     }
 
     public override void run() {
+
         if (getDistanceToPlayer() > controller.getPoint("ChaseZone").localScale.x + 1f) {
             controller.switchState(Random.Range(0, 2) == 0 ? "RMIdle" : "RMRun");
             return;
         }
 
-        bool runningRight = controller.transform.position.x < GameManager.GetPlayerTransform().position.x;
-        controller.setDirection(runningRight);
-        if (getDistanceToPlayer() < .5f) {
-            controller.rb.velocity *= new Vector2(.5f, 1);
-            return;
+        if (controller.isFacingRight() && GameManager.GetPlayerTransform().position.x < controller.transform.position.x)
+            controller.setDirection(false);
+        else if (!controller.isFacingRight() && GameManager.GetPlayerTransform().position.x > controller.transform.position.x)
+            controller.setDirection(true);
+
+        // Transform idealPlayerLocation = controller.getPoint("MainAttackZone");
+        float targetDistance = controller.getPoint("MainAttackZone").localPosition.magnitude;
+
+        if (getDistanceToPlayer() > targetDistance) {
+            controller.rb.velocity = new Vector2(chaseSpeed * (controller.isFacingRight() ? 1 : -1), controller.rb.velocity.y);
+        }
+        if (getDistanceToPlayer() <= targetDistance) {
+            controller.rb.velocity = new Vector2(chaseSpeed * (controller.isFacingRight() ? -1 : 1), controller.rb.velocity.y);
         }
         
-        controller.rb.velocity = new Vector2(chaseSpeed * (runningRight ? 1 : -1), controller.rb.velocity.y);
     }
 
     public override bool canEnter() {
