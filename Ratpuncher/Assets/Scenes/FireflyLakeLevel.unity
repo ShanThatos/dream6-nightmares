@@ -11937,7 +11937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: yay.Array.data[0].duration
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: yay.Array.data[1].duration
@@ -12049,7 +12049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.103814535
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12804,7 +12804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.17289953
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13229,7 +13229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231524982612686, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_text
-      value: now pay the price
+      value: now
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_RootOrder
@@ -13257,7 +13257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.17289953
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13759,7 +13759,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231524982612686, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_text
-      value: now
+      value: 'pay
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_RootOrder
@@ -13787,7 +13789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.17289953
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14418,7 +14420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: yay.Array.data[0].duration
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: yay.Array.data[1].duration
@@ -14502,7 +14504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231524982612686, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_text
-      value: You killed us all...
+      value: you killEd us All...
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_RootOrder
@@ -14530,7 +14532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14819,9 +14821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231524982612686, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_text
-      value: 'pay
-
-'
+      value: the
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_RootOrder
@@ -14849,7 +14849,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.17289953
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_LocalRotation.w
@@ -15927,7 +15927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: yay.Array.data[0].duration
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: yay.Array.data[1].duration
@@ -16011,7 +16011,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231524982612686, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_text
-      value: You killed us all...
+      value: elio...
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_RootOrder
@@ -16039,7 +16039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.103814535
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18386,7 +18386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: yay.Array.data[0].duration
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: yay.Array.data[1].duration
@@ -18470,7 +18470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231524982612686, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_text
-      value: You killed us all...
+      value: our blooD is on your hands
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_RootOrder
@@ -18498,7 +18498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19123,7 +19123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: yay.Array.data[0].duration
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: yay.Array.data[1].duration
@@ -19215,7 +19215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231524982612686, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_text
-      value: You did this to us
+      value: "you diD \nthis to \nus"
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_RootOrder
@@ -19243,7 +19243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19636,7 +19636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: yay.Array.data[0].duration
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 9175231524488556984, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: yay.Array.data[1].duration
@@ -19720,7 +19720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231524982612686, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_text
-      value: elio...
+      value: ELIO
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_RootOrder
@@ -19748,7 +19748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.103814535
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9175231525569072504, guid: bff23e96693451143b5fe34ea746d573, type: 3}
       propertyPath: m_LocalRotation.w
