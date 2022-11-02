@@ -47,13 +47,14 @@ MonoBehaviour:
     sceneName: 
     dialoguesText:
     - Rem (rem normal) That purple stuff... Why is there Nightmare Energy here?
-    - Rem (rem normal) I probably shouldn't get too close
+    - Rem (rem normal) I probably shouldn't get too close.
   - dialogueName: DefeatNarwhal
     needsTransition: 0
     sceneName: 
     dialoguesText:
-    - Rem (rem normal) Narwhal, Narwhal swimming in the ocean...
-    - Rem (rem normal) ...causing a commotion
+    - Rem (rem normal) These dream reminisces here look more dangerous than usual.
+    - Rem (rem normal) I should hurry and take them out before they can cause any
+      more harm.
   - dialogueName: IntroClosure
     needsTransition: 1
     sceneName: Office
@@ -65,15 +66,9 @@ MonoBehaviour:
     sceneName: 
     dialoguesText:
     - Elio (elio normal) Shit, Rem you good?
-    - "Rem (rem normal) I\u2019m alright but\u2026 did you hear that? It was talking
-      and its voice was going straight to my head."
-    - "Elio (elio normal) That\u2019s weird, I didn\u2019t hear anything, or at least
-      anything that I could make sense of. "
-    - 'Rem (rem normal) We have to do something. We have to help. '
-    - "Rem (rem normal) It sounded so sad and\u2026I\u2019m strangely drawn towards
-      it for some reason."
-    - "Elio (elio normal) Of course man, that\u2019s what we do. Come on, looks like
-      we already got someone at the door. "
+    - Rem (rem normal) I should be asking you that. What even happened back there?
+    - Elio (elio normal) I'm not sure myself, but hey, lets save this for later.
+      We have a client at the door.
     - "Elio (elio normal) Good mornin\u2019 ma\u2019am! Come in, come in!"
     - Elio (elio normal) It must be freezing out there- please make yourself comfortable.
     - Rem (rem normal) Welcome to NEST, my name is Rem and that is my partner Elio,
@@ -81,8 +76,8 @@ MonoBehaviour:
     - Ladybird (ladybird normal) H-hello! Please call me Ladybird, I heard this was
       the place that was taking on nightmare cases?
     - 'Ladybird (ladybird normal) I think I might be getting these dreams too. '
-    - "Rem (rem normal) We can definitely help you with that, Ladybird. Can you tell
-      me how has the nightmare been affecting you?\r"
+    - Rem (rem normal) We can definitely help you with that, Ladybird. How has the
+      nightmare been affecting you?
     - Ladybird (ladybird normal) Well, it all began around the time that fog rolled
       into town about a month ago.
     - Ladybird (ladybird normal) I would wake up from the nightmares in a cold sweat
@@ -119,7 +114,7 @@ MonoBehaviour:
     needsTransition: 0
     sceneName: 
     dialoguesText:
-    - Rem (rem normal) Ugh, hopping into realms never gets easier it seems.
+    - Rem (rem normal) Ugh, entering nightmare realms never gets easier.
     - 'Rem (rem normal) Okay, let''s just stick to the usual M.O: locate the core
       stabilizing this place and retrieve it. '
     - 'Rem (rem normal) Huh, this must be the childhood home Ladybird mentioned.
@@ -175,8 +170,10 @@ MonoBehaviour:
       to separate from for anyone."
     - "Ladybird (ladybird normal) I think I\u2019m ready though. It\u2019s about
       time I try and do something for myself."
-    - "Ladybird (ladybird normal) For a while now, it seems like the only thing holding
-      me back was me\u2026\n"
+    - 'Ladybird (ladybird normal) For a while now, it seems like the only thing holding
+      me back was me.
+
+'
     - 'Ladybird (ladybird normal) Rem, Elio, thank you so much for taking on my case.
       You have saved me in more ways than one.
 
