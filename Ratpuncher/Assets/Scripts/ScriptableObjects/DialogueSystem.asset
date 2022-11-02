@@ -292,6 +292,7 @@ MonoBehaviour:
     needsTransition: 0
     sceneName: 
     dialoguesText:
-    - ' () Elio? Where did you come from?'
-    - Elio (elio normal) REM??
-    - Elio (elio normal) Rem get out of here befor...
+    - Rem (rem normal) Elio, is that you?
+    - "Elio (elio normal) Rem! I\u2019m so glad to see you. I don\u2019t know what\u2019s
+      going on but something isn\u2019t adding u-"
+    - Rem (rem normal) Look out!

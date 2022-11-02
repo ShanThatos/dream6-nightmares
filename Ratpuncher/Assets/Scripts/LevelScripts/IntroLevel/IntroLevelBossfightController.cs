@@ -45,7 +45,8 @@ public class IntroLevelBossfightController : MonoBehaviour {
         switchRemnantState("RMScream");
         yield return new WaitForSeconds(1.4f);
 
-        DialogueManager.instance.PlayDialogue("IntroClosure");
+        //DialogueManager.instance.PlayDialogue("IntroClosure");
+        ScenesTransition.instance.ChangeScene("Office");
     }
 
     public void switchRemnantState(string state) {
