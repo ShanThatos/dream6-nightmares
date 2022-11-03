@@ -11115,6 +11115,10 @@ PrefabInstance:
       propertyPath: spawnHitParticles
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1564415879, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}
+      propertyPath: canDash
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5041845320778197620, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}
       propertyPath: m_Pitch
       value: 0.55
