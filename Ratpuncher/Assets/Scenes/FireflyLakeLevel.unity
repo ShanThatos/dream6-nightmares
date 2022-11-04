@@ -17959,7 +17959,7 @@ PrefabInstance:
       objectReference: {fileID: 1921355019}
     - target: {fileID: 6108635679875393534, guid: c897f516095ae2943b442967e0325c59, type: 3}
       propertyPath: useTestPos
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6108635679875393534, guid: c897f516095ae2943b442967e0325c59, type: 3}
       propertyPath: playerTestPos.x
