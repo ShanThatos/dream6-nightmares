@@ -14,7 +14,8 @@ public class FirecrabDigWeak : FirecrabState
         timer = duration;
         controller.animator.Play("DigWeak");
         prevDR = controller.damagable.damageReduction;
-        controller.damagable.damageReduction = 0;
+        controller.damagable.damageReduction = .5f;
+        controller.damagable.energyDamageReduction = 0;
     }
 
     public override void run()

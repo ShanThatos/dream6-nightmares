@@ -19,6 +19,11 @@ public class Damagable : MonoBehaviour
     public float damageReduction = 0.0f;
 
     [SerializeField]
+    [Tooltip("Damage resistance (1 = invunerable)")]
+    [Range(0f, 1f)]
+    public float energyDamageReduction = 0.0f;
+
+    [SerializeField]
     [Tooltip("How long entity is invincible in seconds after damage")]
     private float iFrameTime = 0.4f;
 
@@ -78,13 +83,15 @@ public class Damagable : MonoBehaviour
             {
                 if (attack.canHit(this))
                 {
-                    float effectiveDamage = (attack.damage * (1- damageReduction) );
+                    float dr = attack.energyAttack ? energyDamageReduction : damageReduction;
+
+                    float effectiveDamage = (attack.damage * (1 - dr) );
                     health -= effectiveDamage;
 
                     GameObject hitFX = particles;
                     float recoilMult = 1.0f;
 
-                    if (damageReduction >= .8f)
+                    if (dr >= .8f)
                     {
                         hitFX = deflectParticles;
                         recoilMult = 2.0f;

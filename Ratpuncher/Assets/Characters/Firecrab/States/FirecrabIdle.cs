@@ -12,6 +12,11 @@ public class FirecrabIdle : FirecrabState
     [Range(0f, 1f)]
     private float DR = 0.9f;
 
+    [SerializeField]
+    [Tooltip("Energy damage resistance (1 = invunerable)")]
+    [Range(0f, 1f)]
+    private float EDR = 0.9f;
+
     private float idleTime;
 
     public float attackDistance = 10f;
@@ -24,6 +29,7 @@ public class FirecrabIdle : FirecrabState
     {
         controller.animator.Play("Idle");
         controller.damagable.damageReduction = DR;
+        controller.damagable.energyDamageReduction = EDR;
         idleTime = Random.Range(minTime, maxTime);
         rangeMult = controller.tempRangeMult;
     }
@@ -76,7 +82,7 @@ public class FirecrabIdle : FirecrabState
         {
             case 1:
             case 2:
-                if(volcanoCount <= 2)
+                if(volcanoCount <= 1)
                 {
                     action = "FCVolcano";
                     volcanoCount++;
@@ -85,7 +91,7 @@ public class FirecrabIdle : FirecrabState
                 goto case 3;
             case 3:
             case 4:
-                if (digCount <= 2)
+                if (digCount <= 1)
                 {
                     action = "FCDig";
                     digCount++;

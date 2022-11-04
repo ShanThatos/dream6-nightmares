@@ -4885,12 +4885,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c577dc23271b7e4783741ee71b88030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 15
   knockback: {x: 0.1, y: 0.1}
   isPlayerAttack: 1
   canLaunchPlayer: 0
   player: {fileID: 0}
   isActive: 1
+  energyAttack: 1
 --- !u!61 &9053099390234066631
 BoxCollider2D:
   m_ObjectHideFlags: 0

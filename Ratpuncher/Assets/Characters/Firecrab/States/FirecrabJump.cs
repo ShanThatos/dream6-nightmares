@@ -14,12 +14,14 @@ public class FirecrabJump : FirecrabState
     public bool landed;
 
     private float timer;
+    private float overrideTimer;
 
 
     public override void enter()
     {
         landed = false;
         timer = .5f;
+        overrideTimer = 12f;
         float disLeft = Vector3.Distance(transform.position, leftPoint.position);
         float disRight = Vector3.Distance(transform.position, rightPoint.position);
 
@@ -30,6 +32,8 @@ public class FirecrabJump : FirecrabState
 
     public override void run()
     {
+        overrideTimer -= Time.deltaTime;
+
         if (!landed)
         {
             RaycastHit2D[] hits;
@@ -49,6 +53,11 @@ public class FirecrabJump : FirecrabState
             {
                 controller.switchState("FCIdle");
             }
+        }
+
+        if(overrideTimer <= 0)
+        {
+            controller.switchState("FCIdle");
         }
     }
 
