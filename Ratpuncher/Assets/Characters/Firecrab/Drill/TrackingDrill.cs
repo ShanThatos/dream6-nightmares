@@ -104,7 +104,7 @@ public class TrackingDrill : MonoBehaviour
 
         CallOnExecute();
 
-        Destroy(this, 3f);
+        Destroy(this.gameObject, 3f);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

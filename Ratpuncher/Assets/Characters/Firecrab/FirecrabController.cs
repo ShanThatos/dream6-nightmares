@@ -16,6 +16,9 @@ public class FirecrabController : StateManager
     [HideInInspector]
     public Damagable damagable;
 
+    [HideInInspector]
+    public float tempRangeMult = 1;
+
 
     // Start is called before the first frame update
     public override void init()
