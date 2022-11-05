@@ -22,6 +22,7 @@ public class DialogueController : MonoBehaviour
     public bool isDialogueFinished;
 
     private bool isRunning;
+    private bool intervalDone;
     public float textSpeed;
 
     public UnityEvent EndDialogueFunction;
@@ -51,9 +52,9 @@ public class DialogueController : MonoBehaviour
     private void Update()
     {
         oldInput = input;
-        input = Input.anyKeyDown;
-        //input = Input.GetAxisRaw("Submit") > 0;
-        if (isDialogueOn)
+        //input = Input.anyKeyDown;
+        input = Input.GetAxisRaw("Submit") > 0 || Input.GetMouseButtonDown(0);
+        if (isDialogueOn && intervalDone)
         {
             if (input && !oldInput)
             {
@@ -64,6 +65,8 @@ public class DialogueController : MonoBehaviour
 
     public void StartDialogue(string[] dialogue)
     {
+        intervalDone = false;
+        Invoke("DoneWait", 2f);
         if (!isDialogueOn)
         {
             isDialogueOn = true;
@@ -177,6 +180,11 @@ public class DialogueController : MonoBehaviour
         //dialoguePanel.SetActive(false);
 
         GameManager.UnlockMovement();
+    }
+
+    private void DoneWait()
+    {
+        intervalDone = true;
     }
 
     public void check(string text)

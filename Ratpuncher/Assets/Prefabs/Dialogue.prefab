@@ -142,7 +142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: press any key >>
+  m_text: continue >>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 692a85611fe3f6a44a2701b10996f5d0, type: 2}
   m_sharedMaterial: {fileID: -888643575040364970, guid: 692a85611fe3f6a44a2701b10996f5d0, type: 2}
@@ -347,6 +347,9 @@ MonoBehaviour:
   isDialogueOn: 0
   isDialogueFinished: 0
   textSpeed: 30
+  EndDialogueFunction:
+    m_PersistentCalls:
+      m_Calls: []
   soSceneName: 
 --- !u!1 &3558910314120415074
 GameObject:
