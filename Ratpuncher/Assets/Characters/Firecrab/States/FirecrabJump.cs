@@ -51,13 +51,13 @@ public class FirecrabJump : FirecrabState
             timer -= Time.deltaTime;
             if(timer <= 0)
             {
-                controller.switchState("FCIdle");
+                controller.switchState("FCSeeker");
             }
         }
 
         if(overrideTimer <= 0)
         {
-            controller.switchState("FCIdle");
+            controller.switchState("FCSeeker");
         }
     }
 
@@ -86,7 +86,8 @@ public class FirecrabJump : FirecrabState
         float velocity = Mathf.Sqrt(dis * gravity / Mathf.Sin(2 * radians));
         
         Vector3 force = velocity * dir.normalized;
-        
+
+        force.x *= 1.4f;
         return force;
     }
 }

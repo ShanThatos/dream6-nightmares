@@ -75,12 +75,7 @@ public class Seeker : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detotationDistance);
-    }
-
-    private void OnDrawGizmosSelected()
-    {
         Gizmos.color = Color.blue;
-        Gizmos.DrawRay(transform.position, transform.forward);
-        
+        Gizmos.DrawRay(transform.position, transform.forward*2);
     }
 }

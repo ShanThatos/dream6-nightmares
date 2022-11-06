@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97d8000a674aea34b84abe30d2c3c0a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  giveUpDistance: 15
+  giveUpDistance: 25
   detotationDistance: 0.6
   detoationPrefab: {fileID: 3490313779896905587, guid: 78e0aaa875fa14d4fa9f6501dad4d691, type: 3}
   moveSpeed: 15
@@ -67,7 +67,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 7
+  m_Radius: 20
 --- !u!50 &884091596
 Rigidbody2D:
   serializedVersion: 4
@@ -144,7 +144,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: b125883f6a4140b489d99c8a414eee22, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -166,7 +166,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 3625043607559282579, guid: 045b15ec09bba42448d89db77fa6f20a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3773585, g: 0.14738339, b: 0.3740541, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -238,6 +238,7 @@ MonoBehaviour:
   maxHealth: 1
   knockResistance: {x: 100, y: 100}
   damageReduction: 0
+  energyDamageReduction: 0
   iFrameTime: 0.4
   isPlayer: 0
   spawnHitParticles: 1

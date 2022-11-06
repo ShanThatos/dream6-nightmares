@@ -155,7 +155,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // If no movement input, add some "drag" to help slow the player
-        if (Mathf.Abs(moveVector.x) <= .33 && verticalState != VerticalState.Launched)
+        if (Mathf.Abs(moveVector.x) <= .33 && verticalState != VerticalState.Launched && currentAction != PlayerActions.Dashing)
         {
             animationManager.setRunning(false);
             currentVelocity.x = currentVelocity.x * .9f;
@@ -365,7 +365,7 @@ public class PlayerMovement : MonoBehaviour
             currentAction = PlayerActions.Dashing;
 
             float direction = Mathf.Sign(forward.x);
-            Vector2 currVelocity = rb.velocity;
+            Vector2 currVelocity;
             currVelocity.x = dashForce * direction;
             currVelocity.y = 0;
             animationManager.setDashing(true);

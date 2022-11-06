@@ -4829,7 +4829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6441e03cf5024db4b94d027887846519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 5
+  delay: 3.5
   speed: 3
   targetPlayer: 1
   attack: {fileID: 1858204324123927359}
