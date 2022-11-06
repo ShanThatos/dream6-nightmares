@@ -10,6 +10,7 @@ public class DialogueSystem : ScriptableObject
 {
     public Character[] character;
     public Dialogues[] dialogues;
+
     [Serializable]
     public class Character
     {
@@ -23,6 +24,8 @@ public class DialogueSystem : ScriptableObject
         public String dialogueName;
         public bool needsTransition;
         public String sceneName;
+        [TextArea(5, 10)]
+        public String[] options;
         [TextArea(5, 10)]
         public String[] dialoguesText;
     }

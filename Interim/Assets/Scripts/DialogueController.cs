@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 public class DialogueController : MonoBehaviour
 {
     //public HubDialogueSO hubDialogueSO;
@@ -15,6 +16,7 @@ public class DialogueController : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
     public Image characterImage;
+    public GameObject optionsList;
 
     private bool oldInput;
     private bool input;
@@ -67,20 +69,21 @@ public class DialogueController : MonoBehaviour
     {
         intervalDone = false;
         Invoke("DoneWait", 2f);
+        optionsList.SetActive(false);
+        sentences.Clear();
         if (!isDialogueOn)
         {
             isDialogueOn = true;
-            sentences.Clear();
             blackPanel.transform.localScale = new Vector3(1, 1, 1);
             LeanTween.scaleY(dialoguePanel, 1, 0.2f);
             LeanTween.alpha(characterImage.GetComponent<RectTransform>(), 1f, 0.2f).setDelay(0.1f);
             LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0.5f, 0.2f);
-            foreach (string sentence in dialogue)
-            {
-                sentences.Enqueue(sentence);
-            }
-            DisplayNextSentence();
         }
+        foreach (string sentence in dialogue)
+        {
+            sentences.Enqueue(sentence);
+        }
+        DisplayNextSentence();
     }
 
     public void DisplayNextSentence()
@@ -161,25 +164,46 @@ public class DialogueController : MonoBehaviour
     }
     public void EndDialogue()
     {
-        if (isDialogueOn)
+        int currentIndex = DialogueManager.instance.CurrentDialogueIndex();
+        Debug.Log("Dialogue " + currentIndex + " : " + DialogueManager.instance.CurrentDialogueName());
+        
+        if (dialogueSystem.dialogues[currentIndex].options.Length == 0)
         {
-            isDialogueFinished = true;
-            Invoke("ResetDialogue", 5f);
-            Debug.Log("Dialogue Ended");
-            blackPanel.transform.localScale = new Vector3(0, 0, 0);
-            LeanTween.scaleY(dialoguePanel, 0, 0.2f);
-            LeanTween.alpha(characterImage.GetComponent<RectTransform>(), 0f, 0.2f);
-            LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0, 0.2f);
-            isDialogueOn = false;
-            EndDialogueFunction.Invoke();
-            if (soSceneName != "")
+            if (isDialogueOn)
             {
-                ScenesTransition.instance.LoadScene(soSceneName);
+                isDialogueFinished = true;
+                Invoke("ResetDialogue", 5f);
+                Debug.Log("Dialogue Ended");
+                blackPanel.transform.localScale = new Vector3(0, 0, 0);
+                LeanTween.scaleY(dialoguePanel, 0, 0.2f);
+                LeanTween.alpha(characterImage.GetComponent<RectTransform>(), 0f, 0.2f);
+                LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0, 0.2f);
+                isDialogueOn = false;
+                EndDialogueFunction.Invoke();
+                if (soSceneName != "")
+                {
+                    ScenesTransition.instance.LoadScene(soSceneName);
+                }
             }
-        }
-        //dialoguePanel.SetActive(false);
+            //dialoguePanel.SetActive(false);
 
-        GameManager.UnlockMovement();
+            GameManager.UnlockMovement();
+        }
+        else
+        {
+            for (int idx = 0; idx < optionsList.transform.childCount; idx++ )
+            {
+                string currentOption = dialogueSystem.dialogues[currentIndex].options[idx];
+                int startIndex = currentOption.IndexOf("(");
+                int endIndex = currentOption.IndexOf(")");
+                string optionName = currentOption.Substring(startIndex + 1, endIndex - (startIndex + 1));
+                string optionText = currentOption.Substring(endIndex + 2);
+                optionsList.transform.GetChild(idx).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = optionText;
+                optionsList.transform.GetChild(idx).name = optionName;
+            }
+            optionsList.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(optionsList.transform.GetChild(0).gameObject);
+        }
     }
 
     private void DoneWait()

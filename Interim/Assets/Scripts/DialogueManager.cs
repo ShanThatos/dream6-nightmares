@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
     public DialogueController dialogueScript;
     public bool isDialogueOn;
     public bool isDialogueFinished;
+    private int dialogueIndex;
 
     private void Awake()
     {
@@ -46,9 +47,19 @@ public class DialogueManager : MonoBehaviour
                 }
                 dialogueScript.StartDialogue(dialogueScript.dialogueSystem.dialogues[i].dialoguesText);
                 // Debug.Log("Triggered");
+                dialogueIndex = i;
             }
         }
+    }
 
+    public int CurrentDialogueIndex()
+    {
+        return dialogueIndex;
+    }
+
+    public string CurrentDialogueName()
+    {
+        return dialogueScript.dialogueSystem.dialogues[dialogueIndex].dialogueName;
     }
 
     [ContextMenu("Reset Levels")]

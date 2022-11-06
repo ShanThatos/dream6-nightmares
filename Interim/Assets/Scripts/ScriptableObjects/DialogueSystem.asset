@@ -29,12 +29,14 @@ MonoBehaviour:
   - dialogueName: IntroStart
     needsTransition: 0
     sceneName: IntroLevel
+    options: []
     dialoguesText:
     - "Rem (rem normal) Ugh, my head is killing me. Wha- why am I in a nightmare
       realm right now? What is happening\u2026"
   - dialogueName: DefeatMiniboss
     needsTransition: 0
     sceneName: 
+    options: []
     dialoguesText:
     - Rem (rem normal) Elio, is that you?
     - "Elio (elio normal) Rem! I\u2019m so glad to see you. I don\u2019t know what\u2019s
@@ -45,12 +47,14 @@ MonoBehaviour:
   - dialogueName: IntroEvilEnergy
     needsTransition: 0
     sceneName: 
+    options: []
     dialoguesText:
     - Rem (rem normal) That purple stuff... Why is there Nightmare Energy here?
     - Rem (rem normal) I probably shouldn't get too close.
   - dialogueName: DefeatNarwhal
     needsTransition: 0
     sceneName: 
+    options: []
     dialoguesText:
     - Rem (rem normal) These dream reminisces here look more dangerous than usual.
     - Rem (rem normal) I should hurry and take them out before they can cause any
@@ -58,12 +62,14 @@ MonoBehaviour:
   - dialogueName: IntroClosure
     needsTransition: 1
     sceneName: Office
+    options: []
     dialoguesText:
     - ??? () Hey Rem! You there?
     - ??? () C'mon wake up already. We got a client!
   - dialogueName: HubStart
     needsTransition: 0
     sceneName: 
+    options: []
     dialoguesText:
     - Elio (elio normal) Shit, Rem you good?
     - Rem (rem normal) I should be asking you that. What even happened back there?
@@ -100,6 +106,7 @@ MonoBehaviour:
   - dialogueName: ElioHub
     needsTransition: 0
     sceneName: 
+    options: []
     dialoguesText:
     - "Elio (elio normal) Hey man, I think I have to sit this one out. Whatever that
       whale creature was earlier did a number on me. \r\n"
@@ -107,12 +114,14 @@ MonoBehaviour:
   - dialogueName: LadybirdTransition
     needsTransition: 1
     sceneName: LadybirdLevel
+    options: []
     dialoguesText:
     - "Rem (rem normal) Alright Ladybird, I need you to close your eyes with me\u2026think
       of a time when\u2026"
   - dialogueName: LadybirdStart
     needsTransition: 0
     sceneName: 
+    options: []
     dialoguesText:
     - Rem (rem normal) Ugh, entering nightmare realms never gets easier.
     - 'Rem (rem normal) Okay, let''s just stick to the usual M.O: locate the core
@@ -122,6 +131,7 @@ MonoBehaviour:
   - dialogueName: YoungLadybird
     needsTransition: 0
     sceneName: 
+    options: []
     dialoguesText:
     - Rem (rem normal) Hey kid, what are you doing out here all by yourself?
     - "Young Ladybird (young ladybird) Oh that\u2019s because there are big boats
@@ -133,6 +143,7 @@ MonoBehaviour:
   - dialogueName: DefeatBugfish
     needsTransition: 1
     sceneName: Office
+    options: []
     dialoguesText:
     - "Rem (rem normal) Phew- I almost thought we wouldn\u2019t see the end of that
       one. Hmm, looks like it dropped something\u2026 a plane ticket?"
@@ -149,6 +160,7 @@ MonoBehaviour:
   - dialogueName: LadybirdClosure
     needsTransition: 1
     sceneName: Office
+    options: []
     dialoguesText:
     - Elio (elio normal) Our ace detective! Our hero is back! Oh, how he flawlessly
       saves the day once again.
@@ -179,6 +191,7 @@ MonoBehaviour:
   - dialogueName: FactoryStart
     needsTransition: 0
     sceneName: 
+    options: []
     dialoguesText:
     - Rem (rem normal) So this is what my nightmare is...
     - Rem (rem normal) I've never been in a place like this before
@@ -186,6 +199,7 @@ MonoBehaviour:
   - dialogueName: FireflyLakeStart
     needsTransition: 0
     sceneName: 
+    options: []
     dialoguesText:
     - "Rem (rem normal) Oh, a cabin huh? It would be cozy if it weren\u2019t for
       the fact that I\u2019m in a nightmare realm right now."
@@ -193,6 +207,7 @@ MonoBehaviour:
   - dialogueName: ElioIntro
     needsTransition: 0
     sceneName: 
+    options: []
     dialoguesText:
     - "Rem (rem normal) Elio\u2026has been out of it lately."
     - "Rem (rem normal) He\u2019s still recovering from our encounter with that whale-like
@@ -202,6 +217,7 @@ MonoBehaviour:
   - dialogueName: ElioStart
     needsTransition: 0
     sceneName: 
+    options: []
     dialoguesText:
     - Elio (elio normal) Hey man.
     - "Rem (rem normal) Hey, you don\u2019t look so hot. Everything okay?"
@@ -243,11 +259,58 @@ MonoBehaviour:
   - dialogueName: ElioMid
     needsTransition: 0
     sceneName: 
+    options:
+    - (ElioBranchTeammate) Your teammates?
+    - (ElioBranchMission) The mission?
+    - (ElioBranchEnd) End Conversation
     dialoguesText:
-    - Elio (elio normal) Thanks again for doing this for me man.
+    - "Elio (elio normal) What\u2019s up? Anything I can help with? Well y\u2019know,
+      help you help me."
+  - dialogueName: ElioBranchTeammate
+    needsTransition: 0
+    sceneName: 
+    options:
+    - (ElioBranchTeammate) Your teammates?
+    - (ElioBranchMission) The mission?
+    - (ElioBranchEnd) End Conversation
+    dialoguesText:
+    - Rem (rem normal) Mind telling me a bit more about your teammates?
+    - "Elio (elio normal) Mm, they were a rowdy bunch, that\u2019s for sure. We were
+      a foursome of sorts. "
+    - 'Elio (elio normal) Nine was a constant ball of sunshine-- I always wondered
+      where he got all that energy from. '
+    - 'Elio (elio normal) As for Kelper, it was like his mission in life was to stick
+      his nose in drama. It was never a calm moment with him. '
+    - Elio (elio normal) Luckily we had Cheri. She was the rhyme and reason of our
+      little band, covered our asses when we found ourselves in trouble.
+    - Rem (rem normal) They sound like a joy to be around. I would have loved to
+      meet them.
+  - dialogueName: ElioBranchMission
+    needsTransition: 0
+    sceneName: 
+    options:
+    - (ElioBranchTeammate) Your teammates?
+    - (ElioBranchMission) The mission?
+    - (ElioBranchEnd) End Conversation
+    dialoguesText:
+    - Rem (rem normal) What was the mission about? If you can say.
+    - Elio (elio normal) We were put on a serial arsonist case. At first, it was
+      small animals, then cars, then houses.
+    - "Elio (elio normal) It was getting out of the local police\u2019s hands so
+      we were called in."
+    - "Elio (elio normal) Never would imagine he\u2019d tried to burn down an entire
+      forest\u2026"
+  - dialogueName: ElioBranchEnd
+    needsTransition: 0
+    sceneName: 
+    options: []
+    dialoguesText:
+    - Rem (rem normal) I know what I needed to know. Its time for action.
+    - Elio (elio normal) Thank you again for doing this for me man.
   - dialogueName: ElioClosure
     needsTransition: 0
     sceneName: 
+    options: []
     dialoguesText:
     - "Rem (rem normal) I\u2019m back."
     - Elio (elio normal) Welcome home.
@@ -269,6 +332,7 @@ MonoBehaviour:
   - dialogueName: DefeatCrab
     needsTransition: 1
     sceneName: Office
+    options: []
     dialoguesText:
     - ' (elio note) [Note dropped]'
     - Rem (rem normal) It seems like his team truly cared for him. Though Elio still
@@ -282,6 +346,7 @@ MonoBehaviour:
   - dialogueName: IntroBeforeBoss
     needsTransition: 0
     sceneName: 
+    options: []
     dialoguesText:
     - Rem (rem normal) Elio, is that you?
     - "Elio (elio normal) Rem! I\u2019m so glad to see you. I don\u2019t know what\u2019s
@@ -290,5 +355,6 @@ MonoBehaviour:
   - dialogueName: FactoryClosure
     needsTransition: 1
     sceneName: Office
+    options: []
     dialoguesText:
     - ' () That concludes the Alpha, Thank you for playing!'
