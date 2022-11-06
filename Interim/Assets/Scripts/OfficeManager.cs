@@ -67,7 +67,7 @@ public class OfficeManager : MonoBehaviour
         }
         else
         {
-            EventSystem.current.SetSelectedGameObject(null);
+            //EventSystem.current.SetSelectedGameObject(null);
             isTriggered = false;
         }
     }

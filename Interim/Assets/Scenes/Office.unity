@@ -9826,7 +9826,7 @@ MonoBehaviour:
   noteButton: {fileID: 355208813}
   safeButton: {fileID: 1982315735}
   menuButton: {fileID: 275563155}
-  boardFirstSelected: {fileID: 113740879}
+  boardFirstSelected: {fileID: 573828095}
   phoneFirstSelected: {fileID: 1298800278}
   controlsFirstSelected: {fileID: 1095102328}
   XboxFirstSelected: {fileID: 1532599108}

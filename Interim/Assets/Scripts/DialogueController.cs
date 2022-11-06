@@ -67,6 +67,7 @@ public class DialogueController : MonoBehaviour
 
     public void StartDialogue(string[] dialogue)
     {
+        EventSystem.current.SetSelectedGameObject(null);
         intervalDone = false;
         Invoke("DoneWait", 2f);
         optionsList.SetActive(false);
@@ -173,7 +174,7 @@ public class DialogueController : MonoBehaviour
             {
                 isDialogueFinished = true;
                 Invoke("ResetDialogue", 5f);
-                Debug.Log("Dialogue Ended");
+                //Debug.Log("Dialogue Ended");
                 blackPanel.transform.localScale = new Vector3(0, 0, 0);
                 LeanTween.scaleY(dialoguePanel, 0, 0.2f);
                 LeanTween.alpha(characterImage.GetComponent<RectTransform>(), 0f, 0.2f);

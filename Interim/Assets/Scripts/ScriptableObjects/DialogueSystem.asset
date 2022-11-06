@@ -262,7 +262,7 @@ MonoBehaviour:
     options:
     - (ElioBranchTeammate) Your teammates?
     - (ElioBranchMission) The mission?
-    - (ElioBranchEnd) End Conversation
+    - (ElioBranchEnd) Not much.
     dialoguesText:
     - "Elio (elio normal) What\u2019s up? Anything I can help with? Well y\u2019know,
       help you help me."
@@ -272,7 +272,7 @@ MonoBehaviour:
     options:
     - (ElioBranchTeammate) Your teammates?
     - (ElioBranchMission) The mission?
-    - (ElioBranchEnd) End Conversation
+    - (ElioBranchEnd) Not much.
     dialoguesText:
     - Rem (rem normal) Mind telling me a bit more about your teammates?
     - "Elio (elio normal) Mm, they were a rowdy bunch, that\u2019s for sure. We were
@@ -291,7 +291,7 @@ MonoBehaviour:
     options:
     - (ElioBranchTeammate) Your teammates?
     - (ElioBranchMission) The mission?
-    - (ElioBranchEnd) End Conversation
+    - (ElioBranchEnd) Not much.
     dialoguesText:
     - Rem (rem normal) What was the mission about? If you can say.
     - Elio (elio normal) We were put on a serial arsonist case. At first, it was
