@@ -69,7 +69,11 @@ MonoBehaviour:
   - dialogueName: HubStart
     needsTransition: 0
     sceneName: 
-    options: []
+    options:
+    - (LadybirdBranchHome) Childhood home?
+    - (LadybirdBranchBeach) The beach?
+    - (LadybirdBranchPet) Pet shop?
+    - (LadybirdBranchEnd) End conversation.
     dialoguesText:
     - Elio (elio normal) Shit, Rem you good?
     - Rem (rem normal) I should be asking you that. What even happened back there?
@@ -98,10 +102,61 @@ MonoBehaviour:
     - "Ladybird (ladybird normal) Only bits and pieces that reminded me of my childhood
       home, the shores, or m-maybe the pet shop I\u2019m running."
     - Ladybird (ladybird normal) When I wake up though, most of everything is forgotten.
-    - 'Rem (rem normal) Thank you for trusting us with your situation, Ladybird.
-      I promise to do everything in my power to help you. '
-    - Rem (rem normal) To do so though I need to get into your nightmare realm to
-      get to the root of this issue, is that okay?
+  - dialogueName: LadybirdBranchHome
+    needsTransition: 0
+    sceneName: 
+    options:
+    - (LadybirdBranchHome) Childhood home?
+    - (LadybirdBranchBeach) The beach?
+    - (LadybirdBranchPet) Pet shop?
+    - (LadybirdBranchEnd) End conversation.
+    dialoguesText:
+    - Rem (rem normal) What was growing up at home like?
+    - "Ladybird (ladybird normal) Oh well you know, my parents did well enough for
+      us to live comfortably so meals and shelter fortunately weren\u2019t something
+      I needed to worry about."
+    - 'Ladybird (ladybird normal) They were also very involved in my life too. My
+      mother especially so. '
+    - "Ladybird (ladybird normal) They\u2026 they just wanted the best for me I think\u2026 "
+  - dialogueName: LadybirdBranchBeach
+    needsTransition: 0
+    sceneName: 
+    options:
+    - (LadybirdBranchHome) Childhood home?
+    - (LadybirdBranchBeach) The beach?
+    - (LadybirdBranchPet) Pet shop?
+    - (LadybirdBranchEnd) End conversation.
+    dialoguesText:
+    - Rem (rem normal) You mentioned the shores, are you referring to Lunar beach
+      here?
+    - Ladybird (ladybird normal) Yes! I still go there from time to time to clear
+      my head.
+    - "Ladybird (ladybird normal) It\u2019s peaceful there and being next to the
+      open seas and skies gets me daydreaming about all the places I want to travel
+      to and visit one day. "
+  - dialogueName: LadybirdBranchPet
+    needsTransition: 0
+    sceneName: 
+    options:
+    - (LadybirdBranchHome) Childhood home?
+    - (LadybirdBranchBeach) The beach?
+    - (LadybirdBranchPet) Pet shop?
+    - (LadybirdBranchEnd) End conversation.
+    dialoguesText:
+    - "Rem (rem normal) The pet shop\u2026 what is it like to run the place?\r"
+    - "Ladybird (ladybird normal) It\u2019s comfortable. The pet store is the family
+      business and since my mom is too old to run it nowadays I had to take over. "
+    - Ladybird (ladybird normal) You know how it is, whatever puts food on the table,
+      right?
+  - dialogueName: LadybirdBranchEnd
+    needsTransition: 0
+    sceneName: 
+    options: []
+    dialoguesText:
+    - 'Rem (rem normal) Thank you for trusting us, Ladybird. I promise to do everything
+      in my power to help you. '
+    - Rem (rem normal) To do so, I need to get into your nightmare realm to get to
+      the root of this issue. Is that okay?
     - Ladybird (ladybird normal) Y-yes! Just say the word.
   - dialogueName: ElioHub
     needsTransition: 0
@@ -262,7 +317,8 @@ MonoBehaviour:
     options:
     - (ElioBranchTeammate) Your teammates?
     - (ElioBranchMission) The mission?
-    - (ElioBranchEnd) Not much.
+    - (ElioBranchCaution) Caution?
+    - (ElioBranchEnd) End conversation.
     dialoguesText:
     - "Elio (elio normal) What\u2019s up? Anything I can help with? Well y\u2019know,
       help you help me."
@@ -272,7 +328,8 @@ MonoBehaviour:
     options:
     - (ElioBranchTeammate) Your teammates?
     - (ElioBranchMission) The mission?
-    - (ElioBranchEnd) Not much.
+    - (ElioBranchCaution) Caution?
+    - (ElioBranchEnd) End Conversation.
     dialoguesText:
     - Rem (rem normal) Mind telling me a bit more about your teammates?
     - "Elio (elio normal) Mm, they were a rowdy bunch, that\u2019s for sure. We were
@@ -291,7 +348,8 @@ MonoBehaviour:
     options:
     - (ElioBranchTeammate) Your teammates?
     - (ElioBranchMission) The mission?
-    - (ElioBranchEnd) Not much.
+    - (ElioBranchCaution) Caution?
+    - (ElioBranchEnd) End conversation.
     dialoguesText:
     - Rem (rem normal) What was the mission about? If you can say.
     - Elio (elio normal) We were put on a serial arsonist case. At first, it was
@@ -300,13 +358,24 @@ MonoBehaviour:
       we were called in."
     - "Elio (elio normal) Never would imagine he\u2019d tried to burn down an entire
       forest\u2026"
+  - dialogueName: ElioBranchCaution
+    needsTransition: 0
+    sceneName: 
+    options:
+    - (ElioBranchTeammate) Your teammates?
+    - (ElioBranchMission) The mission?
+    - (ElioBranchCaution) Caution?
+    - (ElioBranchEnd) End conversation.
+    dialoguesText:
+    - Rem (rem normal) Anything I should watch out for in there?
+    - "Elio (elio normal) I\u2019m not sure, sorry man. Everything just feels surreal
+      I can\u2019t tell what\u2019s true from false or right from wrong. "
   - dialogueName: ElioBranchEnd
     needsTransition: 0
     sceneName: 
     options: []
     dialoguesText:
-    - Rem (rem normal) I know what I needed to know. Its time for action.
-    - Elio (elio normal) Thank you again for doing this for me man.
+    - Elio (elio normal) Good luck in there, ace detective.
   - dialogueName: ElioClosure
     needsTransition: 0
     sceneName: 

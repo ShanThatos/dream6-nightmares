@@ -78,6 +78,8 @@ public class FCFightController : MonoBehaviour
         musicAnim.Play("MusicFadeOut");
 
         yield return new WaitForSecondsRealtime(3.3f);
+        PlayerPrefs.SetInt("ElioSolved", 1);
+        Debug.Log("Trigger Firecrab");
         DialogueManager.instance.PlayDialogue("DefeatCrab");
     }
 }
