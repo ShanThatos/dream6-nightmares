@@ -19,6 +19,7 @@ public class FCFightController : MonoBehaviour
     private Vector3 startPos;
     private bool active = false;
     private bool musicOn = false;
+    private bool ended = false;
 
     public void Start()
     {
@@ -59,6 +60,11 @@ public class FCFightController : MonoBehaviour
 
     private void EndFight()
     {
+        if (ended)
+        {
+            return;
+        }
+
         StartCoroutine(EndFightCoroutine());
     }
 
@@ -71,6 +77,8 @@ public class FCFightController : MonoBehaviour
 
     IEnumerator EndFightCoroutine()
     {
+        ended = true;
+
         foreach (GameObject obj in barriers)
         {
             obj.GetComponent<Animator>().SetTrigger("stop");
