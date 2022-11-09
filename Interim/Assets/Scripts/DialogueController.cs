@@ -69,7 +69,7 @@ public class DialogueController : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(null);
         intervalDone = false;
-        Invoke("DoneWait", 2f);
+        Invoke("DoneWait", 1.5f);
         optionsList.SetActive(false);
         sentences.Clear();
         if (!isDialogueOn)

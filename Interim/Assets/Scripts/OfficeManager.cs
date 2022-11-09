@@ -31,6 +31,7 @@ public class OfficeManager : MonoBehaviour
     public GameObject phonePanel;
     public GameObject controlsPanel;
     public GameObject xboxControlsPanel;
+    public GameObject optionsList;
     public GameObject notePanel;
     public GameObject menuPanel;
     public GameObject pinCaseAlert;
@@ -67,8 +68,11 @@ public class OfficeManager : MonoBehaviour
         }
         else
         {
-            //EventSystem.current.SetSelectedGameObject(null);
-            isTriggered = false;
+            if (!optionsList.activeInHierarchy)
+            {
+                EventSystem.current.SetSelectedGameObject(null);
+                isTriggered = false;
+            }
         }
     }
 
