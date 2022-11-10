@@ -10,6 +10,8 @@ public class RatJumpState : RatEnemyState {
 
     public float JUMP_COOLDOWN = 5f;
 
+    public RatRecoil rr;
+
     float idleWaitTime;
     float jumpWaitTime;
 
@@ -25,6 +27,7 @@ public class RatJumpState : RatEnemyState {
         controller.setDirection(facingRight);
         idleWaitTime = 0.5f;
         jumpWaitTime = JUMP_COOLDOWN;
+        rr.isActive = true;
     }
 
     public override void run() {
@@ -40,6 +43,11 @@ public class RatJumpState : RatEnemyState {
     public void FixedUpdate() {
         if (jumpWaitTime > 0) 
             jumpWaitTime -= Time.deltaTime;
+    }
+
+    public override void exit()
+    {
+        rr.isActive = false;
     }
 
 

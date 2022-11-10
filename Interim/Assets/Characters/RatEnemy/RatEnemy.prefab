@@ -338,6 +338,7 @@ GameObject:
   - component: {fileID: 6747546632773015466}
   - component: {fileID: 6747546632773015468}
   - component: {fileID: 1437290127}
+  - component: {fileID: 4467095911252153668}
   m_Layer: 9
   m_Name: MainAttackCollider
   m_TagString: Untagged
@@ -393,6 +394,22 @@ MonoBehaviour:
   isPlayerAttack: 0
   canLaunchPlayer: 1
   player: {fileID: 0}
+  isActive: 0
+  energyAttack: 0
+--- !u!114 &4467095911252153668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747546632773015465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68930b14f41b95d4fb551349f1ddaef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 6747546633228865635}
+  jump: {fileID: 3407920457018288461}
   isActive: 0
 --- !u!1 &6747546632866254145
 GameObject:
@@ -569,6 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42a46a8e7cd6f845b1d3b05e64c22f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStateMachineActive: 1
   currentState: {fileID: 6747546632880583795}
   rb: {fileID: 6747546633228865635}
   animator: {fileID: 6747546632581645179}
@@ -626,6 +644,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   knockResistance: {x: 4, y: 1}
+  damageReduction: 0
+  energyDamageReduction: 0
   iFrameTime: 0.6
   isPlayer: 0
   spawnHitParticles: 1
@@ -972,3 +992,4 @@ MonoBehaviour:
   HORIZONTAL_JUMP_FORCE: 6
   VERTICAL_JUMP_FORCE: 5
   JUMP_COOLDOWN: 5
+  rr: {fileID: 4467095911252153668}
