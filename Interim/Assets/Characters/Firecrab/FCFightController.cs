@@ -14,6 +14,8 @@ public class FCFightController : MonoBehaviour
 
     public Animator musicAnim;
 
+    public Animator levelMusicAnim;
+
     public GameObject healthBar;
 
     private Vector3 startPos;
@@ -42,6 +44,7 @@ public class FCFightController : MonoBehaviour
         if (!musicOn)
         {
             musicAnim.Play("MusicFadeIn");
+            levelMusicAnim.Play("MusicFadeOut");
             healthBar.SetActive(true);
             musicOn = true;
         }

@@ -46,6 +46,9 @@ public class FirecrabController : StateManager
 
     void OnHurt(float damage, bool isEnergy)
     {
-        flicker.Flicker();
+        if(currentState.getStateName() == "FCWeak" || currentState.getStateName() == "FCDigWeak")
+        {
+            flicker.Flicker();
+        }
     }
 }
