@@ -35555,6 +35555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1566683832}
   - component: {fileID: 1566683831}
+  - component: {fileID: 1566683833}
   m_Layer: 0
   m_Name: firecrab_level
   m_TagString: Untagged
@@ -35673,6 +35674,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1566683833
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566683830}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fd75fcb6cae3cc44fa4dc06e9705799e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1598485726
 GameObject:
   m_ObjectHideFlags: 0
@@ -48979,6 +49000,7 @@ MonoBehaviour:
   - {fileID: 1963395562}
   - {fileID: 2089147643}
   musicAnim: {fileID: 1124962306}
+  levelMusicAnim: {fileID: 1566683833}
   healthBar: {fileID: 978133407}
 --- !u!4 &2042724183
 Transform:
