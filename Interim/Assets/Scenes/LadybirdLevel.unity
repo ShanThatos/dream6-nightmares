@@ -8407,7 +8407,7 @@ PrefabInstance:
       objectReference: {fileID: 394609860}
     - target: {fileID: 6108635679875393534, guid: c897f516095ae2943b442967e0325c59, type: 3}
       propertyPath: useTestPos
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6108635679875393534, guid: c897f516095ae2943b442967e0325c59, type: 3}
       propertyPath: playerTestPos.x
@@ -15057,6 +15057,14 @@ PrefabInstance:
       propertyPath: HPBar
       value: 
       objectReference: {fileID: 2077758712}
+    - target: {fileID: 1187009165426390346, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
+      propertyPath: MAX_X
+      value: 180.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187009165426390346, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
+      propertyPath: MIN_X
+      value: 167.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1187009165426390346, guid: cd7a68b5c2fad5f4e9c42270e67dc072, type: 3}
       propertyPath: onDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
