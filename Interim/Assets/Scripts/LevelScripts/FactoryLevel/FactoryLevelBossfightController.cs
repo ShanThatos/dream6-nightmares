@@ -29,6 +29,7 @@ public class FactoryLevelBossfightController : MonoBehaviour
         {
             return;
         }
+        MainCameraScript.instance.useSetting(0);
         boss.SetActive(true);
         bossHPBar.SetActive(true);
 
@@ -51,6 +52,7 @@ public class FactoryLevelBossfightController : MonoBehaviour
 
     void ResetFight()
     {
+        MainCameraScript.instance.useDefaultSetting();
         setBarriersActive(false);
         active = false;
         bossDamagable.Respawn();
