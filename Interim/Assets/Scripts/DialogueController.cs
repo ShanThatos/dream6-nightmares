@@ -17,6 +17,7 @@ public class DialogueController : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public Image characterImage;
     public GameObject optionsList;
+    public GameObject continueButton;
 
     private bool oldInput;
     private bool input;
@@ -55,7 +56,7 @@ public class DialogueController : MonoBehaviour
     {
         oldInput = input;
         //input = Input.anyKeyDown;
-        input = Input.GetAxisRaw("Submit") > 0 || Input.GetMouseButtonDown(0);
+        input = Input.GetAxisRaw("Submit") > 0;
         if (isDialogueOn && intervalDone)
         {
             if (input && !oldInput)
@@ -67,7 +68,7 @@ public class DialogueController : MonoBehaviour
 
     public void StartDialogue(string[] dialogue)
     {
-        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(continueButton);
         intervalDone = false;
         Invoke("DoneWait", 1.5f);
         optionsList.SetActive(false);
