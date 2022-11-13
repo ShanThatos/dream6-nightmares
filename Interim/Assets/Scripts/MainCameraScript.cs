@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class MainCameraScript : MonoBehaviour
 {
@@ -20,6 +21,19 @@ public class MainCameraScript : MonoBehaviour
 
     Camera cam;
 
+    public CameraSetting[] fixedSettings;
+    CameraSetting defaultSetting;
+
+    [Serializable]
+    public class CameraSetting {
+        public Transform targetOverride;
+        public Vector2 cameraOffsetOverride;
+        public float fovMultiplierOverride;
+        public float camPosLerpOverride;
+        public float camFOVLerpOverride;
+    }
+
+
     public static MainCameraScript instance;
 
     void Start()
@@ -30,6 +44,13 @@ public class MainCameraScript : MonoBehaviour
         transform.position = new Vector3(target.position.x + cameraOffset.x, target.position.y + cameraOffset.y, transform.position.z);
         setCamPosLerp(defaultCamPosLerp);
         setCamFOVLerp(defaultCamFOVLerp);
+
+        defaultSetting = new CameraSetting();
+        defaultSetting.targetOverride = target;
+        defaultSetting.cameraOffsetOverride = cameraOffset;
+        defaultSetting.fovMultiplierOverride = camFOVMultiplier;
+        defaultSetting.camPosLerpOverride = defaultCamPosLerp;
+        defaultSetting.camFOVLerpOverride = defaultCamFOVLerp;
     }
 
     // fixed update
@@ -60,5 +81,27 @@ public class MainCameraScript : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawLine(new Vector3(minX, 10), new Vector3(minX, -10));
         Gizmos.DrawLine(new Vector3(maxX, 10), new Vector3(maxX, -10));
+    }
+
+
+    public void useSetting(CameraSetting setting) {
+        if (setting.targetOverride != null) target = setting.targetOverride;
+        cameraOffset = setting.cameraOffsetOverride;
+        if (setting.fovMultiplierOverride != 0) camFOVMultiplier = setting.fovMultiplierOverride;   
+        if (setting.camPosLerpOverride != 0) setCamPosLerp(setting.camPosLerpOverride);
+        if (setting.camFOVLerpOverride != 0) setCamFOVLerp(setting.camFOVLerpOverride);
+    }
+    public void useSetting(int index) {
+        if (index < 0 || index >= fixedSettings.Length) return;
+        useSetting(fixedSettings[index]);
+    }
+
+    public void useDefaultPositioning() {
+        target = defaultSetting.targetOverride;
+        cameraOffset = defaultSetting.cameraOffsetOverride;
+    }
+
+    public void useDefaultSetting() {
+        useSetting(defaultSetting);
     }
 }

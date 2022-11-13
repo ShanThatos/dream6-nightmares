@@ -9,6 +9,7 @@ public class BFFlopState : BFState {
 
     const float FLOP_COOLDOWN = 4f;
     float flopTimer = 0f;
+    float totalTime = 0f;
 
     float idleTimerMax = 2f;
     float idleTimer;
@@ -25,6 +26,7 @@ public class BFFlopState : BFState {
         floppedUp = false;
         floppedDown = false;
         shockSpawned = false;
+        totalTime = 0f;
     }
 
     public void FixedUpdate() {
@@ -33,6 +35,7 @@ public class BFFlopState : BFState {
     }
 
     public override void run() {
+        totalTime += Time.deltaTime;
         if (idleTimer > 0)
             idleTimer -= Time.deltaTime;
         if (controller.cues.inFlopGoingUp && !floppedUp) {
@@ -50,8 +53,12 @@ public class BFFlopState : BFState {
         if (idleTimer <= 0 && controller.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f && isGrounded())
             controller.switchState("BFIdle");
         
+        if (idleTimer <= 0 && totalTime >= 5f)
+            controller.switchState("BFIdle");
+        
         if (controller.cues.inFlopStartShock && !shockSpawned && isGrounded()) {
-            Instantiate(controller.shockSpawnerPrefab, Physics2D.Linecast(controller.transform.position, controller.getPoint("BottomPoint").position, LayerMask.GetMask("Platform")).point, Quaternion.identity);
+            GameObject shockspawner = Instantiate(controller.shockSpawnerPrefab, Physics2D.Linecast(controller.transform.position, controller.getPoint("BottomPoint").position, LayerMask.GetMask("Platform")).point, Quaternion.identity);
+            shockspawner.GetComponent<BFShockSpawner>().setDamage(controller.shockDamage);
             Instantiate(controller.groundPoundPrefab, controller.getPoint("BottomPoint").position, Quaternion.identity);
             shockSpawned = true;
         }

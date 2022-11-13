@@ -24,6 +24,7 @@ public class BFDripState : BFState {
         dripTimer = UnityEngine.Random.Range(controller.MIN_DROP_COOLDOWN, controller.MAX_DROP_COOLDOWN);
         GameObject droplet = Instantiate(controller.dropletPrefab, controller.transform.position, Quaternion.identity);
         droplet.GetComponent<BFDropletController>().shockSpawnerPrefab = controller.shockSpawnerPrefab;
+        droplet.GetComponent<BFDropletController>().damage = controller.shockDamage;
     }
 
     public override void run() {

@@ -18,5 +18,12 @@ public class BFShock : MonoBehaviour {
         if (time <= 0)
             Destroy(gameObject);
     }
+
+    public float getDamage() {
+        return GetComponent<AttackHitbox>().damage;
+    }
+    public void setDamage(float damage) {
+        GetComponentInChildren<AttackHitbox>().damage = damage;
+    }
 }
 
