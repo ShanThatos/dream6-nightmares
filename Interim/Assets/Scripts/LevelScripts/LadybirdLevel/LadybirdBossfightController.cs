@@ -134,6 +134,7 @@ public class LadybirdBossfightController : MonoBehaviour {
         Debug.Log("RESET " + bossAttacks.Length);
         foreach(AttackHitbox attack in bossAttacks)
             attack.damage *= 0.75f;
+        bugfish.shockDamage *= 0.75f;
 
         bugfish.getDamagable().Respawn();
         bugfish.switchState("BFIdle");

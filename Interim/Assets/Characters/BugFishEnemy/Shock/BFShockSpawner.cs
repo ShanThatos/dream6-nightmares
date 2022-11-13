@@ -16,6 +16,8 @@ public class BFShockSpawner : MonoBehaviour {
     float currentX = 0;
     int currentShock = 0;
 
+    float damage;
+
     public void Start() {
         time = timeBetweenShocks;
         currentX = shockStartX;
@@ -32,12 +34,20 @@ public class BFShockSpawner : MonoBehaviour {
             time = timeBetweenShocks;
             currentX += distanceBetweenShocks;
             currentShock++;
+
+            shock.GetComponent<BFShock>().setDamage(damage);
+            shock2.GetComponent<BFShock>().setDamage(damage);
         }
 
         if (currentShock >= totalShocks)
             Destroy(gameObject);
     }
 
-
+    public float getDamage() {
+        return damage;
+    }
+    public void setDamage(float damage) {
+        this.damage = damage;
+    }
 }
 

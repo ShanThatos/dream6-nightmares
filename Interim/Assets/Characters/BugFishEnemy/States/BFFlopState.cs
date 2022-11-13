@@ -57,7 +57,8 @@ public class BFFlopState : BFState {
             controller.switchState("BFIdle");
         
         if (controller.cues.inFlopStartShock && !shockSpawned && isGrounded()) {
-            Instantiate(controller.shockSpawnerPrefab, Physics2D.Linecast(controller.transform.position, controller.getPoint("BottomPoint").position, LayerMask.GetMask("Platform")).point, Quaternion.identity);
+            GameObject shockspawner = Instantiate(controller.shockSpawnerPrefab, Physics2D.Linecast(controller.transform.position, controller.getPoint("BottomPoint").position, LayerMask.GetMask("Platform")).point, Quaternion.identity);
+            shockspawner.GetComponent<BFShockSpawner>().setDamage(controller.shockDamage);
             Instantiate(controller.groundPoundPrefab, controller.getPoint("BottomPoint").position, Quaternion.identity);
             shockSpawned = true;
         }

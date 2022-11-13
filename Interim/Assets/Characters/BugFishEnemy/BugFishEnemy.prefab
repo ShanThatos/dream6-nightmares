@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f472b5244a8874796abaab6202ba09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStateMachineActive: 1
   currentState: {fileID: 1187009165847558664}
   rb: {fileID: 1187009165426390347}
   isAnimating: 0
@@ -231,6 +232,7 @@ MonoBehaviour:
   flopUpForce: 50
   flopUpSideForce: 15
   flopDownForce: 60
+  shockDamage: 50
   shockSpawnerPrefab: {fileID: 3221310975992145530, guid: 33acaecc7d0a38040bb2525adb8e60ea, type: 3}
   groundPoundPrefab: {fileID: 5921306335632418300, guid: b5115a154722ab64aace78c31c45c457, type: 3}
   totalSwoopAttackTime: 1.5
@@ -331,6 +333,7 @@ MonoBehaviour:
   maxHealth: 200
   knockResistance: {x: 100, y: 100}
   damageReduction: 0
+  energyDamageReduction: 0
   iFrameTime: 0.6
   isPlayer: 0
   spawnHitParticles: 1

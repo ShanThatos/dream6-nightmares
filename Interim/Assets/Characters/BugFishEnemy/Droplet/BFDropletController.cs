@@ -5,6 +5,7 @@ using UnityEngine;
 public class BFDropletController : MonoBehaviour {
     
     public GameObject shockSpawnerPrefab;
+    public float damage;
 
     Collider2D col;
 
@@ -14,7 +15,8 @@ public class BFDropletController : MonoBehaviour {
 
     void Update() {
         if (col.IsTouchingLayers(LayerMask.GetMask("Platform"))) {
-            Instantiate(shockSpawnerPrefab, transform.position, Quaternion.identity);
+            GameObject shockspawner = Instantiate(shockSpawnerPrefab, transform.position, Quaternion.identity);
+            shockspawner.GetComponent<BFShockSpawner>().setDamage(damage);
             Destroy(gameObject);
         }
     }
