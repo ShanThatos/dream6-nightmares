@@ -38,6 +38,7 @@ public class FCFightController : MonoBehaviour
             return;
         }
 
+        MainCameraScript.instance.useSetting(0);
         controller.enabled = true;
         active = true;
         
@@ -53,6 +54,7 @@ public class FCFightController : MonoBehaviour
 
     public void ResetFight()
     {
+        MainCameraScript.instance.useDefaultSetting();
         active = false;
         controller.switchState("FCIdle");
         controller.gameObject.transform.position = startPos;

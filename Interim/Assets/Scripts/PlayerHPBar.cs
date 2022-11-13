@@ -47,6 +47,7 @@ public class PlayerHPBar : MonoBehaviour
     {
         currPlayerHp = 0;
         bar.value = 0;
-        flicker.Flicker();
+        if (flicker)
+            flicker.Flicker();
     }
 }
