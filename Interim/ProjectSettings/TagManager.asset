@@ -11,6 +11,7 @@ TagManager:
   - Dialogue
   - InteractableText
   - Item
+  - OfficeManager
   layers:
   - Default
   - TransparentFX

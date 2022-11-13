@@ -24,21 +24,24 @@ EditorBuildSettings:
     path: Assets/Scenes/LadybirdLevel.unity
     guid: 448238d8612bbdd4b91ed85a1bdb0858
   - enabled: 0
-    path: Assets/Scenes/LevelOne.unity
+    path: 
     guid: d1906cc2e7c0f7243b91cd0de8f6390c
   - enabled: 1
     path: Assets/Scenes/IntroLevel.unity
     guid: 19a8ad3716ea37548a3a44f4eaf3a7ee
   - enabled: 0
-    path: Assets/Scenes/LevelTwo.unity
+    path: 
     guid: db51f0b4507d8cb41b7b825de582340e
   - enabled: 0
-    path: Assets/Scenes/LevelThree.unity
+    path: 
     guid: 8d2362b47c7c8d443ba5645d8d524441
   - enabled: 0
-    path: Assets/Scenes/LevelFour.unity
+    path: 
     guid: 19b4dd8b0d3b3364e9c5be8a76aa6746
   - enabled: 0
     path: Assets/Scenes/MovementTest.unity
     guid: a1d93ab049e41664db408e074bab6c7f
+  - enabled: 1
+    path: Assets/Scenes/EndCredits.unity
+    guid: 27aa7013861e5014db41074e24056256
   m_configObjects: {}

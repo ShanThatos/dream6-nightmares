@@ -93,7 +93,7 @@ public class OfficeManager : MonoBehaviour
             boardAlert.SetActive(true);
             elioAlert.SetActive(true);
         }
-        else if (PlayerPrefs.GetInt("RemSolved", 0) == 0 && PlayerPrefs.GetInt("RemActivated", 0) == 1)
+        else if (PlayerPrefs.GetInt("RemSolved", 0) == 0 && PlayerPrefs.GetInt("RemIntro", 0) == 1)
         {
             boardAlert.SetActive(true);
             remAlert.SetActive(true);

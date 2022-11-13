@@ -15,6 +15,7 @@ public class LevelStartDialogue : MonoBehaviour
     public void Start()
     {
         isTriggered = false;
+        PlayerPrefs.SetInt("Failed", 0);
     }
 
     public void Update()
@@ -45,6 +46,11 @@ public class LevelStartDialogue : MonoBehaviour
                 else if (PlayerPrefs.GetInt("ElioSolved", 0) == 1 && PlayerPrefs.GetInt("ElioClosure", 0) == 0)
                 {
                     alternativeDialogue = "ElioClosure";
+                    PlayAlternativeDialouge();
+                }
+                else if (PlayerPrefs.GetInt("ElioClosure", 0) == 1 && PlayerPrefs.GetInt("RemSolved", 0) == 0)
+                {
+                    alternativeDialogue = "RemIntro";
                     PlayAlternativeDialouge();
                 }
             }
@@ -82,20 +88,27 @@ public class LevelStartDialogue : MonoBehaviour
     {
         if (!didFinishedAction)
         {
-            if (PlayerPrefs.GetInt("LadybirdSolved", 0) == 0)
+            if (PlayerPrefs.GetInt("LadybirdSolved", 0) == 0 && PlayerPrefs.GetInt("HubStart", 0) == 1)
             {
                 this.gameObject.GetComponent<OfficeManager>().TriggerPin("Ladybird's case is pinned to the board");
                 this.gameObject.GetComponent<OfficeManager>().TriggerAlert();
             }
-            else if (PlayerPrefs.GetInt("LadybirdSolved", 0) == 1 && PlayerPrefs.GetInt("ElioIntro", 0) == 1)
+            else if (PlayerPrefs.GetInt("ElioSolved", 0) == 0 && PlayerPrefs.GetInt("ElioIntro", 0) == 1 )
             {
                 this.gameObject.GetComponent<OfficeManager>().TriggerAlert();
             }
+            else if (PlayerPrefs.GetInt("RemSolved", 0) == 0 && PlayerPrefs.GetInt("RemIntro", 0) == 1)
+            {
+                this.gameObject.GetComponent<OfficeManager>().TriggerPin("Rem's case is pinned to the board");
+                this.gameObject.GetComponent<OfficeManager>().TriggerAlert();
+            } 
             didFinishedAction = true;
+            Debug.Log("Triggered Finished Action");
             LeanTween.delayedCall(gameObject, 5f, () =>
             {
                 didFinishedAction = false;
             });
         }
+        DialogueManager.instance.dialogueScript.EndDialogueFunction.RemoveAllListeners();
     }
 }

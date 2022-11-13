@@ -9878,7 +9878,7 @@ GameObject:
   - component: {fileID: 1997057171}
   m_Layer: 0
   m_Name: OfficeManager
-  m_TagString: Untagged
+  m_TagString: OfficeManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
