@@ -36,7 +36,7 @@ public class Item : MonoBehaviour
         promptText = itemIdentifier.transform.GetChild(0).transform.GetChild(3).GetComponent<TextMeshProUGUI>();
     }
 
-    public void OpenIdentifier()
+    virtual public void OpenIdentifier()
     {
         itemName.text = name;
         itemDescription.text = descriptionString;
@@ -57,7 +57,7 @@ public class Item : MonoBehaviour
         LeanTween.scale(itemIdentifier, new Vector3(1, 1, 1), 0.1f);
         isOpened = true;
     }
-    public void CloseIdentifier()
+    virtual public void CloseIdentifier()
     {
         blackPanel.transform.localScale = new Vector3(0, 0, 0);
         LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0.0f, 0.1f);
@@ -65,7 +65,7 @@ public class Item : MonoBehaviour
         isOpened = false;
     }
 
-    public void Collect()
+    virtual public void Collect()
     {
         if (isOpened)
         {
