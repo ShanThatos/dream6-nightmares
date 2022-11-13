@@ -39,6 +39,13 @@ public class LadybirdBossfightController : MonoBehaviour {
         playerDamagable.OnRespawn += ResetBossFight;
         GameManager.LockPlayer();
 
+        // MainCameraScript.instance.useSetting(0);
+        // yield return new WaitForSeconds(5f);
+        // MainCameraScript.instance.useDefaultPositioning();
+        // yield return new WaitForSeconds(2f);
+        // MainCameraScript.instance.useDefaultSetting();
+
+
         yield return new WaitForSeconds(1.5f);
 
         DialogueManager.instance.PlayDialogue("YoungLadybird");
@@ -79,9 +86,11 @@ public class LadybirdBossfightController : MonoBehaviour {
         bugfish.HPBar.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(1f);
+
+        MainCameraScript.instance.useSetting(0);
         
-        MainCameraScript.instance.target = GameManager.GetPlayerTransform();
-        MainCameraScript.instance.camFOVMultiplier = 1f;
+        // MainCameraScript.instance.target = GameManager.GetPlayerTransform();
+        // MainCameraScript.instance.camFOVMultiplier = 1f;
 
         bugfish.transform.parent = null;
         bugfish.setAnimating(false);
@@ -92,9 +101,9 @@ public class LadybirdBossfightController : MonoBehaviour {
 
         GameManager.UnlockPlayer();
 
-        MainCameraScript.instance.cameraOffset = cameraOffset;
-        MainCameraScript.instance.setCamPosLerp(MainCameraScript.instance.defaultCamPosLerp);
-        MainCameraScript.instance.setCamFOVLerp(MainCameraScript.instance.defaultCamFOVLerp);
+        // MainCameraScript.instance.cameraOffset = cameraOffset;
+        // MainCameraScript.instance.setCamPosLerp(MainCameraScript.instance.defaultCamPosLerp);
+        // MainCameraScript.instance.setCamFOVLerp(MainCameraScript.instance.defaultCamFOVLerp);
     }
 
     public void EndBossFight() {
@@ -117,6 +126,7 @@ public class LadybirdBossfightController : MonoBehaviour {
     // so the player won't see this happen on screen
     void ResetBossFight()
     {
+        MainCameraScript.instance.useDefaultSetting();
         setBarriersActive(false);
         restartTrigger.SetActive(true);
 
@@ -147,6 +157,7 @@ public class LadybirdBossfightController : MonoBehaviour {
     {
         if (waitingForRestart)
         {
+            MainCameraScript.instance.useSetting(0);
             setBarriersActive(true);
             restartTrigger.SetActive(false);
             waitingForRestart = false;
