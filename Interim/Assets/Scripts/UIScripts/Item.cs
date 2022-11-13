@@ -17,10 +17,11 @@ public class Item : MonoBehaviour
     private TextMeshProUGUI promptText;
     public bool isOpened;
     public bool uncollectable;
+    public bool alwaysSpawn;
     // Start is called before the first frame update
     void Start()
     {
-        if (PlayerPrefs.GetInt(name, 0) == 1)
+        if (!alwaysSpawn && PlayerPrefs.GetInt(name, 0) == 1)
         {
             this.gameObject.SetActive(false);
         }
