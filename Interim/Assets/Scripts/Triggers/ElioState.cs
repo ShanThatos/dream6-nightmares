@@ -21,6 +21,10 @@ public class ElioState : MonoBehaviour
         {
             dialogueChoice = "ElioMid";
         }
+        else if (PlayerPrefs.GetInt("RemIntro", 0) == 1 && PlayerPrefs.GetInt("RemSolved", 0) == 0)
+        {
+            dialogueChoice = "ElioHubFinal";
+        }
 
         DialogueManager.instance.PlayDialogue(dialogueChoice);
         PlayerPrefs.SetInt(dialogueChoice, 1);

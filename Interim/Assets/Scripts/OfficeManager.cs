@@ -42,10 +42,12 @@ public class OfficeManager : MonoBehaviour
     private bool isXboxControls;
     private System.Action onBackInput;
     private bool isTriggered;
+    private bool isSelected;
     // Start is called before the first frame update
     void Start()
     {
         EventSystem.current.SetSelectedGameObject(null);
+        isSelected = false;
     }
 
     // Update is called once per frame
@@ -70,7 +72,11 @@ public class OfficeManager : MonoBehaviour
         {
             if (!optionsList.activeInHierarchy)
             {
-                EventSystem.current.SetSelectedGameObject(null);
+                if (!isSelected)
+                {
+                    EventSystem.current.SetSelectedGameObject(DialogueManager.instance.dialogueScript.continueButton);
+                    isSelected = true;
+                }
                 isTriggered = false;
             }
         }
@@ -93,7 +99,7 @@ public class OfficeManager : MonoBehaviour
             boardAlert.SetActive(true);
             elioAlert.SetActive(true);
         }
-        else if (PlayerPrefs.GetInt("RemSolved", 0) == 0 && PlayerPrefs.GetInt("RemActivated", 0) == 1)
+        else if (PlayerPrefs.GetInt("RemSolved", 0) == 0 && PlayerPrefs.GetInt("RemIntro", 0) == 1)
         {
             boardAlert.SetActive(true);
             remAlert.SetActive(true);

@@ -17,6 +17,7 @@ public class DialogueController : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public Image characterImage;
     public GameObject optionsList;
+    public GameObject continueButton;
 
     private bool oldInput;
     private bool input;
@@ -55,7 +56,7 @@ public class DialogueController : MonoBehaviour
     {
         oldInput = input;
         //input = Input.anyKeyDown;
-        input = Input.GetAxisRaw("Submit") > 0 || Input.GetMouseButtonDown(0);
+        input = Input.GetAxisRaw("Submit") > 0;
         if (isDialogueOn && intervalDone)
         {
             if (input && !oldInput)
@@ -67,7 +68,7 @@ public class DialogueController : MonoBehaviour
 
     public void StartDialogue(string[] dialogue)
     {
-        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(continueButton);
         intervalDone = false;
         Invoke("DoneWait", 1.5f);
         optionsList.SetActive(false);
@@ -192,8 +193,9 @@ public class DialogueController : MonoBehaviour
         }
         else
         {
-            for (int idx = 0; idx < optionsList.transform.childCount; idx++ )
+            for (int idx = 0; idx < dialogueSystem.dialogues[currentIndex].options.Length; idx++ )
             {
+                optionsList.transform.GetChild(idx).gameObject.SetActive(true);
                 string currentOption = dialogueSystem.dialogues[currentIndex].options[idx];
                 int startIndex = currentOption.IndexOf("(");
                 int endIndex = currentOption.IndexOf(")");
@@ -201,6 +203,16 @@ public class DialogueController : MonoBehaviour
                 string optionText = currentOption.Substring(endIndex + 2);
                 optionsList.transform.GetChild(idx).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = optionText;
                 optionsList.transform.GetChild(idx).name = optionName;
+                /*
+                if (optionsList.transform.childCount != dialogueSystem.dialogues[currentIndex].options.Length)
+                {
+                    int diff = optionsList.transform.childCount - dialogueSystem.dialogues[currentIndex].options.Length;
+                    for (int i = dialogueSystem.dialogues[currentIndex].options.Length; i < optionsList.transform.childCount; i++)
+                    {
+                        optionsList.transform.GetChild(i).gameObject.SetActive(false);
+                    }
+                }
+                */
             }
             optionsList.SetActive(true);
             EventSystem.current.SetSelectedGameObject(optionsList.transform.GetChild(0).gameObject);
