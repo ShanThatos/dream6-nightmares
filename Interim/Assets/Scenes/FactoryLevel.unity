@@ -9171,7 +9171,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741979594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.29, y: 10.05, z: 0}
+  m_LocalPosition: {x: 0.72, y: 11.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16940,6 +16940,7 @@ MonoBehaviour:
   descriptionString: 
   isOpened: 0
   uncollectable: 0
+  alwaysSpawn: 0
   KeyPlayerPref: Factory Keycard
   lockedAudio: {fileID: 987756363}
   lockedText: {fileID: 1915022435}
@@ -32462,8 +32463,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1533621183}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07, y: 11.13, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 3.53, y: 7.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -32475,7 +32476,7 @@ Transform:
   - {fileID: 2046376601}
   m_Father: {fileID: 120334775}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &1533621185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32572,7 +32573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6108635679875393534, guid: c897f516095ae2943b442967e0325c59, type: 3}
       propertyPath: playerTestPos.x
-      value: 152.6
+      value: 122.6
       objectReference: {fileID: 0}
     - target: {fileID: 6108635679875393534, guid: c897f516095ae2943b442967e0325c59, type: 3}
       propertyPath: playerTestPos.y
@@ -32892,8 +32893,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581296818}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 157.6934, y: -18.1878, z: 0}
-  m_LocalScale: {x: 3.1818483, y: 1.9881154, z: 1}
+  m_LocalPosition: {x: 155.4824, y: -18.1878, z: 0}
+  m_LocalScale: {x: 7.6039467, y: 1.9881154, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1937147451}
@@ -35861,6 +35862,7 @@ MonoBehaviour:
     up, but why would you?
   isOpened: 0
   uncollectable: 0
+  alwaysSpawn: 0
 --- !u!114 &1865455059
 MonoBehaviour:
   m_ObjectHideFlags: 0
