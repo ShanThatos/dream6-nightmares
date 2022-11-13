@@ -93,6 +93,7 @@ public class TutorialIndicator : MonoBehaviour
                 actionIndicator.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = keyOverride;
                 actionIndicator.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = actionOverride;
                 actionIndicator.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
+                actionIndicator.GetComponent<Canvas>().sortingLayerID = 993612983;
                 LeanTween.moveY(actionIndicator, this.gameObject.transform.position.y + 1, 0.2f);
                 LeanTween.scaleY(actionIndicator, 1, 0.2f);
                 isTriggered = true;
