@@ -694,7 +694,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: 9de2483238dbf1a49bbdcc83c26ed8f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -713,14 +713,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60563504}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.4227, y: -36.5744, z: 0}
-  m_LocalScale: {x: 0.8259, y: 0.8259, z: 0.8259}
+  m_LocalRotation: {x: -0, y: -0, z: 0.098172285, w: 0.9951695}
+  m_LocalPosition: {x: 35.84, y: -37.14, z: 0}
+  m_LocalScale: {x: 0.5351832, y: 0.5351832, z: 0.5351832}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 48
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 11.268}
 --- !u!1 &62282951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,8 +1549,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98903592}
   m_LocalRotation: {x: -0, y: -0, z: 0.07953033, w: -0.9968325}
-  m_LocalPosition: {x: 79.64, y: -33.795, z: 0.066180944}
-  m_LocalScale: {x: -0.375, y: 0.375, z: 0.375}
+  m_LocalPosition: {x: 79.5298, y: -34.12, z: 0.066180944}
+  m_LocalScale: {x: -0.25905, y: 0.25905, z: 0.25905}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2138398733}
@@ -7002,7 +7002,7 @@ GameObject:
   - component: {fileID: 179593033}
   - component: {fileID: 179593032}
   - component: {fileID: 179593034}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone_platform4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14286,7 +14286,7 @@ GameObject:
   - component: {fileID: 349284093}
   - component: {fileID: 349284092}
   - component: {fileID: 349284091}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cutscene set piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18856,8 +18856,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 868515673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.74, y: -33.38, z: 0}
-  m_LocalScale: {x: 1.4596, y: 1.4596, z: 1.4596}
+  m_LocalPosition: {x: 43.74, y: -34.8034, z: 0}
+  m_LocalScale: {x: 1.138342, y: 1.138342, z: 1.138342}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -19400,14 +19400,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900461204}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40, y: -39, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.08314577, w: 0.99653745}
+  m_LocalPosition: {x: 39.32, y: -38.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 49
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 9.539}
 --- !u!1001 &901905838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33830,7 +33830,7 @@ GameObject:
   - component: {fileID: 1368670619}
   - component: {fileID: 1368670618}
   - component: {fileID: 1368670620}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone_platform4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34580,7 +34580,7 @@ GameObject:
   - component: {fileID: 1406107969}
   - component: {fileID: 1406107968}
   - component: {fileID: 1406107970}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone_platform1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35531,7 +35531,7 @@ GameObject:
   - component: {fileID: 1487761343}
   - component: {fileID: 1487761342}
   - component: {fileID: 1487761344}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone_platform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42582,8 +42582,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1736458350}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.302856, y: -36.62522, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 50.302856, y: -37.436, z: 0}
+  m_LocalScale: {x: 0.8212, y: 0.8212, z: 0.8212}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -43574,7 +43574,7 @@ GameObject:
   - component: {fileID: 1849122205}
   - component: {fileID: 1849122204}
   - component: {fileID: 1849122203}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone_platform4 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44622,7 +44622,7 @@ GameObject:
   - component: {fileID: 2001679918}
   - component: {fileID: 2001679917}
   - component: {fileID: 2001679916}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone_platform2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50726,7 +50726,7 @@ GameObject:
   - component: {fileID: 2122183919}
   - component: {fileID: 2122183918}
   - component: {fileID: 2122183920}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone_platform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50986,7 +50986,7 @@ GameObject:
   - component: {fileID: 2135135849}
   - component: {fileID: 2135135848}
   - component: {fileID: 2135135847}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone_platform1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
