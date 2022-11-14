@@ -15202,6 +15202,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1026280613}
     m_Modifications:
+    - target: {fileID: 438562380537931414, guid: e1d3978f3d7b74d43b246be8c3444bf4, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.54509807
+      objectReference: {fileID: 0}
+    - target: {fileID: 438562380537931414, guid: e1d3978f3d7b74d43b246be8c3444bf4, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.49056602
+      objectReference: {fileID: 0}
+    - target: {fileID: 438562380537931414, guid: e1d3978f3d7b74d43b246be8c3444bf4, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.49056602
+      objectReference: {fileID: 0}
+    - target: {fileID: 438562380537931414, guid: e1d3978f3d7b74d43b246be8c3444bf4, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.49056602
+      objectReference: {fileID: 0}
     - target: {fileID: 4398695925767917293, guid: e1d3978f3d7b74d43b246be8c3444bf4, type: 3}
       propertyPath: m_Name
       value: Tarnished Gold
@@ -15465,6 +15481,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: -2
       objectReference: {fileID: 0}
+    - target: {fileID: 2872429829587222802, guid: 0fc5389db605b184b9edbfbc92d936ab, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 84a5a1aafe58f234bb45049392e9ebb0, type: 2}
     - target: {fileID: 3866385072269140882, guid: 0fc5389db605b184b9edbfbc92d936ab, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7340691

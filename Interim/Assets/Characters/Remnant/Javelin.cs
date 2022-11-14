@@ -15,6 +15,7 @@ public class Javelin : MonoBehaviour
     public GameObject javelin;
 
     float timer;
+    float alphaStart;
     Transform player;
     bool charged;
     bool done;
@@ -23,6 +24,7 @@ public class Javelin : MonoBehaviour
     {
         player = GameManager.GetPlayerTransform();
         targetLine.SetPosition(0, transform.position);
+        alphaStart = targetLine.startColor.a;
         timer = chargeTime;
         charged = false;
         done = false;
@@ -53,7 +55,7 @@ public class Javelin : MonoBehaviour
         {
             timer -= Time.deltaTime;
 
-            float a = Mathf.Lerp(1, 0, (delay - timer) / delay);
+            float a = Mathf.Lerp(alphaStart, 0, (delay - timer) / delay);
             Color c = targetLine.startColor;
             c.a = a;
 
