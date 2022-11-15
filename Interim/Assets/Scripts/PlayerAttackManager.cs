@@ -29,6 +29,10 @@ public class PlayerAttackManager : MonoBehaviour
 
     [HideInInspector]
     public bool isFullyCharged;
+
+    [HideInInspector]
+    public int keyDowns = 0;
+
     bool attackQueued = false;
     bool isAnimLocked;
     bool chargedAttackReady;
@@ -50,14 +54,14 @@ public class PlayerAttackManager : MonoBehaviour
 
     public void BeginCharge()
     {
+        keyDowns++;
         animationManager.setAttacking(true);
     }
 
     public bool executeAttack()
     {
         animationManager.setAttacking(true);
-
-        if(isAnimLocked)
+        if (isAnimLocked)
         {
             attackQueued = allowAttackQueueing;
             Debug.Log("Attack queued");
@@ -65,7 +69,6 @@ public class PlayerAttackManager : MonoBehaviour
         }
 
         isAnimLocked = true;
-
         attackQueued = false;
         playerMovement.setAttackState(1);
         animationManager.setNextAttack();
@@ -85,15 +88,21 @@ public class PlayerAttackManager : MonoBehaviour
         { 
             executeAttack();
         }
-
     }
 
     public void EndAttack()
     {
         endAnimLock();
         animationManager.setAttacking(false);
-        playerMovement.setAttackState(0);
         chargedAttackReady = false;
+
+        if (keyDowns > 0)
+        {
+            keyDowns = 0;
+            BeginCharge();
+            return;
+        }
+        playerMovement.setAttackState(0);
     }
 
     // Executed via animation callback
@@ -108,7 +117,6 @@ public class PlayerAttackManager : MonoBehaviour
         {
             SpawnNormalAttack();
         }
-
         chargedAttackReady = false;
     }
 

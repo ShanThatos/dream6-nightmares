@@ -420,21 +420,17 @@ public class PlayerMovement : MonoBehaviour
 
         if (floatVal > .05 || value.isPressed)
         {
-            if(currentAction != PlayerActions.Charging)
-            {
-                attackManager.BeginCharge();
-                currentAction = PlayerActions.Charging;
-            }
-            return;
+           attackManager.BeginCharge();
+           currentAction = PlayerActions.Charging;
+           return;
         }
         else
         {
-            // pass 
+            
         }
-
-
-
+        
         bool success = attackManager.executeAttack();
+        attackManager.keyDowns--;
     }
 
     public void setAttackState(int comboStep)
