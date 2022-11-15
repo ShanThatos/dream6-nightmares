@@ -10,15 +10,12 @@ public class NoteActive : MonoBehaviour
     public string ItemName;
     [TextArea(5,10)]
     public string Description;
-    private GameObject details;
+    public GameObject details;
     private bool isOpened;
     // Start is called before the first frame update
     void Start()
     {
         isOpened = false;
-        details = gameObject.transform.GetChild(0).gameObject;
-        details.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = ItemName;
-        details.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = Description;
 
         if (PlayerPrefs.GetInt(Check, 0) == 1)
         {
@@ -34,11 +31,15 @@ public class NoteActive : MonoBehaviour
     {
         if (!isOpened)
         {
+            details.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = ItemName;
+            details.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = Description;
+            details.transform.position = gameObject.transform.position;
             LeanTween.scaleX(details, 1, 0.1f);
             isOpened = true;
         }
         else
         {
+            details.transform.position = gameObject.transform.position;
             LeanTween.scaleX(details, 0, 0.1f);
             isOpened = false;
         }
@@ -46,6 +47,7 @@ public class NoteActive : MonoBehaviour
 
     public void CloseDetails()
     {
+        details.transform.position = gameObject.transform.position;
         LeanTween.scaleX(details, 0, 0.1f);
         isOpened = false;
     }
