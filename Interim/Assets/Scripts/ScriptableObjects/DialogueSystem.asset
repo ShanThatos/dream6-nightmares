@@ -248,9 +248,13 @@ MonoBehaviour:
     sceneName: 
     options: []
     dialoguesText:
-    - Rem (rem normal) So this is what my nightmare is...
-    - Rem (rem normal) I've never been in a place like this before
-    - Rem (rem normal) But why does it feel some familiar?
+    - "Rem (rem normal) I have to do this, otherwise, it\u2019ll be meaningless."
+  - dialogueName: FactorySimilar
+    needsTransition: 0
+    sceneName: 
+    options: []
+    dialoguesText:
+    - "Rem (rem normal) This looks familiar\u2026 so then the whale creature was\u2026\r"
   - dialogueName: FireflyLakeStart
     needsTransition: 0
     sceneName: 
@@ -474,7 +478,8 @@ MonoBehaviour:
     sceneName: EndCredits
     options: []
     dialoguesText:
-    - ' () Bleeeh. You failed.'
+    - "Rem (rem normal) I\u2019m sorry- I\u2019m sorry I can\u2019t, I don\u2019t
+      know how."
   - dialogueName: ElioHubFinal
     needsTransition: 0
     sceneName: 
