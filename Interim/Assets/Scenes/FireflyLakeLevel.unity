@@ -38053,8 +38053,8 @@ MonoBehaviour:
   defaultCamFOVLerp: 80
   fixedSettings:
   - targetOverride: {fileID: 38667393}
-    cameraOffsetOverride: {x: 0, y: 0}
-    fovMultiplierOverride: 1.52
+    cameraOffsetOverride: {x: 0, y: 1}
+    fovMultiplierOverride: 1.8
     camPosLerpOverride: 2
     camFOVLerpOverride: 2
 --- !u!114 &1177813199
@@ -56913,7 +56913,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -10
-  m_Sprite: {fileID: 21300000, guid: f8e0ad9eaddb44c4dbc2760a039e73e5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3db16fccc41c86a4fba852525576ab60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -56932,7 +56932,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078041166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 98.3299, y: -76.6873, z: 0}
+  m_LocalPosition: {x: 98.4, y: -76.6873, z: 0}
   m_LocalScale: {x: 0.5137491, y: 0.5137491, z: 0.5137491}
   m_ConstrainProportionsScale: 0
   m_Children: []
