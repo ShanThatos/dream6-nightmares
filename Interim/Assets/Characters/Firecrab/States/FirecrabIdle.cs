@@ -17,14 +17,15 @@ public class FirecrabIdle : FirecrabState
     [Range(0f, 1f)]
     private float EDR = 0.9f;
 
+    public PlayerDetector slamZone;
+
     private float idleTime;
 
     public float attackDistance = 10f;
 
-    private int volcanoCount = 0;
-    private int digCount = 0;
     private float rangeMult = 1.0f;
-
+    private float attackCount = 0;
+    private bool canSlam = true;
     public override void enter()
     {
         controller.animator.Play("Idle");
@@ -59,51 +60,42 @@ public class FirecrabIdle : FirecrabState
         controller.tempRangeMult = 1;
     }
 
-    private void switchVolcano()
-    {
-        volcanoCount++;
-        digCount = 0;
-        controller.switchState("FCVolcano");
-    }
-
-    private void switchDig()
-    {
-        digCount++;
-        volcanoCount = 0;
-        controller.switchState("FCDig");
-    }
-
     private string selectAction()
     {
+        Debug.Log("Inside " + slamZone.playerInside);
+
+        if (slamZone.playerInside && canSlam)
+        {
+            // Slam if player is too close (inside)
+            canSlam = false;
+            attackCount++;
+            return "FCSlam";
+        }
+
         string action = "FCJump";
         int rand = Random.Range(1, 6);
+
+        if(attackCount >= 3)
+        {
+            // Force using jump after 3 attacks
+            rand = 5;
+        }
 
         switch (rand)
         {
             case 1:
             case 2:
-                if(volcanoCount <= 1)
-                {
-                    action = "FCVolcano";
-                    volcanoCount++;
-                    break;
-                }
-                goto case 3;
+                action = "FCVolcano";
+                attackCount++;
+                break;
             case 3:
             case 4:
-                if (digCount <= 1)
-                {
-                    action = "FCDig";
-                    digCount++;
-                }
+                 action = "FCDig";
+                 attackCount++;
                 break;
             case 5:
+                resetCounts();
                 break;
-        }
-
-        if(action.Equals("FCJump")){
-            digCount = 0;
-            volcanoCount = 0;
         }
 
         return action;
@@ -112,6 +104,12 @@ public class FirecrabIdle : FirecrabState
     public override string getStateName()
     {
         return "FCIdle";
+    }
+
+    public void resetCounts()
+    {
+        attackCount = 0;
+        canSlam = true;
     }
 
     private void OnDrawGizmos()

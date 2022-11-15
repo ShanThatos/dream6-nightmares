@@ -10,8 +10,10 @@ public class FirecrabJump : FirecrabState
     [Range(30, 75)]
     public float angle;
     public Rigidbody2D rb;
+    public GameObject shockwaveSpawner;
+    public AttackHitbox hitbox;
 
-    public bool landed;
+    bool landed;
 
     private float timer;
     private float overrideTimer;
@@ -43,9 +45,16 @@ public class FirecrabJump : FirecrabState
             if(hits.Length > 0)
             {
                 rb.velocity = Vector2.zero;
+                Instantiate(shockwaveSpawner, bottom.position, Quaternion.identity);
                 landed = true;
             }
         }
+
+        if(rb.velocity.y < 0)
+        {
+            hitbox.isActive = true;
+        }
+
         if (landed)
         {
             timer -= Time.deltaTime;
@@ -64,6 +73,7 @@ public class FirecrabJump : FirecrabState
     public override void exit()
     {
         controller.tempRangeMult = 3.0f;
+        hitbox.isActive = false;
     }
 
     public override string getStateName()
