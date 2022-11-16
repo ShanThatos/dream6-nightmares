@@ -154,8 +154,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.15, y: -1.4}
-  m_Size: {x: 2, y: 3}
+  m_Offset: {x: 0.15, y: -1.6}
+  m_Size: {x: 2, y: 3.5}
   m_Direction: 0
 --- !u!114 &947930316
 MonoBehaviour:
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad21e646a33c2845841519a139dd7fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 20
   knockResistance: {x: 100, y: 100}
   damageReduction: 0.9
   energyDamageReduction: 0.9
@@ -209,7 +209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4376009790966256867
 Transform:
   m_ObjectHideFlags: 0
@@ -233,7 +233,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2435656567467395700}
   serializedVersion: 8
-  lengthInSec: 1.1
+  lengthInSec: 1.2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -308,7 +308,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.9
       minScalar: 5
       maxCurve:
         serializedVersion: 2

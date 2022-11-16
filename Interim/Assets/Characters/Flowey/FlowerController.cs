@@ -14,6 +14,7 @@ public class FlowerController : MonoBehaviour
     Damagable damagable;
     float timer;
     bool isOpened;
+    bool alreadyDead;
 
     private void Start()
     {
@@ -65,6 +66,11 @@ public class FlowerController : MonoBehaviour
 
     private void Death()
     {
+        if (alreadyDead)
+        {
+            return;
+        }   
+        alreadyDead = true;
         animator.SetTrigger("Die");
     }
 
