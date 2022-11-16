@@ -17,6 +17,7 @@ public class FirecrabWeak : FirecrabState
         prevDR = controller.damagable.damageReduction;
         controller.damagable.damageReduction = 0.5f;
         controller.damagable.energyDamageReduction = 0f;
+        isStandingUp = false;
     }
 
     public override void run()

@@ -49,7 +49,7 @@ public class PlayerAttackManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("KD: " + keyDowns);
+        
     }
 
     public void BeginCharge()
