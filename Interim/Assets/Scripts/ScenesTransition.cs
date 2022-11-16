@@ -26,6 +26,15 @@ public class ScenesTransition : MonoBehaviour
     {
         transitionAnim = gameObject.GetComponent<Animator>();
         //transitionAnim.Play("OpenEyes");
+        if (SceneManager.GetActiveScene().name == "EndCredits")
+        {
+            if (PlayerPrefs.GetInt("Failed", 0) == 0)
+            {
+                transitionAnim.Play("UnfadeWhite");
+                return;
+            }
+        }
+
         if (SceneManager.GetActiveScene().name != "MainMenu" || SceneManager.GetActiveScene().name != "Office")
         {
             transitionAnim.Play("OpenEyes");
@@ -90,5 +99,16 @@ public class ScenesTransition : MonoBehaviour
     public void UnlockPlayer()
     {
         GameManager.UnlockMovement();
+    }
+
+    public void Finish(string sceneName)
+    {
+        transitionAnim.Play("FadeWhite");
+        PlayerPrefs.SetInt("RemSolved", 1);
+        LeanTween.delayedCall(gameObject, 5f, () =>
+        {
+            ChangeScene(sceneName);
+            Debug.Log("Change scene to: " + sceneName);
+        });
     }
 }
