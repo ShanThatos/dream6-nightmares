@@ -430,7 +430,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
         bool success = attackManager.executeAttack();
-        attackManager.keyDowns--;
+        attackManager.keyDowns = attackManager.keyDowns <= 0 ? 0 : attackManager.keyDowns - 1;
     }
 
     public void setAttackState(int comboStep)
@@ -525,6 +525,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnHurt(float damage, bool isEnergyHit)
     {
+        attackManager.keyDowns = 0;
+
         if (isRespawning)
         {
             return;
@@ -542,6 +544,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnDeath()
     {
+        attackManager.keyDowns = 0;
+
         if (isRespawning)
         {
             return;
