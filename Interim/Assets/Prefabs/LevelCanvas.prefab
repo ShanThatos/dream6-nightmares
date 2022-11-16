@@ -3147,11 +3147,11 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 30.5
-  m_fontSizeBase: 25
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 35
   m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -7603,7 +7603,7 @@ PrefabInstance:
       objectReference: {fileID: 3613030332828233734}
     - target: {fileID: 2735694542056464749, guid: f99b15720043db94c917e2c1e2623f67, type: 3}
       propertyPath: m_Text
-      value: Space
+      value: Up
       objectReference: {fileID: 0}
     - target: {fileID: 2735694542364790441, guid: f99b15720043db94c917e2c1e2623f67, type: 3}
       propertyPath: m_Text
