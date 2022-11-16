@@ -27,6 +27,8 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 3657095aaa8decc4eb23ccc4273ffdb8, type: 3}
   - spriteName: young ladybird mutant
     sprite: {fileID: 21300000, guid: 9260e703681440b4cb101177eba23431, type: 3}
+  - spriteName: glitch rem
+    sprite: {fileID: 21300000, guid: 29e5166c5566a594093a3e585f890095, type: 3}
   dialogues:
   - dialogueName: IntroStart
     needsTransition: 0
@@ -443,23 +445,23 @@ MonoBehaviour:
     - "Elio (elio normal) Hey buddy, you okay? How\u2019s your head doing?"
     - ' () Frantic knocks ring through the office.'
     - "Elio (elio normal) Sit tight Rem, I\u2019ll get this."
-    - ??? (rem normal) Helphelphelphelphelp please help, please-
-    - "??? (rem normal) Do something- anything! Please I can\u2019t hold on anymore- "
+    - ??? (glitch rem) Helphelphelphelphelp please help, please-
+    - "??? (glitch rem) Do something- anything! Please I can\u2019t hold on anymore- "
     - "Elio (elio normal) Uhh Rem, this\u2019 your long-lost twin brother or something?
       What\u2019s going on?"
     - "Rem (rem normal) I\u2026 I don\u2019t know. "
-    - ??? (rem normal) You do. You know who I am, Rem.
-    - "Nightmare Rem (rem normal) This room, this town, everyone, this world, it\u2019s
-      all fiction! "
-    - "Nightmare Rem (rem normal) But you knew that already. Didn\u2019t you, Rem?"
-    - Nightmare Rem (rem normal) Why? You do it for everyone else. So why? Why is
-      it so hard for you to help me?
+    - ??? (glitch rem) You do. You know who I am, Rem.
+    - "??? (glitch rem) This room, this town, everyone, this world, it\u2019s all
+      fiction! "
+    - "??? (glitch rem) But you knew that already. Didn\u2019t you, Rem?"
+    - ??? (glitch rem) Why? You do it for everyone else. So why? Why is it so hard
+      for you to help me?
     - Rem (rem normal) ...
-    - "Nightmare Rem (rem normal) Nothing here matters! Don\u2019t you get it? You
-      made it up! "
-    - "Nightmare Rem (rem normal) There isn\u2019t a town suffering from some dumb
-      nightmares, it was all you."
-    - "Nightmare Rem (rem normal) Please, Rem, we can\u2019t keep doing this."
+    - "??? (glitch rem) Nothing here matters! Don\u2019t you get it? You made it
+      up! "
+    - "??? (glitch rem) There isn\u2019t a town suffering from some dumb nightmares,
+      it was all you."
+    - "??? (glitch rem) Please, Rem, we can\u2019t keep doing this."
     - "Elio (elio normal) Whoah okay, if I and everything else wasn\u2019t glitching
       out like some buggy video game I would think Rem 2.0 was talking out of his
       behind. "
