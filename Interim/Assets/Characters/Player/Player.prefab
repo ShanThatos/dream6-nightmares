@@ -232,7 +232,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 77e09b35bcaa8a14cad5112d46c70a4c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 34ab3973720734d64acdf5730f9158bc, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -835,6 +835,7 @@ MonoBehaviour:
   sprite: {fileID: 8642731271435911648}
   allowAttackQueueing: 1
   isFullyCharged: 0
+  keyDowns: 0
 --- !u!114 &585488167
 MonoBehaviour:
   m_ObjectHideFlags: 0
