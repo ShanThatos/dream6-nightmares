@@ -25,6 +25,8 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: e7d7c38fb0490a9458fc945b6f5488e9, type: 3}
   - spriteName: elio note
     sprite: {fileID: 21300000, guid: 3657095aaa8decc4eb23ccc4273ffdb8, type: 3}
+  - spriteName: young ladybird mutant
+    sprite: {fileID: 21300000, guid: 9260e703681440b4cb101177eba23431, type: 3}
   dialogues:
   - dialogueName: IntroStart
     needsTransition: 0
@@ -193,8 +195,8 @@ MonoBehaviour:
       here! One day I want to get on one of them- Or, or, the flying metal birds!"
     - "Young Ladybird (young ladybird) I think mommy called them airplanes? Well,
       when I\u2019m older, I\u2019m going to fly all around the world!"
-    - "Young Ladybird (young ladybird) But Mister? I- I don\u2019t think you should
-      be here. "
+    - "Young Ladybird (young ladybird mutant) But Mister? I- I don\u2019t think you
+      should be here. "
   - dialogueName: DefeatBugfish
     needsTransition: 1
     sceneName: Office

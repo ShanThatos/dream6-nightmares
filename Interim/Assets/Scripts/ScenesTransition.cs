@@ -24,6 +24,7 @@ public class ScenesTransition : MonoBehaviour
     }
     void Start()
     {
+        gameObject.transform.SetAsLastSibling();
         transitionAnim = gameObject.GetComponent<Animator>();
         //transitionAnim.Play("OpenEyes");
         if (SceneManager.GetActiveScene().name == "EndCredits")
@@ -103,8 +104,11 @@ public class ScenesTransition : MonoBehaviour
 
     public void Finish(string sceneName)
     {
-        transitionAnim.Play("FadeWhite");
-        PlayerPrefs.SetInt("RemSolved", 1);
+        LeanTween.delayedCall(gameObject, 2f, () =>
+        {
+            transitionAnim.Play("FadeWhite");
+            PlayerPrefs.SetInt("RemSolved", 1);
+        });
         LeanTween.delayedCall(gameObject, 5f, () =>
         {
             ChangeScene(sceneName);
