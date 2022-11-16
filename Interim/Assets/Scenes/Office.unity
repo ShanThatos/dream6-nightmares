@@ -601,6 +601,7 @@ GameObject:
   - component: {fileID: 113740882}
   - component: {fileID: 113740881}
   - component: {fileID: 113740884}
+  - component: {fileID: 113740885}
   m_Layer: 5
   m_Name: LevelOneButton
   m_TagString: Untagged
@@ -799,6 +800,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &113740885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113740879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261cf8cdb31bec3469f922491001d46f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionCheck: HubStart
 --- !u!1001 &114824844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4226,6 +4240,7 @@ GameObject:
   - component: {fileID: 726674349}
   - component: {fileID: 726674348}
   - component: {fileID: 726674351}
+  - component: {fileID: 726674352}
   m_Layer: 5
   m_Name: LevelTwoButton
   m_TagString: Untagged
@@ -4292,7 +4307,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 726674349}
   m_OnClick:
     m_PersistentCalls:
@@ -4424,6 +4439,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &726674352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726674346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261cf8cdb31bec3469f922491001d46f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionCheck: ElioStart
 --- !u!114 &768167619 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1229699349798418522, guid: f99b15720043db94c917e2c1e2623f67, type: 3}
@@ -4757,7 +4785,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Check: Charm
   ItemName: Charm
-  Description: A good luck charm for completing the Intro level
+  Description: "A goodluck charm to ward away evil ghosts and bring prosperity. Hopefully
+    the owner doesn\u2019t miss it too much.\r"
   details: {fileID: 1131364250}
 --- !u!114 &919596003
 MonoBehaviour:
@@ -5077,7 +5106,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Check: ElioSolved
   ItemName: Elio's Note
-  Description: A letter from Elio's friends that was attached to a gift for him.
+  Description: A note for Elio that accompanied a gift, though it seems like the
+    former has been lost.
   details: {fileID: 1131364250}
 --- !u!114 &959004127
 MonoBehaviour:
@@ -5196,6 +5226,7 @@ GameObject:
   - component: {fileID: 996516564}
   - component: {fileID: 996516563}
   - component: {fileID: 996516566}
+  - component: {fileID: 996516567}
   m_Layer: 5
   m_Name: LevelThreeButton
   m_TagString: Untagged
@@ -5262,7 +5293,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 996516564}
   m_OnClick:
     m_PersistentCalls:
@@ -5394,6 +5425,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &996516567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996516561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261cf8cdb31bec3469f922491001d46f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionCheck: RemIntro
 --- !u!1 &1000346027
 GameObject:
   m_ObjectHideFlags: 0
@@ -9415,7 +9459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Check: Broach
   ItemName: Broach
-  Description: A broach that represents Elio's position as the leader of NEST.
+  Description: The decorative jewlery still has not lost its shine.
   details: {fileID: 1131364250}
 --- !u!114 &1876551507
 MonoBehaviour:
@@ -10965,7 +11009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Check: Drawing
   ItemName: Drawing
-  Description: A small sketch Ladybird drew of her family.
+  Description: An artistically made crayon drawing of a family.
   details: {fileID: 1131364250}
 --- !u!114 &2111020007
 MonoBehaviour:

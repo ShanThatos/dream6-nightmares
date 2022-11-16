@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42cf572aceff684b85e40c5cebc7c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  descriptionString: Elio's broach he received as the leader of NEST.
+  descriptionString: The decorative jewlery still has not lost its shine.
   isOpened: 0
   uncollectable: 0
   alwaysSpawn: 0

@@ -125,7 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42cf572aceff684b85e40c5cebc7c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  descriptionString: A charm given to Rem as he travel through nightmare realms.
+  descriptionString: "A goodluck charm to ward away evil ghosts and bring prosperity.
+    Hopefully the owner doesn\u2019t miss it too much.\r"
   isOpened: 0
   uncollectable: 0
   alwaysSpawn: 0
