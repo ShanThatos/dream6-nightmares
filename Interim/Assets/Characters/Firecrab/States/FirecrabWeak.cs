@@ -8,10 +8,12 @@ public class FirecrabWeak : FirecrabState
 
     float prevDR;
     float timer;
+    bool isStandingUp;
+
     public override void enter()
     {
         timer = duration;
-        controller.animator.Play("Weak");
+        controller.animator.SetTrigger("Weak");
         prevDR = controller.damagable.damageReduction;
         controller.damagable.damageReduction = 0.5f;
         controller.damagable.energyDamageReduction = 0f;
@@ -23,7 +25,18 @@ public class FirecrabWeak : FirecrabState
 
         if(timer <= 0)
         {
-            controller.switchState("FCIdle");
+            if (isStandingUp)
+            {
+                controller.switchState("FCIdle");
+                return;
+            }
+            else
+            {
+                controller.animator.SetTrigger("Stand");
+                controller.damagable.damageReduction = prevDR;
+                timer = 1.05f;
+                isStandingUp = true;
+            }
         }
     }
 

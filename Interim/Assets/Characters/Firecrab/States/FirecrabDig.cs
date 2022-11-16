@@ -24,7 +24,7 @@ public class FirecrabDig : FirecrabState
         timer = startLag;
         spawned = false;
         done = false;
-        controller.animator.Play("Dig");
+        controller.animator.Play("DigStart");
 
         drillCount = baseCount;
         float healthPercent = controller.damagable.GetHealthPercent();
@@ -78,7 +78,7 @@ public class FirecrabDig : FirecrabState
                 timer -= Time.deltaTime;
                 if(timer <= 0)
                 {
-                    controller.switchState("FCDigWeak");
+                    controller.switchState("FCWeak");
                 }
             }
         }

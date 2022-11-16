@@ -11,7 +11,7 @@ public class FirecrabChase : FirecrabState
     Vector2 movement;
     public override void enter()
     {
-        controller.animator.Play("Idle");
+        controller.animator.Play("Walk");
         direction = (transform.position.x - GameManager.instance.player.transform.position.x > 0) ? -1 : 1;
         movement = new Vector2(chaseSpeed, 0) * direction;
     }
