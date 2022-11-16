@@ -1764,6 +1764,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4537594639285987827, guid: bb521c49eab2fd7459539b8942c5fc78, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.81
+      objectReference: {fileID: 0}
     - target: {fileID: 7971482274238133333, guid: bb521c49eab2fd7459539b8942c5fc78, type: 3}
       propertyPath: m_Name
       value: RemnantEnemy
@@ -1811,6 +1815,14 @@ PrefabInstance:
     - target: {fileID: 7971482274238133338, guid: bb521c49eab2fd7459539b8942c5fc78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109042876516516634, guid: bb521c49eab2fd7459539b8942c5fc78, type: 3}
+      propertyPath: m_Radius
+      value: 3.9388628
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109042876516516634, guid: bb521c49eab2fd7459539b8942c5fc78, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.28384113
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb521c49eab2fd7459539b8942c5fc78, type: 3}
