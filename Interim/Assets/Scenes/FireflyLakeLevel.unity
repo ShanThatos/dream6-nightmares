@@ -38300,6 +38300,10 @@ PrefabInstance:
       propertyPath: canGroundPound
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4604658197211814552, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 34ab3973720734d64acdf5730f9158bc, type: 3}
     - target: {fileID: 5041845320778197620, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}
       propertyPath: m_Pitch
       value: 0.55
