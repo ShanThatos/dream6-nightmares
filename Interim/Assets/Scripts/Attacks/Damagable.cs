@@ -35,6 +35,9 @@ public class Damagable : MonoBehaviour
     [Tooltip("Spawn particles on hit?")]
     private bool spawnHitParticles = true;
 
+    public bool limitEvents = false;
+    private bool alreadyFired = false;
+
     private float health;
     private LayerMask targetLayer;
     private bool iFrame = false;
@@ -137,7 +140,11 @@ public class Damagable : MonoBehaviour
 
                     if (health <= 0)
                     {
-                        CallOnDeath();
+                        if(!limitEvents || !alreadyFired)
+                        {
+                            CallOnDeath();
+                        }
+                        alreadyFired = true;
 
                         // Subscribe your controller class to OnDeath()
                         // Example:
