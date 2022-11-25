@@ -19,6 +19,8 @@ public class FirecrabController : StateManager
     [HideInInspector]
     public float tempRangeMult = 1;
 
+    private int stunCounter = 3;
+    private bool canStun;
 
     // Start is called before the first frame update
     public override void init()
@@ -50,5 +52,25 @@ public class FirecrabController : StateManager
         {
             flicker.Flicker();
         }
+
+        if (canStun)
+        {
+            int hits = isEnergy ? 3 : 1;
+            stunCounter -= hits;
+
+            if(stunCounter <= 0)
+            {
+                stunCounter = 3;
+                canStun = false;
+                switchState("FCWeak");
+            }
+        }
     }
+
+    public void allowStun(bool stun = true)
+    {
+        stunCounter = 3;
+        canStun = stun;
+    }
+
 }

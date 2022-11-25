@@ -18,12 +18,15 @@ public class FirecrabDig : FirecrabState
     private int drillCount;
     private int drillsLeft;
 
-
+    private bool closing;
     public override void enter()
     {
+        controller.allowStun();
+
         timer = startLag;
         spawned = false;
         done = false;
+        closing = false;
         controller.animator.Play("DigStart");
 
         drillCount = baseCount;
@@ -78,7 +81,17 @@ public class FirecrabDig : FirecrabState
                 timer -= Time.deltaTime;
                 if(timer <= 0)
                 {
-                    controller.switchState("FCWeak");
+                    if (closing)
+                    {
+                        controller.switchState("FCIdle");
+                    }
+                    else
+                    {
+                        controller.allowStun(false);
+                        controller.animator.SetTrigger("Close");
+                        timer = 1.05f;
+                        closing = true;
+                    }
                 }
             }
         }

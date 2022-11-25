@@ -12,13 +12,17 @@ public class FirecrabVolcano : FirecrabState
     private int launchCount;
     private float timer;
 
+    private bool closing;
+
     public override void enter()
     {
+        controller.allowStun();
         float healthPercent = controller.damagable.GetHealthPercent();
 
         controller.animator.Play("Volcano");
 
         launchCount = baseCount;
+        closing = false;
 
         if(healthPercent < 0.4)
         {
@@ -39,6 +43,12 @@ public class FirecrabVolcano : FirecrabState
 
         if(timer <= 0)
         {
+            if (closing)
+            {
+                controller.switchState("FCIdle");
+                return;
+            }
+
             if (launchCount > 0)
             {
                 // Launch and attack
@@ -48,8 +58,10 @@ public class FirecrabVolcano : FirecrabState
             }
             else if (launchCount <= 0)
             {
-                // Enter weakened state
-                controller.switchState("FCWeak");
+                controller.allowStun(false);
+                controller.animator.SetTrigger("Close");
+                timer = .55f;
+                closing = true;
             }
         }
         
