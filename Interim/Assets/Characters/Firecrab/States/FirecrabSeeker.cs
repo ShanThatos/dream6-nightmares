@@ -16,11 +16,13 @@ public class FirecrabSeeker : FirecrabState
 
     private Transform player;
 
+    private bool closing;
     public override void enter()
     {
         controller.animator.Play("Volcano");
         player = GameManager.GetPlayerTransform();
         count = baseCount;
+        closing = false;
         offset = 0;
         timer = delay * 2;
         if(controller.damagable.GetHealthPercent() <= .5)
@@ -34,9 +36,19 @@ public class FirecrabSeeker : FirecrabState
         timer -= Time.deltaTime;
         if(timer <= 0)
         {
+
+            if (closing)
+            {
+                controller.switchState("FCIdle");
+                return;
+            }
+
             if(count <= 0)
             {
-                controller.switchState("FCWeak");
+                controller.allowStun(false);
+                controller.animator.SetTrigger("Close");
+                timer = .55f;
+                closing = true;
             }
             else
             {

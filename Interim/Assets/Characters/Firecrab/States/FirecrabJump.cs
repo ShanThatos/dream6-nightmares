@@ -72,7 +72,7 @@ public class FirecrabJump : FirecrabState
 
     public override void exit()
     {
-        controller.tempRangeMult = 3.0f;
+        controller.tempRangeMult = 5.0f;
         hitbox.isActive = false;
     }
 
