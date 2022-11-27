@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2388756281321128829
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2272,8 +2272,8 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 7087907484694134994}
-    m_SelectOnDown: {fileID: 7087907484694134994}
+    m_SelectOnUp: {fileID: 7633591921855373169}
+    m_SelectOnDown: {fileID: 7633591921855373169}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 2
