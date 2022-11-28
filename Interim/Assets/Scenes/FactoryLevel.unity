@@ -32839,11 +32839,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6108635679875393534, guid: c897f516095ae2943b442967e0325c59, type: 3}
       propertyPath: playerTestPos.x
-      value: 144.66
+      value: 88.94
       objectReference: {fileID: 0}
     - target: {fileID: 6108635679875393534, guid: c897f516095ae2943b442967e0325c59, type: 3}
       propertyPath: playerTestPos.y
-      value: -33.5
+      value: -6.9
       objectReference: {fileID: 0}
     - target: {fileID: 6108635679875393535, guid: c897f516095ae2943b442967e0325c59, type: 3}
       propertyPath: m_Name
