@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RMRunState : RMState {
 
-    public float runSpeed = 2f;
+    public float runSpeed = 1f;
     public Vector2 runTimeRange = new Vector2(.5f, 3f);
     float totalRunTime = 0f;
     float runRemainingTime = 0f;

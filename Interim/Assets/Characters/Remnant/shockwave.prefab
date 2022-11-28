@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391a2c6781d5fa5489a23bc1fad47e73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxScale: 1
-  timeToMaxScale: 2
+  maxScale: 3
+  timeToMaxScale: 6
   timeToFade: 1
 --- !u!60 &2415505141481137659
 PolygonCollider2D:
@@ -797,10 +797,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c577dc23271b7e4783741ee71b88030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
-  knockback: {x: 0, y: 0}
+  damage: 50
+  knockback: {x: 40, y: 20}
   isPlayerAttack: 0
-  canLaunchPlayer: 0
+  canLaunchPlayer: 1
   player: {fileID: 0}
   isActive: 1
   energyAttack: 1

@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8244d575ac0448441b8460c5eb150f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chargeTime: 2
-  delay: 1
-  force: 50
+  chargeTime: 0
+  delay: 0
+  force: 30
   targetLine: {fileID: 7820046629176408921}
   startWidth: 1
   endWidth: 0.1
