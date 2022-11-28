@@ -11973,6 +11973,7 @@ MonoBehaviour:
   iFrameTime: 0.4
   isPlayer: 0
   spawnHitParticles: 1
+  limitEvents: 0
 --- !u!61 &1421663198
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13618,6 +13619,7 @@ MonoBehaviour:
   iFrameTime: 0.4
   isPlayer: 0
   spawnHitParticles: 1
+  limitEvents: 0
 --- !u!70 &1880951902
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -14550,6 +14552,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3373428674663001407, guid: d933a42ccc9bfe647bb8bd10d305c513, type: 3}
+      propertyPath: m_Size.x
+      value: 1.246918
+      objectReference: {fileID: 0}
+    - target: {fileID: 3373428674663001407, guid: d933a42ccc9bfe647bb8bd10d305c513, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3373428674663001407, guid: d933a42ccc9bfe647bb8bd10d305c513, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.1244507
+      objectReference: {fileID: 0}
+    - target: {fileID: 3373428674663001407, guid: d933a42ccc9bfe647bb8bd10d305c513, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062028094356349533, guid: d933a42ccc9bfe647bb8bd10d305c513, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}

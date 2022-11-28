@@ -23,7 +23,7 @@ public class RMScreamState : RMState {
 
     public override void run() {
         if (controller.cues.shouldSpawnScreamShockwave && !spawnedShockwave) {
-            Instantiate(shockwavePrefab, controller.transform.position, Quaternion.identity);
+            Instantiate(shockwavePrefab, controller.getPoint("ScreamSpawnPoint").position, Quaternion.identity);
             spawnedShockwave = true;
         }
 

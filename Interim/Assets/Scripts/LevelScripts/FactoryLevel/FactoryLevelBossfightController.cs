@@ -40,13 +40,13 @@ public class FactoryLevelBossfightController : MonoBehaviour
 
     void OnBossDeath()
     {
-        foreach(GameObject obj in barriers)
-        {
-            obj.GetComponent<Animator>().SetTrigger("stop");
-        }
+        // foreach(GameObject obj in barriers)
+        // {
+        //     obj.GetComponent<Animator>().SetTrigger("stop");
+        // }
 
         // dashTutorial.Open();
-        GameManager.instance.player.GetComponent<PlayerCapabilities>().canDash = true;
+        // GameManager.instance.player.GetComponent<PlayerCapabilities>().canDash = true;
         // afterBossDoor.SetActive(false);
     }
 
