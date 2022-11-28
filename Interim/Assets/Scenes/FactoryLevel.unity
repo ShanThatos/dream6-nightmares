@@ -2480,6 +2480,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5474646327596164947, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
+      propertyPath: attackRange
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5474646327596164951, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
       propertyPath: m_Name
       value: BirdTurret (4)
@@ -3038,6 +3042,10 @@ PrefabInstance:
     - target: {fileID: 5474646327596164946, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5474646327596164947, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
+      propertyPath: attackRange
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5474646327596164951, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
       propertyPath: m_Name
@@ -9685,7 +9693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5474646327596164947, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
       propertyPath: attackRange
-      value: 9
+      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 5474646327596164951, guid: 7717eee7eddd330468619a5fa4830fb7, type: 3}
       propertyPath: m_Name
