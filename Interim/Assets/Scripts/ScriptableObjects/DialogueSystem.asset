@@ -15,12 +15,6 @@ MonoBehaviour:
   character:
   - spriteName: 
     sprite: {fileID: 512778289, guid: 1327b6e1f8a35154d87e70e45da7ea25, type: 3}
-  - spriteName: rem normal
-    sprite: {fileID: 21300000, guid: 2f28284bd73ab5c4d9abd5ac71917974, type: 3}
-  - spriteName: elio normal
-    sprite: {fileID: 21300000, guid: ad2e0f923db8d5547b21195120ad2e2e, type: 3}
-  - spriteName: ladybird normal
-    sprite: {fileID: 21300000, guid: 586419f269a8db34db6a7bf7d7931d58, type: 3}
   - spriteName: young ladybird
     sprite: {fileID: 21300000, guid: e7d7c38fb0490a9458fc945b6f5488e9, type: 3}
   - spriteName: elio note
@@ -28,14 +22,66 @@ MonoBehaviour:
   - spriteName: young ladybird mutant
     sprite: {fileID: 21300000, guid: 9260e703681440b4cb101177eba23431, type: 3}
   - spriteName: glitch rem
-    sprite: {fileID: 21300000, guid: 29e5166c5566a594093a3e585f890095, type: 3}
+    sprite: {fileID: 21300000, guid: 7d80304905b647a4cbe02d959e526e6e, type: 3}
+  - spriteName: remnant
+    sprite: {fileID: 21300000, guid: dd483ef9c3475a74a95db583886429f3, type: 3}
+  - spriteName: rem normal
+    sprite: {fileID: 21300000, guid: 4d9f3a45408bca64fabbd13b16f436ca, type: 3}
+  - spriteName: rem neutral 2
+    sprite: {fileID: 21300000, guid: 6140b45fdf25f6b47a7faee2e9b2be79, type: 3}
+  - spriteName: rem angry
+    sprite: {fileID: 21300000, guid: ae23c308801c4094c89a5788ae775ad6, type: 3}
+  - spriteName: rem disgusted
+    sprite: {fileID: 21300000, guid: 431b04eae5be1574ab7dd41cac9b4b2d, type: 3}
+  - spriteName: rem pained
+    sprite: {fileID: 21300000, guid: 694c1241f331e9b4980f1cc865f5a019, type: 3}
+  - spriteName: rem pained 2
+    sprite: {fileID: 21300000, guid: 8b2670e6f00d4174a9aa80253ba3ff33, type: 3}
+  - spriteName: rem panicked
+    sprite: {fileID: 21300000, guid: a6850c50f5c0e1248bb5bc670cc2fc84, type: 3}
+  - spriteName: rem smiling
+    sprite: {fileID: 21300000, guid: f41ef6b7ad4872446a00f4588fce1ed5, type: 3}
+  - spriteName: rem thoughtful
+    sprite: {fileID: 21300000, guid: 9ec16e7195a09bd43991a8cb0df59448, type: 3}
+  - spriteName: ladybird happy
+    sprite: {fileID: 21300000, guid: b6307b00681aca54bae944e67fe86461, type: 3}
+  - spriteName: ladybird haunted
+    sprite: {fileID: 21300000, guid: 7aeab9ab7bdde744384d33c828b94359, type: 3}
+  - spriteName: ladybird normal
+    sprite: {fileID: 21300000, guid: 631315d4567671c4aaafde8a21ac2950, type: 3}
+  - spriteName: ladybird neutral 2
+    sprite: {fileID: 21300000, guid: 3d602841227002b45861ef727629253b, type: 3}
+  - spriteName: ladybird sad
+    sprite: {fileID: 21300000, guid: a27a51e4c5030b142a544dbd6dfc7ff1, type: 3}
+  - spriteName: elio bittersweet
+    sprite: {fileID: 21300000, guid: 79678326cb8b926419c8d1ea833196a7, type: 3}
+  - spriteName: elio blushing
+    sprite: {fileID: 21300000, guid: ca0d27ae21a309a42a04bde70dc26313, type: 3}
+  - spriteName: elio normal
+    sprite: {fileID: 21300000, guid: 814e28d090833844bb3fb806327ccdf9, type: 3}
+  - spriteName: elio pensive
+    sprite: {fileID: 21300000, guid: ed8eada85d8665448b66c5d55b322d30, type: 3}
+  - spriteName: elio serious
+    sprite: {fileID: 21300000, guid: d191d312511920f4389cf14a321d650a, type: 3}
+  - spriteName: elio sick neutral
+    sprite: {fileID: 21300000, guid: e552f62e5b871ca4aaf68b4f5723d8b0, type: 3}
+  - spriteName: elio sick questioning
+    sprite: {fileID: 21300000, guid: 817c66d23a77e0c4682c2bc6b1abf45b, type: 3}
+  - spriteName: elio sick smile
+    sprite: {fileID: 21300000, guid: 5fd9d6b27665cec4cae9d5cba3e5d701, type: 3}
+  - spriteName: elio smiling
+    sprite: {fileID: 21300000, guid: f73ecbce2e09db642afb698a2d56f0ee, type: 3}
+  - spriteName: elio suspicious
+    sprite: {fileID: 21300000, guid: a0d14cdca3e9467408bdf6b77359b6bb, type: 3}
+  - spriteName: elio trolling
+    sprite: {fileID: 21300000, guid: dfff28dedd55097468f32e83f3f3e419, type: 3}
   dialogues:
   - dialogueName: IntroStart
     needsTransition: 0
     sceneName: IntroLevel
     options: []
     dialoguesText:
-    - "Rem (rem normal) Ugh, my head is killing me. Wha- why am I in a nightmare
+    - "Rem (rem pained 2) Ugh, my head is killing me. Wha- why am I in a nightmare
       realm right now? What is happening\u2026"
   - dialogueName: DefeatMiniboss
     needsTransition: 0
@@ -43,11 +89,11 @@ MonoBehaviour:
     options: []
     dialoguesText:
     - Rem (rem normal) Elio, is that you?
-    - "Elio (elio normal) Rem! I\u2019m so glad to see you. I don\u2019t know what\u2019s
+    - "Elio (elio smiling) Rem! I\u2019m so glad to see you. I don\u2019t know what\u2019s
       going on but something isn\u2019t right. "
-    - "Elio (elio normal) The Core to this realm ahead is nothing like I\u2019ve
+    - "Elio (elio smiling) The Core to this realm ahead is nothing like I\u2019ve
       ever seen before. We gotta to be careful."
-    - Rem (rem normal) Roger that.
+    - Rem (rem neutral 2) Roger that.
   - dialogueName: IntroEvilEnergy
     needsTransition: 0
     sceneName: 
@@ -60,7 +106,7 @@ MonoBehaviour:
     sceneName: 
     options: []
     dialoguesText:
-    - Rem (rem normal) These dream reminisces here look more dangerous than usual.
+    - Rem (rem normal) The dream reminisces here look more dangerous than usual.
     - Rem (rem normal) I should hurry and take them out before they can cause any
       more harm.
   - dialogueName: IntroClosure
@@ -77,32 +123,32 @@ MonoBehaviour:
     - (LadybirdBranchHome) Childhood home?
     - (LadybirdBranchBeach) The beach?
     - (LadybirdBranchPet) Pet shop?
-    - (LadybirdBranchEnd) End conversation.
+    - (LadybirdBranchEnd) There's nothing to ask.
     dialoguesText:
-    - Elio (elio normal) Shit, Rem you good?
-    - Rem (rem normal) I should be asking you that. What even happened back there?
+    - Elio (elio serious) Shit, Rem you good?
+    - Rem (rem thoughtful) I should be asking you that. What even happened back there?
     - Elio (elio normal) I'm not sure myself, but hey, lets save this for later.
       We have a client at the door.
-    - "Elio (elio normal) Good mornin\u2019 ma\u2019am! Come in, come in!"
+    - "Elio (elio smiling) Good mornin\u2019 ma\u2019am! Come in, come in!"
     - Elio (elio normal) It must be freezing out there- please make yourself comfortable.
-    - Rem (rem normal) Welcome to NEST, my name is Rem and this is Investigator Elio,
-      what can we help you with today?
-    - Ladybird (ladybird normal) H-hello! Please call me Ladybird, I heard this was
+    - Rem (rem smiling) Welcome to NEST, my name is Rem and this is Investigator
+      Elio, what can we help you with today?
+    - Ladybird (ladybird happy) H-hello! Please call me Ladybird, I heard this was
       the place that was taking on nightmare cases?
     - 'Ladybird (ladybird normal) I think I might be getting these dreams too. '
     - Rem (rem normal) We can definitely help you with that, Ladybird. How has the
       nightmare been affecting you?
-    - Ladybird (ladybird normal) Well, it all began around the time that fog rolled
+    - Ladybird (ladybird neutral 2) Well, it all began around the time that fog rolled
       into town about a month ago.
-    - Ladybird (ladybird normal) I would wake up from the nightmares in a cold sweat
+    - Ladybird (ladybird haunted) I would wake up from the nightmares in a cold sweat
       or some shivers at first but th-then it got a lot worse.
-    - "Ladybird (ladybird normal) I started waking up to these terrible headaches
-      and bruises started to appear in places I don\u2019t remember getting."
+    - "Ladybird (ladybird sad) I started waking up to these terrible headaches and
+      bruises started to appear in places I don\u2019t remember getting."
     - "Ladybird (ladybird normal) To be honest, I\u2019ve been a little scared to
       sleep."
     - Rem (rem normal) Can you recall anything from these nightmares? Anything that
       sticks out to you?
-    - "Ladybird (ladybird normal) Not much I\u2019m afraid."
+    - "Ladybird (ladybird sad) Not much I\u2019m afraid."
     - "Ladybird (ladybird normal) Only bits and pieces that reminded me of my childhood
       home, the shores, or m-maybe the pet shop I\u2019m running."
     - Ladybird (ladybird normal) When I wake up though, most of everything is forgotten.
@@ -113,15 +159,15 @@ MonoBehaviour:
     - (LadybirdBranchHome) Childhood home?
     - (LadybirdBranchBeach) The beach?
     - (LadybirdBranchPet) Pet shop?
-    - (LadybirdBranchEnd) End conversation.
+    - (LadybirdBranchEnd) There's nothing to ask.
     dialoguesText:
     - Rem (rem normal) What was growing up at home like?
-    - "Ladybird (ladybird normal) Oh well you know, my parents did well enough for
+    - "Ladybird (ladybird happy) Oh well you know, my parents did well enough for
       us to live comfortably so meals and shelter fortunately weren\u2019t something
       I needed to worry about."
     - 'Ladybird (ladybird normal) They were also very involved in my life too. My
       mother especially so. '
-    - "Ladybird (ladybird normal) They\u2026 they just wanted the best for me I think\u2026 "
+    - "Ladybird (ladybird sad) They\u2026 they just wanted the best for me I think\u2026 "
   - dialogueName: LadybirdBranchBeach
     needsTransition: 0
     sceneName: 
@@ -129,15 +175,15 @@ MonoBehaviour:
     - (LadybirdBranchHome) Childhood home?
     - (LadybirdBranchBeach) The beach?
     - (LadybirdBranchPet) Pet shop?
-    - (LadybirdBranchEnd) End conversation.
+    - (LadybirdBranchEnd) There's nothing to ask.
     dialoguesText:
-    - Rem (rem normal) You mentioned the shores, are you referring to Lunar beach
+    - Rem (rem neutral 2) You mentioned the shores, are you referring to Lunar beach
       here?
     - Ladybird (ladybird normal) Yes! I still go there from time to time to clear
       my head.
-    - "Ladybird (ladybird normal) It\u2019s peaceful there and being next to the
-      open seas and skies gets me daydreaming about all the places I want to travel
-      to and visit one day. "
+    - "Ladybird (ladybird happy) It\u2019s peaceful there and being next to the open
+      seas and skies gets me daydreaming about all the places I want to travel to
+      and visit one day. "
   - dialogueName: LadybirdBranchPet
     needsTransition: 0
     sceneName: 
@@ -145,7 +191,7 @@ MonoBehaviour:
     - (LadybirdBranchHome) Childhood home?
     - (LadybirdBranchBeach) The beach?
     - (LadybirdBranchPet) Pet shop?
-    - (LadybirdBranchEnd) End conversation.
+    - (LadybirdBranchEnd) There's nothing to ask.
     dialoguesText:
     - "Rem (rem normal) The pet shop\u2026 what is it like to run the place?\r"
     - "Ladybird (ladybird normal) It\u2019s comfortable. The pet store is the family
@@ -157,18 +203,19 @@ MonoBehaviour:
     sceneName: 
     options: []
     dialoguesText:
-    - 'Rem (rem normal) Thank you for trusting us, Ladybird. I promise to do everything
+    - Rem (rem neutral 2) I think I'm ready.
+    - 'Rem (rem smiling) Thank you for trusting us, Ladybird. I promise to do everything
       in my power to help you. '
     - Rem (rem normal) To do so, I need to get into your nightmare realm to get to
       the root of this issue. Is that okay?
-    - Ladybird (ladybird normal) Y-yes! Just say the word.
+    - Ladybird (ladybird happy) Y-yes! Just say the word.
   - dialogueName: ElioHub
     needsTransition: 0
     sceneName: 
     options: []
     dialoguesText:
-    - "Elio (elio normal) Hey man, I think I have to sit this one out. Whatever that
-      whale creature was earlier did a number on me. \r\n"
+    - "Elio (elio sick smile) Hey man, I think I have to sit this one out. Whatever
+      that whale creature was earlier did a number on me. \r\n"
     - "Elio (elio normal) Don\u2019t have too much fun in there without me, alright?"
   - dialogueName: LadybirdTransition
     needsTransition: 1
@@ -182,8 +229,8 @@ MonoBehaviour:
     sceneName: 
     options: []
     dialoguesText:
-    - Rem (rem normal) Ugh, entering nightmare realms never gets easier.
-    - 'Rem (rem normal) Okay, let''s just stick to the usual M.O: locate the core
+    - Rem (rem pained) Ugh, entering nightmare realms never gets easier.
+    - 'Rem (rem pained 2) Okay, let''s just stick to the usual M.O: locate the core
       stabilizing this place and retrieve it. '
     - 'Rem (rem normal) Huh, this must be the childhood home Ladybird mentioned.
       Her bedroom perhaps? '
@@ -204,26 +251,26 @@ MonoBehaviour:
     sceneName: Office
     options: []
     dialoguesText:
-    - "Rem (rem normal) Phew- I almost thought we wouldn\u2019t see the end of that
+    - "Rem (rem pained) Phew- I almost thought we wouldn\u2019t see the end of that
       one. Hmm, looks like it dropped something\u2026 a plane ticket?"
     - 'Rem (rem normal) But a fish that flies, huh? '
     - "Rem (rem normal) If this bugfish is supposed to be a manifestation of Ladybird\u2019s
       nightmare, I wonder why it took on that form."
     - "Rem (rem normal) Like it couldn\u2019t leave this island by swimming so it
       took to the skies instead, with not much luck there either. "
-    - "Rem (rem normal) What really was keeping it here though? It wasn\u2019t like
-      it was chained up or anything\u2026 "
-    - "Rem (rem normal) Or perhaps, it was something the eye can\u2019t see- something
-      intangible, internal. "
-    - 'Rem (rem normal) Sometimes those things can be heavier than anything physical. '
+    - "Rem (rem thoughtful) What really was keeping it here though? It wasn\u2019t
+      like it was chained up or anything\u2026 "
+    - "Rem (rem thoughtful) Or perhaps, it was something the eye can\u2019t see-
+      something intangible, internal. "
+    - 'Rem (rem thoughtful) Sometimes those things can be heavier than anything physical. '
   - dialogueName: LadybirdClosure
     needsTransition: 1
     sceneName: Office
     options: []
     dialoguesText:
-    - Elio (elio normal) Our ace detective! Our hero is back! Oh, how he flawlessly
+    - Elio (elio blushing) Our ace detective! Our hero is back! Oh, how he flawlessly
       saves the day once again.
-    - "Rem (rem normal) Elio, you\u2019re so embarrassing."
+    - "Rem (rem disgusted) Elio, you\u2019re so embarrassing."
     - Rem (rem normal) Um, Ladybird I found this in your dream realm at the end of
       the pier. It seems to be the root of your nightmares.
     - 'Rem (rem normal) Do you have an idea why?
@@ -231,28 +278,28 @@ MonoBehaviour:
 '
     - "Ladybird (ladybird normal) Ah, yes\u2026 that ticket was an unfilled dream
       of sorts. I always look back at it and think of what could have been. "
-    - 'Ladybird (ladybird normal) Maybe my childhood dream of wanting to explore
-      the world has never truly left. '
-    - Ladybird (ladybird normal) I kept delaying it because I have to run the family
+    - 'Ladybird (ladybird sad) Maybe my childhood dream of wanting to explore the
+      world has never truly left. '
+    - Ladybird (ladybird sad) I kept delaying it because I have to run the family
       business among other responsibilities.
-    - Ladybird (ladybird normal) Looking back now, they sound like I was just making
+    - Ladybird (ladybird happy) Looking back now, they sound like I was just making
       excuses for myself.
     - "Rem (rem normal) You shouldn\u2019t be so hard on yourself. Comfort is hard
       to separate from for anyone."
-    - "Ladybird (ladybird normal) I think I\u2019m ready though. It\u2019s about
-      time I try and do something for myself."
-    - 'Ladybird (ladybird normal) Rem, Elio, thank you so much for taking on my case.
+    - "Ladybird (ladybird happy) I think I\u2019m ready though. It\u2019s about time
+      I try and do something for myself."
+    - 'Ladybird (ladybird happy) Rem, Elio, thank you so much for taking on my case.
       You have saved me in more ways than one.
 
 '
-    - 'Rem (rem normal) It was our pleasure. We are always here if you ever need
+    - 'Rem (rem smiling) It was our pleasure. We are always here if you ever need
       a helping hand. '
   - dialogueName: FactoryStart
     needsTransition: 0
     sceneName: 
     options: []
     dialoguesText:
-    - "Rem (rem normal) I have to do this, otherwise, it\u2019ll be meaningless."
+    - "Rem (rem neutral 2) I have to do this, otherwise, it\u2019ll be meaningless."
   - dialogueName: FactorySimilar
     needsTransition: 0
     sceneName: 
@@ -264,61 +311,62 @@ MonoBehaviour:
     sceneName: 
     options: []
     dialoguesText:
-    - "Rem (rem normal) Oh, a cabin huh? It would be cozy if it weren\u2019t for
+    - "Rem (rem pained 2) Oh, a cabin huh? It would be cozy if it weren\u2019t for
       the fact that I\u2019m in a nightmare realm right now."
-    - Rem (rem normal) Or that it just gave me another massive headache.
+    - Rem (rem pained) Or that it just gave me another massive headache.
   - dialogueName: ElioIntro
     needsTransition: 0
     sceneName: 
     options: []
     dialoguesText:
-    - "Rem (rem normal) Elio\u2026has been out of it lately."
-    - "Rem (rem normal) He\u2019s still recovering from our encounter with that whale-like
-      creature a while back but I can\u2019t help but think there\u2019s something
-      more to it\u2026"
+    - "Rem (rem thoughtful) Elio\u2026has been out of it lately."
+    - "Rem (rem thoughtful) He\u2019s still recovering from our encounter with that
+      whale-like creature a while back but I can\u2019t help but think there\u2019s
+      something more to it\u2026"
     - Rem (rem normal) I should check on him.
   - dialogueName: ElioStart
     needsTransition: 0
     sceneName: 
     options: []
     dialoguesText:
-    - Elio (elio normal) Hey man.
-    - "Rem (rem normal) Hey, you don\u2019t look so hot. Everything okay?"
-    - "Elio (elio normal) Yeah\u2026I mean I wish I could say yes but it\u2019s been
-      pretty rough lately. I don\u2019t remember the last time I had some quality
+    - Elio (elio sick smile) Hey man.
+    - "Rem (rem neutral 2) Hey, you don\u2019t look so hot. Everything okay?"
+    - "Elio (elio bittersweet) Yeah\u2026I mean I wish I could say yes but it\u2019s
+      been pretty rough lately. I don\u2019t remember the last time I had some quality
       shut-eye."
-    - "Elio (elio normal) Think I got a case of the nightmares too, ironic isn\u2019t
+    - "Elio (elio bittersweet) Think I got a case of the nightmares too, ironic isn\u2019t
       it?\r"
-    - "Elio (elio normal) \u2026"
-    - Elio (elio normal) You-- you know how I had worked on the Crime Bureau in the
-      past?
-    - 'Rem (rem normal) Yeah, you mentioned it but not much. '
-    - "Elio (elio normal) Mm, it\u2019s not a pretty story. I- I screwed up big time
-      and my team, my friends- they had paid the price for my mistake. "
-    - 'Elio (elio normal) They trusted me and made me their leader and I let them
-      down. Like a sick prank, I was the only one who made it out of that mission
-      alive. '
-    - "Elio (elio normal) For a while, I felt that it would\u2019ve been better if
-      I had died with them, y\u2019know? Because then I wouldn\u2019t have to live
-      with this guilt."
-    - "Rem (rem normal) I\u2019m sorry to hear that."
-    - "Rem (rem normal) Guilt, regret, those things are messy and we don\u2019t ever
-      get taught how to process them. "
-    - "Rem (rem normal) I don\u2019t know if this is selfish of me but I\u2019m glad
-      you\u2019re still here-- that you\u2019re alive."
+    - "Elio (elio pensive) \u2026"
+    - Elio (elio pensive) You-- you know how I had worked on the Crime Bureau in
+      the past?
+    - 'Rem (rem neutral 2) Yeah, you mentioned it but not much. '
+    - "Elio (elio sick smile) Mm, it\u2019s not a pretty story. I- I screwed up big
+      time and my team, my friends- they had paid the price for my mistake. "
+    - 'Elio (elio sick questioning) They trusted me and made me their leader and
+      I let them down. Like a sick prank, I was the only one who made it out of that
+      mission alive. '
+    - "Elio (elio sick neutral) For a while, I felt that it would\u2019ve been better
+      if I had died with them, y\u2019know? Because then I wouldn\u2019t have to
+      live with this guilt."
+    - "Rem (rem thoughtful) I\u2019m sorry to hear that."
+    - "Rem (rem thoughtful) Guilt, regret, those things are messy and we don\u2019t
+      ever get taught how to process them. "
+    - "Rem (rem neutral 2) I don\u2019t know if this is selfish of me but I\u2019m
+      glad you\u2019re still here-- that you\u2019re alive."
     - "Rem (rem normal) I\u2019m assuming this is what your nightmare is about?"
-    - "Elio (elio normal) Yeah. Has been for a while but the usual stuff I do doesn\u2019t
-      work anymore."
-    - "Elio (elio normal) Thought I could deal with it on my own but as you can see
-      that\u2019s not going so well.\r"
-    - "Elio (elio normal) I hate to be a burden but y\u2019think you could maybe
+    - "Elio (elio sick neutral) Yeah. Has been for a while but the usual stuff I
+      do doesn\u2019t work anymore."
+    - "Elio (elio sick neutral) Thought I could deal with it on my own but as you
+      can see that\u2019s not going so well.\r"
+    - "Elio (elio sick smile) I hate to be a burden but y\u2019think you could maybe
       help a guy out?"
-    - Elio (elio normal) Hop into my brain and fight off the scary monsters for me?
-    - "Rem (rem normal) Of course, Elio. I would love to and seriously, you\u2019re
+    - Elio (elio sick smile) Hop into my brain and fight off the scary monsters for
+      me?
+    - "Rem (rem smiling) Of course, Elio. I would love to and seriously, you\u2019re
       not a bother at all."
-    - 'Rem (rem normal) I wish you would rely on me more instead of stubbornly trying
+    - 'Rem (rem smiling) I wish you would rely on me more instead of stubbornly trying
       to do everything on your own. '
-    - "Rem (rem normal) Just need to sit back big guy, I\u2019ll take care of it."
+    - "Rem (rem smiling) Just need to sit back big guy, I\u2019ll take care of it."
   - dialogueName: ElioMid
     needsTransition: 0
     sceneName: 
@@ -326,9 +374,9 @@ MonoBehaviour:
     - (ElioBranchTeammate) Your teammates?
     - (ElioBranchMission) The mission?
     - (ElioBranchCaution) Caution?
-    - (ElioBranchEnd) End conversation.
+    - (ElioBranchEnd) That's all I need to know.
     dialoguesText:
-    - "Elio (elio normal) What\u2019s up? Anything I can help with? Well y\u2019know,
+    - "Elio (elio sick smile) What\u2019s up? Anything I can help with? Well y\u2019know,
       help you help me."
   - dialogueName: ElioBranchTeammate
     needsTransition: 0
@@ -337,18 +385,18 @@ MonoBehaviour:
     - (ElioBranchTeammate) Your teammates?
     - (ElioBranchMission) The mission?
     - (ElioBranchCaution) Caution?
-    - (ElioBranchEnd) End Conversation.
+    - (ElioBranchEnd) That's all I need to know.
     dialoguesText:
     - Rem (rem normal) Mind telling me a bit more about your teammates?
-    - "Elio (elio normal) Mm, they were a rowdy bunch, that\u2019s for sure. We were
-      a foursome of sorts. "
-    - 'Elio (elio normal) Nine was a constant ball of sunshine-- I always wondered
+    - "Elio (elio sick smile) Mm, they were a rowdy bunch, that\u2019s for sure.
+      We were a foursome of sorts. "
+    - 'Elio (elio bittersweet) Nine was a constant ball of sunshine-- I always wondered
       where he got all that energy from. '
-    - 'Elio (elio normal) As for Kelper, it was like his mission in life was to stick
-      his nose in drama. It was never a calm moment with him. '
-    - Elio (elio normal) Luckily we had Cheri. She was the rhyme and reason of our
-      little band, covered our asses when we found ourselves in trouble.
-    - Rem (rem normal) They sound like a joy to be around. I would have loved to
+    - 'Elio (elio bittersweet) As for Kelper, it was like his mission in life was
+      to stick his nose in drama. It was never a calm moment with him. '
+    - Elio (elio bittersweet) Luckily we had Cheri. She was the rhyme and reason
+      of our little band, covered our asses when we found ourselves in trouble.
+    - Rem (rem smiling) They sound like a joy to be around. I would have loved to
       meet them.
   - dialogueName: ElioBranchMission
     needsTransition: 0
@@ -357,14 +405,14 @@ MonoBehaviour:
     - (ElioBranchTeammate) Your teammates?
     - (ElioBranchMission) The mission?
     - (ElioBranchCaution) Caution?
-    - (ElioBranchEnd) End conversation.
+    - (ElioBranchEnd) That's all I need to know.
     dialoguesText:
     - Rem (rem normal) What was the mission about? If you can say.
-    - Elio (elio normal) We were put on a serial arsonist case. At first, it was
+    - Elio (elio pensive) We were put on a serial arsonist case. At first, it was
       small animals, then cars, then houses.
-    - "Elio (elio normal) It was getting out of the local police\u2019s hands so
+    - "Elio (elio pensive) It was getting out of the local police\u2019s hands so
       we were called in."
-    - "Elio (elio normal) Never would imagine he\u2019d tried to burn down an entire
+    - "Elio (elio pensive) Never would imagine he\u2019d tried to burn down an entire
       forest\u2026"
   - dialogueName: ElioBranchCaution
     needsTransition: 0
@@ -373,35 +421,36 @@ MonoBehaviour:
     - (ElioBranchTeammate) Your teammates?
     - (ElioBranchMission) The mission?
     - (ElioBranchCaution) Caution?
-    - (ElioBranchEnd) End conversation.
+    - (ElioBranchEnd) That's all I need to know.
     dialoguesText:
-    - Rem (rem normal) Anything I should watch out for in there?
-    - "Elio (elio normal) I\u2019m not sure, sorry man. Everything just feels surreal
-      I can\u2019t tell what\u2019s true from false or right from wrong. "
+    - Rem (rem neutral 2) Anything I should watch out for in there?
+    - "Elio (elio sick neutral) I\u2019m not sure, sorry man. Everything just feels
+      surreal I can\u2019t tell what\u2019s true from false or right from wrong. "
   - dialogueName: ElioBranchEnd
     needsTransition: 0
     sceneName: 
     options: []
     dialoguesText:
-    - Elio (elio normal) Good luck in there, ace detective.
+    - Elio (elio sick smile) Good luck in there, ace detective.
   - dialogueName: ElioClosure
     needsTransition: 1
     sceneName: Office
     options: []
     dialoguesText:
-    - "Rem (rem normal) I\u2019m back."
+    - "Rem (rem neutral 2) I\u2019m back."
     - Elio (elio normal) Welcome home.
-    - "Rem (rem normal) You\u2019re an absolute mess. Why didn\u2019t you say anything?"
-    - "Elio (elio normal) I\u2019m sorry Rem. I didn\u2019t mean to hide it from
-      you. "
-    - "Elio (elio normal) It\u2019s irrational but after everything\u2026 I can\u2019t
-      help but think that I\u2019m like a bad omen or something."
-    - "Elio (elio normal) I didn\u2019t want to be the reason that you got hurt too."
-    - "Elio (elio normal) And maybe\u2026 I was scared to be close to people again,
-      only for them to leave."
-    - "Rem (rem normal) You\u2019re not a burden or some kind of bad luck charm.
+    - "Rem (rem angry) You\u2019re an absolute mess. Why didn\u2019t you say anything?"
+    - "Elio (elio bittersweet) I\u2019m sorry Rem. I didn\u2019t mean to hide it
+      from you. "
+    - "Elio (elio bittersweet) It\u2019s irrational but after everything\u2026 I
+      can\u2019t help but think that I\u2019m like a bad omen or something."
+    - "Elio (elio bittersweet) I didn\u2019t want to be the reason that you got hurt
+      too."
+    - "Elio (elio bittersweet) And maybe\u2026 I was scared to be close to people
+      again, only for them to leave."
+    - "Rem (rem thoughtful) You\u2019re not a burden or some kind of bad luck charm.
       You help so many people, Elio. Everyday."
-    - "Rem (rem normal) Yet you won\u2019t allow yourself the same?"
+    - "Rem (rem thoughtful) Yet you won\u2019t allow yourself the same?"
     - "Rem (rem normal) Rely on me, Elio. I give you permission. I\u2019m not going
       anywhere."
     - "Elio (elio normal) Mm, thanks, Rem. I will. Don\u2019t regret it, alright?
@@ -412,14 +461,14 @@ MonoBehaviour:
     options: []
     dialoguesText:
     - ' (elio note) [Note dropped]'
-    - Rem (rem normal) It seems like his team truly cared for him. Though Elio still
-      beat himself up regardless.
+    - Rem (rem thoughtful) It seems like his team truly cared for him. Though Elio
+      still beat himself up regardless.
     - "Rem (rem normal) He\u2019s been suffering alone all this time, and I wish
       I had known to help him sooner."
     - "Rem (rem normal) I get where he\u2019s coming from though. Couldn\u2019t help
       thinking that he was a burden even if everyone tells him he wasn\u2019t."
-    - "Rem (rem normal) \u2026"
-    - 'Rem (rem normal) Elio, you idiot. '
+    - "Rem (rem neutral 2) \u2026"
+    - 'Rem (rem thoughtful) Elio, you idiot. '
   - dialogueName: IntroBeforeBoss
     needsTransition: 0
     sceneName: 
@@ -442,53 +491,53 @@ MonoBehaviour:
     - (RemBranchSave) Save yourself.
     - (RemBranchFail) I can't.
     dialoguesText:
-    - "Elio (elio normal) Hey buddy, you okay? How\u2019s your head doing?"
+    - "Elio (elio serious) Hey buddy, you okay? How\u2019s your head doing?"
     - ' () Frantic knocks ring through the office.'
     - "Elio (elio normal) Sit tight Rem, I\u2019ll get this."
     - ??? (glitch rem) Helphelphelphelphelp please help, please-
     - "??? (glitch rem) Do something- anything! Please I can\u2019t hold on anymore- "
-    - "Elio (elio normal) Uhh Rem, this\u2019 your long-lost twin brother or something?
-      What\u2019s going on?"
-    - "Rem (rem normal) I\u2026 I don\u2019t know. "
+    - "Elio (elio serious) Uhh Rem, this\u2019 your long-lost twin brother or something?"
+    - Elio (elio serious) He looks like a carbon copy of you. What's going on?
+    - "Rem (rem pained) I\u2026 I don\u2019t know. "
     - ??? (glitch rem) You do. You know who I am, Rem.
-    - "??? (glitch rem) This room, this town, everyone, this world, it\u2019s all
+    - "Remnant (remnant) This room, this town, everyone, this world, it\u2019s all
       fiction! "
-    - "??? (glitch rem) But you knew that already. Didn\u2019t you, Rem?"
-    - ??? (glitch rem) Why? You do it for everyone else. So why? Why is it so hard
+    - "Remnant (remnant) But you knew that already. Didn\u2019t you, Rem?"
+    - Rem (rem pained 2) I... I don't know if I can do anything for you.
+    - Remnant (remnant) Why? You can for everyone else. So why? Why is it so hard
       for you to help me?
+    - Remnant (remnant) Why is it so hard for you to help yourself.
     - Rem (rem normal) ...
-    - "??? (glitch rem) Nothing here matters! Don\u2019t you get it? You made it
+    - "Remnant (remnant) Nothing here matters! Don\u2019t you get it? You made it
       up! "
-    - "??? (glitch rem) There isn\u2019t a town suffering from some dumb nightmares,
-      it was all you."
-    - "??? (glitch rem) Please, Rem, we can\u2019t keep doing this."
-    - "Elio (elio normal) Whoah okay, if I and everything else wasn\u2019t glitching
+    - "Remnant (remnant) There isn\u2019t a town suffering from some dumb nightmares,
+      it was all you!"
+    - "Remnant (remnant) Please, Rem, we can\u2019t keep doing this."
+    - "Elio (elio serious) Whoah okay, if I and everything else wasn\u2019t glitching
       out like some buggy video game I would think Rem 2.0 was talking out of his
       behind. "
     - Elio (elio normal) Maybe you should help him out, man. Or I guess yourself?
-    - 'Elio (elio normal) Just like how you did for me and Ladybird, yeah? '
+    - 'Elio (elio smiling) Just like how you did for me and Ladybird, yeah? '
   - dialogueName: RemBranchSave
     needsTransition: 0
     sceneName: 
     options: []
     dialoguesText:
-    - "Rem (rem normal) Hah\u2026 this is so stupid. I don\u2019t know why it\u2019s
-      this difficult for me. "
+    - "Rem (rem thoughtful) Hah\u2026 this is so stupid that I "
     - Rem (rem normal) Mhm, at the very least I can try.
-    - "Elio (elio normal) That\u2019s more like it. Enough dreamin\u2019 Rem, you\u2019re
-      ready.\r"
+    - "Elio (elio smiling) That\u2019s more like it."
   - dialogueName: RemBranchFail
     needsTransition: 1
     sceneName: EndCredits
     options: []
     dialoguesText:
-    - "Rem (rem normal) I\u2019m sorry- I\u2019m sorry I can\u2019t, I don\u2019t
+    - "Rem (rem pained) I\u2019m sorry- I\u2019m sorry I can\u2019t, I don\u2019t
       know how."
   - dialogueName: ElioHubFinal
     needsTransition: 0
     sceneName: 
     options: []
     dialoguesText:
-    - Elio (elio normal) So uh just wondering. What would happen to me if- when you
-      cleanse your nightmare realm?
-    - "Rem (rem normal) Don\u2019t worry Elio, I have a feeling you will be alright."
+    - Elio (elio suspicious) So uh just wondering. What would happen to me if- when
+      you cleanse your nightmare realm?
+    - "Rem (rem smiling) Don\u2019t worry Elio, I have a feeling you will be alright."
