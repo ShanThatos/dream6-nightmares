@@ -926,7 +926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4721667551436791392, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4721667551436791392, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2597,8 +2597,8 @@ GameObject:
   m_Component:
   - component: {fileID: 248968378}
   - component: {fileID: 248968377}
-  - component: {fileID: 248968375}
   - component: {fileID: 248968374}
+  - component: {fileID: 248968379}
   m_Layer: 0
   m_Name: GameMusicTrigger
   m_TagString: Untagged
@@ -2617,7 +2617,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 85c32ae2375bd8a418622e687eea7618, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -2702,21 +2702,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &248968375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 248968373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcec3f4e4b17d59498f281e64d0fee0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playOnlyOnce: 0
-  playOnEnter: 1
-  stopOnExit: 1
 --- !u!61 &248968377
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2724,7 +2709,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248968373}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -2758,6 +2743,26 @@ Transform:
   m_Father: {fileID: 1026280613}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &248968379
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248968373}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fd75fcb6cae3cc44fa4dc06e9705799e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &251516369 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6197960883307520740, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
@@ -8792,9 +8797,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1370318612}
-  - component: {fileID: 1370318615}
   - component: {fileID: 1370318614}
   - component: {fileID: 1370318613}
+  - component: {fileID: 1370318616}
+  - component: {fileID: 1370318615}
   m_Layer: 0
   m_Name: SeaMusicTrigger
   m_TagString: Untagged
@@ -8860,8 +8866,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5f96dd99f7d32eb40a6882b3ffa8d509, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_PlayOnAwake: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -8945,7 +8951,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1370318615
+--- !u!95 &1370318615
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370318611}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fd75fcb6cae3cc44fa4dc06e9705799e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1370318616
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8954,12 +8980,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 1370318611}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcec3f4e4b17d59498f281e64d0fee0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 041558100daed1541832f57ad3572710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playOnlyOnce: 0
-  playOnEnter: 1
-  stopOnExit: 1
+  onlyTriggerOnce: 0
+  onEnterEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1370318615}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MusicFadeIn
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 248968379}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MusicFadeOut
+          m_BoolArgument: 0
+        m_CallState: 2
+  onExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1371569414
 GameObject:
   m_ObjectHideFlags: 0

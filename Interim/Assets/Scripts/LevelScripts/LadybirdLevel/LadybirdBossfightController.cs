@@ -67,7 +67,10 @@ public class LadybirdBossfightController : MonoBehaviour {
         MainCameraScript.instance.camFOVMultiplier = 2f;
 
         for (int i = 4; i >= 0; i--) {
-            seaMusic.volume = i / 5f;
+            if(i == 4)
+            {
+                seaMusic.GetComponent<Animator>().Play("MusicFadeOut");
+            }
             yield return new WaitForSeconds(1f);
         }
 
