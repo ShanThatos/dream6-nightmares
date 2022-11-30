@@ -61835,7 +61835,7 @@ MonoBehaviour:
   fixedSettings:
   - targetOverride: {fileID: 2038524522}
     cameraOffsetOverride: {x: 0, y: 0}
-    fovMultiplierOverride: 1.3
+    fovMultiplierOverride: 1.6
     camPosLerpOverride: 2
     camFOVLerpOverride: 2
 --- !u!114 &1177813199
@@ -61897,8 +61897,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1179901191}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 208.4611, y: -21.1513, z: 0}
-  m_LocalScale: {x: 14.487478, y: 23.852234, z: 1}
+  m_LocalPosition: {x: 212.0728, y: -8.6105, z: 0}
+  m_LocalScale: {x: 7.8167233, y: 48.93286, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1937147451}
@@ -62508,11 +62508,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642731270172959566, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -112.7
+      value: 165.2
       objectReference: {fileID: 0}
     - target: {fileID: 8642731270172959566, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.14
+      value: -34.4
       objectReference: {fileID: 0}
     - target: {fileID: 8642731270172959566, guid: e463ec7e79901f8409c4d4374fd0008f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -70039,8 +70039,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412533297}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 159.0043, y: -19.8158, z: 0}
-  m_LocalScale: {x: 16.702826, y: 1.5722437, z: 1}
+  m_LocalPosition: {x: 162.8304, y: -19.8158, z: 0}
+  m_LocalScale: {x: 18.197727, y: 1.5722437, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1937147451}
@@ -97688,8 +97688,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885697925}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 169.7538, y: 2.6722, z: 0}
-  m_LocalScale: {x: 91.26418, y: 26.257837, z: 1}
+  m_LocalPosition: {x: 148.7488, y: 2.6722, z: 0}
+  m_LocalScale: {x: 49.25989, y: 26.257837, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1937147451}
@@ -100207,7 +100207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038524520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 171.44, y: -32.24, z: 0}
+  m_LocalPosition: {x: 174.49, y: -32.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
