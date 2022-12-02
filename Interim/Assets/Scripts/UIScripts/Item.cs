@@ -18,6 +18,11 @@ public class Item : MonoBehaviour
     public bool isOpened;
     public bool uncollectable;
     public bool alwaysSpawn;
+
+    public bool aniDone = false;
+    public Animator chestAnimator;
+    public ParticleSystem chestParticles;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +34,12 @@ public class Item : MonoBehaviour
         {
             this.gameObject.SetActive(true);
         }
+
+        if (chestAnimator != null)
+        {
+            GetComponent<SpriteRenderer>().enabled = false;
+        }
+
         blackPanel = GameObject.FindGameObjectWithTag("BlackPanel");
         itemIdentifier = GameObject.FindGameObjectWithTag("ItemIdentifier");
         itemImage = itemIdentifier.transform.GetChild(0).transform.GetChild(1).GetComponent<Image>();
@@ -51,15 +62,19 @@ public class Item : MonoBehaviour
         {
             promptText.text = "Jump to Collect";
         }
+
         
 
-        blackPanel.transform.localScale = new Vector3(1, 1, 1);
-        LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0.75f, 0.1f);
-        LeanTween.scale(itemIdentifier, new Vector3(1, 1, 1), 0.1f);
-        isOpened = true;
+
+        StartCoroutine(OpenCoroutine()); 
     }
     virtual public void CloseIdentifier()
     {
+        if (chestAnimator)
+        {
+            chestAnimator.SetTrigger("Reset");
+        }
+
         blackPanel.transform.localScale = new Vector3(0, 0, 0);
         LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0.0f, 0.1f);
         LeanTween.scale(itemIdentifier, new Vector3(0, 0, 0), 0.1f);
@@ -80,5 +95,27 @@ public class Item : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+    }
+
+    IEnumerator OpenCoroutine()
+    {
+        if (chestParticles)
+        {
+            chestParticles.Play();
+            chestParticles.transform.SetParent(null, true);
+        }
+        if (chestAnimator != null)
+        {
+            chestAnimator.SetTrigger("Open");
+            yield return new WaitForSecondsRealtime(.9f);
+        }
+        
+
+        blackPanel.transform.localScale = new Vector3(1, 1, 1);
+        LeanTween.alpha(blackPanel.GetComponent<RectTransform>(), 0.75f, 0.1f);
+        LeanTween.scale(itemIdentifier, new Vector3(1, 1, 1), 0.1f);
+        isOpened = true;
+
+        yield return null;
     }
 }

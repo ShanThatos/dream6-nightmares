@@ -101,6 +101,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -108,10 +120,10 @@ TextureImporter:
       name: chest_spritesheet_0
       rect:
         serializedVersion: 2
-        x: 409
-        y: 2438
-        width: 195
-        height: 260
+        x: 0
+        y: 2048
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,10 +141,10 @@ TextureImporter:
       name: chest_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 1418
-        y: 2438
-        width: 224
-        height: 240
+        x: 1024
+        y: 2048
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,10 +162,10 @@ TextureImporter:
       name: chest_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 2434
-        y: 2440
-        width: 240
-        height: 220
+        x: 2048
+        y: 2048
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,10 +183,10 @@ TextureImporter:
       name: chest_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 234
-        y: 1438
-        width: 418
-        height: 402
+        x: 0
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,10 +204,10 @@ TextureImporter:
       name: chest_spritesheet_4
       rect:
         serializedVersion: 2
-        x: 1272
-        y: 1420
-        width: 393
-        height: 419
+        x: 1024
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,10 +225,10 @@ TextureImporter:
       name: chest_spritesheet_5
       rect:
         serializedVersion: 2
-        x: 2316
-        y: 1414
-        width: 459
-        height: 464
+        x: 2048
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,10 +246,10 @@ TextureImporter:
       name: chest_spritesheet_6
       rect:
         serializedVersion: 2
-        x: 351
-        y: 392
-        width: 378
-        height: 452
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,10 +267,10 @@ TextureImporter:
       name: chest_spritesheet_7
       rect:
         serializedVersion: 2
-        x: 1313
-        y: 391
-        width: 418
-        height: 431
+        x: 1024
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,10 +288,10 @@ TextureImporter:
       name: chest_spritesheet_8
       rect:
         serializedVersion: 2
-        x: 2455
-        y: 391
-        width: 195
-        height: 292
+        x: 2048
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

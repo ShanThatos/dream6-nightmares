@@ -2289,6 +2289,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 652934683703367387, guid: 06ed0b24ee37a244aad5234dc11b2672, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.67
+      objectReference: {fileID: 0}
     - target: {fileID: 2864947131413969202, guid: 06ed0b24ee37a244aad5234dc11b2672, type: 3}
       propertyPath: m_Name
       value: Drawing
@@ -2348,6 +2352,34 @@ PrefabInstance:
     - target: {fileID: 2864947131413969209, guid: 06ed0b24ee37a244aad5234dc11b2672, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864947131413969212, guid: 06ed0b24ee37a244aad5234dc11b2672, type: 3}
+      propertyPath: chestAnimator
+      value: 
+      objectReference: {fileID: 708079129}
+    - target: {fileID: 2864947131413969212, guid: 06ed0b24ee37a244aad5234dc11b2672, type: 3}
+      propertyPath: chestParticles
+      value: 
+      objectReference: {fileID: 1411048171}
+    - target: {fileID: 2864947131413969214, guid: 06ed0b24ee37a244aad5234dc11b2672, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172293106784799816, guid: 06ed0b24ee37a244aad5234dc11b2672, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6328737396713812974, guid: 06ed0b24ee37a244aad5234dc11b2672, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419228292803359042, guid: 06ed0b24ee37a244aad5234dc11b2672, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419228292803359042, guid: 06ed0b24ee37a244aad5234dc11b2672, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06ed0b24ee37a244aad5234dc11b2672, type: 3}
@@ -2839,6 +2871,9 @@ MonoBehaviour:
   isOpened: 0
   uncollectable: 1
   alwaysSpawn: 0
+  aniDone: 0
+  chestAnimator: {fileID: 0}
+  chestParticles: {fileID: 0}
 --- !u!1 &303045468
 GameObject:
   m_ObjectHideFlags: 0
@@ -5602,6 +5637,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1311228394109375210, guid: 75ecb948f20f63b40a59d16e4418ce88, type: 3}
   m_PrefabInstance: {fileID: 77327004}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &708079129 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3249045372348017035, guid: 06ed0b24ee37a244aad5234dc11b2672, type: 3}
+  m_PrefabInstance: {fileID: 203966557}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &743298537
 GameObject:
   m_ObjectHideFlags: 0
@@ -6492,6 +6532,9 @@ MonoBehaviour:
   isOpened: 0
   uncollectable: 1
   alwaysSpawn: 0
+  aniDone: 0
+  chestAnimator: {fileID: 0}
+  chestParticles: {fileID: 0}
 --- !u!114 &837326790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9243,6 +9286,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!198 &1411048171 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6328737396713812974, guid: 06ed0b24ee37a244aad5234dc11b2672, type: 3}
+  m_PrefabInstance: {fileID: 203966557}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1424967882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16574,6 +16622,9 @@ MonoBehaviour:
   isOpened: 0
   uncollectable: 1
   alwaysSpawn: 0
+  aniDone: 0
+  chestAnimator: {fileID: 0}
+  chestParticles: {fileID: 0}
 --- !u!61 &2136053200
 BoxCollider2D:
   m_ObjectHideFlags: 0
