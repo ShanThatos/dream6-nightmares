@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class EndCheck : MonoBehaviour
 {
-    private Animator anim;
-    private Animator sceneAnim;
+    private bool isDone;
     // Start is called before the first frame update
     void Start()
     {
-        anim = gameObject.GetComponent<Animator>();
-        sceneAnim = ScenesTransition.instance.gameObject.GetComponent<Animator>();
-        if (PlayerPrefs.GetInt("Failed", 0) == 1)
+        isDone = false;
+    }
+
+    private void Update()
+    {
+        if (isDone)
         {
-            anim.speed = 10f;
-            sceneAnim.speed = 10f;
-            Debug.Log("Super scrolling!");
+            if (Input.anyKeyDown)
+            {
+                ScenesTransition.instance.LoadScene("MainMenu");
+            }
         }
     }
 
@@ -27,7 +30,9 @@ public class EndCheck : MonoBehaviour
         }
         else
         {
-            ScenesTransition.instance.LoadScene("MainMenu");
+            //ScenesTransition.instance.LoadScene("MainMenu");
+            isDone = true;
+
         }
     }
 }
