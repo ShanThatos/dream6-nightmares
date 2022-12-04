@@ -57,12 +57,16 @@ public class DialogueController : MonoBehaviour
         oldInput = input;
         //input = Input.anyKeyDown;
         input = Input.GetAxisRaw("Submit") > 0;
-        if (isDialogueOn && intervalDone)
+        if (isDialogueOn && intervalDone && !optionsList.activeSelf)
         {
             if (input && !oldInput)
             {
                 DisplayNextSentence();
             }
+        }
+
+        if (!input && optionsList.activeSelf && (EventSystem.current.currentSelectedGameObject == null || EventSystem.current.currentSelectedGameObject.transform.parent.gameObject != optionsList)) {
+            EventSystem.current.SetSelectedGameObject(optionsList.transform.GetChild(0).gameObject);
         }
     }
 
@@ -215,7 +219,6 @@ public class DialogueController : MonoBehaviour
                 */
             }
             optionsList.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(optionsList.transform.GetChild(0).gameObject);
         }
     }
 
