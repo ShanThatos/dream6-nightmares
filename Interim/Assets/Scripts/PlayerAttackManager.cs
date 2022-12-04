@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 public class PlayerAttackManager : MonoBehaviour
 {
     [Tooltip("Object for regular attack")]

@@ -426,6 +426,11 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            if (Gamepad.current != null)
+            {
+                print(Gamepad.current.name);
+                attackManager.keyDowns = 0;
+            }
             
         }
         
