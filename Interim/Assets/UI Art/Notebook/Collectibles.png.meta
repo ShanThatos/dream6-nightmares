@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a01b3c61af2235f4b9d814cd801737df
+guid: 58ffb66f1de6bd74f878f867f7f2f200
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RockSign_0
+      name: Collectibles_0
       rect:
         serializedVersion: 2
-        x: 286
-        y: 216
-        width: 860
-        height: 766
+        x: 139
+        y: 617
+        width: 430
+        height: 383
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,8 +143,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b301630e36d96814d858fc3ff1bfa3be
-      internalID: -776100878
+      spriteID: a6af3dd39679d9e4285fa6b746b6152d
+      internalID: -1791991091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectibles_1
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 617
+        width: 430
+        height: 383
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa8831e9fa3ec1d488fd2542d275f4f1
+      internalID: -2077734016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectibles_2
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 612
+        width: 430
+        height: 383
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb787697e1b62424f99cdb0c392ecdf5
+      internalID: 1267582041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectibles_3
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 157
+        width: 430
+        height: 383
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a74e59b34d94314478128af64f6cfd1a
+      internalID: 69508705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectibles_4
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 157
+        width: 430
+        height: 383
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c405da2c264bd284ba0f089ad32b3b30
+      internalID: 283900180
       vertices: []
       indices: 
       edges: []
@@ -160,7 +244,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      RockSign_0: -776100878
+      Collectibles_4: 283900180
+      Collectibles_2: 1267582041
+      Collectibles_0: -1791991091
+      Collectibles_1: -2077734016
+      Collectibles_3: 69508705
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
