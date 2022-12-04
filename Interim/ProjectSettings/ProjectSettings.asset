@@ -139,6 +139,7 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -600,11 +601,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: 2DBuiltInRenderer
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: Assets\WSATestCertificate.pfx
-  metroCertificatePassword: 
-  metroCertificateSubject: Dream6
-  metroCertificateIssuer: Dream6
-  metroCertificateNotAfter: 00c99cf3fff7d901
+  metroCertificatePath: Assets/WSATestCertificate.pfx
+  metroCertificatePassword: Gcgm><<>
+  metroCertificateSubject: Dream Six
+  metroCertificateIssuer: Dream Six
+  metroCertificateNotAfter: 00f00c796e26da01
   metroApplicationDescription: 2D_BuiltInRenderer
   wsaImages: {}
   metroTileShortName: Interim
