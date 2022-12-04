@@ -43,7 +43,7 @@ public class IntroLevelBossfightController : MonoBehaviour {
         yield return new WaitForSeconds(1f);
 
         switchRemnantState("RMScream");
-        yield return new WaitForSeconds(1.4f);
+        yield return new WaitForSeconds(1.6f);
 
         //DialogueManager.instance.PlayDialogue("IntroClosure");
         GameManager.LockMovement();
