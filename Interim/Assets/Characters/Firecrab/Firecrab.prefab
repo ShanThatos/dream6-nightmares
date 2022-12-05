@@ -492,13 +492,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad21e646a33c2845841519a139dd7fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 200
+  maxHealth: 175
   knockResistance: {x: 100, y: 100}
   damageReduction: 0.95
   energyDamageReduction: 0.9
   iFrameTime: 0.4
   isPlayer: 0
   spawnHitParticles: 1
+  limitEvents: 0
 --- !u!50 &4242808142808042671
 Rigidbody2D:
   serializedVersion: 4
