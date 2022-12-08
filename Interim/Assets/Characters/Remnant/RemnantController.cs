@@ -25,7 +25,6 @@ public class RemnantController : StateManager
 
     [HideInInspector]
     public RemnantAnimationCues cues;
-
     public override void init() {
         base.init();
         rb = GetComponent<Rigidbody2D>();

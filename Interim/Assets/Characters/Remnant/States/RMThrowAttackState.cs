@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RMThrowAttackState : RMState {
 
-    public float attackCooldown = 5f;
+    public float attackCooldown = 3.5f;
     float remainingCooldown = 0f;
 
     public GameObject javelinPrefab;
