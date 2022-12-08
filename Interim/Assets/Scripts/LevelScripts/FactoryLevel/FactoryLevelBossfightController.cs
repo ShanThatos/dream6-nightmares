@@ -10,6 +10,11 @@ public class FactoryLevelBossfightController : MonoBehaviour
     Damagable bossDamagable;
     public GameObject[] barriers;
 
+    bool triggeredBossMusic = false;
+    public AudioSource levelMusic;
+    public AudioSource bossfightMusic;
+    public float bossfightMusicVolume = 1.0f;
+
     bool active = false;
 
     void Start()
@@ -36,6 +41,21 @@ public class FactoryLevelBossfightController : MonoBehaviour
         setBarriersActive(true);
 
         active = true;
+        StartCoroutine(startBossMusic());
+    }
+
+    private IEnumerator startBossMusic() {
+        if (triggeredBossMusic) yield return null;
+        triggeredBossMusic = true;
+        bossfightMusic.Play();
+        for (float i = 0; i <= 1.0f; i += 0.1f) {
+            levelMusic.volume = 1.0f - i;
+            bossfightMusic.volume = i * bossfightMusicVolume;
+            yield return new WaitForSeconds(0.5f);
+        }
+        levelMusic.volume = 0.0f;
+        levelMusic.Stop();
+        bossfightMusic.volume = bossfightMusicVolume;
     }
 
     void OnBossDeath()
